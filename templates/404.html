@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    P&aacute;gina no encontrada
+{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>La p&aacute;gina que busca no se encuentra</h2>
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Regresar al inicio</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views import View, generic
+
+from SIG_SMEHLA.settings import LOGIN_URL, DASHBOARD_URL
+from account.models import Profile
+
+
+class AnonymousRequiredMixin(View):
+    def get_success_url(self):
+        return self.request.GET.get('next', reverse_lazy(DASHBOARD_URL))
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_anonymous:
+            return super(AnonymousRequiredMixin, self).dispatch(request, *args, **kwargs)
+        else:
+            return redirect(reverse_lazy(DASHBOARD_URL))
+
+
+class ProfileMixin(LoginRequiredMixin):
+    def get_context_data(self, **kwargs):
+        context = super(ProfileMixin, self).get_context_data(**kwargs)
+        profile = Profile.objects.get(username=self.request.user.username)
+        context['profile'] = profile
+        return context
+
+
+class SameUserMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        logged_user = Profile.objects.get(id=kwargs['pk'])
+        if request.user.is_superuser or request.user == logged_user:
+            return super(SameUserMixin, self).dispatch(request, *args, **kwargs)
+        else:
+            raise PermissionDenied
+
+
+class NavbarMixin(generic.TemplateView):
+    tab_name = 'init'
+
+    def get_tab_name(self):
+        if self.tab_name:
+            return self.tab_name
+        else:
+            return 'init'
+
+    def get_context_data(self, **kwargs):
+        context = super(NavbarMixin, self).get_context_data(**kwargs)
+        context['tab'] = self.get_tab_name()
+        return context
