@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -51,3 +52,22 @@ class NavbarMixin(generic.TemplateView):
         context = super(NavbarMixin, self).get_context_data(**kwargs)
         context['tab'] = self.get_tab_name()
         return context
+
+
+class AjaxableResponseMixin(generic.FormView):
+    def form_invalid(self, form):
+        response = super(AjaxableResponseMixin, self).form_invalid(form)
+        if self.request.is_ajax():
+            return JsonResponse(form.errors, status=400)
+        else:
+            return response
+
+    def form_valid(self, form):
+        response = super(AjaxableResponseMixin, self).form_valid(form)
+        if self.request.is_ajax():
+            data = {
+                'pk': self.object.pk,
+            }
+            return JsonResponse(data)
+        else:
+            response
