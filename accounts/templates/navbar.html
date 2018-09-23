@@ -14,6 +14,36 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="modal"
                                data-target="#contact">Cont&aacute;ctenos</a>
+                            <div class="modal fade right" tabindex="-1" role="dialog" id="contact">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Cont&aacute;ctenos</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Por favor, d&eacute;nnos su opini&oacute;n del sitio</p>
+                                            <form method="post">
+                                                <div class="md-form">
+                                                    <label for="subject">Asunto</label>
+                                                    <input type="text" id="subject" name="subject">
+                                                </div>
+                                                <div class="md-form">
+                                                    <label for="message">Mensaje</label>
+                                                    <input type="text" id="message">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Saves changes</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <div class="form-inline">
@@ -42,38 +72,12 @@
             </div>
         </nav>
     </header>
-    <div class="modal fade right" tabindex="-1" role="dialog" id="contact">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Cont&aacute;ctenos</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Por favor, d&eacute;nnos su opini&oacute;n del sitio</p>
-                    <form method="post">
-                        <div class="md-form">
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject">
-                        </div>
-                        <div class="md-form">
-                            <label for="message">Mensaje</label>
-                            <input type="text" id="message">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Saves changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+
+    <main class="container-fluid">
+        <div class="row">
+            {% block main %}
+            {% endblock %}
         </div>
-    </div>
-    <main>
-        {% block main %}
-        {% endblock %}
     </main>
 {% endblock %}
 
