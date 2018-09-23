@@ -4,14 +4,14 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from SIG_SMEHLA.settings import DASHBOARD_URL, LOGIN_URL
-from account import mixins
+from accounts import mixins
 from . import forms
 from .models import Profile
 
 
 class LoginView(mixins.AnonymousRequiredMixin, generic.FormView):
     form_class = AuthenticationForm
-    template_name = 'account/login.html'
+    template_name = 'accounts/login.html'
 
     def form_valid(self, form):
         login(self.request, form.get_user())
@@ -31,16 +31,16 @@ class LogoutView(generic.RedirectView):
 
 
 class DashBoardView(mixins.ProfileMixin, mixins.NavbarMixin):
-    template_name = 'account/dashboard.html'
+    template_name = 'accounts/dashboard.html'
 
 
 class ProfileUpdateView(generic.UpdateView, mixins.SameUserMixin):
     model = Profile
     form_class = forms.ProfileUpdateForm
-    template_name = 'account/profile_update_form.html'
+    template_name = 'accounts/profile_update_form.html'
 
     def get_success_url(self):
-        return reverse_lazy('account:profile_update', kwargs={'pk': self.object.pk})
+        return reverse_lazy('accounts:profile_update', kwargs={'pk': self.object.pk})
 
 
 class ProfileDetailView(generic.DetailView):

@@ -5,6 +5,8 @@ from django.db import models
 class Profile(AbstractUser):
     born_date = models.DateField('Fecha de nacimiento', blank=True, null=True)
 
+    REQUIRED_FIELDS = ['email', 'born_date']
+
     class Meta:
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'

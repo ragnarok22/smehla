@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.views import View, generic
 
 from SIG_SMEHLA.settings import LOGIN_URL, DASHBOARD_URL
-from account.models import Profile
+from accounts.models import Profile
 
 
 class AnonymousRequiredMixin(View):

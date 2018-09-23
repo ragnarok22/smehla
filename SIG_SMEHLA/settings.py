@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account.apps.AccountConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -115,7 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_URL = 'account:login'
+LOGIN_URL = 'accounts:login'
 DASHBOARD_URL = 'dashboard'
 
-AUTH_USER_MODEL = 'account.Profile'
+AUTH_USER_MODEL = 'accounts.Profile'
