@@ -22,14 +22,6 @@ class AnonymousRequiredMixin(View):
             return redirect(reverse_lazy(DASHBOARD_URL))
 
 
-class ProfileMixin(LoginRequiredMixin):
-    def get_context_data(self, **kwargs):
-        context = super(ProfileMixin, self).get_context_data(**kwargs)
-        profile = Profile.objects.get(username=self.request.user.username)
-        context['profile'] = profile
-        return context
-
-
 class SameUserMixin(LoginRequiredMixin, View):
     def dispatch(self, request, *args, **kwargs):
         logged_user = Profile.objects.get(id=kwargs['pk'])
