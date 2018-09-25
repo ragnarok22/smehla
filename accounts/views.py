@@ -30,7 +30,7 @@ class LogoutView(generic.RedirectView):
         return super(LogoutView, self).get(request, *args, **kwargs)
 
 
-class DashBoardView(mixins.NavbarMixin):
+class DashBoardView(mixins.NavbarMixin, mixins.LoginRequiredMixin):
     template_name = 'accounts/dashboard.html'
 
 
