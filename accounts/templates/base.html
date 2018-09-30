@@ -21,8 +21,8 @@
 </head>
 
 <body>
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -35,6 +35,12 @@
 <script type="text/javascript" src="{% static 'accounts/js/mdb.min.js' %}"></script>
 <!-- My custom JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
+<script>
+    $(function () {
+       $('#{{ tab }}').addClass('active');
+       $('#{{ tab }} a').attr('href', '#');
+    });
+</script>
 {% block script %}
 {% endblock %}
 </body>

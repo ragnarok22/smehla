@@ -11,6 +11,9 @@
                         <li class="nav-item" id="init">
                             <a href="{% url 'dashboard' %}" class="nav-link">Inicio <span class="sr-only"></span></a>
                         </li>
+                        <li class="nav-item" id="services">
+                            <a href="#" class="nav-link">Servicios</a>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="modal"
                                data-target="#contact">Cont&aacute;ctenos</a>
@@ -85,12 +88,34 @@
             {% endblock %}
         </div>
     </main>
-{% endblock %}
 
-{% block script %}
-    <script>
-        $(document).ready(function () {
-            $('#{{ tab }}').addClass('active');
-        });
-    </script>
+    <footer class="page-footer font-small blue pt-4">
+        <a href="#" class="go-top"><i class="fa fa-arrow-up"></i>Subir</a>
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5>Sistema de Gestión</h5>
+                    <h6 class="offset-1">Sistema de migración y extrangería</h6>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Link 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <div class="footer-copyright text-center py-3">
+        &copy; 2018 Copyright: Created by University of Holguin.
+    </div>
+    </footer>
 {% endblock %}

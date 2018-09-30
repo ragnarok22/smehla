@@ -1,10 +1,10 @@
 function getCookie(name) {
-    var cookieValue = null;
+    let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Estos cookies empiezan con el nombre que buscamos
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
             if (cookie.substring(0, name.length + 1) === (name + '=')) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                 break;
@@ -14,19 +14,35 @@ function getCookie(name) {
     return cookieValue;
 }
 
-function csrfSafeMethod(method) {
-    // estos metodos HTTP no requieren proteccion CSRF
-    return (/^(GET|HEAD|OPTIONS|TRACE)&/.test(method));
+function csrfSaveMethod(method) {
+    // these http methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
 
-$.ajaxSetup({
-    beforeSend: function (xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+$(document).ready(function (e) {
+    const csrftoken = getCookie('csrftoken');
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            if (!csrfSaveMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
         }
-    }
-});
+    });
 
-$(function () {
+    let btn_scroll = $('.go-top');
+
+    //Show or hide the sticky footer button
+    $(window).scroll(function (e) {
+        if ($(this).scrollTop() > 200) {
+            btn_scroll.fadeIn(200);
+        } else {
+            btn_scroll.fadeOut(200);
+        }
+    });
+
+    //animate the scroll to top
+    btn_scroll.click(function (ev) {
+        ev.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 300);
+    });
 });
