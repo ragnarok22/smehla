@@ -1,8 +1,4 @@
-import os
-
 from django.db import models
-
-from SIG_SMEHLA import settings
 
 CIVIL_STATUS = (
     ('c', 'Casado'),
@@ -13,9 +9,10 @@ CIVIL_STATUS = (
 
 class Client(models.Model):
     def upload_file(self, filename):
-        return settings.MEDIA_URL + self.ci + os.sep + filename
+        ext = filename.split('.')[-1]
+        return 'clients/{}.{}'.format(self.ci, ext)
 
-    ci = models.CharField(max_length=13)
+    ci = models.CharField(max_length=13, unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=150)
     born_date = models.DateField()
