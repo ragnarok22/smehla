@@ -16,10 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from accounts.views import DashBoardView
-
 urlpatterns = [
     path('accounts/', include('accounts.urls')),
-    path('', DashBoardView.as_view(), name='dashboard'),
     path('admin/', admin.site.urls),
 ]
