@@ -118,6 +118,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 LOGIN_URL = 'accounts:login'
-DASHBOARD_URL = 'dashboard'
+DASHBOARD_URL = 'accounts:dashboard'
 
 AUTH_USER_MODEL = 'accounts.Profile'

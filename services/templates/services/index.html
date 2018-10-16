@@ -1,6 +1,41 @@
 {% extends 'navbar.html' %}
+{% load static %}
+
 {% block title %}
     Inicio
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'services/css/styles.css' %}">
+{% endblock %}
+
+{% block mask %}
+    <div class="view" id="intro">
+        <div class="mask rgba-black-strong">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-md-10">
+                        <!-- Heading -->
+                        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Sistema de migración y
+                            extranjería</h2>
+
+                        <!-- Divider -->
+                        <hr class="hr-light">
+
+                        <!-- Description -->
+                        <h4 class="white-text my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+                            dignissimos doloribus eos ex explicabo, fugit laboriosam laudantium molestiae, mollitia
+                            necessitatibus nulla provident ratione reprehenderit rerum sed, sint sunt temporibus
+                            velit.</h4>
+
+                        <button type="button" class="btn btn-outline-white">Leer m&aacute;s
+                            <i class="fa fa-book ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block main %}

@@ -1,15 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'accounts/css/navbar.css' %}">
+{% endblock %}
+
 {% block content %}
     <header>
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark primary-color">
             <div class="container-fluid">
-                <a href="{% url 'accounts:dashboard' %}" class="navbar-brand">
+                <!-- Navbar brand-->
+                <a href="{% url 'services:index' %}" class="navbar-brand">
                     <strong>SIG SMEHLA</strong>
                 </a>
-                <div class="collapse navbar-collapse">
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item" id="init">
-                            <a href="{% url 'accounts:dashboard' %}" class="nav-link">Inicio <span class="sr-only"></span></a>
+                            <a href="{% url 'accounts:dashboard' %}" class="nav-link">Inicio <span
+                                    class="sr-only"></span></a>
                         </li>
                         <li class="nav-item" id="services">
                             <a href="#" class="nav-link">Servicios</a>
@@ -77,9 +95,16 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- Links -->
                 </div>
+                <!-- Collapsible content -->
             </div>
         </nav>
+        <!-- Navbar -->
+        <!-- Mask -->
+        {% block mask %}
+        {% endblock %}
+        <!-- Mask -->
     </header>
 
     <main class="container-fluid">
@@ -114,8 +139,8 @@
                 </div>
             </div>
         </div>
-    <div class="footer-copyright text-center py-3">
-        &copy; 2018 Copyright: Created by University of Holguin.
-    </div>
+        <div class="footer-copyright text-center py-3">
+            &copy; 2018 Copyright: Created by University of Holguin.
+        </div>
     </footer>
 {% endblock %}

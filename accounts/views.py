@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 from django.views import generic
 
-from SIG_SMEHLA.settings import DASHBOARD_URL, LOGIN_URL
+from SIG_SMEHLA.settings import DASHBOARD_URL
 from accounts import mixins
 from . import forms
 from .models import Profile
@@ -22,7 +22,7 @@ class LoginView(mixins.AnonymousRequiredMixin, generic.FormView):
 
 
 class LogoutView(generic.RedirectView):
-    pattern_name = LOGIN_URL
+    pattern_name = 'services:index'
     permanent = False
 
     def get(self, request, *args, **kwargs):
