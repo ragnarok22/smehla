@@ -29,3 +29,15 @@ class Client(models.Model):
     def get_full_name(self):
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
+
+
+class Visto(models.Model):
+    especification = models.CharField('especificacion', max_length=100)
+    pedido_prorroga_anos = models.DateField('Pedido de prorroga')
+    tipo_solicitud = models.CharField('Tipo de solicitud', max_length=100)
+    pasaporte_no = models.CharField('No. de Pasaporte', max_length=100)
+    fecha_emision_pasaporte = models.DateField('Fecha de emision de pasaporte')
+    fecha_vencimiento_pasaporte = models.DateField('Fecha de vencimiento de pasaporte')
+    visto_no = models.CharField('No. de Visto', max_length=100)
+    fecha_emision_visto = models.DateField('Fecha de emision de Visto')
+    fecha_vencimiento_visto = models.DateField('Fecha de vencimiento de Visto')
