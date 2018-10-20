@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <!-- Forgot password -->
-                            <a href="#">Olvido la contraseña?</a>
+                            <a href="{% url 'accounts:reset_password' %}">Olvido la contraseña?</a>
                         </div>
                     </div>
 
@@ -55,9 +55,6 @@
                             type="submit">
                         Entrar
                     </button>
-
-                    <!-- Register -->
-                    <p><a href="#">No tienes cuenta?</a></p>
                 </form>
                 <!-- Form -->
             </div>
@@ -71,11 +68,11 @@
     <script>
         {% if form.errors %}
             $(function () {
-                swal(
-                    'Error',
-                    '{{ form.errors }}',
-                    'error'
-                );
+                swal({
+                    title: 'Error',
+                    html: '{{ form.errors }}',
+                    type: 'error'
+                });
             });
         {% endif %}
     </script>

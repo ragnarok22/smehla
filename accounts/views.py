@@ -68,3 +68,24 @@ class UpdatePasswordView(mixins.SameUserMixin, auth_views.PasswordChangeView):
 
     def get_success_url(self):
         return reverse_lazy('accounts:profile_detail', kwargs={'pk': self.request.user.pk})
+
+
+class PasswordResetView(auth_views.PasswordResetView):
+    # Send the email
+    template_name = 'accounts/password_reset_form.html'
+    success_url = reverse_lazy('accounts:reset_password_done')
+
+
+class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+    # Show a success message for the above
+    template_name = 'accounts/password_reset_done.html'
+
+
+class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    # checks the link the user clicked and prompts for a new password
+    pass
+
+
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    # shows a success message for the above
+    pass
