@@ -26,12 +26,17 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item" id="init">
-                            <a href="{% url 'accounts:dashboard' %}" class="nav-link">Inicio <span
+                            <a href="{% url 'services:index' %}" class="nav-link">Inicio <span
                                     class="sr-only"></span></a>
                         </li>
                         <li class="nav-item" id="services">
                             <a href="{% url 'services:services' %}" class="nav-link">Servicios</a>
                         </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item" id="dashboard">
+                                <a href="{% url 'accounts:dashboard' %}" class="nav-link">Administrar</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="modal"
                                data-target="#contact">Cont&aacute;ctenos</a>

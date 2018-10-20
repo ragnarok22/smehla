@@ -32,6 +32,7 @@ class LogoutView(generic.RedirectView):
 
 class DashBoardView(mixins.NavbarMixin, mixins.LoginRequiredMixin):
     template_name = 'accounts/dashboard.html'
+    tab_name = 'dashboard'
 
 
 class ProfileUpdateView(generic.UpdateView, mixins.SameUserMixin):
