@@ -39,6 +39,9 @@ class ProfileCreateView(mixins.SuperuserRequiredMixin, generic.CreateView):
     model = Profile
     form_class = forms.CreateProfileForm
 
+    def get_success_url(self):
+        return reverse_lazy('accounts:profile_detail', kwargs={'pk': self.object.pk})
+
 
 class ProfileUpdateView(mixins.SameUserMixin, generic.UpdateView):
     model = Profile
