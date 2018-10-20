@@ -1,12 +1,12 @@
 from django import forms
 from django.contrib.auth import password_validation
-from django.contrib.auth.forms import AuthenticationForm, UsernameField
+from django.contrib.auth import forms as auth_forms
 
 from accounts.models import Profile
 
 
-class LoginForm(AuthenticationForm):
-    username = UsernameField(
+class LoginForm(auth_forms.AuthenticationForm):
+    username = auth_forms.UsernameField(
         widget=forms.TextInput(
             attrs={'autofocus': True, 'class': 'form-control'}
         )
@@ -63,3 +63,7 @@ class UpdateProfileForm(forms.ModelForm):
         widgets = {
             'born_date': forms.DateInput(attrs={'class': 'datepicker'})
         }
+
+
+class PasswordResetForm(auth_forms.PasswordResetForm):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
