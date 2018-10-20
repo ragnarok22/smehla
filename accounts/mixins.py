@@ -7,19 +7,19 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views import View, generic
 
-from SIG_SMEHLA.settings import LOGIN_URL, DASHBOARD_URL
+from SIG_SMEHLA.settings import LOGIN_URL, INDEX_URL
 from accounts.models import Profile
 
 
 class AnonymousRequiredMixin(View):
     def get_success_url(self):
-        return self.request.GET.get('next', reverse_lazy(DASHBOARD_URL))
+        return self.request.GET.get('next', reverse_lazy(INDEX_URL))
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_anonymous:
             return super(AnonymousRequiredMixin, self).dispatch(request, *args, **kwargs)
         else:
-            return redirect(reverse_lazy(DASHBOARD_URL))
+            return redirect(reverse_lazy(INDEX_URL))
 
 
 class SameUserMixin(LoginRequiredMixin, View):
