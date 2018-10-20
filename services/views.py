@@ -1,5 +1,3 @@
-from django.views import generic
-
 from accounts import mixins
 
 
@@ -8,5 +6,6 @@ class IndexView(mixins.NavbarMixin):
     tab_name = 'init'
 
 
-class ServicesView(generic.TemplateView):
+class ServicesView(mixins.NavbarMixin):
     template_name = 'services/services.html'
+    tab_name = 'services'
