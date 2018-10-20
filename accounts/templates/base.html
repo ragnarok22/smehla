@@ -14,10 +14,11 @@
     <link href="{% static 'accounts/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="{% static 'accounts/css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="{% static 'accounts/css/sweetalert2.min.css' %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="{% static 'accounts/css/styles.css' %}" rel="stylesheet">
-    {% block styles %}
-    {% endblock %}
+    {% block styles %}{% endblock %}
 </head>
 
 <body>
@@ -33,15 +34,18 @@
 <script type="text/javascript" src="{% static 'accounts/js/bootstrap.min.js' %}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/mdb.min.js' %}"></script>
+<!-- Sweet alert -->
+<script type="text/javascript" src="{% static 'accounts/js/sweetalert2.min.js' %}"></script>
 <!-- My custom JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
-<script>
-    $(function () {
-       $('#{{ tab }}').addClass('active');
-       $('#{{ tab }} a').attr('href', '#');
-    });
-</script>
-{% block script %}
-{% endblock %}
+{% if tab %}
+    <script>
+        $(function () {
+            $('#{{ tab }}').addClass('active');
+            $('#{{ tab }} a').attr('href', '#');
+        });
+    </script>
+{% endif %}
+{% block script %}{% endblock %}
 </body>
 </html>

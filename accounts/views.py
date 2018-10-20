@@ -11,7 +11,7 @@ from .models import Profile
 
 
 class LoginView(mixins.AnonymousRequiredMixin, generic.FormView):
-    form_class = auth_forms.AuthenticationForm
+    form_class = forms.LoginForm
     template_name = 'accounts/login.html'
 
     def form_valid(self, form):
