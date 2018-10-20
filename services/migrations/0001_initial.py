@@ -31,19 +31,4 @@ class Migration(migrations.Migration):
                 ('data_attachment', models.FileField(upload_to=services.models.Client.upload_file, verbose_name='Ficheros adjuntos')),
             ],
         ),
-        migrations.CreateModel(
-            name='Visto',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('especification', models.CharField(max_length=100, verbose_name='especificacion')),
-                ('pedido_prorroga_anos', models.DateField(verbose_name='Pedido de prorroga')),
-                ('tipo_solicitud', models.CharField(max_length=100, verbose_name='Tipo de solicitud')),
-                ('pasaporte_no', models.CharField(max_length=100, verbose_name='No. de Pasaporte')),
-                ('fecha_emision_pasaporte', models.DateField(verbose_name='Fecha de emision de pasaporte')),
-                ('fecha_vencimiento_pasaporte', models.DateField(verbose_name='Fecha de vencimiento de pasaporte')),
-                ('visto_no', models.CharField(max_length=100, verbose_name='No. de Visto')),
-                ('fecha_emision_visto', models.DateField(verbose_name='Fecha de emision de Visto')),
-                ('fecha_vencimiento_visto', models.DateField(verbose_name='Fecha de vencimiento de Visto')),
-            ],
-        ),
     ]

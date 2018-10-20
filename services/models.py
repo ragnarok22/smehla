@@ -1,10 +1,39 @@
 from django.db import models
 
 CIVIL_STATUS = (
+    ('s', 'Soltero'),
+    ('o', 'Comprometido'),
     ('c', 'Casado'),
     ('v', 'Viudo'),
-    ('s', 'Soltero'),
 )
+
+REQUEST_SPECIFICATION = (
+    ('VT', ''),
+    ('VPT', ''),
+    ('VP', ''),
+    ('VE', ''),
+    ('VTM', ''),
+    ('VOR', ''),
+    ('VTU', ''),
+    ('VCD', ''),
+)
+
+REQUEST_TYPE = (
+    ('C', 'Caducidad'),
+    ('E', 'Extravio'),
+)
+
+SERVICE_STATUS = (
+    ('1', 'Solicitud'),
+    ('2', 'Facturacion'),
+    ('3', 'Revision'),
+    ('4', 'Autenticar'),
+    ('5', 'Entrega'),
+)
+
+SERVICE_TYPE = {
+    'visa': 'Visa',
+}
 
 
 class Client(models.Model):
@@ -31,13 +60,26 @@ class Client(models.Model):
         return full_name.strip()
 
 
-class Visto(models.Model):
-    especification = models.CharField('especificacion', max_length=100)
-    pedido_prorroga_anos = models.DateField('Pedido de prorroga')
-    tipo_solicitud = models.CharField('Tipo de solicitud', max_length=100)
-    pasaporte_no = models.CharField('No. de Pasaporte', max_length=100)
-    fecha_emision_pasaporte = models.DateField('Fecha de emision de pasaporte')
-    fecha_vencimiento_pasaporte = models.DateField('Fecha de vencimiento de pasaporte')
-    visto_no = models.CharField('No. de Visto', max_length=100)
-    fecha_emision_visto = models.DateField('Fecha de emision de Visto')
-    fecha_vencimiento_visto = models.DateField('Fecha de vencimiento de Visto')
+class Service(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    service_type = None
+
+    def get_service_type(self):
+        if self.service_type:
+            return self.service_type
+        else:
+            return 'Unknown service type'
+
+
+class Visa(Service):
+    service_type = SERVICE_TYPE['visa']
+    specification = models.CharField('especificacion', max_length=3, choices=REQUEST_SPECIFICATION)
+    extension_request_date = models.DateField('Pedido de prorroga')
+    request_type = models.CharField('Tipo de solicitud', max_length=1, choices=REQUEST_TYPE)
+    passport_no = models.CharField('No. de Pasaporte', max_length=100)
+    passport_issuance_date = models.DateField('Fecha de emision de pasaporte')
+    passport_expiration_date = models.DateField('Fecha de vencimiento de pasaporte')
+    visa_no = models.CharField('No. de Visa', max_length=100)
+    visa_issuance_date = models.DateField('Fecha de emision de Visa')
+    visa_expiration_date = models.DateField('Fecha de vencimiento de Visa')
+    status = models.CharField('Estado', max_length=1, choices=SERVICE_STATUS)
