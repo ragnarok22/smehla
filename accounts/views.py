@@ -35,9 +35,14 @@ class DashBoardView(mixins.LoginRequiredMixin, mixins.NavbarMixin):
     tab_name = 'dashboard'
 
 
+class ProfileCreateView(mixins.SuperuserRequiredMixin, generic.CreateView):
+    model = Profile
+    form_class = forms.CreateProfileForm
+
+
 class ProfileUpdateView(mixins.SameUserMixin, generic.UpdateView):
     model = Profile
-    form_class = forms.ProfileUpdateForm
+    form_class = forms.UpdateProfileForm
     template_name = 'accounts/profile_update_form.html'
 
     def get_success_url(self):
