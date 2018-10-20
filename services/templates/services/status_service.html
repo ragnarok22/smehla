@@ -1,0 +1,19 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Estado del servicio
+{% endblock %}
+
+{% block main %}
+    <form method="get">
+        <label for="search">Search</label>
+        <input type="text" class="form-control" id="search" name="search">
+        <button type="submit">Aceptar</button>
+    </form>
+    {% if service %}
+        <p {% if service.status == '5' %}class="green"{% endif %}>{{ service }} {{ service.get_status_display }}</p>
+    {% else %}
+        <p>No hay ninguna solicitud que corresponda con es CI</p>
+    {% endif %}
+
+{% endblock %}

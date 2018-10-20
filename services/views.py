@@ -2,22 +2,40 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from accounts import mixins
-from services import models
+from services import models, forms
+from services.models import Client, Visa, Service
 
 
-class IndexView(mixins.NavbarMixin):
+class IndexView(mixins.NavbarMixin, generic.TemplateView):
     template_name = 'services/index.html'
     tab_name = 'init'
 
 
-class ServicesView(mixins.NavbarMixin):
+class ServicesView(mixins.NavbarMixin, generic.TemplateView):
     template_name = 'services/services.html'
     tab_name = 'services'
 
 
-class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin):
+class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.TemplateView):
     tab_name = 'tools'
     template_name = 'services/tools.html'
+
+
+class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
+    template_name = 'services/status_service.html'
+    tab_name = 'status'
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchStatusServiceView, self).get_context_data(**kwargs)
+        value = self.request.GET.get('search', None)
+        service = Visa.objects.none()
+        if value:
+            try:
+                service = Visa.objects.get(client__ci=value)
+            except:
+                pass
+        context['service'] = service
+        return context
 
 
 class ClientCreateView(mixins.LoginRequiredMixin, generic.CreateView):

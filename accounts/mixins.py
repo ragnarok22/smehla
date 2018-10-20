@@ -40,7 +40,7 @@ class SuperuserRequiredMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
-class NavbarMixin(generic.TemplateView):
+class NavbarMixin:
     tab_name = 'init'
 
     def get_tab_name(self):
