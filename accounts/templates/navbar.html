@@ -33,13 +33,13 @@
                             <a href="{% url 'services:services' %}" class="nav-link">Servicios</a>
                         </li>
                         {% if user.is_authenticated %}
-                            <li class="nav-item" id="dashboard">
-                                <a href="{% url 'accounts:dashboard' %}" class="nav-link">Herramientas</a>
+                            <li class="nav-item" id="tools">
+                                <a href="{% url 'services:tools' %}" class="nav-link">Herramientas</a>
                             </li>
                         {% endif %}
                         {% if user.is_superuser %}
-                            <li class="nav-item" id="administrate">
-                                <a href="#" class="nav-link">Administrar</a>
+                            <li class="nav-item" id="dashboard">
+                                <a href="{% url 'accounts:dashboard' %}" class="nav-link">Administrar</a>
                             </li>
                         {% endif %}
                         <li class="nav-item">

@@ -9,3 +9,8 @@ class IndexView(mixins.NavbarMixin):
 class ServicesView(mixins.NavbarMixin):
     template_name = 'services/services.html'
     tab_name = 'services'
+
+
+class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin):
+    tab_name = 'tools'
+    template_name = 'services/tools.html'
