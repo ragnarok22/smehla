@@ -31,6 +31,15 @@ class SameUserMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
+class SuperuserRequiredMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(SuperuserRequiredMixin, self).dispatch(request, *args, **kwargs)
+        if request.user.is_superuser:
+            return response
+        else:
+            raise PermissionDenied
+
+
 class NavbarMixin(generic.TemplateView):
     tab_name = 'init'
 
