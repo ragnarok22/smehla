@@ -30,12 +30,12 @@ class LogoutView(generic.RedirectView):
         return super(LogoutView, self).get(request, *args, **kwargs)
 
 
-class DashBoardView(mixins.NavbarMixin, mixins.LoginRequiredMixin):
+class DashBoardView(mixins.LoginRequiredMixin, mixins.NavbarMixin):
     template_name = 'accounts/dashboard.html'
     tab_name = 'dashboard'
 
 
-class ProfileUpdateView(generic.UpdateView, mixins.SameUserMixin):
+class ProfileUpdateView(mixins.SameUserMixin, generic.UpdateView):
     model = Profile
     form_class = forms.ProfileUpdateForm
     template_name = 'accounts/profile_update_form.html'
