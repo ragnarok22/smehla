@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from accounts import mixins
-from services.models import Client
+from services import models
 
 
 class IndexView(mixins.NavbarMixin):
@@ -21,7 +21,7 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin):
 
 
 class ClientCreateView(mixins.LoginRequiredMixin, generic.CreateView):
-    model = Client
+    model = models.Client
     fields = '__all__'
 
     def get_success_url(self):
@@ -29,15 +29,15 @@ class ClientCreateView(mixins.LoginRequiredMixin, generic.CreateView):
 
 
 class ClientDetailView(mixins.LoginRequiredMixin, generic.DetailView):
-    model = Client
+    model = models.Client
 
 
 class ClientListView(mixins.LoginRequiredMixin, generic.ListView):
-    model = Client
+    model = models.Client
 
 
 class ClientUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
-    model = Client
+    model = models.Client
     fields = '__all__'
 
     def get_success_url(self):
@@ -45,5 +45,34 @@ class ClientUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
 
 
 class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
-    model = Client
+    model = models.Client
     success_url = reverse_lazy('services:client_list')
+
+
+class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+    model = models.Visa
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk})
+
+
+class VisaDetailView(mixins.LoginRequiredMixin, generic.DetailView):
+    model = models.Visa
+
+
+class VisaListView(mixins.LoginRequiredMixin, generic.ListView):
+    model = models.Visa
+
+
+class VisaUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
+    model = models.Visa
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk})
+
+
+class VisaDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
+    model = models.Visa
+    success_url = reverse_lazy('services:visa_list')

@@ -1,0 +1,14 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Listado de visas
+{% endblock %}
+
+{% block main %}
+    {% for visa in visa_list %}
+        <p><a href="{% url 'services:visa_detail' visa.pk %}">{{ visa }}</a></p>
+        {% empty %}
+        <p>No hay visas</p>
+    {% endfor %}
+
+{% endblock %}

@@ -62,13 +62,13 @@ class Service(models.Model):
 
 class Visa(Service):
     REQUEST_SPECIFICATION = (
-        ('VT', ''),
-        ('VPT', ''),
-        ('VP', ''),
-        ('VE', ''),
-        ('VTM', ''),
-        ('VOR', ''),
-        ('VTU', ''),
+        ('VT', 'VT'),
+        ('VPT', 'VPT'),
+        ('VP', 'VP'),
+        ('VE', 'VE'),
+        ('VTM', 'VTM'),
+        ('VOR', 'VOR'),
+        ('VTU', 'VTU'),
         ('VCD', 'Visado de corta duracion'),
     )
     REQUEST_TYPE = (

@@ -1,0 +1,11 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Visa {{ visa }}
+{% endblock %}
+
+{% block main %}
+    {{ visa }}
+    <a href="{% url 'services:visa_update' visa.pk %}">Actualizar</a>
+    <a href="{% url 'services:visa_delete' visa.pk %}">Eliminar</a>
+{% endblock %}
