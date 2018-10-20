@@ -1,0 +1,12 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Cliente {{ client.get_full_name }}
+{% endblock %}
+
+{% block main %}
+    <p>Nombre completo: {{ client.get_full_name }}</p>
+    <p>CI: {{ client.ci }}</p>
+    <a href="{% url 'services:client_update' client.pk %}">Modificar</a>
+    <a href="{% url 'services:client_delete' client.pk %}">Eliminar</a>
+{% endblock %}

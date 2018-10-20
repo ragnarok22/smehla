@@ -1,0 +1,13 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Eliminar cliente {{ client }}
+{% endblock %}
+
+{% block main %}
+    <h1>¿Estas seguro de eliminar el cliente {{ client }} del sistema?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Aceptar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Listado de clientes
+{% endblock %}
+
+{% block main %}
+    {% for client in client_list %}
+        <p><a href="{% url 'services:client_detail' client.pk %}">{{ client }}</a></p>
+    {% endfor %}
+
+{% endblock %}
