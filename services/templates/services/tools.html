@@ -2,9 +2,88 @@
 {% load i18n %}
 
 {% block title %}
-    {% trans 'Tools' %}
 {% endblock %}
 
 {% block main %}
-    {% trans 'Tools' %}
+    <div class="container">
+        <h1 class="text-center">{% trans 'Tools services' %}</h1>
+        <!-- Create services -->
+        <div class="row">
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-uppercase text-center">Visa</div>
+                    </div>
+                    <div class="card-body">
+                        <p><a href="{% url 'services:visa_create' %}">Visa para un cliente</a></p>
+                        <p><a href="#">Visa a nuevo cliente</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-uppercase text-center">Residencia</div>
+                    </div>
+                    <div class="card-body">
+                        <p><a href="#">Buscar cliente</a></p>
+                        <p><a href="#">Nuevo cliente</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-uppercase text-center">Nacional</div>
+                    </div>
+                    <div class="card-body">
+                        <p><a href="#">Buscar cliente</a></p>
+                        <p><a href="#">Nuevo cliente</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-uppercase text-center">Visa</div>
+                    </div>
+                    <div class="card-body">
+                        <p><a href="#">Buscar cliente</a></p>
+                        <p><a href="#">Nuevo cliente</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Create services -->
+        <!-- List of services -->
+        <h1 class="text-center">Services List</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <td>Tipo</td>
+                        <td>Nombre del cliente</td>
+                        <td>Estado</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for service in services %}
+                        <tr>
+                            <td>{{ service.get_service_type }}</td>
+                            <td>{{ service.client.get_full_name }}</td>
+                            <td>{{ service.get_status_display }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- List of services -->
+    </div>
 {% endblock %}

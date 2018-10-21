@@ -45,6 +45,7 @@ class Service(models.Model):
         ('5', _('Deliver')),
     )
     SERVICE_TYPE = {
+        'None': _('Unknown service type'),
         'visa': _('Visa'),
     }
     client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
@@ -55,7 +56,7 @@ class Service(models.Model):
         if self.service_type:
             return self.service_type
         else:
-            return _('Unknown service type')
+            return self.SERVICE_TYPE['None']
 
     def __str__(self):
         return self.service_type
@@ -89,4 +90,4 @@ class Visa(Service):
     visa_expiration_date = models.DateField(_('Visa expiration date'))
 
     def __str__(self):
-        return '{}: {} -> {}'.format(self.service_type, self.client, self.specification)
+        return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.specification)

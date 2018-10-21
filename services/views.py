@@ -3,7 +3,7 @@ from django.views import generic
 
 from accounts import mixins
 from services import models
-from services.models import Visa
+from services.models import Visa, Service
 
 
 class IndexView(mixins.NavbarMixin, generic.TemplateView):
@@ -20,6 +20,11 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Te
     tab_name = 'tools'
     template_name = 'services/tools.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(ServiceToolsView, self).get_context_data(**kwargs)
+        context['services'] = Service.objects.all()
+        return context
+
 
 class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
     template_name = 'services/status_service.html'
@@ -32,7 +37,7 @@ class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
         if value:
             try:
                 service = Visa.objects.get(client__ci=value)
-            except:
+            except Visa.DoesNotExist:
                 pass
         context['service'] = service
         return context
