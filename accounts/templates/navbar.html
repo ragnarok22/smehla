@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'accounts/css/navbar.css' %}">
@@ -26,53 +27,54 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item" id="init">
-                            <a href="{% url 'services:index' %}" class="nav-link">Inicio <span
-                                    class="sr-only"></span></a>
+                            <a href="{% url 'services:index' %}" class="nav-link">{% trans 'Index' %}
+                                <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item" id="services">
-                            <a href="{% url 'services:services' %}" class="nav-link">Servicios</a>
+                            <a href="{% url 'services:services' %}" class="nav-link">{% trans 'Services' %}</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item" id="tools">
-                                <a href="{% url 'services:tools' %}" class="nav-link">Herramientas</a>
+                                <a href="{% url 'services:tools' %}" class="nav-link">{% trans 'Tools' %}</a>
                             </li>
                         {% endif %}
                         {% if user.is_superuser %}
                             <li class="nav-item" id="dashboard">
-                                <a href="{% url 'accounts:dashboard' %}" class="nav-link">Administrar</a>
+                                <a href="{% url 'accounts:dashboard' %}" class="nav-link">{% trans 'Administrate' %}</a>
                             </li>
                         {% endif %}
                         <li class="nav-item" id="status">
-                            <a href="{% url 'services:status' %}" class="nav-link">Consultar</a>
+                            <a href="{% url 'services:status' %}" class="nav-link">{% trans 'Consult' %}</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="modal"
-                               data-target="#contact">Cont&aacute;ctenos</a>
+                               data-target="#contact">{% trans 'Contact us' %}</a>
                             <div class="modal fade right" tabindex="-1" role="dialog" id="contact">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Cont&aacute;ctenos</h5>
+                                            <h5 class="modal-title">{% trans 'Contact us' %}</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Por favor, d&eacute;nnos su opini&oacute;n del sitio</p>
+                                            <p>{% trans 'Please, give us your opinion about this site' %}</p>
                                             <form method="post">
                                                 <div class="md-form">
-                                                    <label for="subject">Asunto</label>
+                                                    <label for="subject">{% trans 'Subject' %}</label>
                                                     <input type="text" id="subject" name="subject">
                                                 </div>
                                                 <div class="md-form">
-                                                    <label for="message">Mensaje</label>
+                                                    <label for="message">{% trans 'Message' %}</label>
                                                     <input type="text" id="message">
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Saves changes</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            <button type="button" class="btn btn-primary">{% trans 'Send' %}</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                {% trans 'Close' %}
                                             </button>
                                         </div>
                                     </div>
@@ -92,12 +94,13 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="test">
                                             <a class="dropdown-item" href="{% url 'accounts:profile_detail' user.pk %}">
-                                                <i class="fa fa-eye mr-3"></i>Ver Perfil</a>
+                                                <i class="fa fa-eye mr-3"></i>{% trans 'See profile' %}</a>
                                             <a class="dropdown-item" href="{% url 'accounts:profile_update' user.pk %}">
-                                                <i class="fa fa-edit mr-3"></i>Editar
-                                                Perfil</a>
+                                                <i class="fa fa-edit mr-3"></i>
+                                                {% trans 'Edit profile' %}
+                                            </a>
                                             <a class="dropdown-item" href="{% url 'accounts:logout' %}">
-                                                <i class="fa fa-sign-out mr-3"></i>Salir</a>
+                                                <i class="fa fa-sign-out mr-3"></i>{% trans 'Logout' %}</a>
                                         </div>
                                     </div>
                                 {% else %}
@@ -126,16 +129,16 @@
     </main>
 
     <footer class="page-footer font-small blue pt-4">
-        <a href="#" class="go-top"><i class="fa fa-arrow-up"></i>Subir</a>
+        <a href="#" class="go-top"><i class="fa fa-arrow-up"></i>{% trans 'Up' %}</a>
         <div class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <h5>Sistema de Gestión</h5>
-                    <h6 class="offset-1">Sistema de migración y extrangería</h6>
+                    <h5>{% trans 'Manage System' %}</h5>
+                    <h6 class="offset-1">{% trans 'System of emigration and foreign affairs' %}</h6>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
                 <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Links</h5>
+                    <h5 class="text-uppercase">{% trans 'Links' %}</h5>
                     <ul class="list-unstyled">
                         <li>
                             <a href="#">Link 1</a>
@@ -151,7 +154,21 @@
             </div>
         </div>
         <div class="footer-copyright text-center py-3">
-            &copy; 2018 Copyright: Created by University of Holguin.
+            &copy; 2018 {% trans 'Copyright: Created by University of Holguin' %}.
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="{% trans 'Go' %}" class="btn btn-outline-indigo btn-white waves-effect small">
+            </form>
         </div>
     </footer>
 {% endblock %}

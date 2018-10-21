@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.utils.translation import gettext_lazy as _
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -121,3 +123,9 @@ LOGIN_URL = 'accounts:login'
 INDEX_URL = 'services:index'
 
 AUTH_USER_MODEL = 'accounts.Profile'
+
+LANGUAGES = [
+    ('es', _('Spanish')),
+    ('en', _('English')),
+    ('pt', _('Portuguese')),
+]

@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-20 22:03-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\navbar.html:30
+msgid "Index"
+msgstr "Inicio"
+
+#: .\templates\navbar.html:34
+msgid "Services"
+msgstr "Servicios"
+
+#: .\templates\navbar.html:38
+msgid "Tools"
+msgstr "Herramientas"
+
+#: .\templates\navbar.html:43
+msgid "Administrate"
+msgstr "Administrar"
+
+#: .\templates\navbar.html:47
+msgid "Consult"
+msgstr "Consultar"
+
+#: .\templates\navbar.html:51 .\templates\navbar.html:56
+msgid "Contact us"
+msgstr "Contáctanos"
+
+#: .\templates\navbar.html:62
+msgid "Please, give us your opinion about this site"
+msgstr "Por favor, danos tu opinión sobre el sitio"
+
+#: .\templates\navbar.html:65
+msgid "Subject"
+msgstr "Asunto"
+
+#: .\templates\navbar.html:69
+msgid "Message"
+msgstr "Mensaje"
+
+#: .\templates\navbar.html:75
+msgid "Send"
+msgstr "Enviar"
+
+#: .\templates\navbar.html:77
+msgid "Close"
+msgstr "Cerrar"
+
+#: .\templates\navbar.html:97
+msgid "See profile"
+msgstr "Ver perfil"
+
+#: .\templates\navbar.html:100
+msgid "Edit profile"
+msgstr "Editar perfil"
+
+#: .\templates\navbar.html:103
+msgid "Logout"
+msgstr "Salir"
+
+#: .\templates\navbar.html:132
+msgid "Up"
+msgstr "Arriba"
+
+#: .\templates\navbar.html:136
+msgid "Manage System"
+msgstr "Sistema de Gestión"
+
+#: .\templates\navbar.html:137
+msgid "System of emigration and foreign affairs"
+msgstr "Sistema de emigración y extranjería"
+
+#: .\templates\navbar.html:141
+msgid "Links"
+msgstr "Direcciones"
+
+#: .\templates\navbar.html:157
+msgid "Copyright: Created by University of Holguin"
+msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
+
+#: .\templates\navbar.html:170
+msgid "Go"
+msgstr "Ir"
