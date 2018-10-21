@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import password_validation
 from django.contrib.auth import forms as auth_forms
+from django.utils.translation import gettext as _
 
 from accounts.models import Profile
 
@@ -21,11 +22,11 @@ class LoginForm(auth_forms.AuthenticationForm):
 
 class CreateProfileForm(forms.ModelForm):
     password1 = forms.CharField(
-        label='Contraseña',
+        label=_('Password'),
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
     password2 = forms.CharField(
-        label='Confirme Contraseña',
+        label=_('Repeat password'),
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
 
@@ -43,7 +44,7 @@ class CreateProfileForm(forms.ModelForm):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
         if password1 and password2 and password1 != password2:
-            raise forms.ValidationError('Las contraseñas no coinciden')  # passwords don't match
+            raise forms.ValidationError(_("Passwords don't match"))  # Las contraseñas no coinciden
         password_validation.validate_password(password2, self.instance)
         return password2
 
@@ -60,9 +61,9 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['first_name', 'last_name', 'email', 'born_date']
-        widgets = {
-            'born_date': forms.DateInput(attrs={'class': 'datepicker'})
-        }
+        # widgets = {
+        #     'born_date': forms.DateInput(attrs={'class': 'datepicker'})
+        # }
 
 
 class PasswordResetForm(auth_forms.PasswordResetForm):

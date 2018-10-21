@@ -1,7 +1,8 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
-    Editar Perfil de {{ profile }}
+    {% blocktrans %}Update {{ profile }}'s profile{% endblocktrans %}
 {% endblock %}
 
 {% block main %}
@@ -16,6 +17,6 @@
                 {{ field }}
             </div>
         {% endfor %}
-        <button class="btn btn-primary" type="submit">Editar</button>
+        <button class="btn btn-primary" type="submit">{% trans 'Accept' %}</button>
     </form>
 {% endblock %}

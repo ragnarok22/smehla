@@ -1,8 +1,10 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
+
 {% block title %}
-    Inicio
+    {% trans 'Administrate' %}
 {% endblock %}
 
 {% block main %}
-    <p>Bienvenido {{ profile }}</p>
+    <p>Welcome {{ profile }}</p>
 {% endblock %}

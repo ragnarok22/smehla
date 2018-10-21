@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-20 22:03-0400\n"
+"POT-Creation-Date: 2018-10-20 22:27-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\forms.py:25
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\forms.py:29
+msgid "Repeat password"
+msgstr "Repita la contraseña"
+
+#: .\forms.py:47
+msgid "Passwords don't match"
+msgstr "Las contraseñas no coinciden"
+
+#: .\models.py:7
+msgid "Born date"
+msgstr "Fecha de nacimiento"
+
+#: .\models.py:12
+#, fuzzy
+#| msgid "See profile"
+msgid "Profile"
+msgstr "Ver perfil"
+
+#: .\models.py:13
+#, fuzzy
+#| msgid "See profile"
+msgid "Profiles"
+msgstr "Ver perfil"
+
+#: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
+msgid "Administrate"
+msgstr "Administrar"
+
+#: .\templates\accounts\login.html:22
+msgid "Login"
+msgstr "Entrar"
+
+#: .\templates\accounts\login.html:45
+msgid "Remember me"
+msgstr "Recuérdame"
+
+#: .\templates\accounts\login.html:50
+msgid "Forgot your password?"
+msgstr "¿Olvidó su contraseña?"
+
+#: .\templates\accounts\login.html:57
+msgid "Get in"
+msgstr "Entrar"
+
+#: .\templates\accounts\password_change_form.html:5
+msgid "Change password"
+msgstr "Cambiar la contraseña"
+
+#: .\templates\accounts\password_change_form.html:12
+#: .\templates\accounts\password_reset_form.html:32
+#: .\templates\accounts\profile_update_form.html:20
+msgid "Accept"
+msgstr "Aceptar"
+
+#: .\templates\accounts\password_reset_done.html:10
+msgid ""
+"Continue to be the steps that they have sent to the mail to reestablish your "
+"password."
+msgstr "Continue los pasos que se han enviado al correo para restablecer su contraseña."
+
+#: .\templates\accounts\password_reset_done.html:12
+msgid "Home"
+msgstr "Inicio"
+
+#: .\templates\accounts\profile_detail.html:5
+#, python-format
+msgid "%(profile)s's profile "
+msgstr "Perfil de %(profile)s"
+
+#: .\templates\accounts\profile_update_form.html:5
+#, python-format
+msgid "Update %(profile)s's profile"
+msgstr "Actualizar perfil de %(profile)s"
 
 #: .\templates\navbar.html:30
 msgid "Index"
@@ -29,10 +107,6 @@ msgstr "Servicios"
 #: .\templates\navbar.html:38
 msgid "Tools"
 msgstr "Herramientas"
-
-#: .\templates\navbar.html:43
-msgid "Administrate"
-msgstr "Administrar"
 
 #: .\templates\navbar.html:47
 msgid "Consult"

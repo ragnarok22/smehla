@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}
     Entrar
@@ -18,7 +19,7 @@
         <div class="card">
             <!-- Material form login -->
             <h5 class="card-header info-color white-text text-center py-4">
-                <strong>Entrar</strong>
+                <strong>{% trans 'Login' %}</strong>
             </h5>
 
             <!-- Card content -->
@@ -41,19 +42,19 @@
                             <!-- Remember me -->
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="remember">
-                                <label for="remember" class="form-check-label">Recuerdame</label>
+                                <label for="remember" class="form-check-label">{% trans 'Remember me' %}</label>
                             </div>
                         </div>
                         <div>
                             <!-- Forgot password -->
-                            <a href="{% url 'accounts:reset_password' %}">Olvido la contraseña?</a>
+                            <a href="{% url 'accounts:reset_password' %}">{% trans 'Forgot your password?' %}</a>
                         </div>
                     </div>
 
                     <!-- Sign in button -->
                     <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
                             type="submit">
-                        Entrar
+                        {% trans 'Get in' %}
                     </button>
                 </form>
                 <!-- Form -->

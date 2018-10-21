@@ -1,13 +1,12 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.utils.decorators import method_decorator
 from django.views import View, generic
 
-from SIG_SMEHLA.settings import LOGIN_URL, INDEX_URL
+from SIG_SMEHLA.settings import INDEX_URL
 from accounts.models import Profile
 
 
