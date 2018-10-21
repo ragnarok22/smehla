@@ -1,8 +1,10 @@
 from django import forms
 from django.contrib.auth import password_validation
 from django.contrib.auth import forms as auth_forms
+from django.utils.formats import get_format
 from django.utils.translation import gettext as _
 
+from SIG_SMEHLA import settings
 from accounts.models import Profile
 
 
@@ -61,9 +63,9 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['first_name', 'last_name', 'email', 'born_date']
-        # widgets = {
-        #     'born_date': forms.DateInput(attrs={'class': 'datepicker'})
-        # }
+        widgets = {
+            'born_date': forms.DateInput(attrs={'class': 'datepicker'})
+        }
 
 
 class PasswordResetForm(auth_forms.PasswordResetForm):

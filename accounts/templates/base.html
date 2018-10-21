@@ -18,6 +18,8 @@
     <link href="{% static 'accounts/css/mdb.min.css' %}" rel="stylesheet">
     <!-- Sweet Alert -->
     <link href="{% static 'accounts/css/sweetalert2.min.css' %}" rel="stylesheet">
+    <!-- Bootstrap Datepicker -->
+    <link href="{% static 'accounts/css/bootstrap-datepicker.css' %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="{% static 'accounts/css/styles.css' %}" rel="stylesheet">
     {% block styles %}{% endblock %}
@@ -38,16 +40,24 @@
 <script type="text/javascript" src="{% static 'accounts/js/mdb.min.js' %}"></script>
 <!-- Sweet alert -->
 <script type="text/javascript" src="{% static 'accounts/js/sweetalert2.min.js' %}"></script>
+<!-- Bootstrap datepicker -->
+<script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.es.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.pt.min.js' %}"></script>
 <!-- My custom JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
-{% if tab %}
-    <script>
-        $(function () {
+<script>
+    $(function () {
+        {% if tab %}
             $('#{{ tab }}').addClass('active');
             $('#{{ tab }} a').attr('href', '#');
+        {% endif %}
+        $('.datepicker').datepicker({
+            language: '{{ LANGUAGE_CODE }}',
+            format:"yyyy/mm/dd",
         });
-    </script>
-{% endif %}
+    });
+</script>
 {% block script %}{% endblock %}
 </body>
 </html>

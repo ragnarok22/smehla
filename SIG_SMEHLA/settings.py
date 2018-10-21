@@ -57,8 +57,7 @@ ROOT_URLCONF = 'SIG_SMEHLA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,7 +109,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -128,4 +127,9 @@ LANGUAGES = [
     ('es', _('Spanish')),
     ('en', _('English')),
     ('pt', _('Portuguese')),
+]
+
+DATE_INPUT_FORMATS = [
+    # '%m/%d/%Y', '%m/%d/%y'
+    '%Y/%m/%d'
 ]
