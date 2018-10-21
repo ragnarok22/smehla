@@ -158,7 +158,7 @@ msgstr "Sistema de Gestión"
 
 #: .\templates\navbar.html:137
 msgid "System of emigration and foreign affairs"
-msgstr "Sistema de emigración y extranjería"
+msgstr "Sistema de inmigración y extranjería"
 
 #: .\templates\navbar.html:141
 msgid "Links"

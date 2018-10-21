@@ -227,14 +227,14 @@ msgstr "Inicio"
 
 #: .\templates\services\index.html:21
 msgid "System of emigration and foreign affairs"
-msgstr "Sistema de emigración y extranjería"
+msgstr "Sistema de inmigración y extranjería"
 
 #: .\templates\services\index.html:29
 msgid ""
 "For a migration service more fortress and dynamic, on the way to "
 "modernization and excellence"
 msgstr ""
-"Por un servicio de migración más fuerte y dinámico, rumbo a la modernización "
+"Por un servicio de inmigración más fuerte y dinámico, rumbo a la modernización "
 "y la excelencia"
 
 #: .\templates\services\index.html:32
