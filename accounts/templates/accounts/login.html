@@ -67,13 +67,15 @@
 
 {% block script %}
     <script>
-        {% if form.errors %}
+        {% if form.non_field_errors %}
             $(function () {
-                swal({
-                    title: 'Error',
-                    html: '{{ form.errors }}',
-                    type: 'error'
-                });
+                {% for error in form.non_field_errors %}
+                    swal({
+                        title: 'Error',
+                        html: '{{ error }}',
+                        type: 'error'
+                    });
+                {% endfor %}
             });
         {% endif %}
     </script>
