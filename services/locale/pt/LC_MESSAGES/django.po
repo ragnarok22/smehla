@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-20 23:27-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\models.py:7
+msgid "Single"
+msgstr ""
+
+#: .\models.py:8
+msgid "Engaged"
+msgstr ""
+
+#: .\models.py:9
+msgid "Married"
+msgstr ""
+
+#: .\models.py:10
+msgid "Widower"
+msgstr ""
+
+#: .\models.py:17
+msgid "Identity card"
+msgstr ""
+
+#: .\models.py:18
+msgid "First name"
+msgstr "Nome"
+
+#: .\models.py:19
+msgid "Last name"
+msgstr "Apelido"
+
+#: .\models.py:20
+msgid "Born date"
+msgstr "Data de nascimento"
+
+#: .\models.py:21
+msgid "Civil status"
+msgstr "Estado civil"
+
+#: .\models.py:22
+msgid "Naturalness"
+msgstr "Naturalidade"
+
+#: .\models.py:23
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#: .\models.py:24
+msgid "Father name"
+msgstr "nome pai"
+
+#: .\models.py:25
+msgid "Mother name"
+msgstr "nome mãe"
+
+#: .\models.py:26
+msgid "Address"
+msgstr "Residência"
+
+#: .\models.py:27
+msgid "Email"
+msgstr "Endereço Eletrônico"
+
+#: .\models.py:28
+msgid "Phone number"
+msgstr "No Telefônico"
+
+#: .\models.py:29
+msgid "Data attachment"
+msgstr ""
+
+#: .\models.py:41
+msgid "Request"
+msgstr "Solicitação"
+
+#: .\models.py:42
+msgid "Invoicing"
+msgstr ""
+
+#: .\models.py:43
+msgid "Revision"
+msgstr ""
+
+#: .\models.py:44
+msgid "Authenticating"
+msgstr ""
+
+#: .\models.py:45
+msgid "Deliver"
+msgstr ""
+
+#: .\models.py:48
+msgid "Visa"
+msgstr "Visto"
+
+#: .\models.py:50
+msgid "Client"
+msgstr "Utente"
+
+#: .\models.py:51
+msgid "Status"
+msgstr "Estado"
+
+#: .\models.py:58
+msgid "Unknown service type"
+msgstr ""
+
+#: .\models.py:73
+msgid "Visa of short duration"
+msgstr ""
+
+#: .\models.py:76
+msgid "Caducity"
+msgstr ""
+
+#: .\models.py:77
+msgid "Misplacing"
+msgstr ""
+
+#: .\models.py:81
+msgid "Specification"
+msgstr "Especificação"
+
+#: .\models.py:82
+msgid "Extension request date"
+msgstr "Pedido de prorrogação aos"
+
+#: .\models.py:83
+msgid "Request type"
+msgstr "Tipo de prorrogação"
+
+#: .\models.py:84
+msgid "Passport No."
+msgstr "Passaporte No"
+
+#: .\models.py:85
+msgid "Passport issuance date"
+msgstr "Data de Emissão de passaporte"
+
+#: .\models.py:86
+msgid "Passport expiration date"
+msgstr "Data de vencimento de passaporte"
+
+#: .\models.py:87
+msgid "Visa No."
+msgstr "Visto No"
+
+#: .\models.py:88
+msgid "Visa issuance date"
+msgstr "Emitido aos de visto"
+
+#: .\models.py:89
+msgid "Visa expiration date"
+msgstr "Vencido aos de visto"
+
+#: .\templates\services\client_confirm_delete.html:4
+#, python-format
+msgid "Delete client %(client)s"
+msgstr ""
+
+#: .\templates\services\client_confirm_delete.html:9
+#, python-format
+msgid "Are you sure to delete the client %(client)s from the system?"
+msgstr ""
+
+#: .\templates\services\client_confirm_delete.html:13
+#: .\templates\services\client_form.html:12
+#: .\templates\services\status_service.html:12
+#: .\templates\services\visa_confirm_delete.html:14
+#: .\templates\services\visa_form.html:12
+msgid "Accept"
+msgstr ""
+
+#: .\templates\services\client_detail.html:5
+#, python-format
+msgid "Client %(client.get_full_name)s"
+msgstr ""
+
+#: .\templates\services\client_detail.html:9
+msgid "Full name"
+msgstr "Nome completo"
+
+#: .\templates\services\client_detail.html:11
+#: .\templates\services\visa_detail.html:10
+msgid "Update"
+msgstr ""
+
+#: .\templates\services\client_detail.html:12
+#: .\templates\services\visa_detail.html:11
+msgid "Delete"
+msgstr ""
+
+#: .\templates\services\client_form.html:5
+msgid "Add client"
+msgstr ""
+
+#: .\templates\services\client_list.html:5
+msgid "Clients list"
+msgstr ""
+
+#: .\templates\services\index.html:6
+msgid "Home"
+msgstr ""
+
+#: .\templates\services\index.html:21
+msgid "System of emigration and foreign affairs"
+msgstr "Sistema de migração e estrangeiros"
+
+#: .\templates\services\index.html:29
+msgid ""
+"For a migration service more fortress and dynamic, on the way to "
+"modernization and excellence"
+msgstr ""
+"Por um Serviço de Migração mais forte e dinãmico, rumo à Modernização e Excelẽncia."
+
+#: .\templates\services\index.html:32
+msgid "Read more"
+msgstr ""
+
+#: .\templates\services\services.html:5
+msgid "Services"
+msgstr ""
+
+#: .\templates\services\services.html:12
+msgid "Our services"
+msgstr ""
+
+#: .\templates\services\status_service.html:5
+msgid "Service status"
+msgstr ""
+
+#: .\templates\services\status_service.html:10
+msgid "Search"
+msgstr ""
+
+#: .\templates\services\status_service.html:17
+msgid "There are not request that correspond with that CI"
+msgstr ""
+
+#: .\templates\services\tools.html:5 .\templates\services\tools.html:9
+msgid "Tools"
+msgstr ""
+
+#: .\templates\services\visa_confirm_delete.html:5
+msgid "Delete visa"
+msgstr ""
+
+#: .\templates\services\visa_confirm_delete.html:9
+msgid "Are you sure to delete this visa?"
+msgstr ""
+
+#: .\templates\services\visa_confirm_delete.html:10
+msgid "Allottee to"
+msgstr ""
+
+#: .\templates\services\visa_confirm_delete.html:11
+msgid "Expire date"
+msgstr ""
+
+#: .\templates\services\visa_form.html:5
+msgid "Add visa"
+msgstr ""
+
+#: .\templates\services\visa_list.html:5
+msgid "Visas Lists"
+msgstr ""
+
+#: .\templates\services\visa_list.html:12
+msgid "There are no visas"
+msgstr ""

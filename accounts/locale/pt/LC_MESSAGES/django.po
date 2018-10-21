@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-20 23:27-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\forms.py:25
+msgid "Password"
+msgstr ""
+
+#: .\forms.py:29
+msgid "Repeat password"
+msgstr ""
+
+#: .\forms.py:47
+msgid "Passwords don't match"
+msgstr ""
+
+#: .\models.py:7
+msgid "Born date"
+msgstr "Data de nascimento"
+
+#: .\models.py:12
+msgid "Profile"
+msgstr ""
+
+#: .\models.py:13
+msgid "Profiles"
+msgstr ""
+
+#: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
+msgid "Administrate"
+msgstr ""
+
+#: .\templates\accounts\login.html:22
+msgid "Login"
+msgstr ""
+
+#: .\templates\accounts\login.html:45
+msgid "Remember me"
+msgstr ""
+
+#: .\templates\accounts\login.html:50
+msgid "Forgot your password?"
+msgstr ""
+
+#: .\templates\accounts\login.html:57
+msgid "Get in"
+msgstr ""
+
+#: .\templates\accounts\password_change_form.html:5
+msgid "Change password"
+msgstr ""
+
+#: .\templates\accounts\password_change_form.html:12
+#: .\templates\accounts\password_reset_form.html:32
+#: .\templates\accounts\profile_update_form.html:20
+msgid "Accept"
+msgstr ""
+
+#: .\templates\accounts\password_reset_done.html:10
+msgid ""
+"Continue to be the steps that they have sent to the mail to reestablish your "
+"password."
+msgstr ""
+
+#: .\templates\accounts\password_reset_done.html:12
+msgid "Home"
+msgstr ""
+
+#: .\templates\accounts\profile_detail.html:5
+#, python-format
+msgid "%(profile)s's profile "
+msgstr ""
+
+#: .\templates\accounts\profile_update_form.html:5
+#, python-format
+msgid "Update %(profile)s's profile"
+msgstr ""
+
+#: .\templates\navbar.html:30
+msgid "Index"
+msgstr ""
+
+#: .\templates\navbar.html:34
+msgid "Services"
+msgstr ""
+
+#: .\templates\navbar.html:38
+msgid "Tools"
+msgstr ""
+
+#: .\templates\navbar.html:47
+msgid "Consult"
+msgstr ""
+
+#: .\templates\navbar.html:51 .\templates\navbar.html:56
+msgid "Contact us"
+msgstr ""
+
+#: .\templates\navbar.html:62
+msgid "Please, give us your opinion about this site"
+msgstr ""
+
+#: .\templates\navbar.html:65
+msgid "Subject"
+msgstr ""
+
+#: .\templates\navbar.html:69
+msgid "Message"
+msgstr ""
+
+#: .\templates\navbar.html:75
+msgid "Send"
+msgstr ""
+
+#: .\templates\navbar.html:77
+msgid "Close"
+msgstr "Fechar"
+
+#: .\templates\navbar.html:97
+msgid "See profile"
+msgstr ""
+
+#: .\templates\navbar.html:100
+msgid "Edit profile"
+msgstr ""
+
+#: .\templates\navbar.html:103
+msgid "Logout"
+msgstr ""
+
+#: .\templates\navbar.html:132
+msgid "Up"
+msgstr ""
+
+#: .\templates\navbar.html:136
+msgid "Manage System"
+msgstr ""
+
+#: .\templates\navbar.html:137
+msgid "System of emigration and foreign affairs"
+msgstr "Sistema de migração e estrangeiros"
+
+#: .\templates\navbar.html:141
+msgid "Links"
+msgstr ""
+
+#: .\templates\navbar.html:157
+msgid "Copyright: Created by University of Holguin"
+msgstr ""
+
+#: .\templates\navbar.html:170
+msgid "Go"
+msgstr ""
