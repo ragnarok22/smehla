@@ -135,6 +135,23 @@
                 <div class="col-md-6 mt-md-0 mt-3">
                     <h5>{% trans 'Manage System' %}</h5>
                     <h6 class="offset-1">{% trans 'System of emigration and foreign affairs' %}</h6>
+                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <label>
+                            <select name="language" class="form-control form-control-sm" id="languages">
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                            selected{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </label>
+                        <input type="submit" value="{% trans 'Go' %}" class="btn btn-outline-indigo btn-white btn-sm">
+                    </form>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
                 <div class="col-md-3 mb-md-0 mb-3">
@@ -155,20 +172,6 @@
         </div>
         <div class="footer-copyright text-center py-3">
             &copy; 2018 {% trans 'Copyright: Created by University of Holguin' %}.
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select name="language">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
-                        </option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="{% trans 'Go' %}" class="btn btn-outline-indigo btn-white waves-effect small">
-            </form>
         </div>
     </footer>
 {% endblock %}
