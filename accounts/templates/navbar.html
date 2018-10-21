@@ -63,19 +63,23 @@
                                             <form method="post">
                                                 <div class="md-form">
                                                     <label for="subject">{% trans 'Subject' %}</label>
-                                                    <input type="text" id="subject" name="subject">
+                                                    <input type="text" id="subject" name="subject" class="form-control">
                                                 </div>
                                                 <div class="md-form">
                                                     <label for="message">{% trans 'Message' %}</label>
-                                                    <input type="text" id="message">
+                                                    <textarea type="text" id="message" class="md-textarea form-control">
+                                                    </textarea>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">{% trans 'Send' %}</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                                {% trans 'Close' %}
-                                            </button>
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                        class="btn btn-primary">{% trans 'Send' %}</button>
+                                                <button type="button" class="btn btn-cyan" data-dismiss="modal">
+                                                    {% trans 'Close' %}
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
