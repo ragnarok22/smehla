@@ -1,13 +1,15 @@
 {% extends 'navbar.html' %}
-
+{% load i18n %}
 {% block title %}
-    Eliminar cliente {{ client }}
+    {% blocktrans %}Delete client {{ client }}{% endblocktrans %}
 {% endblock %}
 
 {% block main %}
-    <h1>¿Estas seguro de eliminar el cliente {{ client }} del sistema?</h1>
+    <h1>
+        {% blocktrans %}Are you sure to delete the client {{ client }} from the system?{% endblocktrans %}
+    </h1>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Aceptar</button>
+        <button type="submit">{% trans 'Accept' %}</button>
     </form>
 {% endblock %}

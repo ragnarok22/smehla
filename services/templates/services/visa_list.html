@@ -1,14 +1,15 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
-    Listado de visas
+    {% trans 'Visas Lists' %}
 {% endblock %}
 
 {% block main %}
     {% for visa in visa_list %}
         <p><a href="{% url 'services:visa_detail' visa.pk %}">{{ visa }}</a></p>
         {% empty %}
-        <p>No hay visas</p>
+        <p>{% trans 'There are no visas' %}</p>
     {% endfor %}
 
 {% endblock %}

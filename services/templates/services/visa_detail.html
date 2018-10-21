@@ -1,4 +1,5 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
     Visa {{ visa }}
@@ -6,6 +7,6 @@
 
 {% block main %}
     {{ visa }}
-    <a href="{% url 'services:visa_update' visa.pk %}">Actualizar</a>
-    <a href="{% url 'services:visa_delete' visa.pk %}">Eliminar</a>
+    <a href="{% url 'services:visa_update' visa.pk %}">{% trans 'Update' %}</a>
+    <a href="{% url 'services:visa_delete' visa.pk %}">{% trans 'Delete' %}</a>
 {% endblock %}

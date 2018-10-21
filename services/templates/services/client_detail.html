@@ -1,12 +1,13 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
-    Cliente {{ client.get_full_name }}
+    {% blocktrans %}Client {{ client.get_full_name }}{% endblocktrans %}
 {% endblock %}
 
 {% block main %}
-    <p>Nombre completo: {{ client.get_full_name }}</p>
+    <p>{% trans 'Full name' %}: {{ client.get_full_name }}</p>
     <p>CI: {{ client.ci }}</p>
-    <a href="{% url 'services:client_update' client.pk %}">Modificar</a>
-    <a href="{% url 'services:client_delete' client.pk %}">Eliminar</a>
+    <a href="{% url 'services:client_update' client.pk %}">{% trans 'Update' %}</a>
+    <a href="{% url 'services:client_delete' client.pk %}">{% trans 'Delete' %}</a>
 {% endblock %}

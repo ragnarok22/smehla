@@ -1,8 +1,9 @@
 {% extends 'navbar.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-    Inicio
+    {% trans 'Home' %}
 {% endblock %}
 
 {% block styles %}
@@ -16,18 +17,19 @@
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-md-10">
                         <!-- Heading -->
-                        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Sistema de migración y
-                            extranjería</h2>
+                        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">
+                            {% trans 'System of emigration and foreign affairs' %}
+                        </h2>
 
                         <!-- Divider -->
                         <hr class="hr-light">
 
                         <!-- Description -->
-                        <h4 class="white-text my-4">Por um Serviço de Migração mais forte e dinãmico, rumo à
-                            Modernização e Excelẽncia.
+                        <h4 class="white-text my-4">
+                            {% trans 'For a migration service more fortress and dynamic, on the way to modernization and excellence' %}
                         </h4>
 
-                        <button type="button" class="btn btn-outline-white">Leer m&aacute;s
+                        <button type="button" class="btn btn-outline-white">{% trans 'Read more' %}
                             <i class="fa fa-book ml-2"></i>
                         </button>
                     </div>

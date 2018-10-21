@@ -1,31 +1,32 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Client(models.Model):
     CIVIL_STATUS = (
-        ('s', 'Soltero'),
-        ('e', 'Comprometido'),
-        ('m', 'Casado'),
-        ('w', 'Viudo'),
+        ('S', _('Single')),
+        ('E', _('Engaged')),
+        ('M', _('Married')),
+        ('W', _('Widower')),
     )
 
     def upload_file(self, filename):
         ext = filename.split('.')[-1]
         return 'clients/{}.{}'.format(self.ci, ext)
 
-    ci = models.CharField(max_length=13, unique=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=150)
-    born_date = models.DateField()
-    civil_status = models.CharField(choices=CIVIL_STATUS, max_length=1)
-    naturalness = models.CharField('Naturalidad', max_length=30)
-    nationality = models.CharField('Nacionalidad', max_length=30)
-    father = models.CharField(max_length=200)
-    mother = models.CharField(max_length=200)
-    address = models.TextField()
-    email = models.EmailField()
-    phone = models.PositiveIntegerField('Numero de telefono')
-    data_attachment = models.FileField('Ficheros adjuntos', upload_to=upload_file, null=True, blank=True)
+    ci = models.CharField(_('Identity card'), max_length=13, unique=True)
+    first_name = models.CharField(_('First name'), max_length=30)
+    last_name = models.CharField(_('Last name'), max_length=150)
+    born_date = models.DateField(_('Born date'))
+    civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)
+    naturalness = models.CharField(_("Naturalness"), max_length=30)
+    nationality = models.CharField(_('Nationality'), max_length=30)
+    father = models.CharField(_('Father name'), max_length=200)
+    mother = models.CharField(_('Mother name'), max_length=200)
+    address = models.TextField(_('Address'))
+    email = models.EmailField(_('Email'))
+    phone = models.PositiveIntegerField(_('Phone number'))
+    data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
 
     def get_full_name(self):
         full_name = '%s %s' % (self.first_name, self.last_name)
@@ -37,24 +38,24 @@ class Client(models.Model):
 
 class Service(models.Model):
     SERVICE_STATUS = (
-        ('1', 'Solicitud'),
-        ('2', 'Facturacion'),
-        ('3', 'Revision'),
-        ('4', 'Autenticar'),
-        ('5', 'Entrega'),
+        ('1', _('Request')),
+        ('2', _('Invoicing')),
+        ('3', _('Revision')),
+        ('4', _('Authenticating')),
+        ('5', _('Deliver')),
     )
     SERVICE_TYPE = {
-        'visa': 'Visa',
+        'visa': _('Visa'),
     }
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    status = models.CharField('Estado', max_length=1, choices=SERVICE_STATUS)
+    client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
+    status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS)
     service_type = None
 
     def get_service_type(self):
         if self.service_type:
             return self.service_type
         else:
-            return 'Unknown service type'
+            return _('Unknown service type')
 
     def __str__(self):
         return self.service_type
@@ -69,23 +70,23 @@ class Visa(Service):
         ('VTM', 'VTM'),
         ('VOR', 'VOR'),
         ('VTU', 'VTU'),
-        ('VCD', 'Visado de corta duracion'),
+        ('VCD', _('Visa of short duration')),
     )
     REQUEST_TYPE = (
-        ('C', 'Caducidad'),
-        ('E', 'Extravio'),
+        ('C', _('Caducity')),
+        ('M', _('Misplacing')),
     )
 
     service_type = Service.SERVICE_TYPE['visa']
-    specification = models.CharField('especificacion', max_length=3, choices=REQUEST_SPECIFICATION)
-    extension_request_date = models.DateField('Pedido de prorroga')
-    request_type = models.CharField('Tipo de solicitud', max_length=1, choices=REQUEST_TYPE)
-    passport_no = models.CharField('No. de Pasaporte', max_length=100)
-    passport_issuance_date = models.DateField('Fecha de emision de pasaporte')
-    passport_expiration_date = models.DateField('Fecha de vencimiento de pasaporte')
-    visa_no = models.CharField('No. de Visa', max_length=100)
-    visa_issuance_date = models.DateField('Fecha de emision de Visa')
-    visa_expiration_date = models.DateField('Fecha de vencimiento de Visa')
+    specification = models.CharField(_('Specification'), max_length=3, choices=REQUEST_SPECIFICATION)
+    extension_request_date = models.DateField(_('Extension request date'))
+    request_type = models.CharField(_('Request type'), max_length=1, choices=REQUEST_TYPE)
+    passport_no = models.CharField(_('Passport No.'), max_length=100)
+    passport_issuance_date = models.DateField(_('Passport issuance date'))
+    passport_expiration_date = models.DateField(_('Passport expiration date'))
+    visa_no = models.CharField(_('Visa No.'), max_length=100)
+    visa_issuance_date = models.DateField(_('Visa issuance date'))
+    visa_expiration_date = models.DateField(_('Visa expiration date'))
 
     def __str__(self):
         return '{}: {} -> {}'.format(self.service_type, self.client, self.specification)

@@ -2,8 +2,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from accounts import mixins
-from services import models, forms
-from services.models import Client, Visa, Service
+from services import models
+from services.models import Visa
 
 
 class IndexView(mixins.NavbarMixin, generic.TemplateView):

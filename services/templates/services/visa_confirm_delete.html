@@ -1,15 +1,16 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
-    Eliminar Visa
+    {% trans 'Delete visa' %}
 {% endblock %}
 
 {% block main %}
-    <h1>Estas seguro de eliminar esta visa?</h1>
-    <p>Asiganda a: {{ visa.client }}</p>
-    <p>Expira: {{ visa.visa_expiration_date }}</p>
+    <h1>{% trans 'Are you sure to delete this visa?' %}</h1>
+    <p>{% trans 'Allottee to' %}: {{ visa.client }}</p>
+    <p>{% trans 'Expire date' %}: {{ visa.visa_expiration_date }}</p>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Aceptar</button>
+        <button type="submit">{% trans 'Accept' %}</button>
     </form>
 {% endblock %}
