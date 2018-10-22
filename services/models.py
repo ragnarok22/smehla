@@ -64,14 +64,14 @@ class Service(models.Model):
 
 class Visa(Service):
     REQUEST_SPECIFICATION = (
-        ('VT', 'VT'),
-        ('VPT', 'VPT'),
-        ('VP', 'VP'),
-        ('VE', 'VE'),
-        ('VTM', 'VTM'),
-        ('VOR', 'VOR'),
-        ('VTU', 'VTU'),
-        ('VCD', _('Visa of short duration')),
+        ('VT', _('Work visa')),
+        ('VPT', _('Temporary stay visa')),
+        ('VP', _('Privileged visa')),
+        ('VE', _('Study visa')),
+        ('VTM', _('Medical Treatment visa')),
+        ('VOR', _('Ordinary visa')),
+        ('VTU', _('Tourist visa')),
+        ('VCD', _('Short-term visa')),
     )
     REQUEST_TYPE = (
         ('C', _('Caducity')),
