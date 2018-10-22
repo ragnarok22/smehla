@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-20 23:27-0400\n"
+"POT-Creation-Date: 2018-10-22 12:26-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\forms.py:25
+#: .\forms.py:27
 msgid "Password"
-msgstr ""
+msgstr "Contra-senha"
 
-#: .\forms.py:29
+#: .\forms.py:31
 msgid "Repeat password"
-msgstr ""
+msgstr "Repita a contra-senha"
 
-#: .\forms.py:47
+#: .\forms.py:49
 msgid "Passwords don't match"
-msgstr ""
+msgstr "Senhas não correspondem"
 
 #: .\models.py:7
 msgid "Born date"
@@ -36,134 +36,135 @@ msgstr "Data de nascimento"
 
 #: .\models.py:12
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: .\models.py:13
 msgid "Profiles"
-msgstr ""
+msgstr "Perfis"
 
 #: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
 msgid "Administrate"
-msgstr ""
+msgstr "Administrar"
 
 #: .\templates\accounts\login.html:22
 msgid "Login"
-msgstr ""
+msgstr "Entrar"
 
 #: .\templates\accounts\login.html:45
 msgid "Remember me"
-msgstr ""
+msgstr "Lembre de mim"
 
 #: .\templates\accounts\login.html:50
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Esqueceu sua senha?"
 
 #: .\templates\accounts\login.html:57
 msgid "Get in"
-msgstr ""
+msgstr "Entrar"
 
 #: .\templates\accounts\password_change_form.html:5
 msgid "Change password"
-msgstr ""
+msgstr "Mudar senha"
 
 #: .\templates\accounts\password_change_form.html:12
 #: .\templates\accounts\password_reset_form.html:32
 #: .\templates\accounts\profile_update_form.html:20
 msgid "Accept"
-msgstr ""
+msgstr "Aceitar"
 
 #: .\templates\accounts\password_reset_done.html:10
 msgid ""
 "Continue to be the steps that they have sent to the mail to reestablish your "
 "password."
 msgstr ""
+"Continue as etapas que eles enviaram ao email para restabelecer sua senha"
 
 #: .\templates\accounts\password_reset_done.html:12
 msgid "Home"
-msgstr ""
+msgstr "Iar"
 
 #: .\templates\accounts\profile_detail.html:5
 #, python-format
 msgid "%(profile)s's profile "
-msgstr ""
+msgstr "Perfil de %(profile)s"
 
 #: .\templates\accounts\profile_update_form.html:5
 #, python-format
 msgid "Update %(profile)s's profile"
-msgstr ""
+msgstr "Atualizar o perfil de %(profile)s"
 
 #: .\templates\navbar.html:30
 msgid "Index"
-msgstr ""
+msgstr "Iar"
 
 #: .\templates\navbar.html:34
 msgid "Services"
-msgstr ""
+msgstr "Serviços"
 
 #: .\templates\navbar.html:38
 msgid "Tools"
-msgstr ""
+msgstr "Ferramentas"
 
 #: .\templates\navbar.html:47
 msgid "Consult"
-msgstr ""
+msgstr "Consultar"
 
 #: .\templates\navbar.html:51 .\templates\navbar.html:56
 msgid "Contact us"
-msgstr ""
+msgstr "Contate-Nos"
 
 #: .\templates\navbar.html:62
 msgid "Please, give us your opinion about this site"
-msgstr ""
+msgstr "Por favor, dê-nos a sua opinião sobre este site"
 
 #: .\templates\navbar.html:65
 msgid "Subject"
-msgstr ""
+msgstr "Assunto"
 
 #: .\templates\navbar.html:69
 msgid "Message"
-msgstr ""
+msgstr "Mensagem"
 
-#: .\templates\navbar.html:75
+#: .\templates\navbar.html:78
 msgid "Send"
-msgstr ""
+msgstr "Mandar"
 
-#: .\templates\navbar.html:77
+#: .\templates\navbar.html:80
 msgid "Close"
 msgstr "Fechar"
 
-#: .\templates\navbar.html:97
+#: .\templates\navbar.html:101
 msgid "See profile"
-msgstr ""
+msgstr "Ver perfil"
 
-#: .\templates\navbar.html:100
+#: .\templates\navbar.html:104
 msgid "Edit profile"
-msgstr ""
+msgstr "Editar perfil"
 
-#: .\templates\navbar.html:103
+#: .\templates\navbar.html:107
 msgid "Logout"
-msgstr ""
-
-#: .\templates\navbar.html:132
-msgid "Up"
-msgstr ""
+msgstr "Sair"
 
 #: .\templates\navbar.html:136
-msgid "Manage System"
-msgstr ""
+msgid "Up"
+msgstr "Acima"
 
-#: .\templates\navbar.html:137
+#: .\templates\navbar.html:140
+msgid "Manage System"
+msgstr "Gerenciar sistema"
+
+#: .\templates\navbar.html:141
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de migração e estrangeiros"
 
-#: .\templates\navbar.html:141
-msgid "Links"
-msgstr ""
-
 #: .\templates\navbar.html:157
-msgid "Copyright: Created by University of Holguin"
-msgstr ""
-
-#: .\templates\navbar.html:170
 msgid "Go"
-msgstr ""
+msgstr "Ir"
+
+#: .\templates\navbar.html:162
+msgid "Links"
+msgstr "Ligações"
+
+#: .\templates\navbar.html:178
+msgid "Copyright: Created by University of Holguin"
+msgstr "Direito autoral: Criado pela Universidade de Holguín"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-20 22:27-0400\n"
+"POT-Creation-Date: 2018-10-22 12:26-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\forms.py:25
+#: .\forms.py:27
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\forms.py:29
+#: .\forms.py:31
 msgid "Repeat password"
 msgstr "Repita la contraseña"
 
-#: .\forms.py:47
+#: .\forms.py:49
 msgid "Passwords don't match"
 msgstr "Las contraseñas no coinciden"
 
@@ -35,16 +35,12 @@ msgid "Born date"
 msgstr "Fecha de nacimiento"
 
 #: .\models.py:12
-#, fuzzy
-#| msgid "See profile"
 msgid "Profile"
-msgstr "Ver perfil"
+msgstr "Perfil"
 
 #: .\models.py:13
-#, fuzzy
-#| msgid "See profile"
 msgid "Profiles"
-msgstr "Ver perfil"
+msgstr "Perfiles"
 
 #: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
 msgid "Administrate"
@@ -80,7 +76,9 @@ msgstr "Aceptar"
 msgid ""
 "Continue to be the steps that they have sent to the mail to reestablish your "
 "password."
-msgstr "Continue los pasos que se han enviado al correo para restablecer su contraseña."
+msgstr ""
+"Continue los pasos que se han enviado al correo para restablecer su "
+"contraseña."
 
 #: .\templates\accounts\password_reset_done.html:12
 msgid "Home"
@@ -128,46 +126,46 @@ msgstr "Asunto"
 msgid "Message"
 msgstr "Mensaje"
 
-#: .\templates\navbar.html:75
+#: .\templates\navbar.html:78
 msgid "Send"
 msgstr "Enviar"
 
-#: .\templates\navbar.html:77
+#: .\templates\navbar.html:80
 msgid "Close"
 msgstr "Cerrar"
 
-#: .\templates\navbar.html:97
+#: .\templates\navbar.html:101
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\templates\navbar.html:100
+#: .\templates\navbar.html:104
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\templates\navbar.html:103
+#: .\templates\navbar.html:107
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\navbar.html:132
+#: .\templates\navbar.html:136
 msgid "Up"
 msgstr "Arriba"
 
-#: .\templates\navbar.html:136
+#: .\templates\navbar.html:140
 msgid "Manage System"
 msgstr "Sistema de Gestión"
 
-#: .\templates\navbar.html:137
+#: .\templates\navbar.html:141
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de inmigración y extranjería"
 
-#: .\templates\navbar.html:141
+#: .\templates\navbar.html:157
+msgid "Go"
+msgstr "Ir"
+
+#: .\templates\navbar.html:162
 msgid "Links"
 msgstr "Direcciones"
 
-#: .\templates\navbar.html:157
+#: .\templates\navbar.html:178
 msgid "Copyright: Created by University of Holguin"
 msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
-
-#: .\templates\navbar.html:170
-msgid "Go"
-msgstr "Ir"

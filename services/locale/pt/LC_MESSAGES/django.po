@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-20 23:27-0400\n"
+"POT-Creation-Date: 2018-10-22 12:26-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,23 +20,23 @@ msgstr ""
 
 #: .\models.py:7
 msgid "Single"
-msgstr ""
+msgstr "Solteiro"
 
 #: .\models.py:8
 msgid "Engaged"
-msgstr ""
+msgstr "Comprometido"
 
 #: .\models.py:9
 msgid "Married"
-msgstr ""
+msgstr "Casado"
 
 #: .\models.py:10
 msgid "Widower"
-msgstr ""
+msgstr "Viúvo"
 
 #: .\models.py:17
 msgid "Identity card"
-msgstr ""
+msgstr "Carteira de identidade"
 
 #: .\models.py:18
 msgid "First name"
@@ -84,7 +84,7 @@ msgstr "No Telefônico"
 
 #: .\models.py:29
 msgid "Data attachment"
-msgstr ""
+msgstr "Anexo de dados"
 
 #: .\models.py:41
 msgid "Request"
@@ -92,93 +92,121 @@ msgstr "Solicitação"
 
 #: .\models.py:42
 msgid "Invoicing"
-msgstr ""
+msgstr "Facturação"
 
 #: .\models.py:43
 msgid "Revision"
-msgstr ""
+msgstr "Revisão"
 
 #: .\models.py:44
 msgid "Authenticating"
-msgstr ""
+msgstr "Autenticar"
 
 #: .\models.py:45
 msgid "Deliver"
-msgstr ""
+msgstr "Entregar"
 
 #: .\models.py:48
+msgid "Unknown service type"
+msgstr "Tipo de serviço desconhecido"
+
+#: .\models.py:49 .\templates\services\tools.html:17
 msgid "Visa"
 msgstr "Visto"
 
-#: .\models.py:50
+#: .\models.py:51
 msgid "Client"
 msgstr "Utente"
 
-#: .\models.py:51
+#: .\models.py:52
 msgid "Status"
 msgstr "Estado"
 
-#: .\models.py:58
-msgid "Unknown service type"
-msgstr ""
+#: .\models.py:67
+msgid "Work visa"
+msgstr "Visto de trabalho"
+
+#: .\models.py:68
+msgid "Temporary stay visa"
+msgstr "Visto de estada temporária"
+
+#: .\models.py:69
+msgid "Privileged visa"
+msgstr "Visto privilegiado"
+
+#: .\models.py:70
+msgid "Study visa"
+msgstr "Visto de estudo"
+
+#: .\models.py:71
+msgid "Medical Treatment visa"
+msgstr "Visto de tratamento médico"
+
+#: .\models.py:72
+msgid "Ordinary visa"
+msgstr "Visto comum"
 
 #: .\models.py:73
-msgid "Visa of short duration"
-msgstr ""
+msgid "Tourist visa"
+msgstr "Visto de turista"
 
-#: .\models.py:76
-msgid "Caducity"
-msgstr ""
+#: .\models.py:74
+msgid "Short-term visa"
+msgstr "Visto de curto prazo"
 
 #: .\models.py:77
-msgid "Misplacing"
-msgstr ""
+msgid "Caducity"
+msgstr "Caducidade"
 
-#: .\models.py:81
+#: .\models.py:78
+msgid "Misplacing"
+msgstr "Extravio"
+
+#: .\models.py:82
 msgid "Specification"
 msgstr "Especificação"
 
-#: .\models.py:82
+#: .\models.py:83
 msgid "Extension request date"
 msgstr "Pedido de prorrogação aos"
 
-#: .\models.py:83
+#: .\models.py:84
 msgid "Request type"
 msgstr "Tipo de prorrogação"
 
-#: .\models.py:84
+#: .\models.py:85
 msgid "Passport No."
 msgstr "Passaporte No"
 
-#: .\models.py:85
+#: .\models.py:86
 msgid "Passport issuance date"
 msgstr "Data de Emissão de passaporte"
 
-#: .\models.py:86
+#: .\models.py:87
 msgid "Passport expiration date"
 msgstr "Data de vencimento de passaporte"
 
-#: .\models.py:87
+#: .\models.py:88
 msgid "Visa No."
 msgstr "Visto No"
 
-#: .\models.py:88
+#: .\models.py:89
 msgid "Visa issuance date"
 msgstr "Emitido aos de visto"
 
-#: .\models.py:89
+#: .\models.py:90
 msgid "Visa expiration date"
 msgstr "Vencido aos de visto"
 
 #: .\templates\services\client_confirm_delete.html:4
 #, python-format
 msgid "Delete client %(client)s"
-msgstr ""
+msgstr "Excluir cliente %(client)s"
 
 #: .\templates\services\client_confirm_delete.html:9
 #, python-format
 msgid "Are you sure to delete the client %(client)s from the system?"
-msgstr ""
+msgstr "Tem certeza de excluir o cliente %(client)s do sistema?"
 
 #: .\templates\services\client_confirm_delete.html:13
 #: .\templates\services\client_form.html:12
@@ -186,12 +214,12 @@ msgstr ""
 #: .\templates\services\visa_confirm_delete.html:14
 #: .\templates\services\visa_form.html:12
 msgid "Accept"
-msgstr ""
+msgstr "Aceitar"
 
 #: .\templates\services\client_detail.html:5
 #, python-format
 msgid "Client %(client.get_full_name)s"
-msgstr ""
+msgstr "Cliente %(client.get_full_name)s"
 
 #: .\templates\services\client_detail.html:9
 msgid "Full name"
@@ -200,24 +228,24 @@ msgstr "Nome completo"
 #: .\templates\services\client_detail.html:11
 #: .\templates\services\visa_detail.html:10
 msgid "Update"
-msgstr ""
+msgstr "Atualizar"
 
 #: .\templates\services\client_detail.html:12
 #: .\templates\services\visa_detail.html:11
 msgid "Delete"
-msgstr ""
+msgstr "Deletar"
 
 #: .\templates\services\client_form.html:5
 msgid "Add client"
-msgstr ""
+msgstr "Adicionar cliente"
 
 #: .\templates\services\client_list.html:5
 msgid "Clients list"
-msgstr ""
+msgstr "Lista de clientes"
 
 #: .\templates\services\index.html:6
 msgid "Home"
-msgstr ""
+msgstr "Iar"
 
 #: .\templates\services\index.html:21
 msgid "System of emigration and foreign affairs"
@@ -228,60 +256,65 @@ msgid ""
 "For a migration service more fortress and dynamic, on the way to "
 "modernization and excellence"
 msgstr ""
-"Por um Serviço de Migração mais forte e dinãmico, rumo à Modernização e Excelẽncia."
+"Por um Serviço de Migração mais forte e dinãmico, rumo à Modernização e "
+"Excelẽncia."
 
 #: .\templates\services\index.html:32
 msgid "Read more"
-msgstr ""
+msgstr "Consulte mais informação"
 
 #: .\templates\services\services.html:5
 msgid "Services"
-msgstr ""
+msgstr "Serviços"
 
 #: .\templates\services\services.html:12
 msgid "Our services"
-msgstr ""
+msgstr "Nossos serviços"
 
 #: .\templates\services\status_service.html:5
 msgid "Service status"
-msgstr ""
+msgstr "Status dos serviços"
 
 #: .\templates\services\status_service.html:10
 msgid "Search"
-msgstr ""
+msgstr "Procurar"
 
 #: .\templates\services\status_service.html:17
 msgid "There are not request that correspond with that CI"
-msgstr ""
+msgstr "Não há pedido que corresponda a esse Cédula de identidade"
 
-#: .\templates\services\tools.html:5 .\templates\services\tools.html:9
+#: .\templates\services\tools.html:5
 msgid "Tools"
-msgstr ""
+msgstr "Ferramentas"
+
+#: .\templates\services\tools.html:10
+msgid "Services tools"
+msgstr "Ferramentas de serviços"
 
 #: .\templates\services\visa_confirm_delete.html:5
 msgid "Delete visa"
-msgstr ""
+msgstr "Excluir visto"
 
 #: .\templates\services\visa_confirm_delete.html:9
 msgid "Are you sure to delete this visa?"
-msgstr ""
+msgstr "Tem certeza de excluir este visto?"
 
 #: .\templates\services\visa_confirm_delete.html:10
 msgid "Allottee to"
-msgstr ""
+msgstr "Quota para"
 
 #: .\templates\services\visa_confirm_delete.html:11
 msgid "Expire date"
-msgstr ""
+msgstr "Data de validade"
 
 #: .\templates\services\visa_form.html:5
 msgid "Add visa"
-msgstr ""
+msgstr "Adicionar visto"
 
 #: .\templates\services\visa_list.html:5
 msgid "Visas Lists"
-msgstr ""
+msgstr "Lista de vistos"
 
 #: .\templates\services\visa_list.html:12
 msgid "There are no visas"
-msgstr ""
+msgstr "Não há vistos"
