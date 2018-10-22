@@ -2,6 +2,7 @@
 {% load i18n %}
 
 {% block title %}
+    {% trans 'Tools' %}
 {% endblock %}
 
 {% block main %}
@@ -12,10 +13,10 @@
 
             <div class="col-3">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="text-uppercase text-center">Visa</div>
+                    <div class="card-header info-color white-text text-center">
+                        <h5 class="text-uppercase">{% trans 'Visa' %}</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body px-lg-5 pt-0">
                         <p><a href="{% url 'services:visa_create' %}">Visa para un cliente</a></p>
                         <p><a href="#">Visa a nuevo cliente</a></p>
                     </div>
@@ -24,10 +25,10 @@
 
             <div class="col-3">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="text-uppercase text-center">Residencia</div>
+                    <div class="card-header info-color white-text text-center">
+                        <h5 class="text-uppercase">Residencia</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body px-lg-5 pt-0">
                         <p><a href="#">Buscar cliente</a></p>
                         <p><a href="#">Nuevo cliente</a></p>
                     </div>
@@ -36,10 +37,10 @@
 
             <div class="col-3">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="text-uppercase text-center">Nacional</div>
+                    <div class="card-header info-color white-text text-center">
+                        <h5 class="text-uppercase">Nacional</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body px-lg-5 pt-0">
                         <p><a href="#">Buscar cliente</a></p>
                         <p><a href="#">Nuevo cliente</a></p>
                     </div>
@@ -48,10 +49,10 @@
 
             <div class="col-3">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="text-uppercase text-center">Visa</div>
+                    <div class="card-header info-color white-text text-center">
+                        <h5 class="text-uppercase">Visa</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body px-lg-5 pt-0">
                         <p><a href="#">Buscar cliente</a></p>
                         <p><a href="#">Nuevo cliente</a></p>
                     </div>
@@ -63,12 +64,12 @@
         <h1 class="text-center">Services List</h1>
         <div class="row">
             <div class="col-12">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" cellspacing="0" width="100% ">
                     <thead>
                     <tr>
-                        <td>Tipo</td>
-                        <td>Nombre del cliente</td>
-                        <td>Estado</td>
+                        <th class="th-sm">Tipo</th>
+                        <th class="th-sm">Nombre del cliente</th>
+                        <th class="th-sm">Estado</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -77,6 +78,10 @@
                             <td>{{ service.get_service_type }}</td>
                             <td>{{ service.client.get_full_name }}</td>
                             <td>{{ service.get_status_display }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">No existen ningun servicio en el sistema</td>
                         </tr>
                     {% endfor %}
 
