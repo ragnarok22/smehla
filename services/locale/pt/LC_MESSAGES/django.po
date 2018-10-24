@@ -200,13 +200,11 @@ msgstr "Vencido aos de visto"
 
 #: .\templates\services\about.html:5
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
 #: .\templates\services\about.html:12
-#, fuzzy
-#| msgid "Revision"
 msgid "Mission"
-msgstr "Revisão"
+msgstr "Missão"
 
 #: .\templates\services\about.html:15
 msgid ""
@@ -217,20 +215,27 @@ msgid ""
 "flows of people, in isolation and in collaboration with national and "
 "international authorities."
 msgstr ""
+"O serviço de Migração e Estrangeiros (SME) zela pela inviolabilidade e segurança "
+"das fronteiras terrestres, marítimas, fluviais e aéreas de Angola, pela aplicaçao "
+"dos procedimentos administrativos e físicos legalmente previstos. O SME combate "
+"a ilegalidade migratória e regula os fluxos circulatórios legais de pessoas, isoladamente "
+"e em colaboração com as autoridades nacionais e internacionais."
 
 #: .\templates\services\about.html:20
 msgid "Values"
-msgstr ""
+msgstr "Valores"
 
 #: .\templates\services\about.html:23
 msgid ""
 "The daily activities of the Migration and Foreigners Service (EMS) are based "
 "on universal values:"
 msgstr ""
+"A actuação quotidiana do Serviço de Migração e  Estrangeiros (SME) pauta-se "
+"por valores universais:"
 
 #: .\templates\services\about.html:29
 msgid "Legality"
-msgstr ""
+msgstr "Legalidade"
 
 #: .\templates\services\about.html:30
 msgid ""
@@ -238,10 +243,14 @@ msgid ""
 "correct interpretation of the rules in force in Angola, and the fight "
 "against migratory crime."
 msgstr ""
+"A imunidade ao aliciamento, à corrupção ou e demais fenómenos nefastos para "
+"a execução da missão do SME é requisito indispensável à tomada da responsabilidade "
+"pela gestão e controlo dos fluxos migratórios de e para Angola, assegurando a "
+"segurança fronteiriça nacional."
 
 #: .\templates\services\about.html:34
 msgid "Security"
-msgstr ""
+msgstr "Segurança"
 
 #: .\templates\services\about.html:35
 msgid ""
@@ -249,10 +258,13 @@ msgid ""
 "Angola is a result of law enforcement and the mobilization of the necessary "
 "technical and human resources."
 msgstr ""
+"A prevenção e eliminação de todos os riscos para a integridade fronteiriça de "
+"Angola decorre da aplicação de lei e da mobilização dos meios técnicos e humanos "
+"necessários."
 
 #: .\templates\services\about.html:39
 msgid "Humanity"
-msgstr ""
+msgstr "Humanidade"
 
 #: .\templates\services\about.html:40
 msgid ""
@@ -260,6 +272,9 @@ msgid ""
 "illegally, is an inseparable element of the activity of the EMS, reflected "
 "in the daily practice of its staff."
 msgstr ""
+"O respeito integral pelos Direitos Humanos no tratamentos dos cidadãos, tanto "
+"em situação legal como ilegal, é um elemento indissociável da actividade de SME, "
+"reflectindo-se na práctica diária dos seus efectivos."
 
 #: .\templates\services\client_confirm_delete.html:4
 #, python-format
