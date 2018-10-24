@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-22 12:26-0400\n"
+"POT-Creation-Date: 2018-10-24 10:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,6 +197,69 @@ msgstr "Emitido aos de visto"
 #: .\models.py:90
 msgid "Visa expiration date"
 msgstr "Vencido aos de visto"
+
+#: .\templates\services\about.html:5
+msgid "About"
+msgstr ""
+
+#: .\templates\services\about.html:12
+#, fuzzy
+#| msgid "Revision"
+msgid "Mission"
+msgstr "Revisão"
+
+#: .\templates\services\about.html:15
+msgid ""
+"The migration and foreigners service (EMS) ensures the inviolability and "
+"security of the land, sea, river and air borders of Angola, through the "
+"application of legally established administrative and physical procedures. "
+"The SME combats migratory illegality and regulates the legal circulatory "
+"flows of people, in isolation and in collaboration with national and "
+"international authorities."
+msgstr ""
+
+#: .\templates\services\about.html:20
+msgid "Values"
+msgstr ""
+
+#: .\templates\services\about.html:23
+msgid ""
+"The daily activities of the Migration and Foreigners Service (EMS) are based "
+"on universal values:"
+msgstr ""
+
+#: .\templates\services\about.html:29
+msgid "Legality"
+msgstr ""
+
+#: .\templates\services\about.html:30
+msgid ""
+"compliance with and strict application of migration legislation ensures the "
+"correct interpretation of the rules in force in Angola, and the fight "
+"against migratory crime."
+msgstr ""
+
+#: .\templates\services\about.html:34
+msgid "Security"
+msgstr ""
+
+#: .\templates\services\about.html:35
+msgid ""
+"The prevention and elimination of all risks to the border integrity of "
+"Angola is a result of law enforcement and the mobilization of the necessary "
+"technical and human resources."
+msgstr ""
+
+#: .\templates\services\about.html:39
+msgid "Humanity"
+msgstr ""
+
+#: .\templates\services\about.html:40
+msgid ""
+"full respect for Human Rights in the treatment of citizens, both legally and "
+"illegally, is an inseparable element of the activity of the EMS, reflected "
+"in the daily practice of its staff."
+msgstr ""
 
 #: .\templates\services\client_confirm_delete.html:4
 #, python-format

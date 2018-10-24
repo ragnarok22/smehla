@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-22 12:26-0400\n"
+"POT-Creation-Date: 2018-10-24 10:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,6 +197,84 @@ msgstr "Fecha de emisión de visa"
 #: .\models.py:90
 msgid "Visa expiration date"
 msgstr "Fecha de expiración de visa"
+
+#: .\templates\services\about.html:5
+msgid "About"
+msgstr "Acerca de"
+
+#: .\templates\services\about.html:12
+msgid "Mission"
+msgstr "Misión"
+
+#: .\templates\services\about.html:15
+msgid ""
+"The migration and foreigners service (EMS) ensures the inviolability and "
+"security of the land, sea, river and air borders of Angola, through the "
+"application of legally established administrative and physical procedures. "
+"The SME combats migratory illegality and regulates the legal circulatory "
+"flows of people, in isolation and in collaboration with national and "
+"international authorities."
+msgstr ""
+"El servicio de Migración y Extranjeros (SME) vela por la inviolabilidad y "
+"seguridad de las fronteras terrestres, marítimas, fluviales y aéreas de "
+"Angola, por la aplicación de los procedimientos administrativos y físicos "
+"legalmenteprevistos. El SME combate la ilegalidad migratoria y regula los "
+"flujos circulatorios legales de personas, aisladamentey en colaboración con "
+"las autoridades nacionales e internacionales."
+
+#: .\templates\services\about.html:20
+msgid "Values"
+msgstr "Valores"
+
+#: .\templates\services\about.html:23
+msgid ""
+"The daily activities of the Migration and Foreigners Service (EMS) are based "
+"on universal values:"
+msgstr ""
+"La actuación cotidiana del Servicio de Migración y Extranjeros (SME) se rige "
+"por los valores universales:"
+
+#: .\templates\services\about.html:29
+msgid "Legality"
+msgstr "Legalidad"
+
+#: .\templates\services\about.html:30
+msgid ""
+"compliance with and strict application of migration legislation ensures the "
+"correct interpretation of the rules in force in Angola, and the fight "
+"against migratory crime."
+msgstr ""
+"El cumplimiento y aplicación rigurosa de la legislación migratoria asegura "
+"la correcta interpretación de las reglas vigentes en Angola, y la lucha "
+"contra la criminalidad migratoria."
+
+#: .\templates\services\about.html:34
+msgid "Security"
+msgstr "Seguridad"
+
+#: .\templates\services\about.html:35
+msgid ""
+"The prevention and elimination of all risks to the border integrity of "
+"Angola is a result of law enforcement and the mobilization of the necessary "
+"technical and human resources."
+msgstr ""
+"La prevención y eliminación de todos los riesgos para la integridad "
+"fronteriza de Angola se deriva de la aplicaión de la ley y de la "
+"movilización de los medios técnicos y humanos necesarios."
+
+#: .\templates\services\about.html:39
+msgid "Humanity"
+msgstr "Humanidad"
+
+#: .\templates\services\about.html:40
+msgid ""
+"full respect for Human Rights in the treatment of citizens, both legally and "
+"illegally, is an inseparable element of the activity of the EMS, reflected "
+"in the daily practice of its staff."
+msgstr ""
+"El respeto integral de los derechos humanos en el trato de los ciudadanos, "
+"tanto en situación legal como ilegal, es un elemento indisociable de la "
+"actividad del SME, reflejándose en la práctica diaria de sus efectivos."
 
 #: .\templates\services\client_confirm_delete.html:4
 #, python-format
