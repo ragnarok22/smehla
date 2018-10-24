@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-24 12:32-0400\n"
+"POT-Creation-Date: 2018-10-24 18:48-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,17 +30,48 @@ msgstr "Repita a contra-senha"
 msgid "Passwords don't match"
 msgstr "Senhas não correspondem"
 
-#: .\models.py:7
+#: .\models.py:11
+msgid "Functionary of Attention to Customer"
+msgstr ""
+
+#: .\models.py:12
+msgid "Boss of Attention to Customer"
+msgstr ""
+
+#: .\models.py:13
+msgid "Boss of Departament of Attention to Customer"
+msgstr ""
+
+#: .\models.py:14
+msgid "Director"
+msgstr ""
+
+#: .\models.py:15
+#, fuzzy
+#| msgid "Administrate"
+msgid "Administrator"
+msgstr "Administrar"
+
+#: .\models.py:17
 msgid "Born date"
 msgstr "Data de nascimento"
 
-#: .\models.py:12
+#: .\models.py:18
+msgid "Occupation"
+msgstr ""
+
+#: .\models.py:23
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\models.py:13
+#: .\models.py:24
 msgid "Profiles"
 msgstr "Perfis"
+
+#: .\models.py:28
+#, python-format
+msgid "%(years)d years"
+msgstr "%(years)d aos"
 
 #: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
 msgid "Administrate"
