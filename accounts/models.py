@@ -2,8 +2,9 @@ from datetime import date
 
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
-from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+
+from services.validators import validate_born_date
 
 
 class Profile(AbstractUser):
@@ -14,7 +15,7 @@ class Profile(AbstractUser):
         ('DIR', _('Director')),
         ('ADMIN', _('Administrator')),
     )
-    born_date = models.DateField(_('Born date'), blank=True, null=True)
+    born_date = models.DateField(_('Born date'), blank=True, null=True, validators=[validate_born_date])
     occupation = models.CharField(_('Occupation'), max_length=5, choices=OCCUPATION_TYPE, default=OCCUPATION_TYPE[0])
 
     REQUIRED_FIELDS = ['email', 'born_date']
