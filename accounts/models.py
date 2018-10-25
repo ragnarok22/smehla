@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from services.validators import validate_born_date
+from .validators import validate_born_date
 
 
 class Profile(AbstractUser):
