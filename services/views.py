@@ -40,10 +40,10 @@ class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
         service = Visa.objects.none()
         if value:
             try:
-                service = Visa.objects.get(client__ci=value)
+                service = Visa.objects.filter(client__ci=value)
             except Visa.DoesNotExist:
                 pass
-        context['service'] = service
+        context['services'] = service
         return context
 
 
@@ -87,11 +87,6 @@ class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
 
     def get_success_url(self):
         return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk})
-
-    def get_context_data(self, **kwargs):
-        context = super(VisaCreateView, self).get_context_data(**kwargs)
-        context['client'] = models.Client.objects.get(pk=self.kwargs.get('pk'))
-        return context
 
     def form_valid(self, form):
         self.object = form.save(commit=False)

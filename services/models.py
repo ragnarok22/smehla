@@ -90,4 +90,4 @@ class Visa(Service):
     visa_expiration_date = models.DateField(_('Visa expiration date'))
 
     def __str__(self):
-        return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.specification)
+        return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_specification_display())

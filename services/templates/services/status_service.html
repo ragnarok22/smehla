@@ -11,10 +11,9 @@
         <input type="text" class="form-control" id="search" name="search">
         <button type="submit">{% trans 'Accept' %}</button>
     </form>
-    {% if service %}
+    {% for service in services %}
         <p {% if service.status == '5' %}class="green"{% endif %}>{{ service }} {{ service.get_status_display }}</p>
-    {% else %}
+    {% empty %}
         <p>{% trans 'There are not request that correspond with that CI' %}</p>
-    {% endif %}
-
+    {% endfor %}
 {% endblock %}
