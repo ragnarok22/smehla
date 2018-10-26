@@ -17,7 +17,7 @@
                         <h5 class="text-uppercase">{% trans 'Visa' %}</h5>
                     </div>
                     <div class="card-body px-lg-5 pt-0">
-                        <p><a href="{% url 'services:visa_create' %}">Visa para un cliente</a></p>
+                        <p><a href="{% url 'services:client_list' 'visa' %}">Visa para un cliente</a></p>
                         <p><a href="{% url 'services:client_create' %}">Visa a nuevo cliente</a></p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <h5 class="text-uppercase">Residencia</h5>
                     </div>
                     <div class="card-body px-lg-5 pt-0">
-                        <p><a href="#">Buscar cliente</a></p>
+                        <p><a href="{% url 'services:client_list' 'resident' %}">Buscar cliente</a></p>
                         <p><a href="#">Nuevo cliente</a></p>
                     </div>
                 </div>

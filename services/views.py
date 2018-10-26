@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from accounts import mixins
-from services import models
+from services import models, forms
 from services.models import Visa, Service
 
 
@@ -62,6 +62,11 @@ class ClientDetailView(mixins.LoginRequiredMixin, generic.DetailView):
 class ClientListView(mixins.LoginRequiredMixin, generic.ListView):
     model = models.Client
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ClientListView, self).get_context_data(**kwargs)
+        context['service_type'] = self.kwargs.get('type')
+        return context
+
 
 class ClientUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
     model = models.Client
@@ -78,10 +83,21 @@ class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
 
 class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     model = models.Visa
-    fields = '__all__'
+    form_class = forms.VisaCreateForm
 
     def get_success_url(self):
         return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk})
+
+    def get_context_data(self, **kwargs):
+        context = super(VisaCreateView, self).get_context_data(**kwargs)
+        context['client'] = models.Client.objects.get(pk=self.kwargs.get('pk'))
+        return context
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
+        response = super(VisaCreateView, self).form_valid(form)
+        return response
 
 
 class VisaDetailView(mixins.LoginRequiredMixin, generic.DetailView):

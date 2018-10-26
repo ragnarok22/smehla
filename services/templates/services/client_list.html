@@ -6,8 +6,24 @@
 {% endblock %}
 
 {% block main %}
-    {% for client in client_list %}
-        <p><a href="{% url 'services:client_detail' client.pk %}">{{ client }}</a></p>
-    {% endfor %}
-
+    <table class="table table-bordered table-hover" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th class="th-sm">Nombre completo</th>
+            <th class="th-sm">Carnet de Identidad</th>
+            <th class="th-sm">Fecha de nacimiento</th>
+            <th class="th-sm">Correo electronico</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for client in client_list %}
+            <tr>
+                <td><a href="{% url 'services:service_create' service_type client.pk %}">{{ client.get_full_name }}</a></td>
+                <td>{{ client.ci }}</td>
+                <td>{{ client.born_date }}</td>
+                <td>{{ client.email }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
