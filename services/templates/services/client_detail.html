@@ -8,6 +8,7 @@
 {% block main %}
     <p>{% trans 'Full name' %}: {{ client.get_full_name }}</p>
     <p>CI: {{ client.ci }}</p>
+    <p>Fecha nacimiento: {{ client.born_date }}</p>
     {% if client.data_attachment %}
         <p>Datos adjuntos: <a href="{{ client.data_attachment.url }}">{{ client.data_attachment.name }}</a></p>
     {% endif %}

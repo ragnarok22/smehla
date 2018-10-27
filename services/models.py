@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from services import validators
+
 
 class Client(models.Model):
     CIVIL_STATUS = (
@@ -22,7 +24,7 @@ class Client(models.Model):
     # picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
     first_name = models.CharField(_('First name'), max_length=30)
     last_name = models.CharField(_('Last name'), max_length=150)
-    born_date = models.DateField(_('Born date'))
+    born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])
     civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)
     naturalness = models.CharField(_("Naturalness"), max_length=30)
     nationality = models.CharField(_('Nationality'), max_length=30)
