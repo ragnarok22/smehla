@@ -23,6 +23,7 @@ class ClientForm(forms.ModelForm):
         model = models.Client
         fields = '__all__'
         widgets = {
+            'ci': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'civil_status': forms.Select(attrs={'class': 'form-control'}),
