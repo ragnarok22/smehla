@@ -49,7 +49,7 @@ class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
 
 class ClientCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     model = models.Client
-    fields = '__all__'
+    form_class = forms.ClientForm
 
     def get_success_url(self):
         return reverse_lazy('services:client_detail', kwargs={'pk': self.object.pk})
@@ -70,7 +70,7 @@ class ClientListView(mixins.LoginRequiredMixin, generic.ListView):
 
 class ClientUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
     model = models.Client
-    fields = '__all__'
+    form_class = forms.ClientForm
 
     def get_success_url(self):
         return reverse_lazy('services:client_detail', kwargs={'pk': self.object.pk})

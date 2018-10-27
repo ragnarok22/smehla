@@ -16,3 +16,13 @@ class VisaCreateForm(forms.ModelForm):
             'visa_expiration_date': forms.DateInput(attrs={'class': 'datepicker'}),
             'visa_issuance_date': forms.DateInput(attrs={'class': 'datepicker'}),
         }
+
+
+class ClientForm(forms.ModelForm):
+    class Meta:
+        model = models.Client
+        fields = '__all__'
+        widgets = {
+            'data_attachment': forms.ClearableFileInput(attrs={'multiple': True}),
+            'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
+        }

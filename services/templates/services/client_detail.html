@@ -8,13 +8,16 @@
 {% block main %}
     <p>{% trans 'Full name' %}: {{ client.get_full_name }}</p>
     <p>CI: {{ client.ci }}</p>
-    <h4>Servicios solicitados</h4>
-    {% for service in client.service_set.all %}
-        <p>Tipo: {{ service.get_service_type }}</p>
-        <p>Status: {{ service.get_status_display }}</p>
-    {% endfor %}
+    <p>Datos adjuntos: <a href="{{ client.data_attachment.url }}">{{ client.data_attachment.name }}</a></p>
+    {% if client.service_set.all %}
+        <h4>Servicios solicitados</h4>
+        {% for service in client.service_set.all %}
+            <p>Tipo: {{ service.get_service_type }}</p>
+            <p>Status: {{ service.get_status_display }}</p>
+        {% endfor %}
+    {% endif %}
 
     <a href="{% url 'services:client_update' client.pk %}">{% trans 'Update' %}</a>
     <a href="{% url 'services:client_delete' client.pk %}">{% trans 'Delete' %}</a>
-    <a href="{% url 'services:visa_create' %}">Actualizar servicio</a>
+    <a href="#">Actualizar servicio</a>
 {% endblock %}
