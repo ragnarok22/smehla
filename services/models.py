@@ -14,7 +14,12 @@ class Client(models.Model):
         ext = filename.split('.')[-1]
         return 'clients/{}.{}'.format(self.ci, ext)
 
+    def upload_image(self, filename):
+        ext = filename.split('.')[-1]
+        return 'clients/picture/{}.{}'.format(self.first_name, ext)
+
     ci = models.CharField(_('Identity card'), max_length=13, unique=True)
+    # picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
     first_name = models.CharField(_('First name'), max_length=30)
     last_name = models.CharField(_('Last name'), max_length=150)
     born_date = models.DateField(_('Born date'))

@@ -23,6 +23,16 @@ class ClientForm(forms.ModelForm):
         model = models.Client
         fields = '__all__'
         widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'civil_status': forms.Select(attrs={'class': 'form-control'}),
+            'naturalness': forms.TextInput(attrs={'class': 'form-control'}),
+            'nationality': forms.TextInput(attrs={'class': 'form-control'}),
+            'father': forms.TextInput(attrs={'class': 'form-control'}),
+            'mother': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'md-textarea', 'rows': 2}),
+            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
             'data_attachment': forms.ClearableFileInput(attrs={'multiple': True}),
             'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
         }
