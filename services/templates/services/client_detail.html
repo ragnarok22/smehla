@@ -1,26 +1,119 @@
 {% extends 'navbar.html' %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}
     {% blocktrans %}Client {{ client.get_full_name }}{% endblocktrans %}
 {% endblock %}
 
 {% block main %}
-    <p>{% trans 'Full name' %}: {{ client.get_full_name }}</p>
-    <p>CI: {{ client.ci }}</p>
-    <p>Fecha nacimiento: {{ client.born_date }}</p>
-    {% if client.data_attachment %}
-        <p>Datos adjuntos: <a href="{{ client.data_attachment.url }}">{{ client.data_attachment.name }}</a></p>
-    {% endif %}
-    {% if client.service_set.all %}
-        <h4>Servicios solicitados</h4>
-        {% for service in client.service_set.all %}
-            <p>Tipo: {{ service.get_service_type }}</p>
-            <p>Status: {{ service.get_status_display }}</p>
-        {% endfor %}
-    {% endif %}
-
-    <a href="{% url 'services:client_update' client.pk %}">{% trans 'Update' %}</a>
-    <a href="{% url 'services:client_delete' client.pk %}">{% trans 'Delete' %}</a>
-    <a href="#">Actualizar servicio</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 mb-5">
+                <h1 class="h1 text-center">{{ client.get_full_name }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>{% trans 'Identity card' %}: {{ client.ci }}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{% trans 'Born date' %}: {{ client.born_date }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>{% trans 'Naturalness' %}: {{ client.naturalness }}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{% trans 'Nationality' %}: {{ client.nationality }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>{% trans "Father's name" %}: {{ client.father }}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{% trans "Mother's name" %}: {{ client.mother }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>{% trans 'Address' %}: {{ client.address }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                {% if client.image %}
+                    <img src="{{ client.image.url }}" alt="{{ client.first_name }}" width="150em" height="150em"
+                         class="img-thumbnail">
+                {% else %}
+                    <img src="{% static 'accounts/img/favicon.png' %}" alt="{{ client.first_name }}" width="150em"
+                         height="150em" class="img-thumbnail right">
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <p>{% trans 'Civil status' %}: {{ client.get_civil_status_display }}</p>
+            </div>
+            <div class="col-lg-4">
+                <p>{% trans 'Email' %}: {{ client.email }}</p>
+            </div>
+            <div class="col-lg-4">
+                <p>{% trans 'Phone' %}: {{ client.phone }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {% if client.data_attachment %}
+                    <p>{% trans 'Data attachment' %}:
+                        <a href="{{ client.data_attachment.url }}"
+                           download="{{ client.get_full_name }}_{{ client.data_attachment.name }}">
+                            {% trans 'Download' %}
+                        </a>
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="h2 text-center">{% trans 'Migratory acts' %}</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for service in client.service_set.all %}
+                        <tr>
+                            <td>{{ service.get_service_type }}</td>
+                            <td>{{ service.get_status_display }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="2"
+                                class="text-muted text-center">{% trans 'No requested services found' %}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="">
+                <a href="{% url 'services:client_update' client.pk %}" class="btn btn-success">{% trans 'Update' %}</a>
+                <a href="{% url 'services:client_delete' client.pk %}" class="btn btn-success">{% trans 'Delete' %}</a>
+                <a href="#" class="btn btn-success">{% trans 'Add service' %}</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -34,6 +34,6 @@ class ClientForm(forms.ModelForm):
             'address': forms.Textarea(attrs={'class': 'md-textarea', 'rows': 2}),
             'phone': forms.NumberInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'data_attachment': forms.ClearableFileInput(attrs={'multiple': True}),
+            'data_attachment': forms.ClearableFileInput(attrs={'multiple': True, 'class': 'form-control'}),
             'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
         }

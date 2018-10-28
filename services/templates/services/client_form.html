@@ -7,95 +7,97 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container-fluid">
-        <h1 class="h1 text-center">Datos Personales</h1>
-        <form method="post" enctype="multipart/form-data" class="form-row">
-            {% csrf_token %}
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.first_name }}
-                    <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
-                </div>
+<div class="container-fluid">
+    <h1 class="h1 text-center">Datos Personales</h1>
+    <form method="post" enctype="multipart/form-data" class="form-row">
+        {% csrf_token %}
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.first_name }}
+                <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.last_name }}
-                    <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
-                </div>
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.last_name }}
+                <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
             </div>
-            <div class="col-4">
-                {% if client.picture %}
-                    <img src="{{ client.picture.url }}" alt="{{ client.first_name }}'s image">
-                {% else %}
-                    <i class="fa fa-user fa-5x flex-center"></i>
-                {% endif %}
+        </div>
+        <div class="col-4">
+            <img src="{% static 'accounts/img/user.png' %}" width="150em" height="150em" class="img-thumbnail">
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.born_date }}
+                <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                <p class="text-muted text-info">{{ form.born_date.help_text }}</p>
+                <p class="text-muted text-danger">{{ form.born_date.errors|first }}</p>
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.born_date }}
-                    <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
-                    <p class="text-muted text-info">{{ form.born_date.help_text }}</p>
-                    <p class="text-muted text-danger">{{ form.born_date.errors|first }}</p>
-                </div>
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.ci }}
+                <label for="{{ form.ci.id_for_label }}">{{ form.ci.label }}</label>
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.ci }}
-                    <label for="{{ form.ci.id_for_label }}">{{ form.ci.label }}</label>
-                </div>
+        </div>
+        <div class="col-4">
+            <label for="{{ form.civil_status.id_for_label }}">{{ form.civil_status.label }}</label>
+            {{ form.civil_status }}
+        </div>
+        <div class="col-6">
+            <div class="md-form">
+                {{ form.naturalness }}
+                <label for="{{ form.naturalness.id_for_label }}">{{ form.naturalness.label }}</label>
             </div>
-            <div class="col-4">
-                <label for="{{ form.civil_status.id_for_label }}">{{ form.civil_status.label }}</label>
-                {{ form.civil_status }}
+        </div>
+        <div class="col-6">
+            <div class="md-form">
+                {{ form.nationality }}
+                <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
             </div>
-            <div class="col-6">
-                <div class="md-form">
-                    {{ form.naturalness }}
-                    <label for="{{ form.naturalness.id_for_label }}">{{ form.naturalness.label }}</label>
-                </div>
+        </div>
+        <div class="col-12"><h3 class="h3 text-center">Filiacion</h3></div>
+        <div class="col-6">
+            <div class="md-form">
+                {{ form.father }}
+                <label for="{{ form.father.id_for_label }}">{{ form.father.label }}</label>
             </div>
-            <div class="col-6">
-                <div class="md-form">
-                    {{ form.nationality }}
-                    <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
-                </div>
+        </div>
+        <div class="col-6">
+            <div class="md-form">
+                {{ form.mother }}
+                <label for="{{ form.mother.id_for_label }}">{{ form.mother.label }}</label>
             </div>
-            <div class="col-12"><h3 class="h3 text-center">Filiacion</h3></div>
-            <div class="col-6">
-                <div class="md-form">
-                    {{ form.father }}
-                    <label for="{{ form.father.id_for_label }}">{{ form.father.label }}</label>
-                </div>
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.address }}
+                <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
             </div>
-            <div class="col-6">
-                <div class="md-form">
-                    {{ form.mother }}
-                    <label for="{{ form.mother.id_for_label }}">{{ form.mother.label }}</label>
-                </div>
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.phone }}
+                <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.address }}
-                    <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
-                </div>
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.email }}
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.phone }}
-                    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
-                </div>
+        </div>
+        <div class="col-4">
+            <div class="md-form">
+                {{ form.data_attachment }}
+                <label for="{{ form.data_attachment.id_for_label }}">{{ form.data_attachment.label }}</label>
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.email }}
-                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-                </div>
-            </div>
-            <div class="col-12">
-                <button class="btn btn-success float-right">Aceptar</button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-success float-right" type="submit">Aceptar</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
 
 {% block script %}
