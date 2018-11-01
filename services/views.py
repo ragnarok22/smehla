@@ -1,4 +1,5 @@
 from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
 from django.views import generic
 
 from accounts import mixins
@@ -37,13 +38,20 @@ class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(SearchStatusServiceView, self).get_context_data(**kwargs)
         value = self.request.GET.get('search', None)
-        service = Visa.objects.none()
         if value:
-            try:
-                service = Visa.objects.filter(client__ci=value)
-            except Visa.DoesNotExist:
-                pass
-        context['services'] = service
+            service = Visa.objects.filter(client__ci=value)
+            if service:
+                services = []
+                for s in service:
+                    if s.status == s.SERVICE_STATUS[4][0]:
+                        services.append(s)
+                if services:
+                    context['services'] = services
+                else:
+                    context['message'] = _('Is in progress')
+            else:
+                context['message'] = _('Has no found any request with %s ci' % value)
+            context['value'] = value
         return context
 
 

@@ -6,14 +6,49 @@
 {% endblock %}
 
 {% block main %}
-    <form method="get">
-        <label for="search">{% trans 'Search' %}</label>
-        <input type="text" class="form-control" id="search" name="search">
-        <button type="submit">{% trans 'Accept' %}</button>
-    </form>
-    {% for service in services %}
-        <p {% if service.status == '5' %}class="green"{% endif %}>{{ service }} {{ service.get_status_display }}</p>
-    {% empty %}
-        <p>{% trans 'There are not request that correspond with that CI' %}</p>
-    {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Buscar estado
+                    </div>
+                    <div class="card-body">
+                        <form method="get">
+                            <div class="md-form">
+                                <label for="search">{% trans 'Search' %}</label>
+                                <input type="text" class="form-control" id="search" name="search"
+                                       {% if value %}value="{{ value }}"{% endif %}>
+                            </div>
+                            <button type="submit" class="btn btn-default">{% trans 'Accept' %}</button>
+                            {% if services %}
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Numero de pasaporte</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for service in services %}
+                                        <tr>
+                                            <td>{{ service.client.get_full_name }}</td>
+                                            <td>{{ service.passport_no }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td colspan="2">{% trans 'There are not request that correspond with that CI' %}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <h5 class="h5 text-center text-danger">{{ message }}</h5>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
