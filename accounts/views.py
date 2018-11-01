@@ -1,5 +1,5 @@
-from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth import forms as auth_forms
+from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from django.views import generic
@@ -31,9 +31,10 @@ class LogoutView(generic.RedirectView):
         return super(LogoutView, self).get(request, *args, **kwargs)
 
 
-class DashBoardView(mixins.SuperuserRequiredMixin, mixins.NavbarMixin, generic.TemplateView):
+class DashBoardView(mixins.SuperuserRequiredMixin, mixins.NavbarMixin, generic.ListView):
     template_name = 'accounts/dashboard.html'
     tab_name = 'dashboard'
+    model = Profile
 
 
 class ProfileCreateView(mixins.SuperuserRequiredMixin, generic.CreateView):

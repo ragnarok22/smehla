@@ -6,5 +6,46 @@
 {% endblock %}
 
 {% block main %}
-    <p>Welcome {{ profile }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-10"><h2 class="h2 text-center">{% trans 'Users System' %}</h2></div>
+            <div class="col">
+                <a href="{% url 'accounts:profile_create' %}" class="btn btn-default">{% trans 'Add user' %}</a>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="th">Nombre de usuario</th>
+                    <th>Nombre completo</th>
+                    <th>email</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in profile_list %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.get_full_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a href="{% url 'accounts:profile_detail' user.pk %}">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="{% url 'accounts:profile_update' user.pk %}">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="#">
+{#                            <a href="{% url 'accounts:profile_remove' user.pk %}">#}
+                                <i class="fa fa-remove"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
