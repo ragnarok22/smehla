@@ -1,10 +1,8 @@
 from django import forms
-from django.contrib.auth import password_validation
 from django.contrib.auth import forms as auth_forms
-from django.utils.formats import get_format
+from django.contrib.auth import password_validation
 from django.utils.translation import gettext as _
 
-from SIG_SMEHLA import settings
 from accounts.models import Profile
 
 
@@ -25,7 +23,7 @@ class LoginForm(auth_forms.AuthenticationForm):
 class CreateProfileForm(forms.ModelForm):
     password1 = forms.CharField(
         label=_('Password'),
-        widget=forms.PasswordInput(attrs={'class': 'form-control'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
     )
     password2 = forms.CharField(
         label=_('Repeat password'),
@@ -39,6 +37,7 @@ class CreateProfileForm(forms.ModelForm):
             'username': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
         }
 
     def clean_password2(self):
@@ -64,7 +63,10 @@ class UpdateProfileForm(forms.ModelForm):
         model = Profile
         fields = ['first_name', 'last_name', 'email', 'born_date']
         widgets = {
-            'born_date': forms.DateInput(attrs={'class': 'datepicker'})
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker'})
         }
 
 

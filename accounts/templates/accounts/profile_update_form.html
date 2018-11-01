@@ -6,17 +6,50 @@
 {% endblock %}
 
 {% block main %}
-    {% if form.errors %}
-        {{ form.errors }}
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            <div class="md-form">
-                {{ field.label_tag }}<br>
-                {{ field }}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.first_name }}
+                        <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.last_name }}
+                        <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-        <button class="btn btn-primary" type="submit">{% trans 'Accept' %}</button>
-    </form>
+
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.email }}
+                        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.born_date }}
+                        <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-default" type="submit">Actualizar</button>
+                    <a href="{% url 'accounts:profile_update_password' profile.pk %}" class="btn btn-default">
+                        Cambiar contraseña
+                    </a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'accounts:profile_delete' profile.pk %}" class="btn btn-default">Eliminar</a>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}

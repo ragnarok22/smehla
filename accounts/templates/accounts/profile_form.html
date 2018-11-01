@@ -5,9 +5,62 @@
 {% endblock %}
 
 {% block main %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Aceptar</button>
-    </form>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="justify-content-center text-danger">{{ form.non_field_errors }}</div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.first_name }}
+                        <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.last_name }}
+                        <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.username }}
+                        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                        <span class="text-muted font-small">{{ form.username.help_text }}</span>
+                        <span class="text-danger">{{ form.username.errors }}</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.born_date }}
+                        <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                        <span class="text-danger">{{ form.born_date.errors }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.password1 }}
+                        <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                        <span class="text-danger">{{ form.password1.errors }}</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.password2 }}
+                        <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                        <span class="text-danger">{{ form.password2.errors }}</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default">Aceptar</button>
+        </form>
+    </div>
 {% endblock %}
