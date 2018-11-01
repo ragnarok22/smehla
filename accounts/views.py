@@ -58,6 +58,11 @@ class ProfileDetailView(mixins.LoginRequiredMixin, generic.DetailView):
     model = Profile
 
 
+class ProfileDeleteView(mixins.SuperuserRequiredMixin, generic.DeleteView):
+    model = Profile
+    success_url = reverse_lazy('accounts:dashboard')
+
+
 class UpdatePasswordView(mixins.SameUserMixin, auth_views.PasswordChangeView):
     template_name = 'accounts/password_change_form.html'
     form_class = auth_forms.PasswordChangeForm

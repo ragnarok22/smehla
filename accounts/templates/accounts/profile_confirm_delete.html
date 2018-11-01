@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Borrar usuario {{ profile.username }}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">Estas seguro de eliminar a este usuario?</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Aceptar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
