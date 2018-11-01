@@ -65,7 +65,7 @@ class ProfileDeleteView(mixins.SuperuserRequiredMixin, generic.DeleteView):
 
 class UpdatePasswordView(mixins.SameUserMixin, auth_views.PasswordChangeView):
     template_name = 'accounts/password_change_form.html'
-    form_class = auth_forms.PasswordChangeForm
+    form_class = forms.PasswordChangeForm
 
     def form_valid(self, form):
         form.save()
