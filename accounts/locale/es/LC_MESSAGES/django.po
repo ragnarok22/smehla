@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-24 18:48-0400\n"
+"POT-Creation-Date: 2018-10-31 21:47-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,45 +30,43 @@ msgstr "Repita la contraseña"
 msgid "Passwords don't match"
 msgstr "Las contraseñas no coinciden"
 
-#: .\models.py:11
+#: .\models.py:12
 msgid "Functionary of Attention to Customer"
 msgstr "Funcionario de atención al cliente"
 
-#: .\models.py:12
+#: .\models.py:13
 msgid "Boss of Attention to Customer"
 msgstr "Jefe de Atención al cliente"
 
-#: .\models.py:13
+#: .\models.py:14
 msgid "Boss of Departament of Attention to Customer"
 msgstr "Jefe del Departamento de Atención al Cliente"
 
-#: .\models.py:14
+#: .\models.py:15
 msgid "Director"
 msgstr "Director"
 
-#: .\models.py:15
-#, fuzzy
-#| msgid "Administrate"
+#: .\models.py:16
 msgid "Administrator"
-msgstr "Administrar"
+msgstr "Administrador"
 
-#: .\models.py:17
+#: .\models.py:18
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\models.py:18
+#: .\models.py:19
 msgid "Occupation"
 msgstr "Ocupación"
 
-#: .\models.py:23
+#: .\models.py:24
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\models.py:24
+#: .\models.py:25
 msgid "Profiles"
 msgstr "Perfiles"
 
-#: .\models.py:28
+#: .\models.py:29
 #, python-format
 msgid "%(years)d years"
 msgstr "%(years)d años"
@@ -76,6 +74,30 @@ msgstr "%(years)d años"
 #: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
 msgid "Administrate"
 msgstr "Administrar"
+
+#: .\templates\accounts\dashboard.html:11
+msgid "Users System"
+msgstr "Usuarios del sistema"
+
+#: .\templates\accounts\dashboard.html:13
+msgid "Add user"
+msgstr "Añadir usuario"
+
+#: .\templates\accounts\dashboard.html:20
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: .\templates\accounts\dashboard.html:21
+msgid "Full name"
+msgstr "Nombre completo"
+
+#: .\templates\accounts\dashboard.html:22
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: .\templates\accounts\dashboard.html:23
+msgid "Actions"
+msgstr "Acciones"
 
 #: .\templates\accounts\login.html:22
 msgid "Login"
@@ -141,74 +163,79 @@ msgstr "Herramientas"
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\templates\navbar.html:51 .\templates\navbar.html:56
+#: .\templates\navbar.html:51 .\templates\navbar.html:57
 msgid "Contact us"
 msgstr "Contáctanos"
 
-#: .\templates\navbar.html:62
-msgid "Please, give us your opinion about this site"
-msgstr "Por favor, danos tu opinión sobre el sitio"
+#: .\templates\navbar.html:70
+msgid "Your name"
+msgstr "Tu nombre"
 
-#: .\templates\navbar.html:65
+#: .\templates\navbar.html:78
+msgid "Your email"
+msgstr "Tu correo"
+
+#: .\templates\navbar.html:86
 msgid "Subject"
 msgstr "Asunto"
 
-#: .\templates\navbar.html:69
-msgid "Message"
-msgstr "Mensaje"
+#: .\templates\navbar.html:96
+msgid "Your message"
+msgstr "Tu Mensaje"
 
-#: .\templates\navbar.html:78
+#: .\templates\navbar.html:104
 msgid "Send"
 msgstr "Enviar"
 
-#: .\templates\navbar.html:80
-msgid "Close"
-msgstr "Cerrar"
-
-#: .\templates\navbar.html:101
+#: .\templates\navbar.html:124
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\templates\navbar.html:104
+#: .\templates\navbar.html:127
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\templates\navbar.html:107
+#: .\templates\navbar.html:130
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\navbar.html:136
+#: .\templates\navbar.html:159
 msgid "Up"
 msgstr "Arriba"
 
-#: .\templates\navbar.html:140
+#: .\templates\navbar.html:163
 msgid "Manage System"
 msgstr "Sistema de Gestión"
 
-#: .\templates\navbar.html:141
+#: .\templates\navbar.html:164
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de inmigración y extranjería"
 
-#: .\templates\navbar.html:157
+#: .\templates\navbar.html:180
 msgid "Go"
 msgstr "Ir"
 
-#: .\templates\navbar.html:162
+#: .\templates\navbar.html:185
 msgid "Links"
 msgstr "Direcciones"
 
-#: .\templates\navbar.html:165
+#: .\templates\navbar.html:188
 msgid "Citizen Portal"
 msgstr "Portal del cuidadano"
 
-#: .\templates\navbar.html:168
+#: .\templates\navbar.html:191
 msgid "Ministry of Interior"
 msgstr "Ministerio del Interior"
 
-#: .\templates\navbar.html:171
+#: .\templates\navbar.html:194
 msgid "Company's only booth"
 msgstr "Único stand de la compañía"
 
-#: .\templates\navbar.html:178
+#: .\templates\navbar.html:201
 msgid "Copyright: Created by University of Holguin"
 msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
+
+#: .\validators.py:10
+#, python-format
+msgid "%(born_date)s is not a correct born date"
+msgstr "%(born_date)s no es una fecha de nacimiento válida"

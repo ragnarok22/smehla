@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-24 12:31-0400\n"
+"POT-Creation-Date: 2018-10-31 21:54-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,183 +18,186 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\models.py:7
+#: .\models.py:9
 msgid "Single"
 msgstr "Soltero"
 
-#: .\models.py:8
+#: .\models.py:10
 msgid "Engaged"
 msgstr "Comprometido"
 
-#: .\models.py:9
+#: .\models.py:11
 msgid "Married"
 msgstr "Casado"
 
-#: .\models.py:10
+#: .\models.py:12
 msgid "Widower"
 msgstr "Viudo"
 
-#: .\models.py:17
+#: .\models.py:23 .\templates\services\client_detail.html:20
+#: .\templates\services\client_list.html:13
 msgid "Identity card"
 msgstr "Carnet de identidad"
 
-#: .\models.py:18
+#: .\models.py:25
 msgid "First name"
 msgstr "Nombre"
 
-#: .\models.py:19
+#: .\models.py:26
 msgid "Last name"
 msgstr "Apellidos"
 
-#: .\models.py:20
+#: .\models.py:27 .\templates\services\client_detail.html:23
+#: .\templates\services\client_list.html:14
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\models.py:21
+#: .\models.py:28 .\templates\services\client_detail.html:60
 msgid "Civil status"
 msgstr "Estado civil"
 
-#: .\models.py:22
+#: .\models.py:29 .\templates\services\client_detail.html:28
 msgid "Naturalness"
 msgstr "Naturalidad"
 
-#: .\models.py:23
+#: .\models.py:30 .\templates\services\client_detail.html:31
 msgid "Nationality"
 msgstr "Nacionalidad"
 
-#: .\models.py:24
+#: .\models.py:31
 msgid "Father name"
 msgstr "Nombre del padre"
 
-#: .\models.py:25
+#: .\models.py:32
 msgid "Mother name"
 msgstr "Nombre de la madre"
 
-#: .\models.py:26
+#: .\models.py:33 .\templates\services\client_detail.html:44
 msgid "Address"
 msgstr "Dirección"
 
-#: .\models.py:27
+#: .\models.py:34 .\templates\services\client_detail.html:63
+#: .\templates\services\client_list.html:15
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\models.py:28
+#: .\models.py:35
 msgid "Phone number"
 msgstr "Número de teléfono"
 
-#: .\models.py:29
+#: .\models.py:36 .\templates\services\client_detail.html:72
 msgid "Data attachment"
 msgstr "Datos adjuntos"
 
-#: .\models.py:41
+#: .\models.py:48
 msgid "Request"
 msgstr "Solicitud"
 
-#: .\models.py:42
+#: .\models.py:49
 msgid "Invoicing"
 msgstr "Facturación"
 
-#: .\models.py:43
+#: .\models.py:50
 msgid "Revision"
 msgstr "Revisión"
 
-#: .\models.py:44
+#: .\models.py:51
 msgid "Authenticating"
 msgstr "Autenticar"
 
-#: .\models.py:45
+#: .\models.py:52
 msgid "Deliver"
 msgstr "Entrega"
 
-#: .\models.py:48
+#: .\models.py:55
 msgid "Unknown service type"
 msgstr "tipo de servicio desconocido"
 
-#: .\models.py:49 .\templates\services\tools.html:17
+#: .\models.py:56 .\templates\services\tools.html:17
 msgid "Visa"
 msgstr "Visa"
 
-#: .\models.py:51
+#: .\models.py:58
 msgid "Client"
 msgstr "Cliente"
 
-#: .\models.py:52
+#: .\models.py:59
 msgid "Status"
 msgstr "Estado"
 
-#: .\models.py:67
+#: .\models.py:74
 msgid "Work visa"
 msgstr "Visa de trabajo"
 
-#: .\models.py:68
+#: .\models.py:75
 msgid "Temporary stay visa"
 msgstr "Visa de estancia temporal"
 
-#: .\models.py:69
+#: .\models.py:76
 msgid "Privileged visa"
 msgstr "Visa privilegiada"
 
-#: .\models.py:70
+#: .\models.py:77
 msgid "Study visa"
 msgstr "Visa de estudio"
 
-#: .\models.py:71
+#: .\models.py:78
 msgid "Medical Treatment visa"
 msgstr "Visa de tratamiento médico"
 
-#: .\models.py:72
+#: .\models.py:79
 msgid "Ordinary visa"
 msgstr "Visa ordinaria"
 
-#: .\models.py:73
+#: .\models.py:80
 msgid "Tourist visa"
 msgstr "Visa de turista"
 
-#: .\models.py:74
+#: .\models.py:81
 msgid "Short-term visa"
 msgstr "Visa de corto plazo"
 
-#: .\models.py:77
+#: .\models.py:84
 msgid "Caducity"
 msgstr "Caducidad"
 
-#: .\models.py:78
+#: .\models.py:85
 msgid "Misplacing"
 msgstr "Pérdida"
 
-#: .\models.py:82
+#: .\models.py:89
 msgid "Specification"
 msgstr "Especificación"
 
-#: .\models.py:83
+#: .\models.py:90
 msgid "Extension request date"
 msgstr "Fecha de pedido de extensión"
 
-#: .\models.py:84
+#: .\models.py:91
 msgid "Request type"
 msgstr "Tipo de pedido"
 
-#: .\models.py:85
+#: .\models.py:92
 msgid "Passport No."
 msgstr "No. de pasaporte"
 
-#: .\models.py:86
+#: .\models.py:93
 msgid "Passport issuance date"
 msgstr "Fecha de emisión de pasaporte"
 
-#: .\models.py:87
+#: .\models.py:94
 msgid "Passport expiration date"
 msgstr "Fecha de expiración del pasaporte"
 
-#: .\models.py:88
+#: .\models.py:95
 msgid "Visa No."
 msgstr "No. de visa"
 
-#: .\models.py:89
+#: .\models.py:96
 msgid "Visa issuance date"
 msgstr "Fecha de emisión de visa"
 
-#: .\models.py:90
+#: .\models.py:97
 msgid "Visa expiration date"
 msgstr "Fecha de expiración de visa"
 
@@ -287,39 +290,70 @@ msgid "Are you sure to delete the client %(client)s from the system?"
 msgstr "¿Estás seguro de eliminar al cliente %(client)s del sistema?"
 
 #: .\templates\services\client_confirm_delete.html:13
-#: .\templates\services\client_form.html:12
-#: .\templates\services\status_service.html:12
+#: .\templates\services\status_service.html:23
 #: .\templates\services\visa_confirm_delete.html:14
 #: .\templates\services\visa_form.html:12
 msgid "Accept"
 msgstr "Aceptar"
 
-#: .\templates\services\client_detail.html:5
+#: .\templates\services\client_detail.html:6
 #, python-format
 msgid "Client %(client.get_full_name)s"
 msgstr "Cliente %(client.get_full_name)s"
 
-#: .\templates\services\client_detail.html:9
-msgid "Full name"
-msgstr "Nombre completo"
+#: .\templates\services\client_detail.html:36
+#, fuzzy
+#| msgid "Father name"
+msgid "Father's name"
+msgstr "Nombre del padre"
 
-#: .\templates\services\client_detail.html:11
+#: .\templates\services\client_detail.html:39
+#, fuzzy
+#| msgid "Mother name"
+msgid "Mother's name"
+msgstr "Nombre de la madre"
+
+#: .\templates\services\client_detail.html:66
+msgid "Phone"
+msgstr "Teléfono"
+
+#: .\templates\services\client_detail.html:75
+msgid "Download"
+msgstr "Descargar"
+
+#: .\templates\services\client_detail.html:83
+msgid "Migratory acts"
+msgstr "Actos migratorios"
+
+#: .\templates\services\client_detail.html:104
+msgid "No requested services found"
+msgstr "No se ha encontrado ninguna petición de servicio"
+
+#: .\templates\services\client_detail.html:113
 #: .\templates\services\visa_detail.html:10
 msgid "Update"
 msgstr "Actualizar"
 
-#: .\templates\services\client_detail.html:12
+#: .\templates\services\client_detail.html:114
 #: .\templates\services\visa_detail.html:11
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .\templates\services\client_form.html:5
+#: .\templates\services\client_detail.html:115
+msgid "Add service"
+msgstr "Añadir servicio"
+
+#: .\templates\services\client_form.html:6
 msgid "Add client"
 msgstr "Añadir cliente"
 
 #: .\templates\services\client_list.html:5
 msgid "Clients list"
 msgstr "Listado de cliente"
+
+#: .\templates\services\client_list.html:12
+msgid "Full name"
+msgstr "Nombre completo"
 
 #: .\templates\services\index.html:6
 msgid "Home"
@@ -353,11 +387,11 @@ msgstr "Nuestros servicios"
 msgid "Service status"
 msgstr "Estado del servicio"
 
-#: .\templates\services\status_service.html:10
+#: .\templates\services\status_service.html:19
 msgid "Search"
 msgstr "Buscar"
 
-#: .\templates\services\status_service.html:17
+#: .\templates\services\status_service.html:40
 msgid "There are not request that correspond with that CI"
 msgstr "No hay ninguna petición que corresponda con ese CI"
 
@@ -368,6 +402,26 @@ msgstr "Herramientas"
 #: .\templates\services\tools.html:10
 msgid "Services tools"
 msgstr "Herramientas de servicios"
+
+#: .\templates\services\tools.html:64
+msgid "Services Request's List"
+msgstr "Listado de petición de servicios"
+
+#: .\templates\services\tools.html:70
+msgid "Type"
+msgstr "Tipo"
+
+#: .\templates\services\tools.html:71
+msgid "Client's name"
+msgstr "nombre del cliente"
+
+#: .\templates\services\tools.html:72
+msgid "State"
+msgstr "Estado"
+
+#: .\templates\services\tools.html:73
+msgid "Actions"
+msgstr "Acciones"
 
 #: .\templates\services\visa_confirm_delete.html:5
 msgid "Delete visa"
@@ -396,3 +450,17 @@ msgstr "Listado de visas"
 #: .\templates\services\visa_list.html:12
 msgid "There are no visas"
 msgstr "No hay visas"
+
+#: .\validators.py:10
+#, python-format
+msgid "%(born_date)s is not a correct born date"
+msgstr "%(born_date)s no es una fecha de nacimiento válida"
+
+#: .\views.py:51
+msgid "Is in progress"
+msgstr "Está en progreso"
+
+#: .\views.py:53
+#, python-format
+msgid "Has no found any request with %s ci"
+msgstr "No se ha encontrado ninguna petición con el ci %s"
