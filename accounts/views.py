@@ -1,4 +1,3 @@
-from django.contrib.auth import forms as auth_forms
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy

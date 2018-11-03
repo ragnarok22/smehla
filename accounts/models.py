@@ -16,7 +16,7 @@ class Profile(AbstractUser):
         ('ADMIN', _('Administrator')),
     )
     born_date = models.DateField(_('Born date'), blank=True, null=True, validators=[validate_born_date])
-    occupation = models.CharField(_('Occupation'), max_length=5, choices=OCCUPATION_TYPE, default=OCCUPATION_TYPE[0])
+    occupation = models.CharField(_('Occupation'), max_length=5, choices=OCCUPATION_TYPE, default='FAC')
 
     REQUIRED_FIELDS = ['email', 'born_date']
 

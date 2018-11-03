@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-31 21:47-0400\n"
+"POT-Creation-Date: 2018-11-03 11:34-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\forms.py:27
+#: .\forms.py:25
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\forms.py:31
+#: .\forms.py:29
 msgid "Repeat password"
 msgstr "Repita la contraseña"
 
-#: .\forms.py:49
+#: .\forms.py:48
 msgid "Passwords don't match"
 msgstr "Las contraseñas no coinciden"
+
+#: .\forms.py:79
+msgid "Old password"
+msgstr "Contraseña anterior"
+
+#: .\forms.py:84
+msgid "New password"
+msgstr "Nueva contraseña"
+
+#: .\forms.py:90
+msgid "New password confirmation"
+msgstr "Confirme la nueva contraseña"
 
 #: .\models.py:12
 msgid "Functionary of Attention to Customer"
@@ -119,9 +131,8 @@ msgstr "Entrar"
 msgid "Change password"
 msgstr "Cambiar la contraseña"
 
-#: .\templates\accounts\password_change_form.html:12
+#: .\templates\accounts\password_change_form.html:47
 #: .\templates\accounts\password_reset_form.html:32
-#: .\templates\accounts\profile_update_form.html:20
 msgid "Accept"
 msgstr "Aceptar"
 

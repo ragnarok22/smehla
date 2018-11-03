@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import forms as auth_forms
 from django.contrib.auth import password_validation
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 from accounts.models import Profile
 
