@@ -21,14 +21,11 @@ class ServicesView(mixins.NavbarMixin, generic.TemplateView):
     tab_name = 'services'
 
 
-class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.TemplateView):
+class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.ListView):
     tab_name = 'tools'
     template_name = 'services/tools.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ServiceToolsView, self).get_context_data(**kwargs)
-        context['services'] = Service.objects.all()
-        return context
+    model = Service
+    paginate_by = 10
 
 
 class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
@@ -90,6 +87,7 @@ class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
 
 
 class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+    object: models.models.Model
     model = models.Visa
     form_class = forms.VisaCreateForm
 
