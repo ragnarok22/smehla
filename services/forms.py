@@ -6,7 +6,7 @@ from services import models
 class VisaCreateForm(forms.ModelForm):
     class Meta:
         model = models.Visa
-        exclude = ['client']
+        exclude = ['client', 'status']
         widgets = {
             'passport_no': forms.TextInput(attrs={'class': 'form-control'}),
             'visa_no': forms.TextInput(attrs={'class': 'form-control'}),

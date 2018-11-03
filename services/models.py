@@ -56,7 +56,7 @@ class Service(models.Model):
         'visa': _('Visa'),
     }
     client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
-    status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS)
+    status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
     service_type = None
 
     def get_service_type(self):
