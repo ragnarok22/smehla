@@ -1,11 +1,12 @@
 from django.urls import reverse_lazy
 from django.views import generic
 
+from accounts import mixins as auth_mixin
 from news import forms
 from news.models import News
 
 
-class NewsCreateView(generic.CreateView):
+class NewsCreateView(auth_mixin.SuperuserRequiredMixin, generic.CreateView):
     model = News
     form_class = forms.NewsCreateForm
 
@@ -17,7 +18,7 @@ class NewsDetailView(generic.DetailView):
     model = News
 
 
-class NewsUpdateView(generic.UpdateView):
+class NewsUpdateView(auth_mixin.SuperuserRequiredMixin, generic.UpdateView):
     model = News
     form_class = forms.NewsCreateForm
 
@@ -29,6 +30,6 @@ class NewsListView(generic.ListView):
     model = News
 
 
-class NewsDeleteView(generic.DeleteView):
+class NewsDeleteView(auth_mixin.SuperuserRequiredMixin, generic.DeleteView):
     model = News
     success_url = reverse_lazy('news:list')
