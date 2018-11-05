@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-03 11:34-0400\n"
+"POT-Creation-Date: 2018-11-05 18:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\admin.py:12
+msgid "Personal info"
+msgstr "Información personal"
+
+#: .\admin.py:13
+msgid "Permissions"
+msgstr "Permisos"
+
+#: .\admin.py:15
+msgid "Important dates"
+msgstr "Fechas importantes"
 
 #: .\forms.py:25
 msgid "Password"
@@ -66,7 +78,7 @@ msgstr "Administrador"
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\models.py:19
+#: .\models.py:19 .\templates\accounts\dashboard.html:23
 msgid "Occupation"
 msgstr "Ocupación"
 
@@ -107,7 +119,11 @@ msgstr "Nombre completo"
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\templates\accounts\dashboard.html:23
+#: .\templates\accounts\dashboard.html:24
+msgid "Is active"
+msgstr "Está activo"
+
+#: .\templates\accounts\dashboard.html:25
 msgid "Actions"
 msgstr "Acciones"
 
@@ -174,75 +190,79 @@ msgstr "Herramientas"
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\templates\navbar.html:51 .\templates\navbar.html:57
+#: .\templates\navbar.html:50
+msgid "News"
+msgstr "Noticias"
+
+#: .\templates\navbar.html:54 .\templates\navbar.html:60
 msgid "Contact us"
 msgstr "Contáctanos"
 
-#: .\templates\navbar.html:70
+#: .\templates\navbar.html:73
 msgid "Your name"
 msgstr "Tu nombre"
 
-#: .\templates\navbar.html:78
+#: .\templates\navbar.html:81
 msgid "Your email"
 msgstr "Tu correo"
 
-#: .\templates\navbar.html:86
+#: .\templates\navbar.html:89
 msgid "Subject"
 msgstr "Asunto"
 
-#: .\templates\navbar.html:96
+#: .\templates\navbar.html:99
 msgid "Your message"
 msgstr "Tu Mensaje"
 
-#: .\templates\navbar.html:104
+#: .\templates\navbar.html:107
 msgid "Send"
 msgstr "Enviar"
 
-#: .\templates\navbar.html:124
+#: .\templates\navbar.html:127
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\templates\navbar.html:127
+#: .\templates\navbar.html:130
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\templates\navbar.html:130
+#: .\templates\navbar.html:133
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\navbar.html:159
+#: .\templates\navbar.html:162
 msgid "Up"
 msgstr "Arriba"
 
-#: .\templates\navbar.html:163
+#: .\templates\navbar.html:166
 msgid "Manage System"
 msgstr "Sistema de Gestión"
 
-#: .\templates\navbar.html:164
+#: .\templates\navbar.html:167
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de inmigración y extranjería"
 
-#: .\templates\navbar.html:180
+#: .\templates\navbar.html:183
 msgid "Go"
 msgstr "Ir"
 
-#: .\templates\navbar.html:185
+#: .\templates\navbar.html:188
 msgid "Links"
 msgstr "Direcciones"
 
-#: .\templates\navbar.html:188
+#: .\templates\navbar.html:191
 msgid "Citizen Portal"
 msgstr "Portal del cuidadano"
 
-#: .\templates\navbar.html:191
+#: .\templates\navbar.html:194
 msgid "Ministry of Interior"
 msgstr "Ministerio del Interior"
 
-#: .\templates\navbar.html:194
+#: .\templates\navbar.html:197
 msgid "Company's only booth"
 msgstr "Único stand de la compañía"
 
-#: .\templates\navbar.html:201
+#: .\templates\navbar.html:204
 msgid "Copyright: Created by University of Holguin"
 msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
 
