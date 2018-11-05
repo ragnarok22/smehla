@@ -1,10 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import View, generic
+from django.views.generic.base import ContextMixin
 
 from SIG_SMEHLA.settings import INDEX_URL
 from accounts.models import Profile
@@ -39,7 +39,7 @@ class SuperuserRequiredMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
-class NavbarMixin:
+class NavbarMixin(ContextMixin):
     tab_name = 'init'
 
     def get_tab_name(self):
