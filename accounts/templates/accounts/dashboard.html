@@ -20,23 +20,27 @@
                     <th class="th">{% trans 'Username' %}</th>
                     <th>{% trans 'Full name' %}</th>
                     <th>{% trans 'Email' %}</th>
+                    <th>{% trans 'Occupation' %}</th>
+                    <th>{% trans 'Is active' %}</th>
                     <th>{% trans 'Actions' %}</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for user in profile_list %}
+                {% for profile in profile_list %}
                     <tr>
-                        <td>{{ user.username }}</td>
-                        <td>{{ user.get_full_name }}</td>
-                        <td>{{ user.email }}</td>
+                        <td>{{ profile.username }}</td>
+                        <td>{{ profile.get_full_name }}</td>
+                        <td>{{ profile.email }}</td>
+                        <td>{{ profile.get_occupation_display }}</td>
+                        <td>{{ profile.is_active }}</td>
                         <td>
-                            <a href="{% url 'accounts:profile_detail' user.pk %}">
+                            <a href="{% url 'accounts:profile_detail' profile.pk %}">
                                 <i class="fa fa-eye"></i>
                             </a>
-                            <a href="{% url 'accounts:profile_update' user.pk %}">
+                            <a href="{% url 'accounts:profile_update' profile.pk %}">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <a href="{% url 'accounts:profile_delete' user.pk %}">
+                            <a href="{% url 'accounts:profile_delete' profile.pk %}">
                                 <i class="fa fa-remove"></i>
                             </a>
                         </td>
