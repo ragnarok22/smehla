@@ -22,6 +22,7 @@ from SIG_SMEHLA import settings
 urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('services.urls')),
+    path('news/', include('news.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    {{ news }}
+{% endblock %}
+
+{% block main %}
+    <h1>{{ news.title }}</h1><span>Publicado {{ news.pub_date }}</span>
+    <p>{{ news.content }}</p>
+{% endblock %}

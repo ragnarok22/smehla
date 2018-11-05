@@ -1,0 +1,13 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+    Eliminar noticia
+{% endblock %}
+
+{% block main %}
+    <h1>Estas seguro de eliminar la noticia "{{ news }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger">Aceptar</button>
+    </form>
+{% endblock %}
