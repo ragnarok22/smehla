@@ -26,8 +26,9 @@ class NewsUpdateView(auth_mixin.SuperuserRequiredMixin, generic.UpdateView):
         return reverse_lazy('news:detail', kwargs={'pk': self.object.pk})
 
 
-class NewsListView(generic.ListView):
+class NewsListView(auth_mixin.NavbarMixin, generic.ListView):
     model = News
+    tab_name = 'news'
 
 
 class NewsDeleteView(auth_mixin.SuperuserRequiredMixin, generic.DeleteView):
