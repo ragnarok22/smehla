@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-31 21:54-0400\n"
+"POT-Creation-Date: 2018-11-04 18:40-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -456,11 +456,11 @@ msgstr "No hay visas"
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"
 
-#: .\views.py:51
+#: .\views.py:48
 msgid "Is in progress"
 msgstr "Está en progreso"
 
-#: .\views.py:53
+#: .\views.py:50
 #, python-format
 msgid "Has no found any request with %s ci"
 msgstr "No se ha encontrado ninguna petición con el ci %s"
