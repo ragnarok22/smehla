@@ -39,6 +39,51 @@ class SuperuserRequiredMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
+class FACRequiredMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(FACRequiredMixin, self).dispatch(request, *args, **kwargs)
+        if request.user.occupation == 'FAC':
+            return response
+        else:
+            raise PermissionDenied
+
+
+class BACRequiredMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(BACRequiredMixin, self).dispatch(request, *args, **kwargs)
+        if request.user.occupation == 'BAC':
+            return response
+        else:
+            raise PermissionDenied
+
+
+class BDACRequiredMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(BDACRequiredMixin, self).dispatch(request, *args, **kwargs)
+        if request.user.occupation == 'BDAC':
+            return response
+        else:
+            raise PermissionDenied
+
+
+class DIRRequiredMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(DIRRequiredMixin, self).dispatch(request, *args, **kwargs)
+        if request.user.occupation == 'DIR':
+            return response
+        else:
+            raise PermissionDenied
+
+
+class AdminRequiredMixin(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(AdminRequiredMixin, self).dispatch(request, *args, **kwargs)
+        if request.user.occupation == 'ADMIN':
+            return response
+        else:
+            raise PermissionDenied
+
+
 class NavbarMixin(ContextMixin):
     tab_name = 'init'
 
