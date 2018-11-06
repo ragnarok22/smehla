@@ -21,7 +21,7 @@ class Client(models.Model):
         return 'clients/picture/{}.{}'.format(self.first_name, ext)
 
     ci = models.CharField(_('Identity card'), max_length=13, unique=True)
-    # picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
+    picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
     first_name = models.CharField(_('First name'), max_length=30)
     last_name = models.CharField(_('Last name'), max_length=150)
     born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])

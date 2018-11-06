@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-06 08:09-0500\n"
+"POT-Creation-Date: 2018-11-06 18:30-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,10 @@ msgstr "Viúvo"
 #: .\templates\services\client_list.html:13
 msgid "Identity card"
 msgstr "Carteira de identidade"
+
+#: .\models.py:24
+msgid "Picture"
+msgstr "Image"
 
 #: .\models.py:25
 msgid "First name"
@@ -303,16 +307,12 @@ msgid "Client %(client.get_full_name)s"
 msgstr "Cliente %(client.get_full_name)s"
 
 #: .\templates\services\client_detail.html:36
-#, fuzzy
-#| msgid "Father name"
 msgid "Father's name"
-msgstr "nome pai"
+msgstr "Nome pai"
 
 #: .\templates\services\client_detail.html:39
-#, fuzzy
-#| msgid "Mother name"
 msgid "Mother's name"
-msgstr "nome mãe"
+msgstr "Nome mãe"
 
 #: .\templates\services\client_detail.html:66
 msgid "Phone"
@@ -419,14 +419,20 @@ msgid "Client's name"
 msgstr "Nome do clientes"
 
 #: .\templates\services\tools.html:74
-#, fuzzy
-#| msgid "Status"
 msgid "State"
 msgstr "Estado"
 
 #: .\templates\services\tools.html:75
 msgid "Actions"
 msgstr "Ações"
+
+#: .\templates\services\tools.html:114
+msgid "Previous"
+msgstr "Anterior"
+
+#: .\templates\services\tools.html:118
+msgid "Next"
+msgstr "Siguiente"
 
 #: .\templates\services\visa_confirm_delete.html:5
 msgid "Delete visa"
