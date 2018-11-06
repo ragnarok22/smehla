@@ -24,7 +24,7 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
     tab_name = 'tools'
     template_name = 'services/tools.html'
     model = models.Service
-    paginate_by = 10
+    paginate_by = 5
 
 
 class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):

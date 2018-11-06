@@ -106,15 +106,19 @@
 
                     </tbody>
                 </table>
-                <a href="?page=1">start</a>
-                {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">next</a>
-                {% endif %}
-                <a href="?page={{ paginator.num_pages }}">end</a>
+                <p>Page {{ page_obj.number }} of {{ paginator.num_pages }}</p>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pg-blue justify-content-center">
+                        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+                            <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}"
+                               class="page-link" tabindex="'1">{% trans 'Previous' %}</a>
+                        </li>
+                        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+                            <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}"
+                               class="page-link">{% trans 'Next' %}</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <!-- List of services -->
