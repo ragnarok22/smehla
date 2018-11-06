@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-04 18:40-0500\n"
+"POT-Creation-Date: 2018-11-06 08:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgstr "Entrega"
 msgid "Unknown service type"
 msgstr "tipo de servicio desconocido"
 
-#: .\models.py:56 .\templates\services\tools.html:17
+#: .\models.py:56 .\templates\services\tools.html:18
 msgid "Visa"
 msgstr "Visa"
 
@@ -292,7 +292,7 @@ msgstr "¿Estás seguro de eliminar al cliente %(client)s del sistema?"
 #: .\templates\services\client_confirm_delete.html:13
 #: .\templates\services\status_service.html:23
 #: .\templates\services\visa_confirm_delete.html:14
-#: .\templates\services\visa_form.html:12
+#: .\templates\services\visa_form.html:27
 msgid "Accept"
 msgstr "Aceptar"
 
@@ -339,7 +339,9 @@ msgstr "Actualizar"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .\templates\services\client_detail.html:115
+#: .\templates\services\client_detail.html:116
+#: .\templates\services\client_detail.html:127
+#: .\templates\services\visa_form.html:5
 msgid "Add service"
 msgstr "Añadir servicio"
 
@@ -399,27 +401,27 @@ msgstr "No hay ninguna petición que corresponda con ese CI"
 msgid "Tools"
 msgstr "Herramientas"
 
-#: .\templates\services\tools.html:10
+#: .\templates\services\tools.html:11
 msgid "Services tools"
 msgstr "Herramientas de servicios"
 
-#: .\templates\services\tools.html:64
+#: .\templates\services\tools.html:66
 msgid "Services Request's List"
 msgstr "Listado de petición de servicios"
 
-#: .\templates\services\tools.html:70
+#: .\templates\services\tools.html:72
 msgid "Type"
 msgstr "Tipo"
 
-#: .\templates\services\tools.html:71
+#: .\templates\services\tools.html:73
 msgid "Client's name"
 msgstr "nombre del cliente"
 
-#: .\templates\services\tools.html:72
+#: .\templates\services\tools.html:74
 msgid "State"
 msgstr "Estado"
 
-#: .\templates\services\tools.html:73
+#: .\templates\services\tools.html:75
 msgid "Actions"
 msgstr "Acciones"
 
@@ -439,10 +441,6 @@ msgstr "Asignado a"
 msgid "Expire date"
 msgstr "Fecha de expiración"
 
-#: .\templates\services\visa_form.html:5
-msgid "Add visa"
-msgstr "Añadir visa"
-
 #: .\templates\services\visa_list.html:5
 msgid "Visas Lists"
 msgstr "Listado de visas"
@@ -456,11 +454,14 @@ msgstr "No hay visas"
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"
 
-#: .\views.py:48
+#: .\views.py:47
 msgid "Is in progress"
 msgstr "Está en progreso"
 
-#: .\views.py:50
+#: .\views.py:49
 #, python-format
 msgid "Has no found any request with %s ci"
 msgstr "No se ha encontrado ninguna petición con el ci %s"
+
+#~ msgid "Add visa"
+#~ msgstr "Añadir visa"

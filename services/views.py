@@ -4,7 +4,6 @@ from django.views import generic
 
 from accounts import mixins
 from services import models, forms
-from services.models import Visa, Service
 
 
 class IndexView(mixins.NavbarMixin, generic.TemplateView):
@@ -24,7 +23,7 @@ class ServicesView(mixins.NavbarMixin, generic.TemplateView):
 class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.ListView):
     tab_name = 'tools'
     template_name = 'services/tools.html'
-    model = Service
+    model = models.Service
     paginate_by = 10
 
 
@@ -36,7 +35,7 @@ class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
         context = super(SearchStatusServiceView, self).get_context_data(**kwargs)
         value = self.request.GET.get('search', None)
         if value:
-            service = Visa.objects.filter(client__ci=value)
+            service = models.Visa.objects.filter(client__ci=value)
             if service:
                 services = []
                 for s in service:
@@ -98,6 +97,26 @@ class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
         self.object = form.save(commit=False)
         self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
         response = super(VisaCreateView, self).form_valid(form)
+        return response
+
+
+class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+    object: models.Service
+
+    def dispatch(self, request, *args, **kwargs):
+        if kwargs.get('type') == 'visa':
+            self.model = models.Visa
+            self.form_class = forms.VisaCreateForm
+            self.extra_context = {'type': 'visa'}
+        return super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk})
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
+        response = super(ServiceCreateView, self).form_valid(form)
         return response
 
 
