@@ -89,9 +89,7 @@ class ServiceOccupationRequiredMixin(LoginRequiredMixin):
     def dispatch(self, request, *args, **kwargs):
         response = super(ServiceOccupationRequiredMixin, self).dispatch(request, *args, **kwargs)
         service = models.Service.objects.get(pk=kwargs.get('pk'))
-        print('dispatch')
-        if service:
-            print('entro')
+        if service:  # updateView
             if service.status == '1' and request.user.occupation == 'FAC':
                 return response
             elif service.status == '2' and request.user.occupation == 'BAC':
@@ -102,6 +100,13 @@ class ServiceOccupationRequiredMixin(LoginRequiredMixin):
                 return response
             else:
                 raise PermissionDenied
+        else:  # createView
+            t = kwargs.get('type')
+            if t:
+                if request.user.occupation == 'FAC':
+                    return response
+                else:
+                    raise PermissionDenied
 
 
 class NavbarMixin(ContextMixin):
