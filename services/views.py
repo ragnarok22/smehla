@@ -104,11 +104,12 @@ class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     object: models.Service
 
     def dispatch(self, request, *args, **kwargs):
+        response = super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
         if kwargs.get('type') == 'visa':
             self.model = models.Visa
             self.form_class = forms.VisaCreateForm
             self.extra_context = {'type': 'visa'}
-        return super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
+        return response
 
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk})
@@ -128,7 +129,7 @@ class VisaListView(mixins.LoginRequiredMixin, generic.ListView):
     model = models.Visa
 
 
-class VisaUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
+class VisaUpdateView(mixins.ServiceOccupationRequiredMixin, generic.UpdateView):
     model = models.Visa
     fields = '__all__'
 

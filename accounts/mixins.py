@@ -8,6 +8,7 @@ from django.views.generic.base import ContextMixin
 
 from SIG_SMEHLA.settings import INDEX_URL
 from accounts.models import Profile
+from services import models
 
 
 class AnonymousRequiredMixin(View):
@@ -82,6 +83,25 @@ class AdminRequiredMixin(LoginRequiredMixin, View):
             return response
         else:
             raise PermissionDenied
+
+
+class ServiceOccupationRequiredMixin(LoginRequiredMixin):
+    def dispatch(self, request, *args, **kwargs):
+        response = super(ServiceOccupationRequiredMixin, self).dispatch(request, *args, **kwargs)
+        service = models.Service.objects.get(pk=kwargs.get('pk'))
+        print('dispatch')
+        if service:
+            print('entro')
+            if service.status == '1' and request.user.occupation == 'FAC':
+                return response
+            elif service.status == '2' and request.user.occupation == 'BAC':
+                return response
+            elif service.status == '3' and request.user.occupation == 'BDAC':
+                return response
+            elif service.status == '4' and request.user.occupation == 'DIR':
+                return response
+            else:
+                raise PermissionDenied
 
 
 class NavbarMixin(ContextMixin):

@@ -11,7 +11,7 @@
     <h3>Apellidos: {{ profile.last_name }}</h3>
     <h3>Fecha de nacimiento: {{ profile.born_date }}</h3>
     <h3>Edad: {{ profile.age }}</h3>
-    <h3>Cargo: {{ profile.get_occupation_display }}</h3>
+    <h3>Cargo: {{ profile.get_occupation_display }} ({{ profile.occupation }})</h3>
     {% if user.occupation == 'ADMIN' %}
         <h3>Esta Activo: {{ profile.is_active }}</h3>
     {% endif %}
