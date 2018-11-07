@@ -12,19 +12,21 @@
             <!-- Create services -->
             <div class="row">
 
-                <div class="col-3">
+                <div class="col">
                     <div class="card">
                         <div class="card-header info-color white-text text-center">
                             <h5 class="text-uppercase">{% trans 'Visa' %}</h5>
                         </div>
                         <div class="card-body px-lg-5 pt-0">
-                            <p><a href="{% url 'services:client_list' 'visa' %}">Visa para un cliente</a></p>
-                            <p><a href="{% url 'services:client_create' %}">Visa a nuevo cliente</a></p>
+                            <a href="{% url 'services:client_list' 'visa' %}" class="btn btn-default">Visa para un
+                                cliente</a>
+                            <a href="{% url 'services:client_create' %}" class="btn btn-default">Visa a nuevo
+                                cliente</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col">
                     <div class="card">
                         <div class="card-header info-color white-text text-center">
                             <h5 class="text-uppercase">Residencia</h5>
@@ -36,7 +38,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col">
                     <div class="card">
                         <div class="card-header info-color white-text text-center">
                             <h5 class="text-uppercase">Nacional</h5>
@@ -48,17 +50,6 @@
                     </div>
                 </div>
 
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-header info-color white-text text-center">
-                            <h5 class="text-uppercase">Visa</h5>
-                        </div>
-                        <div class="card-body px-lg-5 pt-0">
-                            <p><a href="#">Buscar cliente</a></p>
-                            <p><a href="#">Nuevo cliente</a></p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- Create services -->
         {% endif %}
