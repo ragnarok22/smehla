@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
@@ -100,16 +101,22 @@ class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
         return response
 
 
-class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+class ServiceCreateView(mixins.ServiceOccupationRequiredMixin, generic.CreateView):
     object: models.Service
 
     def dispatch(self, request, *args, **kwargs):
-        response = super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
-        if kwargs.get('type') == 'visa':
+        _type = kwargs.get('type')
+        if _type == 'visa':
             self.model = models.Visa
             self.form_class = forms.VisaCreateForm
             self.extra_context = {'type': 'visa'}
-        return response
+        elif _type == 'passport':
+            self.model = models.Passport
+            self.form_class = forms.PassportCreateForm
+            self.extra_context = {'type': 'passport'}
+        else:
+            raise Http404(_('Service type not found'))
+        return super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk})

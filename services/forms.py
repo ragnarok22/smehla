@@ -18,6 +18,18 @@ class VisaCreateForm(forms.ModelForm):
         }
 
 
+class PassportCreateForm(forms.ModelForm):
+    class Meta:
+        model = models.Passport
+        exclude = ['client', 'status']
+        widgets = {
+            'passport_issuance_date': forms.TextInput(attrs={'class': 'datepicker'}),
+            'passport_expiration_date': forms.TextInput(attrs={'class': 'datepicker'}),
+            'emission_date': forms.TextInput(attrs={'class': 'datepicker'}),
+            'remission_date': forms.TextInput(attrs={'class': 'datepicker'}),
+        }
+
+
 class ClientForm(forms.ModelForm):
     class Meta:
         model = models.Client

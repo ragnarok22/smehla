@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-default">Aceptar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
