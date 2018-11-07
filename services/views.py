@@ -86,21 +86,6 @@ class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:client_list')
 
 
-class VisaCreateView(mixins.LoginRequiredMixin, generic.CreateView):
-    object: models.models.Model
-    model = models.Visa
-    form_class = forms.VisaCreateForm
-
-    def get_success_url(self):
-        return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk})
-
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
-        response = super(VisaCreateView, self).form_valid(form)
-        return response
-
-
 class ServiceCreateView(mixins.ServiceOccupationRequiredMixin, generic.CreateView):
     object: models.Service
 
