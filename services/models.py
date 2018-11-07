@@ -98,3 +98,18 @@ class Visa(Service):
 
     def __str__(self):
         return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_specification_display())
+
+
+class Passport(Service):
+    PASSPORT_TYPE = (
+        ('N', _('Normal')),
+        ('S', _('Service')),
+    )
+    passport_type = models.CharField(_('Passport type'), max_length=1, choices=PASSPORT_TYPE)
+    emission_date = models.DateField(_('Emission date'))
+    remission_type = models.CharField(_('Remission type'), max_length=1, choices=Visa.REQUEST_TYPE)
+    remission_date = models.DateField(_('Remission date'))
+    personal_no = models.CharField(_('Personal No.'), max_length=50)
+    passport_no = models.CharField(_('Passport No.'), max_length=100)
+    passport_issuance_date = models.DateField(_('Passport issuance date'))
+    passport_expiration_date = models.DateField(_('Passport expiration date'))
