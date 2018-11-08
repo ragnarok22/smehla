@@ -1,5 +1,5 @@
 /*.errorlist {*/
-    /*color: red;*/
+/*color: red;*/
 /*}*/
 
 .hidden {
@@ -11,13 +11,17 @@
     bottom: 2em;
     right: 2em;
     text-decoration: none;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid #2bbbad !important;
+    background-color: transparent !important;
+    color: #2bbbad !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
     font-size: 12px;
     padding: 1em;
     display: none;
 }
 
 .go-top:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #2bbbad !important;
+    color: #fff !important;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 }
