@@ -113,3 +113,6 @@ class Passport(Service):
     passport_no = models.CharField(_('Passport No.'), max_length=100)
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
+
+    def __str__(self):
+        return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())

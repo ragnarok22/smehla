@@ -86,11 +86,13 @@ class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:client_list')
 
 
-class ServiceCreateView(mixins.ServiceOccupationRequiredMixin, generic.CreateView):
+class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
     object: models.Service
+    service_type = None
 
     def dispatch(self, request, *args, **kwargs):
         _type = kwargs.get('type')
+        self.service_type = _type
         if _type == 'visa':
             self.model = models.Visa
             self.form_class = forms.VisaCreateForm
@@ -104,7 +106,7 @@ class ServiceCreateView(mixins.ServiceOccupationRequiredMixin, generic.CreateVie
         return super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -113,15 +115,24 @@ class ServiceCreateView(mixins.ServiceOccupationRequiredMixin, generic.CreateVie
         return response
 
 
-class VisaDetailView(mixins.LoginRequiredMixin, generic.DetailView):
-    model = models.Visa
+class ServiceDetailView(mixins.LoginRequiredMixin, generic.DetailView):
+    def dispatch(self, request, *args, **kwargs):
+        _type = kwargs.get('type')
+        if _type == 'visa':
+            self.model = models.Visa
+        elif _type == 'passport':
+            self.model = models.Passport
+        else:
+            raise Http404(_('Service type not found'))
+        self.extra_context = {'type': _type}
+        return super(ServiceDetailView, self).dispatch(request, *args, **kwargs)
 
 
 class VisaListView(mixins.LoginRequiredMixin, generic.ListView):
     model = models.Visa
 
 
-class VisaUpdateView(mixins.ServiceOccupationRequiredMixin, generic.UpdateView):
+class VisaUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
     model = models.Visa
     fields = '__all__'
 

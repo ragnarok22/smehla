@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    Peticion de Pasaporte
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <h1 class="h1 text-center">Passport to {{ passport.client }}</h1>
+        <p>passport type: {{ passport.get_passport_type_display }}</p>
+        <p>emission date: {{ passport.emission_date }}</p>
+        <p>remission type: {{ passport.get_remission_type_display }}</p>
+        <p>remission date: {{ passport.remission_date }}</p>
+        <p>personal no: {{ passport.personal_no }}</p>
+        <p>passport no: {{ passport.passport_no }}</p>
+        <p>passport issuance date: {{ passport.passport_issuance_date }}</p>
+        <p>passport expiration date: {{ passport.passport_expiration_date }}</p>
+    <div class="row">
+        <div class="col">
+            <a href="#" class="btn btn-default">{% trans 'Update' %}</a>
+            <a href="#" class="btn btn-default">{% trans 'Delete' %}</a>
+        </div>
+    </div>
+    </div>
+{% endblock %}

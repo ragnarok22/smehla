@@ -32,8 +32,10 @@
                             <h5 class="text-uppercase">Residencia</h5>
                         </div>
                         <div class="card-body px-lg-5 pt-0">
-                            <p><a href="{% url 'services:client_list' 'resident' %}">Buscar cliente</a></p>
-                            <p><a href="#">Nuevo cliente</a></p>
+                            <a href="{% url 'services:client_list' 'resident' %}" class="btn btn-default">
+                                Residencia a un cliente
+                            </a>
+                            <a href="#" class="btn btn-default">Nuevo cliente</a>
                         </div>
                     </div>
                 </div>
@@ -41,11 +43,13 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header info-color white-text text-center">
-                            <h5 class="text-uppercase">Nacional</h5>
+                            <h5 class="text-uppercase">{% trans 'Passport' %}</h5>
                         </div>
                         <div class="card-body px-lg-5 pt-0">
-                            <p><a href="{% url 'services:client_list' 'passport' %}">Buscar cliente</a></p>
-                            <p><a href="#">Nuevo cliente</a></p>
+                            <a href="{% url 'services:client_list' 'passport' %}" class="btn btn-default">
+                                Pasaporte a un cliente
+                            </a>
+                            <a href="#" class="btn btn-default">Nuevo cliente</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +79,7 @@
                             </td>
                             <td>{{ service.get_status_display }}</td>
                             <td class="btn-group-sm">
-                                <a href="{% url 'services:visa_detail' service.pk %}" class="btn btn-default">
+                                <a href="{% url 'services:service_detail' 'visa' service.pk %}" class="btn btn-default">
                                     <i class="fa fa-eye"></i>
                                 </a>
                                 {% if user.is_superadmin or user.occupation == 'FAC' and service.status == '1' or user.occupation == 'BAC' and service.status == '2' %}
