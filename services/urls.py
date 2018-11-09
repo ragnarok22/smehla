@@ -19,6 +19,6 @@ urlpatterns = [
     path('service/<type>/<int:pk>/add/', views.ServiceCreateView.as_view(), name='service_create'),
     path('service/<str:type>/<int:pk>/', views.ServiceDetailView.as_view(), name='service_detail'),
     path('visa/list/', views.VisaListView.as_view(), name='visa_list'),
-    path('visa/<int:pk>/update/', views.VisaUpdateView.as_view(), name='visa_update'),
+    path('service/<type>/<int:pk>/update/', views.ServiceUpdateView.as_view(), name='service_update'),
     path('visa/<int:pk>/delete/', views.VisaDeleteView.as_view(), name='visa_delete'),
 ]

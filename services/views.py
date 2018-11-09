@@ -132,12 +132,24 @@ class VisaListView(mixins.LoginRequiredMixin, generic.ListView):
     model = models.Visa
 
 
-class VisaUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
-    model = models.Visa
+class ServiceUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
+    model = models.Service
     fields = '__all__'
+    service_type = None
+
+    def dispatch(self, request, *args, **kwargs):
+        _type = kwargs.get('type')
+        self.service_type = _type
+        if _type == 'visa':
+            self.model = models.Visa
+        elif _type == 'passport':
+            self.model = models.Passport
+        else:
+            raise Http404(_('Service type not found'))
+        return super(ServiceUpdateView, self).dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
 
 class VisaDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
