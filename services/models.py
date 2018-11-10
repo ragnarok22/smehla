@@ -54,6 +54,7 @@ class Service(models.Model):
     SERVICE_TYPE = {
         'None': _('Unknown service type'),
         'visa': _('Visa'),
+        'passport': _('Passport'),
     }
     client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
@@ -66,7 +67,7 @@ class Service(models.Model):
             return self.SERVICE_TYPE['None']
 
     def __str__(self):
-        return self.service_type
+        return '{}'.format(self.get_service_type())
 
 
 class Visa(Service):
@@ -105,6 +106,7 @@ class Passport(Service):
         ('N', _('Normal')),
         ('S', _('Service')),
     )
+    service_type = Service.SERVICE_TYPE['passport']
     passport_type = models.CharField(_('Passport type'), max_length=1, choices=PASSPORT_TYPE)
     emission_date = models.DateField(_('Emission date'))
     remission_type = models.CharField(_('Remission type'), max_length=1, choices=Visa.REQUEST_TYPE)

@@ -7,6 +7,6 @@
 
 {% block main %}
     {{ visa }}
-    <a href="{% url 'services:visa_update' visa.pk %}">{% trans 'Update' %}</a>
-    <a href="{% url 'services:visa_delete' visa.pk %}">{% trans 'Delete' %}</a>
+    <a href="{% url 'services:service_update' type visa.pk %}">{% trans 'Update' %}</a>
+{#    <a href="{% url 'services:visa_delete' visa.pk %}">{% trans 'Delete' %}</a>#}
 {% endblock %}

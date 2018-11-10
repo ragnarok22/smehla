@@ -110,6 +110,7 @@ class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
+        self.object.service_type = self.service_type
         self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
         response = super(ServiceCreateView, self).form_valid(form)
         return response

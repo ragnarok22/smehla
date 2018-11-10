@@ -73,7 +73,11 @@
                     <tbody>
                     {% for service in page_obj %}
                         <tr>
-                            <td>{{ service.get_service_type }}</td>
+                            {% if service.visa %}
+                                <td>{{ service.visa.service_type }}</td>
+                            {% else %}
+                                <td>{{ service.passport.service_type }}</td>
+                            {% endif %}
                             <td>
                                 <a href="{% url 'services:client_detail' service.client.pk %}">{{ service.client.get_full_name }}</a>
                             </td>
@@ -83,7 +87,8 @@
                                     <i class="fa fa-eye"></i>
                                 </a>
                                 {% if user.is_superadmin or user.occupation == 'FAC' and service.status == '1' or user.occupation == 'BAC' and service.status == '2' %}
-                                    <a href="{% url 'services:service_update' 'visa' service.pk %}" class="btn btn-default">
+                                    <a href="{% url 'services:service_update' 'visa' service.pk %}"
+                                       class="btn btn-default">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     <a href="{% url 'services:visa_delete' service.pk %}" class="btn btn-default">
