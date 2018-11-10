@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 22:56-0500\n"
+"POT-Creation-Date: 2018-11-10 16:31-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr "nome mãe"
 msgid "Address"
 msgstr "Residência"
 
-#: .\models.py:34 .\models.py:149 .\templates\services\client_detail.html:63
+#: .\models.py:34 .\models.py:174 .\templates\services\client_detail.html:63
 #: .\templates\services\client_list.html:15
 msgid "Email"
 msgstr "Endereço Eletrônico"
@@ -127,7 +127,7 @@ msgstr "Entregar"
 msgid "Unknown service type"
 msgstr "Tipo de serviço desconhecido"
 
-#: .\models.py:60 .\models.py:105 .\templates\services\tools.html:18
+#: .\models.py:60 .\models.py:107 .\templates\services\tools.html:18
 msgid "Visa"
 msgstr "Visto"
 
@@ -173,11 +173,11 @@ msgstr "Visto de turista"
 msgid "Short-term visa"
 msgstr "Visto de curto prazo"
 
-#: .\models.py:89
+#: .\models.py:89 .\models.py:147
 msgid "Caducity"
 msgstr "Caducidade"
 
-#: .\models.py:90
+#: .\models.py:90 .\models.py:148
 msgid "Misplacing"
 msgstr "Extravio"
 
@@ -193,15 +193,15 @@ msgstr "Pedido de prorrogação aos"
 msgid "Request type"
 msgstr "Tipo de prorrogação"
 
-#: .\models.py:97 .\models.py:123
+#: .\models.py:97 .\models.py:125 .\models.py:155
 msgid "Passport No."
 msgstr "Passaporte No"
 
-#: .\models.py:98 .\models.py:124
+#: .\models.py:98 .\models.py:126
 msgid "Passport issuance date"
 msgstr "Data de Emissão de passaporte"
 
-#: .\models.py:99 .\models.py:125
+#: .\models.py:99 .\models.py:127
 msgid "Passport expiration date"
 msgstr "Data de vencimento de passaporte"
 
@@ -217,99 +217,123 @@ msgstr "Emitido aos de visto"
 msgid "Visa expiration date"
 msgstr "Vencido aos de visto"
 
-#: .\models.py:106
+#: .\models.py:103
+msgid "Tutelary Entity"
+msgstr ""
+
+#: .\models.py:108
 #, fuzzy
 #| msgid "Visa"
 msgid "Visas"
 msgstr "Visto"
 
-#: .\models.py:114
+#: .\models.py:116
 msgid "Normal"
 msgstr ""
 
-#: .\models.py:115
+#: .\models.py:117
 #, fuzzy
 #| msgid "Services"
 msgid "Service"
 msgstr "Serviços"
 
-#: .\models.py:118
+#: .\models.py:120
 #, fuzzy
 #| msgid "Passport No."
 msgid "Passport type"
 msgstr "Passaporte No"
 
-#: .\models.py:119
+#: .\models.py:121
 #, fuzzy
 #| msgid "Born date"
 msgid "Emission date"
 msgstr "Data de nascimento"
 
-#: .\models.py:120
+#: .\models.py:122
 #, fuzzy
 #| msgid "Revision"
 msgid "Remission type"
 msgstr "Revisão"
 
-#: .\models.py:121
+#: .\models.py:123
 #, fuzzy
 #| msgid "Revision"
 msgid "Remission date"
 msgstr "Revisão"
 
-#: .\models.py:122
+#: .\models.py:124
 #, fuzzy
 #| msgid "Visa No."
 msgid "Personal No."
 msgstr "Visto No"
 
-#: .\models.py:128
+#: .\models.py:130
 #, fuzzy
 #| msgid "Passport No."
 msgid "passport"
 msgstr "Passaporte No"
 
-#: .\models.py:129
+#: .\models.py:131
 #, fuzzy
 #| msgid "Passport No."
 msgid "passports"
 msgstr "Passaporte No"
 
-#: .\models.py:137
-msgid "Entity"
+#: .\models.py:151
+msgid "AUR No."
 msgstr ""
 
-#: .\models.py:138
-msgid "Entities"
-msgstr ""
-
-#: .\models.py:143
-msgid "Name"
-msgstr ""
-
-#: .\models.py:144
-msgid "Localization"
-msgstr ""
-
-#: .\models.py:145
-#, fuzzy
-#| msgid "Specification"
-msgid "Identification No."
-msgstr "Especificação"
-
-#: .\models.py:146
+#: .\models.py:152 .\models.py:171
 #, fuzzy
 #| msgid "Visa issuance date"
 msgid "Issuance date"
 msgstr "Emitido aos de visto"
 
-#: .\models.py:147
+#: .\models.py:153 .\models.py:172
 #, fuzzy
 #| msgid "Visa expiration date"
 msgid "Expiration date"
 msgstr "Vencido aos de visto"
 
-#: .\models.py:148
+#: .\models.py:154
+msgid "Renovation reason"
+msgstr ""
+
+#: .\models.py:156
+#, fuzzy
+#| msgid "Visa issuance date"
+msgid "Issuance passport date"
+msgstr "Emitido aos de visto"
+
+#: .\models.py:157
+#, fuzzy
+#| msgid "Passport No."
+msgid "Valid passport date"
+msgstr "Passaporte No"
+
+#: .\models.py:162
+msgid "Entity"
+msgstr ""
+
+#: .\models.py:163
+msgid "Entities"
+msgstr ""
+
+#: .\models.py:168
+msgid "Name"
+msgstr ""
+
+#: .\models.py:169
+msgid "Localization"
+msgstr ""
+
+#: .\models.py:170
+#, fuzzy
+#| msgid "Specification"
+msgid "Identification No."
+msgstr "Especificação"
+
+#: .\models.py:173
 msgid "Telephone"
 msgstr ""
 

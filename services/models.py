@@ -134,6 +134,29 @@ class Passport(Service):
         return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())
 
 
+# class ResidentAuthorization(Service):
+#     service_type = 'resident'
+#     AUTHORIZATION_TYPE = (
+#         ('', _('Married')),
+#         ('VFR', _('VFR')),
+#     )
+
+
+class ResidentRenovation(Service):
+    REASON = (
+        ('C', _('Caducity')),
+        ('M', _('Misplacing')),
+    )
+    service_type = 'renovation'
+    aur_no = models.CharField(_('AUR No.'), max_length=100)
+    issuance_date = models.DateField(_('Issuance date'))
+    expiration_date = models.DateField(_('Expiration date'))
+    reason = models.CharField(_('Renovation reason'), max_length=1, choices=REASON)
+    passport_no = models.CharField(_('Passport No.'), max_length=20)
+    issuance_passport_date = models.DateField(_('Issuance passport date'))
+    valid_passport_date = models.DateField(_('Valid passport date'))  # v'alido at'e
+
+
 class Entity(models.Model):
     class Meta:
         verbose_name = _('Entity')
