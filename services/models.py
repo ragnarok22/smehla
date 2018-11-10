@@ -130,3 +130,20 @@ class Passport(Service):
 
     def __str__(self):
         return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())
+
+
+class Entity(models.Model):
+    class Meta:
+        verbose_name = _('Entity')
+        verbose_name_plural = _('Entities')
+
+    def __str__(self):
+        return '{}'.format(self.name)
+
+    name = models.CharField(_('Name'), max_length=100)
+    localization = models.CharField(_('Localization'), max_length=200)
+    identification_no = models.CharField(_('Identification No.'), max_length=50)
+    issuance_date = models.DateField(_('Issuance date'))
+    expiration_date = models.DateField(_('Expiration date'))
+    telephone = models.PositiveIntegerField(_('Telephone'))
+    email = models.EmailField(_('Email'))

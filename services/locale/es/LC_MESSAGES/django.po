@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 22:35-0500\n"
+"POT-Creation-Date: 2018-11-09 22:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr "Nombre de la madre"
 msgid "Address"
 msgstr "Dirección"
 
-#: .\models.py:34 .\templates\services\client_detail.html:63
+#: .\models.py:34 .\models.py:149 .\templates\services\client_detail.html:63
 #: .\templates\services\client_list.html:15
 msgid "Email"
 msgstr "Correo electrónico"
@@ -252,6 +252,38 @@ msgstr "Pasaporte"
 #: .\models.py:129
 msgid "passports"
 msgstr "Pasaportes"
+
+#: .\models.py:137
+msgid "Entity"
+msgstr "Entidad"
+
+#: .\models.py:138
+msgid "Entities"
+msgstr "Entidades"
+
+#: .\models.py:143
+msgid "Name"
+msgstr "Nombre"
+
+#: .\models.py:144
+msgid "Localization"
+msgstr "Localización"
+
+#: .\models.py:145
+msgid "Identification No."
+msgstr "No. de identificación"
+
+#: .\models.py:146
+msgid "Issuance date"
+msgstr "Fecha de emisión"
+
+#: .\models.py:147
+msgid "Expiration date"
+msgstr "Fecha de expiración"
+
+#: .\models.py:148
+msgid "Telephone"
+msgstr "Teléfono"
 
 #: .\templates\services\about.html:5
 msgid "About"
