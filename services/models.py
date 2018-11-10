@@ -100,6 +100,8 @@ class Visa(Service):
     visa_no = models.CharField(_('Visa No.'), max_length=100)
     visa_issuance_date = models.DateField(_('Visa issuance date'))
     visa_expiration_date = models.DateField(_('Visa expiration date'))
+    tutelary_entity = models.ForeignKey('Entity', verbose_name=_('Tutelary Entity'), on_delete=models.CASCADE,
+                                        blank=True, null=True)
 
     class Meta:
         verbose_name = _('Visa')

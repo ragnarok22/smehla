@@ -146,7 +146,7 @@ class ServiceUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
         return super(ServiceUpdateView, self).dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse_lazy('services:visa_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
+        return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
 
 class ServiceDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
