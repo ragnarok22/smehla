@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-06 18:30-0500\n"
+"POT-Creation-Date: 2018-11-09 22:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,117 +93,165 @@ msgstr "Número de teléfono"
 msgid "Data attachment"
 msgstr "Datos adjuntos"
 
-#: .\models.py:48
-msgid "Request"
-msgstr "Solicitud"
-
-#: .\models.py:49
-msgid "Invoicing"
-msgstr "Facturación"
-
-#: .\models.py:50
-msgid "Revision"
-msgstr "Revisión"
-
-#: .\models.py:51
-msgid "Authenticating"
-msgstr "Autenticar"
-
-#: .\models.py:52
-msgid "Deliver"
-msgstr "Entrega"
-
-#: .\models.py:55
-msgid "Unknown service type"
-msgstr "tipo de servicio desconocido"
-
-#: .\models.py:56 .\templates\services\tools.html:18
-msgid "Visa"
-msgstr "Visa"
-
-#: .\models.py:58
+#: .\models.py:43 .\models.py:63
 msgid "Client"
 msgstr "Cliente"
 
+#: .\models.py:44
+msgid "Clients"
+msgstr "Clientes"
+
+#: .\models.py:52
+msgid "Request"
+msgstr "Solicitud"
+
+#: .\models.py:53
+msgid "Invoicing"
+msgstr "Facturación"
+
+#: .\models.py:54
+msgid "Revision"
+msgstr "Revisión"
+
+#: .\models.py:55
+msgid "Authenticating"
+msgstr "Autenticar"
+
+#: .\models.py:56
+msgid "Deliver"
+msgstr "Entrega"
+
 #: .\models.py:59
+msgid "Unknown service type"
+msgstr "tipo de servicio desconocido"
+
+#: .\models.py:60 .\models.py:105 .\templates\services\tools.html:18
+msgid "Visa"
+msgstr "Visa"
+
+#: .\models.py:61 .\templates\services\tools.html:46
+msgid "Passport"
+msgstr "Pasaporte"
+
+#: .\models.py:64
 msgid "Status"
 msgstr "Estado"
 
-#: .\models.py:74
+#: .\models.py:79
 msgid "Work visa"
 msgstr "Visa de trabajo"
 
-#: .\models.py:75
+#: .\models.py:80
 msgid "Temporary stay visa"
 msgstr "Visa de estancia temporal"
 
-#: .\models.py:76
+#: .\models.py:81
 msgid "Privileged visa"
 msgstr "Visa privilegiada"
 
-#: .\models.py:77
+#: .\models.py:82
 msgid "Study visa"
 msgstr "Visa de estudio"
 
-#: .\models.py:78
+#: .\models.py:83
 msgid "Medical Treatment visa"
 msgstr "Visa de tratamiento médico"
 
-#: .\models.py:79
+#: .\models.py:84
 msgid "Ordinary visa"
 msgstr "Visa ordinaria"
 
-#: .\models.py:80
+#: .\models.py:85
 msgid "Tourist visa"
 msgstr "Visa de turista"
 
-#: .\models.py:81
+#: .\models.py:86
 msgid "Short-term visa"
 msgstr "Visa de corto plazo"
 
-#: .\models.py:84
+#: .\models.py:89
 msgid "Caducity"
 msgstr "Caducidad"
 
-#: .\models.py:85
+#: .\models.py:90
 msgid "Misplacing"
 msgstr "Pérdida"
 
-#: .\models.py:89
+#: .\models.py:94
 msgid "Specification"
 msgstr "Especificación"
 
-#: .\models.py:90
+#: .\models.py:95
 msgid "Extension request date"
 msgstr "Fecha de pedido de extensión"
 
-#: .\models.py:91
+#: .\models.py:96
 msgid "Request type"
 msgstr "Tipo de pedido"
 
-#: .\models.py:92
+#: .\models.py:97 .\models.py:123
 msgid "Passport No."
 msgstr "No. de pasaporte"
 
-#: .\models.py:93
+#: .\models.py:98 .\models.py:124
 msgid "Passport issuance date"
 msgstr "Fecha de emisión de pasaporte"
 
-#: .\models.py:94
+#: .\models.py:99 .\models.py:125
 msgid "Passport expiration date"
 msgstr "Fecha de expiración del pasaporte"
 
-#: .\models.py:95
+#: .\models.py:100
 msgid "Visa No."
 msgstr "No. de visa"
 
-#: .\models.py:96
+#: .\models.py:101
 msgid "Visa issuance date"
 msgstr "Fecha de emisión de visa"
 
-#: .\models.py:97
+#: .\models.py:102
 msgid "Visa expiration date"
 msgstr "Fecha de expiración de visa"
+
+#: .\models.py:106
+msgid "Visas"
+msgstr "Visas"
+
+#: .\models.py:114
+msgid "Normal"
+msgstr "Normal"
+
+#: .\models.py:115
+msgid "Service"
+msgstr "Servicio"
+
+#: .\models.py:118
+msgid "Passport type"
+msgstr "Tipo de pasaporte"
+
+#: .\models.py:119
+msgid "Emission date"
+msgstr "Fecha de emisión"
+
+#: .\models.py:120
+msgid "Remission type"
+msgstr "Tipo de remisión"
+
+#: .\models.py:121
+msgid "Remission date"
+msgstr "Fecha de Remisión"
+
+#: .\models.py:122
+msgid "Personal No."
+msgstr "No. personal"
+
+#: .\models.py:128
+msgid "passport"
+msgstr "Pasaporte"
+
+#: .\models.py:129
+msgid "passports"
+msgstr "Pasaportes"
 
 #: .\templates\services\about.html:5
 msgid "About"
@@ -294,6 +342,7 @@ msgid "Are you sure to delete the client %(client)s from the system?"
 msgstr "¿Estás seguro de eliminar al cliente %(client)s del sistema?"
 
 #: .\templates\services\client_confirm_delete.html:13
+#: .\templates\services\passport_confirm_delete.html:14
 #: .\templates\services\status_service.html:23
 #: .\templates\services\visa_confirm_delete.html:14
 #: .\templates\services\visa_form.html:27
@@ -330,12 +379,13 @@ msgid "No requested services found"
 msgstr "No se ha encontrado ninguna petición de servicio"
 
 #: .\templates\services\client_detail.html:113
+#: .\templates\services\passport_detail.html:21
 #: .\templates\services\visa_detail.html:10
 msgid "Update"
 msgstr "Actualizar"
 
 #: .\templates\services\client_detail.html:114
-#: .\templates\services\visa_detail.html:11
+#: .\templates\services\passport_detail.html:22
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -377,6 +427,25 @@ msgstr ""
 msgid "Read more"
 msgstr "Leer más"
 
+#: .\templates\services\passport_confirm_delete.html:5
+#: .\templates\services\visa_confirm_delete.html:5
+msgid "Delete visa"
+msgstr "Eliminar visa"
+
+#: .\templates\services\passport_confirm_delete.html:9
+msgid "Are you sure to delete this passport?"
+msgstr "¿Estás seguro de eliminar este pasaporte?"
+
+#: .\templates\services\passport_confirm_delete.html:10
+#: .\templates\services\visa_confirm_delete.html:10
+msgid "Allottee to"
+msgstr "Asignado a"
+
+#: .\templates\services\passport_confirm_delete.html:11
+#: .\templates\services\visa_confirm_delete.html:11
+msgid "Expire date"
+msgstr "Fecha de expiración"
+
 #: .\templates\services\services.html:5
 msgid "Services"
 msgstr "Servicios"
@@ -405,71 +474,52 @@ msgstr "Herramientas"
 msgid "Services tools"
 msgstr "Herramientas de servicios"
 
-#: .\templates\services\tools.html:66
+#: .\templates\services\tools.html:61
 msgid "Services Request's List"
 msgstr "Listado de petición de servicios"
 
-#: .\templates\services\tools.html:72
+#: .\templates\services\tools.html:67
 msgid "Type"
 msgstr "Tipo"
 
-#: .\templates\services\tools.html:73
+#: .\templates\services\tools.html:68
 msgid "Client's name"
 msgstr "nombre del cliente"
 
-#: .\templates\services\tools.html:74
+#: .\templates\services\tools.html:69
 msgid "State"
 msgstr "Estado"
 
-#: .\templates\services\tools.html:75
+#: .\templates\services\tools.html:70
 msgid "Actions"
 msgstr "Acciones"
 
-#: .\templates\services\tools.html:114
+#: .\templates\services\tools.html:135
 msgid "Previous"
 msgstr "Anterior"
 
-#: .\templates\services\tools.html:118
+#: .\templates\services\tools.html:139
 msgid "Next"
 msgstr "Siguiente"
-
-#: .\templates\services\visa_confirm_delete.html:5
-msgid "Delete visa"
-msgstr "Eliminar visa"
 
 #: .\templates\services\visa_confirm_delete.html:9
 msgid "Are you sure to delete this visa?"
 msgstr "¿Estás seguro de eliminar esta visa?"
-
-#: .\templates\services\visa_confirm_delete.html:10
-msgid "Allottee to"
-msgstr "Asignado a"
-
-#: .\templates\services\visa_confirm_delete.html:11
-msgid "Expire date"
-msgstr "Fecha de expiración"
-
-#: .\templates\services\visa_list.html:5
-msgid "Visas Lists"
-msgstr "Listado de visas"
-
-#: .\templates\services\visa_list.html:12
-msgid "There are no visas"
-msgstr "No hay visas"
 
 #: .\validators.py:10
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"
 
-#: .\views.py:47
+#: .\views.py:48
 msgid "Is in progress"
 msgstr "Está en progreso"
 
-#: .\views.py:49
+#: .\views.py:50
 #, python-format
 msgid "Has no found any request with %s ci"
 msgstr "No se ha encontrado ninguna petición con el ci %s"
 
-#~ msgid "Add visa"
-#~ msgstr "Añadir visa"
+#: .\views.py:105 .\views.py:127 .\views.py:145 .\views.py:163
+msgid "Service type not found"
+msgstr "Tipo de servicio no encontrado"

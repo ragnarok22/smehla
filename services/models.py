@@ -39,6 +39,10 @@ class Client(models.Model):
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
 
+    class Meta:
+        verbose_name = _('Client')
+        verbose_name_plural = _('Clients')
+
     def __str__(self):
         return self.get_full_name()
 
@@ -97,6 +101,10 @@ class Visa(Service):
     visa_issuance_date = models.DateField(_('Visa issuance date'))
     visa_expiration_date = models.DateField(_('Visa expiration date'))
 
+    class Meta:
+        verbose_name = _('Visa')
+        verbose_name_plural = _('Visas')
+
     def __str__(self):
         return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_specification_display())
 
@@ -115,6 +123,10 @@ class Passport(Service):
     passport_no = models.CharField(_('Passport No.'), max_length=100)
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
+
+    class Meta:
+        verbose_name = _('passport')
+        verbose_name_plural = _('passports')
 
     def __str__(self):
         return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())
