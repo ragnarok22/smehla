@@ -62,7 +62,7 @@ class Service(models.Model):
 
     def get_service_type(self):
         if self.service_type:
-            return self.service_type
+            return self.SERVICE_TYPE[self.service_type]
         else:
             return self.SERVICE_TYPE['None']
 
@@ -86,7 +86,7 @@ class Visa(Service):
         ('M', _('Misplacing')),
     )
 
-    service_type = Service.SERVICE_TYPE['visa']
+    service_type = 'visa'
     specification = models.CharField(_('Specification'), max_length=3, choices=REQUEST_SPECIFICATION)
     extension_request_date = models.DateField(_('Extension request date'))
     request_type = models.CharField(_('Request type'), max_length=1, choices=REQUEST_TYPE)
@@ -106,7 +106,7 @@ class Passport(Service):
         ('N', _('Normal')),
         ('S', _('Service')),
     )
-    service_type = Service.SERVICE_TYPE['passport']
+    service_type = 'passport'
     passport_type = models.CharField(_('Passport type'), max_length=1, choices=PASSPORT_TYPE)
     emission_date = models.DateField(_('Emission date'))
     remission_type = models.CharField(_('Remission type'), max_length=1, choices=Visa.REQUEST_TYPE)

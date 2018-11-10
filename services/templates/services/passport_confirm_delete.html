@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Delete visa' %}
+{% endblock %}
+
+{% block main %}
+    <h1>{% trans 'Are you sure to delete this passport?' %}</h1>
+    <p>{% trans 'Allottee to' %}: {{ passport.client }}</p>
+    <p>{% trans 'Expire date' %}: {{ passport.passport_expiration_date }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">{% trans 'Accept' %}</button>
+    </form>
+{% endblock %}
