@@ -167,3 +167,30 @@ class ServiceDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
         else:
             raise Http404(_('Service type not found'))
         return super(ServiceDeleteView, self).dispatch(request, *args, **kwargs)
+
+
+class EntityListView(mixins.LoginRequiredMixin, generic.ListView):
+    model = models.Entity
+
+
+class EntityCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+    model = models.Entity
+    form_class = forms.EntityForm
+    success_url = reverse_lazy('services:entity_list')
+
+
+class EntityDetailView(mixins.LoginRequiredMixin, generic.DetailView):
+    model = models.Entity
+
+
+class EntityUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
+    model = models.Entity
+    form_class = forms.EntityForm
+
+    def get_success_url(self):
+        return reverse_lazy('services:entity_detail', kwargs={'pk': self.object.pk})
+
+
+class EntityDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
+    model = models.Entity
+    success_url = reverse_lazy('services:entity_list')

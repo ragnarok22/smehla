@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{{ entity.name }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">Localization: {{ entity.localization }}</div>
+            <div class="col">No. de identificacion: {{ entity.identification_no }}</div>
+            <div class="col">Telefono: {{ entity.telephone }}</div>
+            <div class="col">Email: {{ entity.email }}</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'services:entity_update' entity.pk %}">editar</a>
+                <a href="#">eliminar</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

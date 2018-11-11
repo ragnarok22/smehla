@@ -1,0 +1,14 @@
+{% extends 'navbar.html' %}
+
+{% block main %}
+    <div class="container">
+        {% for entity in entity_list %}
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'services:entity_detail' entity.pk %}">{{ entity }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

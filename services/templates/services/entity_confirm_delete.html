@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+
+{% block main %}
+    <h1 class="h1 text-center">Estas seguro de eliminar esta entidad?</h1>
+    <h2 class="h2">{{ entity.name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-default">Aceptar</button>
+    </form>
+{% endblock %}
