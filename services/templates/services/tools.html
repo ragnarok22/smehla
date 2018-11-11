@@ -1,5 +1,6 @@
 {% extends 'navbar.html' %}
 {% load i18n %}
+{% load service_tags %}
 
 {% block title %}
     {% trans 'Tools' %}
@@ -81,7 +82,7 @@
                             <td>
                                 <a href="{% url 'services:client_detail' service.client.pk %}">{{ service.client.get_full_name }}</a>
                             </td>
-                            <td>{{ service.get_status_display }}</td>
+                            <td>{{ service.get_status_display }} ({% my_tag service user %})</td>
                             <td class="btn-group-sm">
                                 {% if service.visa %}
                                     <a href="{% url 'services:service_detail' service.visa.service_type service.pk %}"

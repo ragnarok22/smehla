@@ -70,6 +70,14 @@ class Service(models.Model):
         else:
             return self.SERVICE_TYPE['None']
 
+    def can_mod(self, user=None):
+        if user is None: return 'talla'
+        if (self.status == '1' and user.occupation == 'FAC') or (self.status == '2' and user.occupation == 'BAC') or (
+                self.status == '3' and user.occupation == 'BDAC') or (self.status == '4' and user.occupation == 'DIR'):
+            return True
+        else:
+            return False
+
     def __str__(self):
         return '{}'.format(self.get_service_type())
 
