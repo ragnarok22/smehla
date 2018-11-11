@@ -1,10 +1,23 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
     {{ news }}
 {% endblock %}
 
 {% block main %}
-    <h1>{{ news.title }}</h1><span>Publicado {{ news.pub_date }}</span>
-    <p>{{ news.content }}</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>{{ news.title }}</h1><span>Publicado {{ news.pub_date }}</span>
+                <p>{{ news.content }}</p>
+            </div>
+        </div>
+        {% if user.occupation == 'ADMIN' %}
+            <div class="row">
+                <a href="{% url 'news:update' news.pk %}" class="btn btn-default">{% trans 'Update' %}</a>
+                <a href="{% url 'news:delete' news.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
