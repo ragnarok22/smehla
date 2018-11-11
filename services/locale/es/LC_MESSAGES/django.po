@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-10 16:31-0500\n"
+"POT-Creation-Date: 2018-11-10 21:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -397,7 +397,7 @@ msgstr "¿Estás seguro de eliminar al cliente %(client)s del sistema?"
 #: .\templates\services\passport_confirm_delete.html:14
 #: .\templates\services\status_service.html:23
 #: .\templates\services\visa_confirm_delete.html:14
-#: .\templates\services\visa_form.html:27
+#: .\templates\services\visa_form.html:102
 msgid "Accept"
 msgstr "Aceptar"
 
@@ -557,6 +557,10 @@ msgstr "Siguiente"
 #: .\templates\services\visa_confirm_delete.html:9
 msgid "Are you sure to delete this visa?"
 msgstr "¿Estás seguro de eliminar esta visa?"
+
+#: .\templates\services\visa_form.html:92
+msgid "Tutelary Entity data"
+msgstr "Datos de la Entidad tutelar"
 
 #: .\validators.py:10
 #, python-format

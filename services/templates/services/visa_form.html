@@ -7,25 +7,180 @@
 
 {% block main %}
     <div class="container-fluid">
-        <form method="post">
+        <form method="post" id="visa-form">
             {% csrf_token %}
-            {% for field in form %}
-                {% if forloop.counter0 == 0 %}
-                    yes
-                {% endif %}
-                <div class="row">
-                    <div class="col">
-                        <div class="md-form">
-                            {{ field }}
-                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                            <span class="text-danger">{{ field.errors }}</span>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="{{ form.specification.id_for_label }}">{{ form.specification.label }}</label>
+                        </div>
+                        <div class="col-9">
+                            {{ form.specification }}
+                            <span class="text-danger">{{ form.specification.errors }}</span>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+                <div class="col">
+                    <div class="md-form">
+                        <label for="{{ form.extension_request_date.id_for_label }}">{{ form.extension_request_date.label }}</label>
+                        {{ form.extension_request_date }}
+                        <span class="text-danger">{{ form.extension_request_date.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="{{ form.request_type.id_for_label }}">{{ form.request_type.label }}</label>
+                        </div>
+                        <div class="col-9">
+                            {{ form.request_type }}
+                            <span class="text-danger">{{ form.request_type.errors }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <button type="submit" class="btn btn-default">{% trans 'Accept' %}</button>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.passport_no }}
+                        <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
+                        <span class="text-danger">{{ form.passport_no.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.passport_issuance_date }}
+                        <label for="{{ form.passport_issuance_date.id_for_label }}">{{ form.passport_issuance_date.label }}</label>
+                        <span class="text-danger">{{ form.passport_issuance_date.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.passport_expiration_date }}
+                        <label for="{{ form.passport_expiration_date.id_for_label }}">{{ form.passport_expiration_date.label }}</label>
+                        <span class="text-danger">{{ form.passport_expiration_date.errors }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.visa_no }}
+                        <label for="{{ form.visa_no.id_for_label }}">{{ form.visa_no.label }}</label>
+                        <span class="text-danger">{{ form.visa_no.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.visa_issuance_date }}
+                        <label for="{{ form.visa_issuance_date.id_for_label }}">{{ form.visa_issuance_date.label }}</label>
+                        <span class="text-danger">{{ form.visa_issuance_date.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.visa_expiration_date }}
+                        <label for="{{ form.visa_expiration_date.id_for_label }}">{{ form.visa_expiration_date.label }}</label>
+                        <span class="text-danger">{{ form.visa_expiration_date.errors }}</span>
+                    </div>
+                    <div class="hidden">
+                        {{ form.tutelary_entity }}
+                    </div>
+                </div>
             </div>
         </form>
     </div>
+
+    <div id="entity" class="container-fluid">
+        <form method="post" id="entity-form">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <h1 class="h1 text-center">{% trans 'Tutelary Entity data' %}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.name }}
+                        <label for="{{ entity_form.name.id_for_label }}">{{ entity_form.name.label }}</label>
+                        <span class="text-danger">{{ entity_form.name.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.localization }}
+                        <label for="{{ entity_form.localization.id_for_label }}">{{ entity_form.localization.label }}</label>
+                        <span class="text-danger">{{ entity_form.localization.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.identification_no }}
+                        <label for="{{ entity_form.identification_no.id_for_label }}">{{ entity_form.identification_no.label }}</label>
+                        <span class="text-danger">{{ entity_form.identification_no.errors }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.issuance_date }}
+                        <label for="{{ entity_form.issuance_date.id_for_label }}">{{ entity_form.issuance_date.label }}</label>
+                        <span class="text-danger">{{ entity_form.issuance_date.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.expiration_date }}
+                        <label for="{{ entity_form.expiration_date.id_for_label }}">{{ entity_form.expiration_date.label }}</label>
+                        <span class="text-danger">{{ entity_form.expiration_date.errors }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.telephone }}
+                        <label for="{{ entity_form.telephone.id_for_label }}">{{ entity_form.telephone.label }}</label>
+                        <span class="text-danger">{{ entity_form.telephone.errors }}</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ entity_form.email }}
+                        <label for="{{ entity_form.email.id_for_label }}">{{ entity_form.email.label }}</label>
+                        <span class="text-danger">{{ entity_form.email.errors }}</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-default" id="talla">{% trans 'Accept' %}</button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function () {
+            let specification = $('#{{ form.specification.id_for_label }}');
+            const entity = $('#entity-form');
+            const visa = $('#visa-form');
+            specification.change(function (event) {
+                if ($(this).val() === 'VT') {
+                    $('#entity').removeClass('hidden');
+                } else {
+                    $('#entity').addClass('hidden');
+                }
+            });
+            $('button[type=submit]').click(function (event) {
+                event.preventDefault();
+                // enviar a traves de ajax la creacion de una nueva entidad y en la vista añadir esta nueva entidad
+                console.log($('#{{ form.tutelary_entity.id_for_label }}').val());
+                console.log($(this));
+            });
+        });
+    </script>
 {% endblock %}
