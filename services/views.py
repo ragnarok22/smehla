@@ -1,3 +1,4 @@
+from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -148,7 +149,10 @@ class ServiceUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
             self.model = models.Passport
         else:
             raise Http404(_('Service type not found'))
-        return super(ServiceUpdateView, self).dispatch(request, *args, **kwargs)
+        if self.get_object(self.get_queryset()).can_mod(request.user):
+            return super(ServiceUpdateView, self).dispatch(request, *args, **kwargs)
+        else:
+            raise PermissionDenied
 
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})

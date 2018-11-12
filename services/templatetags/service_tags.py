@@ -9,5 +9,5 @@ def upper(value):
 
 
 @register.simple_tag
-def my_tag(service, profile):
+def user_can_mod_service(service, profile):
     return service.can_mod(profile)
