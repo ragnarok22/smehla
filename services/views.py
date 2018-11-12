@@ -194,3 +194,14 @@ class EntityUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
 class EntityDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
     model = models.Entity
     success_url = reverse_lazy('services:entity_list')
+
+
+class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMixin):
+    model = models.Entity
+
+    # def get_queryset(self):
+    #     name = self.request.GET.get('name', None)
+    #     if name:
+    #         return self.model.objects.filter(name__contains=name)
+    #     return super().get_queryset()
+#

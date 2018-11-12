@@ -26,4 +26,5 @@ urlpatterns = [
     path('entity/<int:pk>/detail/', views.EntityDetailView.as_view(), name='entity_detail'),
     path('entity/<int:pk>/update/', views.EntityUpdateView.as_view(), name='entity_update'),
     path('entity/<int:pk>/delete/', views.EntityDeleteView.as_view(), name='entity_delete'),
+    path('entity/search/', views.EntitySearchView.as_view(), name='entity_search'),
 ]

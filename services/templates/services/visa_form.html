@@ -106,6 +106,11 @@
                         {{ entity_form.name }}
                         <label for="{{ entity_form.name.id_for_label }}">{{ entity_form.name.label }}</label>
                         <span class="text-danger">{{ entity_form.name.errors }}</span>
+                        <ol id="entity-list">
+                            {#                            <li><a href="#">entity 1</a></li>#}
+                            {#                            <li><a href="#">entity 2</a></li>#}
+                            {#                            <li><a href="#">entity 3</a></li>#}
+                        </ol>
                     </div>
                 </div>
                 <div class="col">
@@ -168,7 +173,7 @@
             let specification = $('#{{ form.specification.id_for_label }}');
             const entity = $('#entity-form');
             const visa = $('#visa-form');
-            specification.change(function (event) {
+            specification.change(function () {
                 if ($(this).val() === 'VT') {
                     $('#entity').removeClass('hidden');
                 } else {
@@ -181,6 +186,39 @@
                 console.log($('#{{ form.tutelary_entity.id_for_label }}').val());
                 console.log($(this));
             });
+
+            let typingTimer; //timer identifier
+            const typingInterval = 1000; //
+            let entity_name = $('#{{ entity_form.name.id_for_label }}');
+            entity_name.keyup(function () {
+                clearTimeout(typingTimer);
+                if ($(this).val) {
+                    typingTimer = setTimeout(doneTyping, typingInterval);
+                }
+            });
+
+            function doneTyping() {
+                let result = '';
+                const en_list = ['universidad', 'ceramica blanca', 'particular'];
+                $.ajax("{% url 'services:entity_search' %}", {
+                    method: 'GET',
+                    data: {'name': entity_name.val()},
+                    success: function (data, status) {
+                        console.log(data);
+                        {#for (let i = 0; i < data.length;i++){#}
+                        {#    console.log(data[i]);#}
+                        //}
+                    },
+                    error: function (a, b) {
+                        console.log(a);
+                        console.log(b);
+                    }
+                });
+                for(en in en_list){
+                    result += '<li><a href="#">' + en_list[en] + '</a></li>' + '\n';
+                }
+                $("#entity-list").html(result);
+            }
         });
     </script>
 {% endblock %}
