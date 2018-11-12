@@ -92,76 +92,74 @@
         </form>
     </div>
 
-    <div id="entity" class="container-fluid">
-        <form method="post" id="entity-form">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col">
-                    <h1 class="h1 text-center">{% trans 'Tutelary Entity data' %}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.name }}
-                        <label for="{{ entity_form.name.id_for_label }}">{{ entity_form.name.label }}</label>
-                        <span class="text-danger">{{ entity_form.name.errors }}</span>
-                        <ol id="entity-list">
-                            {#                            <li><a href="#">entity 1</a></li>#}
-                            {#                            <li><a href="#">entity 2</a></li>#}
-                            {#                            <li><a href="#">entity 3</a></li>#}
-                        </ol>
+    {% if entity_form %}
+        <div id="entity" class="container-fluid">
+            <form method="post" id="entity-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <h1 class="h1 text-center">{% trans 'Tutelary Entity data' %}</h1>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.localization }}
-                        <label for="{{ entity_form.localization.id_for_label }}">{{ entity_form.localization.label }}</label>
-                        <span class="text-danger">{{ entity_form.localization.errors }}</span>
+                <div class="row">
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.name }}
+                            <label for="{{ entity_form.name.id_for_label }}">{{ entity_form.name.label }}</label>
+                            <span class="text-danger">{{ entity_form.name.errors }}</span>
+                            <ol id="entity-list"></ol>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.localization }}
+                            <label for="{{ entity_form.localization.id_for_label }}">{{ entity_form.localization.label }}</label>
+                            <span class="text-danger">{{ entity_form.localization.errors }}</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.identification_no }}
+                            <label for="{{ entity_form.identification_no.id_for_label }}">{{ entity_form.identification_no.label }}</label>
+                            <span class="text-danger">{{ entity_form.identification_no.errors }}</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.identification_no }}
-                        <label for="{{ entity_form.identification_no.id_for_label }}">{{ entity_form.identification_no.label }}</label>
-                        <span class="text-danger">{{ entity_form.identification_no.errors }}</span>
+                <div class="row">
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.issuance_date }}
+                            <label for="{{ entity_form.issuance_date.id_for_label }}">{{ entity_form.issuance_date.label }}</label>
+                            <span class="text-danger">{{ entity_form.issuance_date.errors }}</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.expiration_date }}
+                            <label for="{{ entity_form.expiration_date.id_for_label }}">{{ entity_form.expiration_date.label }}</label>
+                            <span class="text-danger">{{ entity_form.expiration_date.errors }}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.issuance_date }}
-                        <label for="{{ entity_form.issuance_date.id_for_label }}">{{ entity_form.issuance_date.label }}</label>
-                        <span class="text-danger">{{ entity_form.issuance_date.errors }}</span>
+                <div class="row">
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.telephone }}
+                            <label for="{{ entity_form.telephone.id_for_label }}">{{ entity_form.telephone.label }}</label>
+                            <span class="text-danger">{{ entity_form.telephone.errors }}</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+                            {{ entity_form.email }}
+                            <label for="{{ entity_form.email.id_for_label }}">{{ entity_form.email.label }}</label>
+                            <span class="text-danger">{{ entity_form.email.errors }}</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.expiration_date }}
-                        <label for="{{ entity_form.expiration_date.id_for_label }}">{{ entity_form.expiration_date.label }}</label>
-                        <span class="text-danger">{{ entity_form.expiration_date.errors }}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.telephone }}
-                        <label for="{{ entity_form.telephone.id_for_label }}">{{ entity_form.telephone.label }}</label>
-                        <span class="text-danger">{{ entity_form.telephone.errors }}</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="md-form">
-                        {{ entity_form.email }}
-                        <label for="{{ entity_form.email.id_for_label }}">{{ entity_form.email.label }}</label>
-                        <span class="text-danger">{{ entity_form.email.errors }}</span>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    {% endif %}
     <div class="row">
         <button type="submit" class="btn btn-default" id="talla">{% trans 'Accept' %}</button>
     </div>
@@ -214,7 +212,7 @@
                         console.log(b);
                     }
                 });
-                for(en in en_list){
+                for (en in en_list) {
                     result += '<li><a href="#">' + en_list[en] + '</a></li>' + '\n';
                 }
                 $("#entity-list").html(result);

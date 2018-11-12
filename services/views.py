@@ -154,6 +154,11 @@ class ServiceUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
         else:
             raise PermissionDenied
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['entity_form'] = forms.EntityForm
+        return context
+
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
