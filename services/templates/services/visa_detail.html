@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col">
                 <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
@@ -19,12 +19,9 @@
                 <p>{% trans 'Full name' %}: {{ visa.client.get_full_name }}</p>
             </div>
             <div class="col">
-                {% if visa.client.picture %}
-                    <img src="{{ visa.client.picture }}" alt="{{ visa.client.first_name }}">
-                    {{ visa.client.picture }}
-                {% else %}
-                    <img src="{% static 'accounts/img/user.png' %}" width="50" height="50">
-                {% endif %}
+                <img src="
+                        {% if visa.client.picture %}{{ visa.client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
+                     alt="{{ visa.client.first_name }}" width="150" height="150">
             </div>
         </div>
         <div class="row">
