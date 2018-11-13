@@ -1,12 +1,120 @@
 {% extends 'navbar.html' %}
 {% load i18n %}
+{% load static %}
+{% load service_tags %}
 
 {% block title %}
     Visa {{ visa }}
 {% endblock %}
 
 {% block main %}
-    {{ visa }}
-    <a href="{% url 'services:service_update' type visa.pk %}">{% trans 'Update' %}</a>
-{#    <a href="{% url 'services:visa_delete' visa.pk %}">{% trans 'Delete' %}</a>#}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>{% trans 'Full name' %}: {{ visa.client.get_full_name }}</p>
+            </div>
+            <div class="col">
+                {% if visa.client.picture %}
+                    <img src="{{ visa.client.picture }}" alt="{{ visa.client.first_name }}">
+                    {{ visa.client.picture }}
+                {% else %}
+                    <img src="{% static 'accounts/img/user.png' %}" width="50" height="50">
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Born date' %}: {{ visa.client.born_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Civil status' %}: {{ visa.client.get_civil_status_display }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Naturalness' %}: {{ visa.client.naturalness }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Nationality' %}: {{ visa.client.nationality }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="h3">{% trans 'Parents' %}</h3>
+            </div>
+            <div class="col">
+                <p>{% trans 'Father name' %}: {{ visa.client.father }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Mother name' %}: {{ visa.client.mother }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Address' %}: {{ visa.client.address }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Phone number' %}: {{ visa.client.phone }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Email' %}: {{ visa.client.email }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Migratory acts' %}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Specification' %}: {{ visa.get_specification_display }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Extension request date' %}: {{ visa.extension_request_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Request type' %}: {{ visa.get_request_type_display }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Passport No.' %}: {{ visa.passport_no }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Passport issuance date' %}: {{ visa.passport_issuance_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Passport expiration date' %}: {{ visa.passport_expiration_date }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Visa No.' %}: {{ visa.visa_no }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Visa issuance date' %}: {{ visa.visa_issuance_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Visa expiration date' %}: {{ visa.visa_expiration_date }}</p>
+            </div>
+        </div>
+    </div>
+    {% user_can_mod_service visa user as can_mod %}
+    {% if can_mod %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'services:service_update' type visa.pk %}"
+                   class="btn btn-default">{% trans 'Update' %}</a>
+                <a href="{% url 'services:service_delete' type visa.pk %}"
+                   class="btn btn-danger">{% trans 'Delete' %}</a>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
