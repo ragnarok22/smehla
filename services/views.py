@@ -87,15 +87,8 @@ class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
 
 
 class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
-    object: models.Service
-
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
-
-    def get_context_data(self, **kwargs):
-        context = super(ServiceCreateView, self).get_context_data(**kwargs)
-        context['entity_form'] = forms.EntityForm
-        return context
 
 
 class ServiceDetailView(services_mixins.ServiceMixin, generic.DetailView):
@@ -103,20 +96,11 @@ class ServiceDetailView(services_mixins.ServiceMixin, generic.DetailView):
 
 
 class ServiceUpdateView(services_mixins.ServiceMixin, mixins.ServiceOccupationRequiredMixin, generic.UpdateView):
-    model = models.Service
-    fields = '__all__'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['entity_form'] = forms.EntityForm
-        return context
-
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
 
 class ServiceDeleteView(services_mixins.ServiceMixin, generic.DeleteView):
-    service_type = None
     success_url = reverse_lazy('services:tools')
 
 
@@ -155,8 +139,3 @@ class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMix
     #     if name:
     #         return self.model.objects.filter(name__contains=name)
     #     return super().get_queryset()
-
-
-class ResidenceMarriageCreateView(services_mixins.ServiceMixin, generic.CreateView):
-    def get_success_url(self):
-        return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})

@@ -33,7 +33,7 @@
                             <h5 class="text-uppercase">Residencia</h5>
                         </div>
                         <div class="card-body px-lg-5 pt-0">
-                            <a href="{% url 'services:client_list' 'residence' %}" class="btn btn-default">
+                            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#residence-types">
                                 Residencia a un cliente
                             </a>
                             <a href="#" class="btn btn-default">Nuevo cliente</a>
@@ -146,4 +146,40 @@
         </div>
         <!-- List of services -->
     </div>
+
+    <!-- Residence type modal -->
+    <div class="modal fade" id="residence-types" tabindex="-1" role="dialog" aria-labelledby="residence-types"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">{% trans 'Residence types' %}</h4>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal body-->
+                <div class="modal-body mx-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'services:client_list' 'renovation' %}"
+                                   class="btn btn-default">{% trans 'Residence renovation' %}</a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'services:client_list' 'marriage' %}"
+                                   class="btn btn-default">{% trans 'Residence by marriage' %}</a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'services:client_list' 'authorization' %}" class="btn btn-default">{% trans 'Residence authorization' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal body-->
+            </div>
+        </div>
+
+    </div>
+    <!-- Residence type modal -->
 {% endblock %}

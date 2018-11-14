@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-14 09:54-0500\n"
+"POT-Creation-Date: 2018-11-14 14:04-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\mixins.py:24
+msgid "Service type not found"
+msgstr "tipo de serviço no encontrado"
 
 #: .\models.py:9
 msgid "Single"
@@ -81,7 +85,7 @@ msgstr "nome mãe"
 msgid "Address"
 msgstr "Residência"
 
-#: .\models.py:34 .\models.py:197
+#: .\models.py:34 .\models.py:209
 #: .\templates\services\client_detail_template.html:58
 #: .\templates\services\client_list.html:15
 msgid "Email"
@@ -137,15 +141,18 @@ msgstr "Visto"
 msgid "Passport"
 msgstr "Passaporte"
 
-#: .\models.py:62
+#: .\models.py:62 .\templates\services\residence_form.html:26
+#: .\templates\services\tools.html:166
 msgid "Residence renovation"
 msgstr "Renovação de residência"
 
-#: .\models.py:63
+#: .\models.py:63 .\templates\services\residence_form.html:20
+#: .\templates\services\tools.html:169
 msgid "Residence by marriage"
 msgstr "Residência por casamento"
 
-#: .\models.py:64
+#: .\models.py:64 .\models.py:149 .\templates\services\residence_form.html:14
+#: .\templates\services\tools.html:172
 msgid "Residence authorization"
 msgstr "Autorização de residência"
 
@@ -185,11 +192,11 @@ msgstr "Visto de turista"
 msgid "Short-term visa"
 msgstr "Visto de curto prazo"
 
-#: .\models.py:101 .\models.py:170
+#: .\models.py:101 .\models.py:178
 msgid "Caducity"
 msgstr "Caducidade"
 
-#: .\models.py:102 .\models.py:171
+#: .\models.py:102 .\models.py:179
 msgid "Misplacing"
 msgstr "Extravio"
 
@@ -205,19 +212,19 @@ msgstr "Pedido de prorrogação aos"
 msgid "Request type"
 msgstr "Tipo de prorrogação"
 
-#: .\models.py:109 .\models.py:140 .\models.py:156 .\models.py:178
+#: .\models.py:109 .\models.py:144 .\models.py:164 .\models.py:186
 #: .\templates\services\passport_detail.html:44
 #: .\templates\services\visa_detail.html:38
 msgid "Passport No."
 msgstr "Passaporte No"
 
-#: .\models.py:110 .\models.py:141 .\models.py:157
+#: .\models.py:110 .\models.py:145 .\models.py:165
 #: .\templates\services\passport_detail.html:47
 #: .\templates\services\visa_detail.html:41
 msgid "Passport issuance date"
 msgstr "Data de Emissão de passaporte"
 
-#: .\models.py:111 .\models.py:142 .\models.py:158
+#: .\models.py:111 .\models.py:146 .\models.py:166
 #: .\templates\services\passport_detail.html:50
 #: .\templates\services\visa_detail.html:44
 msgid "Passport expiration date"
@@ -247,7 +254,7 @@ msgstr "Vistos"
 msgid "Married to"
 msgstr "Casado com"
 
-#: .\models.py:130 .\models.py:138 .\models.py:194
+#: .\models.py:130 .\models.py:142 .\models.py:206
 msgid "Issuance date"
 msgstr "Emitido aos"
 
@@ -255,103 +262,127 @@ msgstr "Emitido aos"
 msgid "Valid date"
 msgstr "Válido aos"
 
-#: .\models.py:136
+#: .\models.py:134
+#, fuzzy
+#| msgid "Residence by marriage"
+msgid "Residence by Marriage"
+msgstr "Residência por casamento"
+
+#: .\models.py:135
+msgid "Residences by Marriage"
+msgstr "Residências por casamento"
+
+#: .\models.py:140
 msgid "Authorization No."
 msgstr "No. de autorização"
 
-#: .\models.py:137
+#: .\models.py:141
 msgid "Issued in"
 msgstr "Emitido em"
 
-#: .\models.py:139
+#: .\models.py:143
 msgid "Valid until"
 msgstr "Válido até"
 
-#: .\models.py:147
+#: .\models.py:150
+msgid "Residences authorization"
+msgstr "Autorização de residências"
+
+#: .\models.py:155
 msgid "Normal"
 msgstr "Normal"
 
-#: .\models.py:148
+#: .\models.py:156
 msgid "Service"
 msgstr "Serviço"
 
-#: .\models.py:151 .\templates\services\passport_detail.html:25
+#: .\models.py:159 .\templates\services\passport_detail.html:25
 msgid "Passport type"
 msgstr "Tipo do Passaporte"
 
-#: .\models.py:152 .\templates\services\passport_detail.html:28
+#: .\models.py:160 .\templates\services\passport_detail.html:28
 msgid "Emission date"
 msgstr "Emitido aos"
 
-#: .\models.py:153 .\templates\services\passport_detail.html:36
+#: .\models.py:161 .\templates\services\passport_detail.html:36
 msgid "Remission type"
 msgstr "Tipo de Reemissão"
 
-#: .\models.py:154 .\templates\services\passport_detail.html:39
+#: .\models.py:162 .\templates\services\passport_detail.html:39
 msgid "Remission date"
 msgstr "Reemisssão aos"
 
-#: .\models.py:155 .\templates\services\passport_detail.html:31
+#: .\models.py:163 .\templates\services\passport_detail.html:31
 msgid "Personal No."
 msgstr "No. Pessoal"
 
-#: .\models.py:161
+#: .\models.py:169
 msgid "passport"
 msgstr "Passaporte"
 
-#: .\models.py:162
+#: .\models.py:170
 msgid "passports"
 msgstr "Passaportes"
 
-#: .\models.py:174
+#: .\models.py:182
 msgid "Residence authorization No."
 msgstr "No. de autorização de residência"
 
-#: .\models.py:175
+#: .\models.py:183
 msgid "Residence authorization issuance date"
 msgstr "Data de emissão da autorização de residência"
 
-#: .\models.py:176
+#: .\models.py:184
 msgid "Residence authorization expiration date"
 msgstr "Data de vencimento de autorização de residência"
 
-#: .\models.py:177
+#: .\models.py:185
 msgid "Renovation reason"
 msgstr "Motivo de renovação"
 
-#: .\models.py:179
+#: .\models.py:187
 msgid "Issuance passport date"
 msgstr "Emitido aos de passaporte"
 
-#: .\models.py:180
+#: .\models.py:188
 msgid "Valid passport date"
 msgstr "Válido passaporte aos"
 
-#: .\models.py:185
+#: .\models.py:191
+#, fuzzy
+#| msgid "Residence renovation"
+msgid "Residence Renovation"
+msgstr "Renovação de residência"
+
+#: .\models.py:192
+msgid "Residences Renovation"
+msgstr "Renovação de residências"
+
+#: .\models.py:197
 msgid "Entity"
 msgstr "Entidade"
 
-#: .\models.py:186
+#: .\models.py:198
 msgid "Entities"
 msgstr "Entidades"
 
-#: .\models.py:191
+#: .\models.py:203
 msgid "Name"
 msgstr "Nome"
 
-#: .\models.py:192
+#: .\models.py:204
 msgid "Localization"
 msgstr ""
 
-#: .\models.py:193
+#: .\models.py:205
 msgid "Identification No."
 msgstr "No. Identificação"
 
-#: .\models.py:195
+#: .\models.py:207
 msgid "Expiration date"
 msgstr "Vencido aos"
 
-#: .\models.py:196
+#: .\models.py:208
 msgid "Telephone"
 msgstr "No. telefônico"
 
@@ -486,6 +517,7 @@ msgid "Add service"
 msgstr "Adicionar serviço"
 
 #: .\templates\services\client_detail.html:76
+#: .\templates\services\residence_form.html:5
 msgid "Residence"
 msgstr "Residência"
 
@@ -630,6 +662,10 @@ msgstr "Anterior"
 msgid "Next"
 msgstr "Siguiente"
 
+#: .\templates\services\tools.html:156
+msgid "Residence types"
+msgstr "Tipo de residência"
+
 #: .\templates\services\visa_confirm_delete.html:9
 msgid "Are you sure to delete this visa?"
 msgstr "Tem certeza de excluir este visto?"
@@ -639,15 +675,11 @@ msgstr "Tem certeza de excluir este visto?"
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
 
-#: .\views.py:49
+#: .\views.py:48
 msgid "Is in progress"
 msgstr "Está em endamento"
 
-#: .\views.py:51
+#: .\views.py:50
 #, python-format
 msgid "Has no found any request with %(value)s ci"
 msgstr "Não encontrou nenhum pedido com %(value)s ci"
-
-#: .\views.py:106 .\views.py:133 .\views.py:151 .\views.py:177
-msgid "Service type not found"
-msgstr "tipo de serviço no encontrado"

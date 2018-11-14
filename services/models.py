@@ -130,6 +130,10 @@ class ResidenceMarriage(Service):
     issuance_date = models.DateField(_('Issuance date'))
     valid_date = models.DateField(_('Valid date'))
 
+    class Meta:
+        verbose_name = _('Residence by Marriage')
+        verbose_name_plural = _('Residences by Marriage')
+
 
 class ResidenceAuthorization(Service):
     service_type = 'authorization'
@@ -140,6 +144,10 @@ class ResidenceAuthorization(Service):
     passport_no = models.CharField(_('Passport No.'), max_length=20)
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
+
+    class Meta:
+        verbose_name = _('Residence authorization')
+        verbose_name_plural = _('Residences authorization')
 
 
 class Passport(Service):
@@ -178,6 +186,10 @@ class ResidenceRenovation(Service):
     passport_no = models.CharField(_('Passport No.'), max_length=20)
     issuance_passport_date = models.DateField(_('Issuance passport date'))
     valid_passport_date = models.DateField(_('Valid passport date'))  # v'alido at'e
+
+    class Meta:
+        verbose_name = _('Residence Renovation')
+        verbose_name_plural = _('Residences Renovation')
 
 
 class Entity(models.Model):

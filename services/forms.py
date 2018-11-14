@@ -69,7 +69,19 @@ class EntityForm(forms.ModelForm):
         }
 
 
-class ResidenceForm(forms.ModelForm):
+class ResidenceAuthorizationForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceAuthorization
+        exclude = ['client']
+
+
+class ResidenceMarriageForm(forms.ModelForm):
+    class Meta:
+        model = models.ResidenceMarriage
+        exclude = ['client']
+
+
+class ResidenceRenovationForm(forms.ModelForm):
+    class Meta:
+        model = models.ResidenceRenovation
         exclude = ['client']

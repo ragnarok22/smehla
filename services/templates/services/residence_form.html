@@ -1,0 +1,55 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Residence' %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="residence" name="residence" checked>
+                    <label for="residence" class="custom-control-label">{% trans 'Residence authorization' %}</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="marriage" name="residence">
+                    <label for="marriage" class="custom-control-label">{% trans 'Residence by marriage' %}</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="renovation" name="residence">
+                    <label for="renovation" class="custom-control-label">{% trans 'Residence renovation' %}</label>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="form-container">
+            {{ form }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function () {
+            $('input[type=radio]').click(function (e) {
+                const form_container = $('#form-container');
+                switch ($(this).prop('id')) {
+                    case 'residence':
+                        form_container.html('residence');
+                        break;
+                    case 'marriage':
+                        form_container.html('marriage');
+                        break;
+                    case 'renovation':
+                        form_container.html("<p id=\"talla\">renovation</p> \n<em>tocate</em>");
+                }
+
+            });
+        });
+    </script>
+{% endblock %}
