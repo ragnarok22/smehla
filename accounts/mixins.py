@@ -6,10 +6,10 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import View, generic
 from django.views.generic.base import ContextMixin
+from django.views.generic.detail import SingleObjectMixin
 
 from SIG_SMEHLA.settings import INDEX_URL
 from accounts.models import Profile
-from services import models
 
 
 class AnonymousRequiredMixin(View):
@@ -41,42 +41,6 @@ class SuperuserRequiredMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
-class FACRequiredMixin(LoginRequiredMixin, View):
-    def dispatch(self, request, *args, **kwargs):
-        response = super(FACRequiredMixin, self).dispatch(request, *args, **kwargs)
-        if request.user.occupation == 'FAC':
-            return response
-        else:
-            raise PermissionDenied
-
-
-class BACRequiredMixin(LoginRequiredMixin, View):
-    def dispatch(self, request, *args, **kwargs):
-        response = super(BACRequiredMixin, self).dispatch(request, *args, **kwargs)
-        if request.user.occupation == 'BAC':
-            return response
-        else:
-            raise PermissionDenied
-
-
-class BDACRequiredMixin(LoginRequiredMixin, View):
-    def dispatch(self, request, *args, **kwargs):
-        response = super(BDACRequiredMixin, self).dispatch(request, *args, **kwargs)
-        if request.user.occupation == 'BDAC':
-            return response
-        else:
-            raise PermissionDenied
-
-
-class DIRRequiredMixin(LoginRequiredMixin, View):
-    def dispatch(self, request, *args, **kwargs):
-        response = super(DIRRequiredMixin, self).dispatch(request, *args, **kwargs)
-        if request.user.occupation == 'DIR':
-            return response
-        else:
-            raise PermissionDenied
-
-
 class AdminRequiredMixin(LoginRequiredMixin, View):
     def dispatch(self, request, *args, **kwargs):
         response = super(AdminRequiredMixin, self).dispatch(request, *args, **kwargs)
@@ -86,28 +50,12 @@ class AdminRequiredMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
-class ServiceOccupationRequiredMixin(LoginRequiredMixin):
+class ServiceOccupationRequiredMixin(LoginRequiredMixin, SingleObjectMixin):
     def dispatch(self, request, *args, **kwargs):
-        response = super(ServiceOccupationRequiredMixin, self).dispatch(request, *args, **kwargs)
-        service = models.Service.objects.get(pk=kwargs.get('pk'))
-        if service:  # updateView
-            if service.status == '1' and request.user.occupation == 'FAC':
-                return response
-            elif service.status == '2' and request.user.occupation == 'BAC':
-                return response
-            elif service.status == '3' and request.user.occupation == 'BDAC':
-                return response
-            elif service.status == '4' and request.user.occupation == 'DIR':
-                return response
-            else:
-                raise PermissionDenied
-        else:  # createView
-            t = kwargs.get('type')
-            if t:
-                if request.user.occupation == 'FAC':
-                    return response
-                else:
-                    raise PermissionDenied
+        if self.get_object(self.get_queryset()).can_mod(request.user):
+            return super(ServiceOccupationRequiredMixin, self).dispatch(request, *args, **kwargs)
+        else:
+            raise PermissionDenied
 
 
 class NavbarMixin(ContextMixin):
