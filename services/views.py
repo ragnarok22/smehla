@@ -6,6 +6,7 @@ from django.views import generic
 
 from accounts import mixins
 from services import models, forms
+from services import mixins as services_mixins
 
 
 class IndexView(mixins.NavbarMixin, generic.TemplateView):
@@ -87,24 +88,8 @@ class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:client_list')
 
 
-class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
     object: models.Service
-    service_type = None
-
-    def dispatch(self, request, *args, **kwargs):
-        _type = kwargs.get('type')
-        self.service_type = _type
-        if _type == 'visa':
-            self.model = models.Visa
-            self.form_class = forms.VisaCreateForm
-            self.extra_context = {'type': 'visa'}
-        elif _type == 'passport':
-            self.model = models.Passport
-            self.form_class = forms.PassportCreateForm
-            self.extra_context = {'type': 'passport'}
-        else:
-            raise Http404(_('Service type not found'))
-        return super(ServiceCreateView, self).dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
@@ -122,37 +107,13 @@ class ServiceCreateView(mixins.LoginRequiredMixin, generic.CreateView):
         return response
 
 
-class ServiceDetailView(mixins.LoginRequiredMixin, generic.DetailView):
-    def dispatch(self, request, *args, **kwargs):
-        _type = kwargs.get('type')
-        if _type == 'visa':
-            self.model = models.Visa
-        elif _type == 'passport':
-            self.model = models.Passport
-        else:
-            raise Http404(_('Service type not found'))
-        self.extra_context = {'type': _type}
-        return super(ServiceDetailView, self).dispatch(request, *args, **kwargs)
+class ServiceDetailView(services_mixins.ServiceMixin, generic.DetailView):
+    pass
 
 
-class ServiceUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
+class ServiceUpdateView(services_mixins.ServiceMixin, mixins.ServiceOccupationRequiredMixin, generic.UpdateView):
     model = models.Service
     fields = '__all__'
-    service_type = None
-
-    def dispatch(self, request, *args, **kwargs):
-        _type = kwargs.get('type')
-        self.service_type = _type
-        if _type == 'visa':
-            self.model = models.Visa
-        elif _type == 'passport':
-            self.model = models.Passport
-        else:
-            raise Http404(_('Service type not found'))
-        if self.get_object(self.get_queryset()).can_mod(request.user):
-            return super(ServiceUpdateView, self).dispatch(request, *args, **kwargs)
-        else:
-            raise PermissionDenied
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -163,19 +124,9 @@ class ServiceUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
 
-class ServiceDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
+class ServiceDeleteView(services_mixins.ServiceMixin, generic.DeleteView):
     service_type = None
     success_url = reverse_lazy('services:tools')
-
-    def dispatch(self, request, *args, **kwargs):
-        _type = kwargs.get('type')
-        if _type == 'visa':
-            self.model = models.Visa
-        elif _type == 'passport':
-            self.model = models.Passport
-        else:
-            raise Http404(_('Service type not found'))
-        return super(ServiceDeleteView, self).dispatch(request, *args, **kwargs)
 
 
 class EntityListView(mixins.LoginRequiredMixin, generic.ListView):
@@ -213,3 +164,7 @@ class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMix
     #     if name:
     #         return self.model.objects.filter(name__contains=name)
     #     return super().get_queryset()
+
+
+class ResidenceMarriageCreateView(services_mixins.ServiceMixin, generic.CreateView):
+    pass
