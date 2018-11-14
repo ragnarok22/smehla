@@ -48,7 +48,7 @@ class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
                 else:
                     context['message'] = _('Is in progress')
             else:
-                context['message'] = _('Has no found any request with %s ci' % value)
+                context['message'] = _('Has no found any request with %(value)s ci') % {'value': value}
             context['value'] = value
         return context
 
@@ -213,4 +213,3 @@ class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMix
     #     if name:
     #         return self.model.objects.filter(name__contains=name)
     #     return super().get_queryset()
-#

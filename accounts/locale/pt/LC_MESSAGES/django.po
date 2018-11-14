@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-06 07:40-0500\n"
+"POT-Creation-Date: 2018-11-13 21:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -233,10 +233,6 @@ msgstr "Editar perfil"
 msgid "Logout"
 msgstr "Sair"
 
-#: .\templates\navbar.html:162
-msgid "Up"
-msgstr "Acima"
-
 #: .\templates\navbar.html:166
 msgid "Manage System"
 msgstr "Gerenciar sistema"
@@ -273,9 +269,3 @@ msgstr "Direito autoral: Criado pela Universidade de Holguín"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
-
-#~ msgid "Please, give us your opinion about this site"
-#~ msgstr "Por favor, dê-nos a sua opinião sobre este site"
-
-#~ msgid "Close"
-#~ msgstr "Fechar"
