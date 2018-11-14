@@ -1,5 +1,6 @@
 {% extends 'navbar.html' %}
 {% load i18n %}
+{% load service_tags %}
 
 {% block title %}
     Peticion de Pasaporte
@@ -7,20 +8,56 @@
 
 {% block main %}
     <div class="container-fluid">
-        <h1 class="h1 text-center">Passport to {{ passport.client }}</h1>
-        <p>passport type: {{ passport.get_passport_type_display }}</p>
-        <p>emission date: {{ passport.emission_date }}</p>
-        <p>remission type: {{ passport.get_remission_type_display }}</p>
-        <p>remission date: {{ passport.remission_date }}</p>
-        <p>personal no: {{ passport.personal_no }}</p>
-        <p>passport no: {{ passport.passport_no }}</p>
-        <p>passport issuance date: {{ passport.passport_issuance_date }}</p>
-        <p>passport expiration date: {{ passport.passport_expiration_date }}</p>
-    <div class="row">
-        <div class="col">
-            <a href="#" class="btn btn-default">{% trans 'Update' %}</a>
-            <a href="#" class="btn btn-default">{% trans 'Delete' %}</a>
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
+            </div>
         </div>
-    </div>
+        {% include 'services/client_detail_template.html' with client=passport.client only %}
+
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Passport detail' %}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Passport type' %}: {{ passport.get_passport_type_display }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Emission date' %}: {{ passport.emission_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Personal No.' %}: {{ passport.personal_no }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Remission type' %}: {{ passport.get_remission_type_display }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Remission date' %}: {{ passport.remission_date }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Passport No.' %}: {{ passport.passport_no }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Passport issuance date' %}: {{ passport.passport_issuance_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Passport expiration date' %}: {{ passport.passport_expiration_date }}</p>
+            </div>
+        </div>
+        {% user_can_mod_service passport user as can_mod %}
+        {% if can_mod %}
+            <div class="row">
+                <div class="col">
+                    <a href="#" class="btn btn-default">{% trans 'Update' %}</a>
+                    <a href="#" class="btn btn-danger">{% trans 'Delete' %}</a>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
