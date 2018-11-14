@@ -161,7 +161,7 @@
         </div>
     {% endif %}
     <div class="row">
-        <button type="submit" class="btn btn-default" id="talla">{% trans 'Accept' %}</button>
+        <button type="submit" class="btn btn-default" id="submit">{% trans 'Accept' %}</button>
     </div>
 {% endblock %}
 
@@ -181,8 +181,7 @@
             $('button[type=submit]').click(function (event) {
                 event.preventDefault();
                 // enviar a traves de ajax la creacion de una nueva entidad y en la vista añadir esta nueva entidad
-                console.log($('#{{ form.tutelary_entity.id_for_label }}').val());
-                console.log($(this));
+                $('#visa-form').submit();
             });
 
             let typingTimer; //timer identifier

@@ -1,6 +1,7 @@
 from django import forms
 
 from services import models
+from . import widgets
 
 
 class VisaCreateForm(forms.ModelForm):
@@ -8,15 +9,15 @@ class VisaCreateForm(forms.ModelForm):
         model = models.Visa
         exclude = ['client', 'status']
         widgets = {
-            'specification': forms.Select(attrs={'class': 'form-control custom-select'}),
-            'request_type': forms.Select(attrs={'class': 'form-control custom-select'}),
-            'passport_no': forms.TextInput(attrs={'class': 'form-control'}),
-            'visa_no': forms.TextInput(attrs={'class': 'form-control'}),
-            'extension_request_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
-            'passport_expiration_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
-            'passport_issuance_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
-            'visa_expiration_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
-            'visa_issuance_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
+            'specification': widgets.Select(),
+            'request_type': widgets.Select(),
+            'passport_no': widgets.TextInput(),
+            'visa_no': widgets.TextInput(),
+            'extension_request_date': widgets.DateInput(),
+            'passport_expiration_date': widgets.DateInput(),
+            'passport_issuance_date': widgets.DateInput(),
+            'visa_expiration_date': widgets.DateInput(),
+            'visa_issuance_date': widgets.DateInput(),
         }
 
 
@@ -58,11 +59,17 @@ class EntityForm(forms.ModelForm):
         model = models.Entity
         fields = '__all__'
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'localization': forms.TextInput(attrs={'class': 'form-control'}),
-            'identification_no': forms.TextInput(attrs={'class': 'form-control'}),
-            'issuance_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
-            'expiration_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
-            'telephone': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'name': widgets.TextInput(),
+            'localization': widgets.TextInput(),
+            'identification_no': widgets.TextInput(),
+            'issuance_date': widgets.DateInput(),
+            'expiration_date': widgets.DateInput(),
+            'telephone': widgets.TextInput(),
+            'email': widgets.EmailInput(),
         }
+
+
+class ResidenceForm(forms.ModelForm):
+    class Meta:
+        model = models.ResidenceAuthorization
+        exclude = ['client']

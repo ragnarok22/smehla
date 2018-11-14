@@ -17,6 +17,8 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
             self.model = models.Visa
         elif _type == 'passport':
             self.model = models.Passport
+        elif _type == 'residence':
+            self.model = models.ResidenceAuthorization
         else:
             raise Http404(_('Service type not found'))
         self.extra_context = {'type': _type}
@@ -32,4 +34,13 @@ class ServiceFormMixin(ServiceMixin, ModelFormMixin):
             self.form_class = forms.VisaCreateForm
         elif self.service_type == 'passport':
             self.form_class = forms.PassportCreateForm
+        elif self.service_type == 'residence':
+            self.form_class = forms.ResidenceForm
         return super(ServiceFormMixin, self).dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.service_type = self.service_type
+        self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
+        response = super(ServiceFormMixin, self).form_valid(form)
+        return response

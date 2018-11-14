@@ -1,12 +1,10 @@
-from django.core.exceptions import PermissionDenied
-from django.http import Http404
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
 
 from accounts import mixins
-from services import models, forms
 from services import mixins as services_mixins
+from services import models, forms
 
 
 class IndexView(mixins.NavbarMixin, generic.TemplateView):
@@ -99,13 +97,6 @@ class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
         context['entity_form'] = forms.EntityForm
         return context
 
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.service_type = self.service_type
-        self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
-        response = super(ServiceCreateView, self).form_valid(form)
-        return response
-
 
 class ServiceDetailView(services_mixins.ServiceMixin, generic.DetailView):
     pass
@@ -167,4 +158,5 @@ class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMix
 
 
 class ResidenceMarriageCreateView(services_mixins.ServiceMixin, generic.CreateView):
-    pass
+    def get_success_url(self):
+        return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
