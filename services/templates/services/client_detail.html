@@ -98,7 +98,9 @@
                             {% if service.visa %}
                                 <td>{{ service.visa.get_service_type }}</td>
                             {% elif service.passport %}
-                                <td>{{ service.pasport.get_service_type }}</td>
+                                <td>{{ service.passport.get_service_type }}</td>
+                            {% else %}
+                                <td>{{ service.get_service_type }}</td>
                             {% endif %}
                             <td>{{ service.get_status_display }}</td>
                         </tr>
@@ -113,9 +115,9 @@
             </div>
         </div>
         <div class="row">
-            {% if user.occupation == 'FAC' %}
                 <a href="{% url 'services:client_update' client.pk %}" class="btn btn-success">{% trans 'Update' %}</a>
                 <a href="{% url 'services:client_delete' client.pk %}" class="btn btn-success">{% trans 'Delete' %}</a>
+            {% if user.occupation == 'FAC' %}
                 <a href="#" class="btn btn-success" data-toggle="modal"
                    data-target="#add-service">{% trans 'Add service' %}</a>
             {% endif %}
