@@ -59,6 +59,9 @@ class Service(models.Model):
         'None': _('Unknown service type'),
         'visa': _('Visa'),
         'passport': _('Passport'),
+        'renovation': _('Residence renovation'),
+        'marriage': _('Residence by marriage'),
+        'authorization': _('Residence authorization'),
     }
     client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
@@ -72,8 +75,10 @@ class Service(models.Model):
 
     def can_mod(self, user):
         if user:
-            if (self.status == '1' and user.occupation == 'FAC') or (self.status == '2' and user.occupation == 'BAC') or (
-                    self.status == '3' and user.occupation == 'BDAC') or (self.status == '4' and user.occupation == 'DIR'):
+            if (self.status == '1' and user.occupation == 'FAC') or (
+                    self.status == '2' and user.occupation == 'BAC') or (
+                    self.status == '3' and user.occupation == 'BDAC') or (
+                    self.status == '4' and user.occupation == 'DIR'):
                 return True
         return False
 
@@ -118,6 +123,25 @@ class Visa(Service):
         return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_specification_display())
 
 
+class ResidenceMarriage(Service):
+    service_type = 'marriage'
+    married_to = models.CharField(_('Married to'), max_length=100)
+    ci = models.CharField(_('Identity card'), max_length=13)
+    issuance_date = models.DateField(_('Issuance date'))
+    valid_date = models.DateField(_('Valid date'))
+
+
+class ResidenceAuthorization(Service):
+    service_type = 'authorization'
+    authorization_no = models.PositiveIntegerField(_('Authorization No.'))
+    issued_place = models.CharField(_('Issued in'), max_length=100)
+    issuance_date = models.DateField(_('Issuance date'))
+    valid_date = models.DateField(_('Valid until'))
+    passport_no = models.CharField(_('Passport No.'), max_length=20)
+    passport_issuance_date = models.DateField(_('Passport issuance date'))
+    passport_expiration_date = models.DateField(_('Passport expiration date'))
+
+
 class Passport(Service):
     PASSPORT_TYPE = (
         ('N', _('Normal')),
@@ -141,23 +165,15 @@ class Passport(Service):
         return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())
 
 
-# class ResidentAuthorization(Service):
-#     service_type = 'resident'
-#     AUTHORIZATION_TYPE = (
-#         ('', _('Married')),
-#         ('VFR', _('VFR')),
-#     )
-
-
-class ResidentRenovation(Service):
+class ResidenceRenovation(Service):
     REASON = (
         ('C', _('Caducity')),
         ('M', _('Misplacing')),
     )
     service_type = 'renovation'
-    aur_no = models.CharField(_('AUR No.'), max_length=100)
-    issuance_date = models.DateField(_('Issuance date'))
-    expiration_date = models.DateField(_('Expiration date'))
+    residence_authorization_no = models.CharField(_('Residence authorization No.'), max_length=100)
+    issuance_date = models.DateField(_('Residence authorization issuance date'))
+    expiration_date = models.DateField(_('Residence authorization expiration date'))
     reason = models.CharField(_('Renovation reason'), max_length=1, choices=REASON)
     passport_no = models.CharField(_('Passport No.'), max_length=20)
     issuance_passport_date = models.DateField(_('Issuance passport date'))
