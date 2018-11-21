@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Delete Residence Renovation' %}
+{% endblock %}
+
+{% block main %}
+    <h1>{% trans 'Are you sure to delete this residence renovation?' %}</h1>
+    <p>{% trans 'Allottee to' %}: {{ residencerenovation.client }}</p>
+    <p>{% trans 'Residence authorization expiration date' %}: {{ residencerenovation.expiration_date }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">{% trans 'Accept' %}</button>
+    </form>
+{% endblock %}

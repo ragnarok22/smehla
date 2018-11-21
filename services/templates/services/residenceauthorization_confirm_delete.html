@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Delete Residence by Marriage' %}
+{% endblock %}
+
+{% block main %}
+    <h1>{% trans 'Are you sure to delete this residence authorization?' %}</h1>
+    <p>{% trans 'Allottee to' %}: {{ residenceauthorization.client }}</p>
+    <p>{% trans 'Issuance date' %}: {{ residenceauthorization.issuance_date }}</p>
+    <p>{% trans 'Valid until' %}: {{ residenceauthorization.valid_date }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">{% trans 'Accept' %}</button>
+    </form>
+{% endblock %}
