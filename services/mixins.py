@@ -27,19 +27,19 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
                 self.form_class = forms.PassportCreateForm
         elif _type == 'authorization':
             self.model = models.ResidenceAuthorization
-            self.template_name = 'services/residence_form.html'
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ResidenceAuthorizationForm
+                self.template_name = 'services/residence_form.html'
         elif _type == 'renovation':
             self.model = models.ResidenceRenovation
-            self.template_name = 'services/residence_form.html'
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ResidenceRenovationForm
+                self.template_name = 'services/residence_form.html'
         elif _type == 'marriage':
             self.model = models.ResidenceMarriage
-            self.template_name = 'services/residence_form.html'
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ResidenceMarriageForm
+                self.template_name = 'services/residence_form.html'
         else:
             raise Http404(_('Service type not found'))
         self.extra_context = {'type': _type}

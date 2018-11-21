@@ -72,7 +72,7 @@ class EntityForm(forms.ModelForm):
 class ResidenceAuthorizationForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceAuthorization
-        exclude = ['client']
+        exclude = ['client', 'status']
         widgets = {
             'authorization_no': widgets.NumberInput(),
             'issued_place': widgets.TextInput(),
@@ -87,7 +87,7 @@ class ResidenceAuthorizationForm(forms.ModelForm):
 class ResidenceMarriageForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceMarriage
-        exclude = ['client']
+        exclude = ['client', 'status']
         widgets = {
             'married_to': widgets.TextInput(),
             'ci': widgets.TextInput(),
@@ -99,7 +99,7 @@ class ResidenceMarriageForm(forms.ModelForm):
 class ResidenceRenovationForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceRenovation
-        exclude = ['client']
+        exclude = ['client', 'status']
         widgets = {
             'residence_authorization_no': widgets.TextInput(),
             'issuance_date': widgets.DateInput(),

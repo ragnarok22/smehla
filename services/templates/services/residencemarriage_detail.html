@@ -1,0 +1,52 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+{% load service_tags %}
+
+{% block title %}
+    {% trans 'Residence' %}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
+            </div>
+        </div>
+
+        {% include 'services/client_detail_template.html' with client=residencemarriage.client %}
+
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Migratory acts' %}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Married to' %}: {{ residencemarriage.married_to }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Identity card' %}: {{ residencemarriage.ci }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Issuance date' %}: {{ residencemarriage.issuance_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Valid date' %}: {{ residencemarriage.valid_date }}</p>
+            </div>
+        </div>
+    </div>
+    {% user_can_mod_service residencemarriage user as can_mod %}
+    {% if can_mod %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'services:service_update' type residencemarriage.pk %}"
+                   class="btn btn-default">{% trans 'Update' %}</a>
+                <a href="{% url 'services:service_delete' type residencemarriage.pk %}"
+                   class="btn btn-danger">{% trans 'Delete' %}</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

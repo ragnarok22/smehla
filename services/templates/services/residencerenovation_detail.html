@@ -1,0 +1,63 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+{% load service_tags %}
+
+{% block title %}
+    {% trans 'Residence' %}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
+            </div>
+        </div>
+
+        {% include 'services/client_detail_template.html' with client=residencerenovation.client %}
+
+        <div class="row">
+            <div class="col">
+                <h1 class="h1 text-center">{% trans 'Migratory acts' %}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Residence authorization No.' %}: {{ residencerenovation.residence_authorization_no }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Issuance date' %}: {{ residencerenovation.issuance_date }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Expiration date' %}: {{ residencerenovation.expiration_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Renovation reason' %}: {{ residencerenovation.get_reason_display }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{% trans 'Passport No.' %}: {{ residencerenovation.passport_no }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Passport issuance date' %}: {{ residencerenovation.issuance_passport_date }}</p>
+            </div>
+            <div class="col">
+                <p>{% trans 'Valid passport date' %}: {{ residencerenovation.valid_passport_date }}</p>
+            </div>
+        </div>
+    </div>
+    {% user_can_mod_service residencerenovation user as can_mod %}
+    {% if can_mod %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'services:service_update' type residencerenovation.pk %}"
+                   class="btn btn-default">{% trans 'Update' %}</a>
+                <a href="{% url 'services:service_delete' type residencerenovation.pk %}"
+                   class="btn btn-danger">{% trans 'Delete' %}</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

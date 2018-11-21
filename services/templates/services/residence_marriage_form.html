@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col">
+        <div class="md-form">
+            {{ form.married_to }}
+            <label for="{{ form.married_to.id_for_label }}">{{ form.married_to.label }}</label>
+            <span class="text-muted text-danger">{{ form.married_to.errors }}</span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="md-form">
+            {{ form.ci }}
+            <label for="{{ form.ci.id_for_label }}">{{ form.ci.label }}</label>
+            <span class="text-muted text-danger">{{ form.ci.errors }}</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="md-form">
+            {{ form.issuance_date }}
+            <label for="{{ form.issuance_date.id_for_label }}">{{ form.issuance_date.label }}</label>
+            <span class="text-muted text-danger">{{ form.issuance_date.errors }}</span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="md-form">
+            {{ form.valid_date }}
+            <label for="{{ form.valid_date.id_for_label }}">{{ form.valid_date.label }}</label>
+            <span class="text-muted text-danger">{{ form.valid_date.errors }}</span>
+        </div>
+    </div>
+</div>

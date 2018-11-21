@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col">
+        <label for="{{ form.reason.id_for_label }}">{{ form.reason.label }}</label>
+        {{ form.reason }}
+        <span class="text-muted text-danger">{{ form.reason.errors }}</span>
+    </div>
+    <div class="col">
+        <div class="md-form">
+            {{ form.residence_authorization_no }}
+            <label for="{{ form.residence_authorization_no.id_for_label }}">
+                {{ form.residence_authorization_no.label }}
+            </label>
+            <span class="text-muted text-danger">{{ form.residence_authorization_no.errors }}</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="md-form">
+            {{ form.issuance_date }}
+            <label for="{{ form.issuance_date.id_for_label }}">
+                {{ form.issuance_date.label }}
+            </label>
+            <span class="text-muted text-danger">{{ form.issuance_date.errors }}</span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="md-form">
+            {{ form.expiration_date }}
+            <label for="{{ form.expiration_date.id_for_label }}">
+                {{ form.expiration_date.label }}
+            </label>
+            <span class="text-muted text-danger">{{ form.expiration_date.errors }}</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="md-form">
+            {{ form.passport_no }}
+            <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
+            <span class="text-muted text-danger">{{ form.passport_no.errors }}</span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="md-form">
+            {{ form.issuance_passport_date }}
+            <label for="{{ form.issuance_passport_date.id_for_label }}">
+                {{ form.issuance_passport_date.label }}
+            </label>
+            <span class="text-muted text-danger">{{ form.issuance_passport_date.errors }}</span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="md-form">
+            {{ form.valid_passport_date }}
+            <label for="{{ form.valid_passport_date.id_for_label }}">
+                {{ form.valid_passport_date.label }}
+            </label>
+            <span class="text-muted text-danger">{{ form.valid_passport_date.errors }}</span>
+        </div>
+    </div>
+</div>
