@@ -73,15 +73,39 @@ class ResidenceAuthorizationForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceAuthorization
         exclude = ['client']
+        widgets = {
+            'authorization_no': widgets.NumberInput(),
+            'issued_place': widgets.TextInput(),
+            'issuance_date': widgets.DateInput(),
+            'valid_date': widgets.DateInput(),
+            'passport_no': widgets.TextInput(),
+            'passport_issuance_date': widgets.DateInput(),
+            'passport_expiration_date': widgets.DateInput(),
+        }
 
 
 class ResidenceMarriageForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceMarriage
         exclude = ['client']
+        widgets = {
+            'married_to': widgets.TextInput(),
+            'ci': widgets.TextInput(),
+            'issuance_date': widgets.DateInput(),
+            'valid_date': widgets.DateInput(),
+        }
 
 
 class ResidenceRenovationForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceRenovation
         exclude = ['client']
+        widgets = {
+            'residence_authorization_no': widgets.TextInput(),
+            'issuance_date': widgets.DateInput(),
+            'expiration_date': widgets.DateInput(),
+            'reason': widgets.Select(),
+            'passport_no': widgets.TextInput(),
+            'issuance_passport_date': widgets.DateInput(),
+            'valid_passport_date': widgets.DateInput(),
+        }

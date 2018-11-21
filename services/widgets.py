@@ -25,3 +25,8 @@ class DateInput(BMDWidget, forms.DateInput):
 class EmailInput(BMDWidget, forms.EmailInput):
     def __init__(self):
         super(EmailInput, self).__init__()
+
+
+class NumberInput(BMDWidget, forms.NumberInput):
+    def __init__(self):
+        super(NumberInput, self).__init__()
