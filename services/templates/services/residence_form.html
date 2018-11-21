@@ -8,27 +8,11 @@
 {% block main %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="residence" name="residence" checked>
-                    <label for="residence" class="custom-control-label">{% trans 'Residence authorization' %}</label>
-                </div>
-            </div>
-            <div class="col">
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="marriage" name="residence">
-                    <label for="marriage" class="custom-control-label">{% trans 'Residence by marriage' %}</label>
-                </div>
-            </div>
-            <div class="col">
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="renovation" name="residence">
-                    <label for="renovation" class="custom-control-label">{% trans 'Residence renovation' %}</label>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="form-container">
-            {{ form }}
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-default">Aceptar</button>
+            </form>
         </div>
     </div>
 {% endblock %}
@@ -36,7 +20,7 @@
 {% block script %}
     <script>
         $(function () {
-            $('input[type=radio]').click(function (e) {
+            $('input[type=radio]').click(function () {
                 const form_container = $('#form-container');
                 switch ($(this).prop('id')) {
                     case 'residence':

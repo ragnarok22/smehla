@@ -41,13 +41,8 @@
         </div>
     </div>
     <div class="col-lg-4">
-        {% if client.picture %}
-            <img src="{{ client.picture.url }}" alt="{{ client.first_name }}" width="150em" height="150em"
-                 class="img-thumbnail">
-        {% else %}
-            <img src="{% static 'accounts/img/favicon.png' %}" alt="{{ client.first_name }}" width="150em"
-                 height="150em" class="img-thumbnail right">
-        {% endif %}
+        <img src="{% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
+             alt="{{ client.first_name }}" width="150em" height="150em" class="img-thumbnail">
     </div>
 </div>
 <div class="row">
