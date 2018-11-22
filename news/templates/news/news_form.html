@@ -1,13 +1,46 @@
 {% extends 'navbar.html' %}
+{% load static %}
+{% load i18n %}
 
 {% block title %}
-    añadir noticia
+    {% trans 'News' %}
 {% endblock %}
 
 {% block main %}
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
-        <button class="btn btn-default">Aceptar</button>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="md-form">
+                                    {{ form.title }}
+                                    <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                                    <span class="text-muted text-danger">{{ form.title.errors }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="md-form">
+                                    {{ form.content }}
+                                    <label for="{{ form.content.id_for_label }}">{{ form.content.label }}</label>
+                                    <span class="text-muted text-danger">{{ form.content.errors }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="{% if news.picture %}{{ news.picture.url }}{% else %}{% static 'services/img/lobby.jpg' %}
+                        {% endif %}" height="200">
+                    {{ form.picture }}
+                    <span class="text-muted text-danger">{{ form.picture.errors }}</span>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default">{% trans 'Accept' %}</button>
     </form>
 {% endblock %}

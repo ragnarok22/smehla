@@ -12,6 +12,9 @@
                 <h1>{{ news.title }}</h1><span>Publicado {{ news.pub_date }}</span>
                 <p>{{ news.content }}</p>
             </div>
+            <div class="col">
+                <img src="{{ news.picture.url }}" alt="{{ news.title }}" width="200" height="200">
+            </div>
         </div>
         {% if user.occupation == 'ADMIN' %}
             <div class="row">
