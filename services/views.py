@@ -104,11 +104,11 @@ class ServiceDeleteView(services_mixins.ServiceMixin, generic.DeleteView):
     success_url = reverse_lazy('services:tools')
 
 
-class EntityListView(mixins.LoginRequiredMixin, generic.ListView):
+class EntityListView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMixin):
     model = models.Entity
 
 
-class EntityCreateView(mixins.LoginRequiredMixin, generic.CreateView):
+class EntityCreateView(mixins.LoginRequiredMixin, mixins.AjaxableResponseMixin, generic.CreateView):
     model = models.Entity
     form_class = forms.EntityForm
     success_url = reverse_lazy('services:entity_list')
@@ -134,8 +134,8 @@ class EntityDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
 class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMixin):
     model = models.Entity
 
-    # def get_queryset(self):
-    #     name = self.request.GET.get('name', None)
-    #     if name:
-    #         return self.model.objects.filter(name__contains=name)
-    #     return super().get_queryset()
+    def get_queryset(self):
+        name = self.request.GET.get('name', None)
+        if name:
+            return self.model.objects.filter(name__contains=name)
+        return super().get_queryset()

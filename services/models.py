@@ -207,3 +207,15 @@ class Entity(models.Model):
     expiration_date = models.DateField(_('Expiration date'))
     telephone = models.PositiveIntegerField(_('Telephone'))
     email = models.EmailField(_('Email'))
+
+    def to_dict(self):
+        return {
+            'pk': self.pk,
+            'name': self.name,
+            'localization': self.localization,
+            'identification_no': self.identification_no,
+            'issuance_date': self.issuance_date,
+            'expiration_date': self.expiration_date,
+            'telephone': self.telephone,
+            'email': self.email,
+        }

@@ -93,8 +93,8 @@
     </div>
 
     {% if entity_form %}
-        <div id="entity" class="container-fluid">
-            <form method="post" id="entity-form">
+        <div id="entity" class="container-fluid hidden">
+            <form method="post" id="entity-form" action="{% url 'services:entity_create' %}">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col">
@@ -162,6 +162,7 @@
     {% endif %}
     <div class="row">
         <button type="submit" class="btn btn-default" id="submit">{% trans 'Accept' %}</button>
+        <button class="btn btn-default" id="obtener">Obtener</button>
     </div>
 {% endblock %}
 
@@ -169,8 +170,10 @@
     <script>
         $(function () {
             let specification = $('#{{ form.specification.id_for_label }}');
-            const entity = $('#entity-form');
-            const visa = $('#visa-form');
+            const entityForm = $('#entity-form');
+            const visaForm = $('#visa-form');
+            let createNewEntity = true;
+
             specification.change(function () {
                 if ($(this).val() === 'VT') {
                     $('#entity').removeClass('hidden');
@@ -178,11 +181,44 @@
                     $('#entity').addClass('hidden');
                 }
             });
+
             $('button[type=submit]').click(function (event) {
                 event.preventDefault();
-                // enviar a traves de ajax la creacion de una nueva entidad y en la vista añadir esta nueva entidad
-                $('#visa-form').submit();
+                if (createNewEntity && specification.val() === 'VT') {
+                    $.ajax(entityForm.attr('action'), {
+                        method: 'POST',
+                        data: {
+                            'name': $('#{{ entity_form.name.id_for_label }}').val(),
+                            'localization': $('#{{ entity_form.localization.id_for_label }}').val(),
+                            'identification_no': $('#{{ entity_form.identification_no.id_for_label }}').val(),
+                            'issuance_date': $('#{{ entity_form.issuance_date.id_for_label }}').val(),
+                            'expiration_date': $('#{{ entity_form.expiration_date.id_for_label }}').val(),
+                            'telephone': $('#{{ entity_form.telephone.id_for_label }}').val(),
+                            'email': $('#{{ entity_form.email.id_for_label }}').val(),
+                        },
+                        success: function (response) {
+                            console.log(response['pk']);
+                            $('#{{ form.tutelary_entity.id_for_label }}').attr('value', response['pk']);
+                        },
+                        error: function (response, status) {
+                            swal('Ha ocurrido un error', response.responseText, status);
+                            console.log(response);
+                        }
+                    });
+                }
+                visaForm.submit();
             });
+
+            function refillEntityData(event, entity) {
+                createNewEntity = false;
+                $('#{{ entity_form.name.id_for_label }}').val(entity['name']);
+                $('#{{ entity_form.localization.id_for_label }}').val(entity['localization']);
+                $('#{{ entity_form.identification_no.id_for_label }}').val(entity['identification_no']);
+                $('#{{ entity_form.issuance_date.id_for_label }}').val(entity['issuance_date']);
+                $('#{{ entity_form.expiration_date.id_for_label }}').val(entity['expiration_date']);
+                $('#{{ entity_form.telephone.id_for_label }}').val(entity['telephone']);
+                $('#{{ entity_form.email.id_for_label }}').val(entity['email']);
+            }
 
             let typingTimer; //timer identifier
             const typingInterval = 1000; //
@@ -196,25 +232,29 @@
 
             function doneTyping() {
                 let result = '';
-                const en_list = ['universidad', 'ceramica blanca', 'particular'];
+                let en_list = [];
                 $.ajax("{% url 'services:entity_search' %}", {
                     method: 'GET',
                     data: {'name': entity_name.val()},
-                    success: function (data, status) {
-                        console.log(data);
-                        {#for (let i = 0; i < data.length;i++){#}
-                        {#    console.log(data[i]);#}
-                        //}
+                    success: function (data) {
+                        for (let i = 0; i < data.length; i++) {
+                            en_list[i] = data[i];
+                            result += '<li><a href="#" id="entity-' + en_list[i]['pk'] + '">' + en_list[i]['name'] +
+                                '</a></li>' + '\n';
+                        }
+                        $("#entity-list").html(result);
+                        for (let i = 0; i < en_list.length; i++) {
+                            let ent = $('#entity-' + en_list[i]['pk']);
+                            ent.on('custom', refillEntityData);
+                            ent.on('click', function (event) {
+                                event.preventDefault();
+                                ent.trigger('custom', [en_list[i]]);
+                            });
+                        }
                     },
-                    error: function (a, b) {
-                        console.log(a);
-                        console.log(b);
+                    error: function (response, status) {
                     }
                 });
-                for (en in en_list) {
-                    result += '<li><a href="#">' + en_list[en] + '</a></li>' + '\n';
-                }
-                $("#entity-list").html(result);
             }
         });
     </script>

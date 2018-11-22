@@ -1,5 +1,4 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core import serializers
 from django.core.exceptions import PermissionDenied
 from django.http import JsonResponse
 from django.shortcuts import redirect
@@ -89,12 +88,15 @@ class AjaxableResponseMixin(generic.FormView):
             }
             return JsonResponse(data)
         else:
-            response
+            return response
 
 
 class AjaxableListResponseMixin(generic.ListView):
     def get(self, request, *args, **kwargs):
-        # if request.is_ajax():
-            data = serializers.serialize('json', self.get_queryset())
-            return JsonResponse(data, safe=False)
-        # return super(AjaxableListResponseMixin, self).get(request, *args, **kwargs)
+        response = super().get(request, *args, **kwargs)
+        if request.is_ajax():
+            ob_list = []
+            for o in self.object_list:
+                ob_list.append(o.to_dict())
+            return JsonResponse(ob_list, safe=False)
+        return response
