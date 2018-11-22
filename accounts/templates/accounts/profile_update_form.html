@@ -37,16 +37,20 @@
                         <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
                     </div>
                 </div>
+                <div class="col">
+                    <label for="{{ form.occupation.id_for_label }}">{{ form.occupation.label }}</label>
+                    {{ form.occupation }}
+                </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-default" type="submit">Actualizar</button>
+                    <button class="btn btn-default" type="submit">{% trans 'Update' %}</button>
                     <a href="{% url 'accounts:profile_update_password' profile.pk %}" class="btn btn-default">
-                        Cambiar contraseña
+                        {% trans 'Update password' %}
                     </a>
                     {% if user.is_superuser %}
-                        <a href="{% url 'accounts:profile_delete' profile.pk %}" class="btn btn-default">Eliminar</a>
+                        <a href="{% url 'accounts:profile_delete' profile.pk %}" class="btn btn-default">{% trans 'Delete' %}</a>
                     {% endif %}
                 </div>
             </div>

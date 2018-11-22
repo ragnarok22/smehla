@@ -18,8 +18,6 @@ class Profile(AbstractUser):
     born_date = models.DateField(_('Born date'), blank=True, null=True, validators=[validate_born_date])
     occupation = models.CharField(_('Occupation'), max_length=5, choices=OCCUPATION_TYPE, default='FAC')
 
-    REQUIRED_FIELDS = ['email', 'born_date']
-
     class Meta:
         verbose_name = _('Profile')
         verbose_name_plural = _('Profiles')

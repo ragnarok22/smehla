@@ -32,12 +32,12 @@ class CreateProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['username', 'first_name', 'last_name', 'born_date']
+        fields = ['username', 'first_name', 'last_name', 'occupation']
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
+            'occupation': forms.Select(attrs={'class': 'form-control'}),
         }
 
     def clean_password2(self):
@@ -61,12 +61,13 @@ class CreateProfileForm(forms.ModelForm):
 class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['first_name', 'last_name', 'email', 'born_date']
+        fields = ['first_name', 'last_name', 'email', 'born_date', 'occupation']
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker'})
+            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
+            'occupation': forms.Select(attrs={'class': 'form-control'}),
         }
 
 

@@ -36,11 +36,9 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="md-form">
-                        {{ form.born_date }}
-                        <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
-                        <span class="text-danger">{{ form.born_date.errors }}</span>
-                    </div>
+                    <label for="{{ form.occupation.id_for_label }}">{{ form.occupation.label }}</label>
+                    {{ form.occupation }}
+                    <span class="text-danger">{{ form.occupation.errors }}</span>
                 </div>
             </div>
 
