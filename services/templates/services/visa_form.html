@@ -162,7 +162,6 @@
     {% endif %}
     <div class="row">
         <button type="submit" class="btn btn-default" id="submit">{% trans 'Accept' %}</button>
-        <button class="btn btn-default" id="obtener">Obtener</button>
     </div>
 {% endblock %}
 
@@ -173,13 +172,20 @@
             const entityForm = $('#entity-form');
             const visaForm = $('#visa-form');
             let createNewEntity = true;
+            let entity = $('#entity');
+
+            function checkSpecificationStatus() {
+                if (specification.val() === 'VT') {
+                    entity.removeClass('hidden');
+                } else {
+                    entity.addClass('hidden');
+                }
+            }
+
+            checkSpecificationStatus();
 
             specification.change(function () {
-                if ($(this).val() === 'VT') {
-                    $('#entity').removeClass('hidden');
-                } else {
-                    $('#entity').addClass('hidden');
-                }
+                checkSpecificationStatus();
             });
 
             $('button[type=submit]').click(function (event) {
