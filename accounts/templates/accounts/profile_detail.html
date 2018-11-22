@@ -12,9 +12,9 @@
                 <h1 class="h1 text-center">{{ profile }}</h1>
                 {% if user.occupation == 'ADMIN' %}
                     {% if profile.is_active %}
-                        <h5 class="green text-center">Is active</h5>
+                        <h5 class="green text-center">{% trans 'Is active' %}</h5>
                     {% else %}
-                        <h5 class="yellow text-center">Is inactive</h5>
+                        <h5 class="yellow text-center">{% trans 'Is inactive' %}</h5>
                     {% endif %}
                 {% endif %}
             </div>
