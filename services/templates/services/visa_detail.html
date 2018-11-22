@@ -55,6 +55,30 @@
                 <p>{% trans 'Visa expiration date' %}: {{ visa.visa_expiration_date }}</p>
             </div>
         </div>
+
+        {% if visa.tutelary_entity %}
+            <div class="row">
+                <div class="col">
+                    <h1 class="h1 text-center">{% trans 'Tutelary Entity data' %}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{% trans 'Name' %}: {{ visa.tutelary_entity.name }}</p>
+                </div>
+                <div class="col">
+                    <p>{% trans 'Identification No.' %}: {{ visa.tutelary_entity.identification_no }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{% trans 'Telephone' %}: {{ visa.tutelary_entity.telephone }}</p>
+                </div>
+                <div class="col">
+                    <p>{% trans 'Email' %}: {{ visa.tutelary_entity.email }}</p>
+                </div>
+            </div>
+        {% endif %}
     </div>
     {% user_can_mod_service visa user as can_mod %}
     {% if can_mod %}
