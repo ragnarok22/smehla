@@ -166,7 +166,9 @@
                                             <i class="fa fa-remove"></i>
                                         </a>
                                     {% endif %}
-
+                                    <a href="#" class="btn btn-default" data-type="change" data-pk="{{ service.pk }}">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -233,4 +235,26 @@
 
     </div>
     <!-- Residence type modal -->
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function () {
+            $('a[data-type=change]').click(function () {
+                alert($(this).attr('data-pk'));
+                $.ajax('{% url "services:change_status" %}', {
+                    method: 'POST',
+                    data: {'pk': $(this).attr('data-pk')},
+                    success: function (data, status) {
+                        console.log(data);
+                        alert('success');
+                    },
+                    error: function (data, status) {
+                        console.log(data);
+                        alert('error');
+                    }
+                });
+            });
+        });
+    </script>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
+from django.http import HttpResponseRedirect, JsonResponse
 
 from accounts import mixins
 from services import mixins as services_mixins
@@ -139,3 +140,24 @@ class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMix
         if name:
             return self.model.objects.filter(name__contains=name)
         return super().get_queryset()
+
+
+class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
+    success_url = reverse_lazy('services:tools')
+
+    def post(self, request, *args, **kwargs):
+        pk = request.POST.get('pk', None)
+        if pk:
+            service = models.Service.objects.get(pk=pk)
+            if service.status == '1':
+                service.status = '2'
+            elif service.status == '2':
+                service.status = '3'
+            elif service.status == '3':
+                service.status = '4'
+            elif service.status == '4':
+                service.status = '5'
+            service.save()
+            if request.is_ajax():
+                return JsonResponse({'pk': pk, 'status': service.status})
+        return HttpResponseRedirect(self.success_url)
