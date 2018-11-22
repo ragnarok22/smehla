@@ -1,5 +1,6 @@
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth import views as auth_views
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -95,3 +96,16 @@ class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
 class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
     # shows a success message for the above
     pass
+
+
+class ChangeActiveUsersView(mixins.SuperuserRequiredMixin, generic.FormView):
+    def post(self, request, *args, **kwargs):
+        pk = request.POST.get('pk', None)
+        if pk:
+            user = Profile.objects.get(pk=pk)
+            user.is_active = not user.is_active
+            user.save()
+            if request.is_ajax():
+                return JsonResponse({'active': user.is_active, 'pk': user.pk})
+
+        return HttpResponseRedirect('/')

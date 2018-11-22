@@ -32,7 +32,10 @@
                         <td>{{ profile.get_full_name }}</td>
                         <td>{{ profile.email }}</td>
                         <td>{{ profile.get_occupation_display }}</td>
-                        <td>{{ profile.is_active }}</td>
+                        <td>
+                            <input type="checkbox" {% if  profile.is_active %}checked
+                                   title="{% trans 'Is active' %}"{% endif %} data-pk="{{ profile.pk }}">
+                        </td>
                         <td>
                             <a href="{% url 'accounts:profile_detail' profile.pk %}">
                                 <i class="fa fa-eye"></i>
@@ -51,4 +54,37 @@
             </table>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function () {
+            $('input[type=checkbox]').click(function () {
+                $.ajax('{% url "accounts:change_active_users" %}', {
+                    method: 'POST',
+                    data: {'pk': $(this).attr('data-pk')},
+                    success: function (data, status) {
+                        swal({
+                            position: 'top-end',
+                            type: status,
+                            title: '{% trans "The user status has been changed" %}',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        console.log(data);
+                    },
+                    error: function (data, status) {
+                        swal({
+                            position: 'top-end',
+                            type: status,
+                            title: "{% trans 'An error has been happend' %}",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        console.log(data);
+                    },
+                });
+            });
+        });
+    </script>
 {% endblock %}
