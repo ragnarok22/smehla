@@ -204,7 +204,10 @@
                         },
                         success: function (response) {
                             console.log(response['pk']);
-                            $('#{{ form.tutelary_entity.id_for_label }}').attr('value', response['pk']);
+                            const entity_name = $('#{{ entity_form.name.id_for_label }}').val();
+                            const option = '<option value="' + response['pk'] + '">' + entity_name + '</option>';
+                            $('#{{ form.tutelary_entity.id_for_label }}').append(option);
+                            $('#{{ form.tutelary_entity.id_for_label }}').val(response['pk']);
                         },
                         error: function (response, status) {
                             swal('Ha ocurrido un error', response.responseText, status);
