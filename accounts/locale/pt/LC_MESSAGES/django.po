@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 21:37-0500\n"
+"POT-Creation-Date: 2018-11-22 11:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,15 +46,15 @@ msgstr "Repita a contra-senha"
 msgid "Passwords don't match"
 msgstr "Senhas não correspondem"
 
-#: .\forms.py:79
+#: .\forms.py:80
 msgid "Old password"
 msgstr "Contra-senha antiga"
 
-#: .\forms.py:84
+#: .\forms.py:85
 msgid "New password"
 msgstr "Nova contra-senha"
 
-#: .\forms.py:90
+#: .\forms.py:91
 msgid "New password confirmation"
 msgstr "Nova confirmação de Senha"
 
@@ -78,23 +78,24 @@ msgstr "Diretor"
 msgid "Administrator"
 msgstr "Administrador"
 
-#: .\models.py:18
+#: .\models.py:18 .\templates\accounts\profile_detail.html:27
 msgid "Born date"
 msgstr "Data de nascimento"
 
 #: .\models.py:19 .\templates\accounts\dashboard.html:23
+#: .\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupação"
 
-#: .\models.py:24
+#: .\models.py:22
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\models.py:25
+#: .\models.py:23
 msgid "Profiles"
 msgstr "Perfis"
 
-#: .\models.py:29
+#: .\models.py:27
 #, python-format
 msgid "%(years)d years"
 msgstr "%(years)d aos"
@@ -112,6 +113,7 @@ msgid "Add user"
 msgstr "Adicionar usuário"
 
 #: .\templates\accounts\dashboard.html:20
+#: .\templates\accounts\profile_detail.html:24
 msgid "Username"
 msgstr "Nome de usuário"
 
@@ -124,12 +126,22 @@ msgid "Email"
 msgstr "Correio eletrõnico"
 
 #: .\templates\accounts\dashboard.html:24
+#: .\templates\accounts\dashboard.html:37
+#: .\templates\accounts\profile_detail.html:15
 msgid "Is active"
 msgstr "Está ativo"
 
 #: .\templates\accounts\dashboard.html:25
 msgid "Actions"
 msgstr "Ações"
+
+#: .\templates\accounts\dashboard.html:70
+msgid "The user status has been changed"
+msgstr ""
+
+#: .\templates\accounts\dashboard.html:80
+msgid "An error has been happend"
+msgstr ""
 
 #: .\templates\accounts\login.html:22
 msgid "Login"
@@ -172,10 +184,34 @@ msgstr "Iar"
 msgid "%(profile)s's profile "
 msgstr "Perfil de %(profile)s"
 
+#: .\templates\accounts\profile_detail.html:17
+#, fuzzy
+#| msgid "Is active"
+msgid "Is inactive"
+msgstr "Está ativo"
+
+#: .\templates\accounts\profile_detail.html:31
+msgid "Age"
+msgstr "Edade"
+
+#: .\templates\accounts\profile_detail.html:43
+#: .\templates\accounts\profile_update_form.html:50
+msgid "Update password"
+msgstr "Atualizar contra-senha"
+
+#: .\templates\accounts\profile_detail.html:46
+#: .\templates\accounts\profile_update_form.html:48
+msgid "Update"
+msgstr "Atualizar"
+
 #: .\templates\accounts\profile_update_form.html:5
 #, python-format
 msgid "Update %(profile)s's profile"
 msgstr "Atualizar o perfil de %(profile)s"
+
+#: .\templates\accounts\profile_update_form.html:53
+msgid "Delete"
+msgstr "Deletar"
 
 #: .\templates\navbar.html:30
 msgid "Index"
