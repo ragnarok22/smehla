@@ -14,12 +14,14 @@
                     <div class="md-form">
                         {{ form.first_name }}
                         <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                        <span class="text-muted text-danger">{{ form.first_name.errors }}</span>
                     </div>
                 </div>
                 <div class="col">
                     <div class="md-form">
                         {{ form.last_name }}
                         <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                        <span class="text-muted text-danger">{{ form.last_name.errors }}</span>
                     </div>
                 </div>
             </div>
@@ -29,17 +31,20 @@
                     <div class="md-form">
                         {{ form.email }}
                         <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                        <span class="text-muted text-danger">{{ form.email.errors }}</span>
                     </div>
                 </div>
                 <div class="col">
                     <div class="md-form">
                         {{ form.born_date }}
                         <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                        <span class="text-muted text-danger">{{ form.born_date.errors }}</span>
                     </div>
                 </div>
                 <div class="col">
                     <label for="{{ form.occupation.id_for_label }}">{{ form.occupation.label }}</label>
                     {{ form.occupation }}
+                    <span class="text-muted text-danger">{{ form.occupation.errors }}</span>
                 </div>
             </div>
 
