@@ -3,6 +3,7 @@ Para ejecutar el proyecto se necesita tener instalado:
 - [Python versión 3.6.5](https://www.python.org/downloads/release/python-365/) o superior
 - [Django version 2.1.1](https://www.djangoproject.com/download/) o superior (abrir la consola y escribir `pip install Django==2.1.1`)
 - [pillow](https://pypi.org/project/Pillow/) (abrir la consola y escribir `pip install Pillow`)
+- [gettext](https://mlocati.github.io/articles/gettext-iconv-windows.html) para windows
 
 ## Para conprobar que todo está instalado correctamente
 Escribir en la consola python --version y saldrá la versión de python que está instalado
