@@ -101,7 +101,7 @@ class ServiceUpdateView(services_mixins.ServiceMixin, mixins.ServiceOccupationRe
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
 
-class ServiceDeleteView(services_mixins.ServiceMixin, generic.DeleteView):
+class ServiceDeleteView(services_mixins.ServiceMixin, mixins.ServiceOccupationRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:tools')
 
 

@@ -33,8 +33,9 @@
                         <td>{{ profile.email }}</td>
                         <td>{{ profile.get_occupation_display }}</td>
                         <td>
-                            <input type="checkbox" {% if  profile.is_active %}checked
-                                   title="{% trans 'Is active' %}"{% endif %} data-pk="{{ profile.pk }}">
+                            <input type="checkbox" class="form-control"
+                                   {% if  profile.is_active %}checked title="{% trans 'Is active' %}"
+                                   {% else %}title="{% trans 'Is inactive' %}"{% endif %} data-pk="{{ profile.pk }}">
                         </td>
                         <td>
                             <a href="{% url 'accounts:profile_detail' profile.pk %}">
@@ -60,6 +61,7 @@
     <script>
         $(function () {
             $('input[type=checkbox]').click(function () {
+                let current = $(this);
                 $.ajax('{% url "accounts:change_active_users" %}', {
                     method: 'POST',
                     data: {'pk': $(this).attr('data-pk')},
@@ -71,7 +73,11 @@
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        console.log(data);
+                        if (current.is(':checked')) {
+                            current.prop("title", "{% trans 'Is active' %}");
+                        } else {
+                            current.prop("title", "{% trans 'Is inactive' %}");
+                        }
                     },
                     error: function (data, status) {
                         swal({

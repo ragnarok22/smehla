@@ -50,7 +50,7 @@
                         {% trans 'Update password' %}
                     </a>
                     {% if user.is_superuser %}
-                        <a href="{% url 'accounts:profile_delete' profile.pk %}" class="btn btn-default">{% trans 'Delete' %}</a>
+                        <a href="{% url 'accounts:profile_delete' profile.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
                     {% endif %}
                 </div>
             </div>
