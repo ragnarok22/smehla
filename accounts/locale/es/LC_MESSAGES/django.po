@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-22 11:12-0500\n"
+"POT-Creation-Date: 2018-11-26 10:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,6 +57,10 @@ msgstr "Nueva contraseña"
 #: .\forms.py:91
 msgid "New password confirmation"
 msgstr "Confirme la nueva contraseña"
+
+#: .\mixins.py:31
+msgid "Profile not found"
+msgstr "Perfil no encontrado"
 
 #: .\models.py:12
 msgid "Functionary of Attention to Customer"
@@ -127,6 +131,7 @@ msgstr "Correo electrónico"
 
 #: .\templates\accounts\dashboard.html:24
 #: .\templates\accounts\dashboard.html:37
+#: .\templates\accounts\dashboard.html:77
 #: .\templates\accounts\profile_detail.html:15
 msgid "Is active"
 msgstr "Está activo"
@@ -135,12 +140,18 @@ msgstr "Está activo"
 msgid "Actions"
 msgstr "Acciones"
 
-#: .\templates\accounts\dashboard.html:70
+#: .\templates\accounts\dashboard.html:38
+#: .\templates\accounts\dashboard.html:79
+#: .\templates\accounts\profile_detail.html:17
+msgid "Is inactive"
+msgstr "Está inactivo"
+
+#: .\templates\accounts\dashboard.html:72
 msgid "The user status has been changed"
 msgstr "El estado del usuario ha sido cambiado"
 
-#: .\templates\accounts\dashboard.html:80
-msgid "An error has been happend"
+#: .\templates\accounts\dashboard.html:86
+msgid "An error has been happened"
 msgstr "Ha ocurrido un error"
 
 #: .\templates\accounts\login.html:22
@@ -185,21 +196,17 @@ msgstr "Inicio"
 msgid "%(profile)s's profile "
 msgstr "Perfil de %(profile)s"
 
-#: .\templates\accounts\profile_detail.html:17
-msgid "Is inactive"
-msgstr "Está inactivo"
-
 #: .\templates\accounts\profile_detail.html:31
 msgid "Age"
 msgstr "Edad"
 
 #: .\templates\accounts\profile_detail.html:43
-#: .\templates\accounts\profile_update_form.html:50
+#: .\templates\accounts\profile_update_form.html:55
 msgid "Update password"
 msgstr "Cambiar contraseña"
 
 #: .\templates\accounts\profile_detail.html:46
-#: .\templates\accounts\profile_update_form.html:48
+#: .\templates\accounts\profile_update_form.html:53
 msgid "Update"
 msgstr "Actualizar"
 
@@ -208,7 +215,7 @@ msgstr "Actualizar"
 msgid "Update %(profile)s's profile"
 msgstr "Actualizar perfil de %(profile)s"
 
-#: .\templates\accounts\profile_update_form.html:53
+#: .\templates\accounts\profile_update_form.html:58
 msgid "Delete"
 msgstr "Eliminar"
 
