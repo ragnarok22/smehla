@@ -1,5 +1,6 @@
 {% extends 'navbar.html' %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}
     {% trans 'News' %}
@@ -14,9 +15,35 @@
         {% endif %}
         <div class="row">
             {% for news in news_list %}
-                <div class="col"><a href="{% url 'news:detail' news.pk %}">{{ news }}</a></div>
-            {% empty %}
-                <div class="col">No hay para mostrar</div>
+                <div class="col-4">
+                    <!-- Card -->
+                    <div class="card" style="height: 350px;">
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            {% if news.picture %}
+                                <img src="{{ news.picture.url }}" alt="Card image"
+                                     class="card-img-top" height="200" width="100">
+                            {% else %}
+                                <img src="{% static 'accounts/img/favicon.png' %}" alt="Card image"
+                                     class="card-img-top" height="200" width="100">
+                            {% endif %}
+                            <a href="{% url 'news:detail' news.pk %}">
+                                <span class="mask rgba-white-slight"></span>
+                            </a>
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title"><a href="{% url 'news:detail' news.pk %}">{{ news.title }}</a></h4>
+                            <!-- Text -->
+                            <p class="card-text text-truncate">{{ news.content }}</p>
+                            <!-- Button -->
+                            <a href="{% url 'news:detail' news.pk %}"
+                               class="btn btn-primary">{% trans 'View news' %}</a>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>

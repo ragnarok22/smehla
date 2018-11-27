@@ -10,49 +10,46 @@
     <div class="container">
         {% if user.occupation == 'FAC' %}
             <h1 class="text-center">{% trans 'Services tools' %}</h1>
+            <div class="row">
+                <div class="col text-center">
+                    <a href="{% url 'services:client_create' %}" class="btn btn-outline-default">
+                        {% trans 'Create new client' %}
+                    </a>
+                </div>
+            </div>
             <!-- Create services -->
             <div class="row">
 
                 <div class="col">
-                    <div class="card">
-                        <div class="card-header info-color white-text text-center">
-                            <h5 class="text-uppercase">{% trans 'Visa' %}</h5>
-                        </div>
-                        <div class="card-body px-lg-5 pt-0">
-                            <a href="{% url 'services:client_list' 'visa' %}" class="btn btn-default">Visa para un
-                                cliente</a>
-                            <a href="{% url 'services:client_create' %}" class="btn btn-default">Visa a nuevo
-                                cliente</a>
+                    <a href="{% url 'services:client_list' 'visa' %}" class="btn btn-default">
+                        {% trans 'Visa for a client' %}
+                    </a>
+                </div>
+
+                <div class="col">
+                    <h4 class="h4 text-center w-100 font-weight-bold">{% trans 'Residence types' %}</h4>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'services:client_list' 'renovation' %}"
+                                   class="btn btn-default">{% trans 'Residence renovation' %}</a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'services:client_list' 'marriage' %}"
+                                   class="btn btn-default">{% trans 'Residence by marriage' %}</a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'services:client_list' 'authorization' %}"
+                                   class="btn btn-default">{% trans 'Residence authorization' %}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col">
-                    <div class="card">
-                        <div class="card-header info-color white-text text-center">
-                            <h5 class="text-uppercase">Residencia</h5>
-                        </div>
-                        <div class="card-body px-lg-5 pt-0">
-                            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#residence-types">
-                                Residencia a un cliente
-                            </a>
-                            <a href="#" class="btn btn-default">Nuevo cliente</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header info-color white-text text-center">
-                            <h5 class="text-uppercase">{% trans 'Passport' %}</h5>
-                        </div>
-                        <div class="card-body px-lg-5 pt-0">
-                            <a href="{% url 'services:client_list' 'passport' %}" class="btn btn-default">
-                                Pasaporte a un cliente
-                            </a>
-                            <a href="#" class="btn btn-default">Nuevo cliente</a>
-                        </div>
-                    </div>
+                    <a href="{% url 'services:client_list' 'passport' %}" class="btn btn-default">
+                        {% trans 'Passport for a client' %}
+                    </a>
                 </div>
 
             </div>
@@ -174,7 +171,8 @@
                         </tr>
                     {% empty %}
                         <tr>
-                            <td colspan="4" class="text-center text-danger">No existen ningun servicio en el sistema
+                            <td colspan="4" class="text-center text-danger">
+                                {% trans 'Has no service created yet' %}
                             </td>
                         </tr>
                     {% endfor %}
@@ -198,58 +196,21 @@
         </div>
         <!-- List of services -->
     </div>
-
-    <!-- Residence type modal -->
-    <div class="modal fade" id="residence-types" tabindex="-1" role="dialog" aria-labelledby="residence-types"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">{% trans 'Residence types' %}</h4>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <!-- Modal body-->
-                <div class="modal-body mx-3">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col">
-                                <a href="{% url 'services:client_list' 'renovation' %}"
-                                   class="btn btn-default">{% trans 'Residence renovation' %}</a>
-                            </div>
-                            <div class="col">
-                                <a href="{% url 'services:client_list' 'marriage' %}"
-                                   class="btn btn-default">{% trans 'Residence by marriage' %}</a>
-                            </div>
-                            <div class="col">
-                                <a href="{% url 'services:client_list' 'authorization' %}"
-                                   class="btn btn-default">{% trans 'Residence authorization' %}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal body-->
-            </div>
-        </div>
-
-    </div>
-    <!-- Residence type modal -->
 {% endblock %}
 
 {% block script %}
     <script>
         $(function () {
-            $('a[data-type=change]').click(function () {
+            $('a[data-type=change]').click(function (event) {
+                event.preventDefault();
+                //$(this).html('<i class="fa fa-lock"></i>'); //loader
                 $.ajax('{% url "services:change_status" %}', {
                     method: 'POST',
                     data: {'pk': $(this).attr('data-pk')},
-                    success: function (data, status) {
-                        console.log(data);
+                    success: function () {
                         location.reload();
                     },
                     error: function (data, status) {
-                        console.log(data);
                         swal({
                             position: 'top-end',
                             type: status,
