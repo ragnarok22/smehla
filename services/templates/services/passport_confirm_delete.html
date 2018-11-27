@@ -11,6 +11,6 @@
     <p>{% trans 'Expire date' %}: {{ passport.passport_expiration_date }}</p>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">{% trans 'Accept' %}</button>
+        <button type="submit" class="btn btn-danger">{% trans 'Accept' %}</button>
     </form>
 {% endblock %}
