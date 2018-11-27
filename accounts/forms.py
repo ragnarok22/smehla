@@ -100,7 +100,7 @@ class SendEmailForm(forms.Form):
     name = forms.CharField(max_length=50)
     email = forms.EmailField()
     subject = forms.CharField(max_length=100)
-    message = forms.CharField(max_length=200)
+    message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
         message = _('{} <{}> send you a email: {}'.format(
