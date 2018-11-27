@@ -82,6 +82,30 @@ class Service(models.Model):
                 return True
         return False
 
+    def get_previous_status(self):
+        if self.status == '2':
+            return self.SERVICE_STATUS[0][1]
+        elif self.status == '3':
+            return self.SERVICE_STATUS[1][1]
+        elif self.status == '4':
+            return self.SERVICE_STATUS[2][1]
+        elif self.status == '5':
+            return self.SERVICE_STATUS[3][1]
+        else:
+            return None
+
+    def get_next_status(self):
+        if self.status == '1':
+            return self.SERVICE_STATUS[1][1]
+        elif self.status == '2':
+            return self.SERVICE_STATUS[2][1]
+        elif self.status == '3':
+            return self.SERVICE_STATUS[3][1]
+        elif self.status == '4':
+            return self.SERVICE_STATUS[4][1]
+        else:
+            return None
+
     def __str__(self):
         return '{}'.format(self.get_service_type())
 
