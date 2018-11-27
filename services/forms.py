@@ -26,10 +26,14 @@ class PassportCreateForm(forms.ModelForm):
         model = models.Passport
         exclude = ['client', 'status']
         widgets = {
-            'passport_issuance_date': forms.TextInput(attrs={'class': 'datepicker'}),
-            'passport_expiration_date': forms.TextInput(attrs={'class': 'datepicker'}),
-            'emission_date': forms.TextInput(attrs={'class': 'datepicker'}),
-            'remission_date': forms.TextInput(attrs={'class': 'datepicker'}),
+            'passport_type': widgets.Select(),
+            'emission_date': widgets.DateInput(),
+            'remission_type': widgets.Select(),
+            'remission_date': widgets.DateInput(),
+            'personal_no': widgets.TextInput(),
+            'passport_no': widgets.TextInput(),
+            'passport_issuance_date': widgets.DateInput(),
+            'passport_expiration_date': widgets.DateInput(),
         }
 
 

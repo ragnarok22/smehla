@@ -1,17 +1,69 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
 
 {% block title %}
-
+    {% trans 'Create passport' %}
 {% endblock %}
 
 {% block main %}
     <div class="container-fluid">
-        <div class="row">
-            <form method="post">
-                {% csrf_token %}
-                {{ form }}
-                <button class="btn btn-default">Aceptar</button>
-            </form>
-        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <label for="{{ form.passport_type.id_for_label }}">{{ form.passport_type.label }}</label>
+                    {{ form.passport_type }}
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.emission_date }}
+                        <label for="{{ form.emission_date.id_for_label }}">{{ form.emission_date.label }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="{{ form.remission_type.id_for_label }}">{{ form.remission_type.label }}</label>
+                    {{ form.remission_type }}
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.remission_date }}
+                        <label for="{{ form.remission_date.id_for_label }}">{{ form.remission_date.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.personal_no }}
+                        <label for="{{ form.personal_no.id_for_label }}">{{ form.personal_no.label }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.passport_no }}
+                        <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.passport_issuance_date }}
+                        <label for="{{ form.passport_issuance_date.id_for_label }}">{{ form.passport_issuance_date.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form">
+                        {{ form.passport_expiration_date }}
+                        <label for="{{ form.passport_expiration_date.id_for_label }}">{{ form.passport_expiration_date.label }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-default">{% trans 'Accept' %}</button>
+                </div>
+            </div>
+        </form>
     </div>
 {% endblock %}

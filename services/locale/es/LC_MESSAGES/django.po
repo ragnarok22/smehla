@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-26 22:34-0500\n"
+"POT-Creation-Date: 2018-11-26 22:57-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,23 +137,26 @@ msgstr "tipo de servicio desconocido"
 msgid "Visa"
 msgstr "Visa"
 
-#: .\models.py:61 .\templates\services\client_detail.html:80
+#: .\models.py:61 .\templates\services\client_detail.html:78
 msgid "Passport"
 msgstr "Pasaporte"
 
-#: .\models.py:62 .\templates\services\tools.html:35
+#: .\models.py:62 .\templates\services\client_detail.html:83
+#: .\templates\services\tools.html:35
 msgid "Residence renovation"
 msgstr "Renovación de Residencia"
 
-#: .\models.py:63 .\templates\services\tools.html:39
+#: .\models.py:63 .\templates\services\client_detail.html:88
+#: .\templates\services\tools.html:39
 msgid "Residence by marriage"
 msgstr "Residencia por matrimonio"
 
-#: .\models.py:64 .\models.py:173 .\templates\services\tools.html:43
+#: .\models.py:64 .\models.py:173 .\templates\services\client_detail.html:93
+#: .\templates\services\tools.html:43
 msgid "Residence authorization"
 msgstr "Autorización de residencia"
 
-#: .\models.py:67
+#: .\models.py:67 .\templates\services\client_detail.html:25
 msgid "Status"
 msgstr "Estado"
 
@@ -488,6 +491,7 @@ msgstr "¿Estás seguro de eliminar al cliente %(client)s del sistema?"
 #: .\templates\services\client_confirm_delete.html:13
 #: .\templates\services\entity_form.html:70
 #: .\templates\services\passport_confirm_delete.html:14
+#: .\templates\services\passport_form.html:64
 #: .\templates\services\residence_form.html:19
 #: .\templates\services\residenceauthorization_confirm_delete.html:15
 #: .\templates\services\residencemarriage_confirm_delete.html:15
@@ -510,6 +514,11 @@ msgstr "Cliente %(client.get_full_name)s"
 #: .\templates\services\visa_detail.html:22
 msgid "Migratory acts"
 msgstr "Actos migratorios"
+
+#: .\templates\services\client_detail.html:24
+#: .\templates\services\tools.html:65
+msgid "Type"
+msgstr "Tipo"
 
 #: .\templates\services\client_detail.html:43
 msgid "No requested services found"
@@ -538,14 +547,6 @@ msgstr "Eliminar"
 #: .\templates\services\visa_form.html:5
 msgid "Add service"
 msgstr "Añadir servicio"
-
-#: .\templates\services\client_detail.html:76
-#: .\templates\services\residence_form.html:5
-#: .\templates\services\residenceauthorization_detail.html:6
-#: .\templates\services\residencemarriage_detail.html:6
-#: .\templates\services\residencerenovation_detail.html:6
-msgid "Residence"
-msgstr "Residencia"
 
 #: .\templates\services\client_detail_template.html:28
 msgid "Parents"
@@ -643,6 +644,17 @@ msgstr "Datos personales"
 msgid "Passport details"
 msgstr "Detalle del pasaporte"
 
+#: .\templates\services\passport_form.html:5
+msgid "Create passport"
+msgstr "Crear pasaporte"
+
+#: .\templates\services\residence_form.html:5
+#: .\templates\services\residenceauthorization_detail.html:6
+#: .\templates\services\residencemarriage_detail.html:6
+#: .\templates\services\residencerenovation_detail.html:6
+msgid "Residence"
+msgstr "Residencia"
+
 #: .\templates\services\residenceauthorization_confirm_delete.html:5
 #: .\templates\services\residencemarriage_confirm_delete.html:5
 msgid "Delete Residence by Marriage"
@@ -711,10 +723,6 @@ msgstr "Pasaporte para un cliente"
 #: .\templates\services\tools.html:59
 msgid "Services Request's List"
 msgstr "Listado de petición de servicios"
-
-#: .\templates\services\tools.html:65
-msgid "Type"
-msgstr "Tipo"
 
 #: .\templates\services\tools.html:66
 msgid "Client's name"
