@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 12:53-0500\n"
+"POT-Creation-Date: 2018-11-27 14:45-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,29 +34,33 @@ msgstr "Fechas importantes"
 msgid "Others dates"
 msgstr "Otras fechas"
 
-#: .\forms.py:25
+#: .\forms.py:27
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\forms.py:29
+#: .\forms.py:31
 msgid "Repeat password"
 msgstr "Repita la contraseña"
 
-#: .\forms.py:48
+#: .\forms.py:50
 msgid "Passwords don't match"
 msgstr "Las contraseñas no coinciden"
 
-#: .\forms.py:80
+#: .\forms.py:82
 msgid "Old password"
 msgstr "Contraseña anterior"
 
-#: .\forms.py:85
+#: .\forms.py:87
 msgid "New password"
 msgstr "Nueva contraseña"
 
-#: .\forms.py:91
+#: .\forms.py:93
 msgid "New password confirmation"
 msgstr "Confirme la nueva contraseña"
+
+#: .\forms.py:106
+msgid "{} <{}> send you a email: {}"
+msgstr "{} <{}> te envió un mensaje: {}"
 
 #: .\mixins.py:31
 msgid "Profile not found"
@@ -242,6 +246,11 @@ msgstr "Actualizar perfil de %(profile)s"
 msgid "Delete"
 msgstr "Eliminar"
 
+#: .\templates\accounts\send_email.html:5 .\templates\navbar.html:54
+#: .\templates\navbar.html:60
+msgid "Contact us"
+msgstr "Contáctanos"
+
 #: .\templates\navbar.html:30
 msgid "Index"
 msgstr "Inicio"
@@ -261,10 +270,6 @@ msgstr "Consultar"
 #: .\templates\navbar.html:50
 msgid "News"
 msgstr "Noticias"
-
-#: .\templates\navbar.html:54 .\templates\navbar.html:60
-msgid "Contact us"
-msgstr "Contáctanos"
 
 #: .\templates\navbar.html:73
 msgid "Your name"

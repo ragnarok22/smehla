@@ -4,6 +4,7 @@ from django.contrib.auth import password_validation
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail
 
+from SIG_SMEHLA import settings
 from accounts.models import Profile
 
 
@@ -96,15 +97,21 @@ class PasswordChangeForm(auth_forms.PasswordChangeForm):
 
 
 class SendEmailForm(forms.Form):
+    name = forms.CharField(max_length=50)
     email = forms.EmailField()
-    subject = forms.CharField()
-    message = forms.CharField()
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(max_length=200)
 
     def send_email(self):
+        message = _('{} <{}> send you a email: {}'.format(
+            self.cleaned_data['name'],
+            self.cleaned_data['email'],
+            self.cleaned_data['message'],
+        ))
         send_mail(
-            'asunto',
-            'mensaje',
-            'ragnarok@uho.edu.cu',
-            ['ragnarok@uho.edu.cu'],
+            self.cleaned_data['subject'],
+            message,
+            settings.ADMINS[0],
+            settings.ADMINS,
             fail_silently=False,
         )

@@ -141,3 +141,6 @@ EMAIL_HOST = '10.26.0.75'
 EMAIL_PORT = '25'
 EMAIL_HOST_USER = 'ragnarok'
 EMAIL_HOST_PASSWORD = 'lapuerca32+'
+
+# admin email
+ADMINS = ['ragnarok@uho.edu.cu']
