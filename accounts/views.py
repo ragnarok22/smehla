@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse_lazy
 from django.views import generic
 
-from SIG_SMEHLA.settings import INDEX_URL
 from accounts import mixins
 from . import forms
 from .models import Profile
@@ -19,7 +18,14 @@ class LoginView(mixins.AnonymousRequiredMixin, generic.FormView):
         return super(LoginView, self).form_valid(form)
 
     def get_success_url(self):
-        return self.request.GET.get('next', reverse_lazy(INDEX_URL))
+        next = self.request.GET.get('next', None)
+        if next:
+            return next
+        else:
+            if self.request.user.occupation == 'ADMIN':
+                return reverse_lazy('accounts:dashboard')
+            else:
+                return reverse_lazy('services:tools')
 
 
 class LogoutView(generic.RedirectView):
