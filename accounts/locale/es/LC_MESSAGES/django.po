@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-26 23:56-0500\n"
+"POT-Creation-Date: 2018-11-27 12:53-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,7 +128,7 @@ msgid "Visa expiration date"
 msgstr "Fecha de expiración de la visa"
 
 #: .\templates\accounts\dashboard.html:48
-msgid "Expired visa"
+msgid "Expired visas"
 msgstr "Visas expiradas"
 
 #: .\templates\accounts\dashboard.html:81
