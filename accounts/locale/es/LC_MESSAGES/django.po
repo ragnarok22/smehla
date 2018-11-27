@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-26 10:37-0500\n"
+"POT-Creation-Date: 2018-11-26 23:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,7 +86,7 @@ msgstr "Administrador"
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\models.py:19 .\templates\accounts\dashboard.html:23
+#: .\models.py:19 .\templates\accounts\dashboard.html:93
 #: .\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupación"
@@ -108,49 +108,72 @@ msgstr "%(years)d años"
 msgid "Administrate"
 msgstr "Administrar"
 
-#: .\templates\accounts\dashboard.html:11
+#: .\templates\accounts\dashboard.html:13
+msgid "Visa to expire"
+msgstr "Visas a expirar"
+
+#: .\templates\accounts\dashboard.html:21
+#: .\templates\accounts\dashboard.html:56
+msgid "Type"
+msgstr "Tipo"
+
+#: .\templates\accounts\dashboard.html:22
+#: .\templates\accounts\dashboard.html:57
+msgid "Client's name"
+msgstr "Nombre del cliente"
+
+#: .\templates\accounts\dashboard.html:23
+#: .\templates\accounts\dashboard.html:58
+msgid "Visa expiration date"
+msgstr "Fecha de expiración de la visa"
+
+#: .\templates\accounts\dashboard.html:48
+msgid "Expired visa"
+msgstr "Visas expiradas"
+
+#: .\templates\accounts\dashboard.html:81
 msgid "Users System"
 msgstr "Usuarios del sistema"
 
-#: .\templates\accounts\dashboard.html:13
+#: .\templates\accounts\dashboard.html:83
 msgid "Add user"
 msgstr "Añadir usuario"
 
-#: .\templates\accounts\dashboard.html:20
+#: .\templates\accounts\dashboard.html:90
 #: .\templates\accounts\profile_detail.html:24
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\templates\accounts\dashboard.html:21
+#: .\templates\accounts\dashboard.html:91
 msgid "Full name"
 msgstr "Nombre completo"
 
-#: .\templates\accounts\dashboard.html:22
+#: .\templates\accounts\dashboard.html:92
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\templates\accounts\dashboard.html:24
-#: .\templates\accounts\dashboard.html:37
-#: .\templates\accounts\dashboard.html:77
+#: .\templates\accounts\dashboard.html:94
+#: .\templates\accounts\dashboard.html:107
+#: .\templates\accounts\dashboard.html:147
 #: .\templates\accounts\profile_detail.html:15
 msgid "Is active"
 msgstr "Está activo"
 
-#: .\templates\accounts\dashboard.html:25
+#: .\templates\accounts\dashboard.html:95
 msgid "Actions"
 msgstr "Acciones"
 
-#: .\templates\accounts\dashboard.html:38
-#: .\templates\accounts\dashboard.html:79
+#: .\templates\accounts\dashboard.html:108
+#: .\templates\accounts\dashboard.html:149
 #: .\templates\accounts\profile_detail.html:17
 msgid "Is inactive"
 msgstr "Está inactivo"
 
-#: .\templates\accounts\dashboard.html:72
+#: .\templates\accounts\dashboard.html:142
 msgid "The user status has been changed"
 msgstr "El estado del usuario ha sido cambiado"
 
-#: .\templates\accounts\dashboard.html:86
+#: .\templates\accounts\dashboard.html:156
 msgid "An error has been happened"
 msgstr "Ha ocurrido un error"
 

@@ -1,10 +1,15 @@
+import datetime
+
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth import views as auth_views
+from django.db.models import Q
 from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.views import generic
 
 from accounts import mixins
+from services.models import Visa
 from . import forms
 from .models import Profile
 
@@ -18,9 +23,9 @@ class LoginView(mixins.AnonymousRequiredMixin, generic.FormView):
         return super(LoginView, self).form_valid(form)
 
     def get_success_url(self):
-        next = self.request.GET.get('next', None)
-        if next:
-            return next
+        next_url = self.request.GET.get('next', None)
+        if next_url:
+            return next_url
         else:
             if self.request.user.occupation == 'ADMIN':
                 return reverse_lazy('accounts:dashboard')
@@ -41,6 +46,18 @@ class DashBoardView(mixins.SuperuserRequiredMixin, mixins.NavbarMixin, generic.L
     template_name = 'accounts/dashboard.html'
     tab_name = 'dashboard'
     model = Profile
+
+    def get_context_data(self, **kwargs):
+        context = super(DashBoardView, self).get_context_data(**kwargs)
+        now = timezone.now().today()
+        context['visa_to_expire'] = Visa.objects.filter(
+            Q(visa_expiration_date__gte=datetime.date(now.year, now.month, now.day - 5)) &
+            Q(visa_expiration_date__lte=datetime.date(now.year, now.month, now.day))
+        )
+        context['expired_visa'] = Visa.objects.filter(
+            Q(visa_expiration_date__lt=now)
+        )
+        return context
 
 
 class ProfileCreateView(mixins.SuperuserRequiredMixin, generic.CreateView):
