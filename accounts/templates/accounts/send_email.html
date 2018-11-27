@@ -1,0 +1,14 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Contact us' %}
+{% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-default">Aceptar</button>
+    </form>
+{% endblock %}

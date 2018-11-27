@@ -132,3 +132,13 @@ class ChangeActiveUsersView(mixins.SuperuserRequiredMixin, generic.FormView):
                 return JsonResponse({'active': user.is_active, 'pk': user.pk})
 
         return HttpResponseRedirect('/')
+
+
+class SendEmailView(generic.FormView):
+    form_class = forms.SendEmailForm
+    template_name = 'accounts/send_email.html'
+    success_url = reverse_lazy('accounts:send_email')
+
+    def form_valid(self, form):
+        form.send_email()
+        return super(SendEmailView, self).form_valid(form)

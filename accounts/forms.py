@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import forms as auth_forms
 from django.contrib.auth import password_validation
 from django.utils.translation import gettext_lazy as _
+from django.core.mail import send_mail
 
 from accounts.models import Profile
 
@@ -92,3 +93,18 @@ class PasswordChangeForm(auth_forms.PasswordChangeForm):
         strip=False,
         widget=forms.PasswordInput(attrs={'class': 'form-control'}),
     )
+
+
+class SendEmailForm(forms.Form):
+    email = forms.EmailField()
+    subject = forms.CharField()
+    message = forms.CharField()
+
+    def send_email(self):
+        send_mail(
+            'asunto',
+            'mensaje',
+            'ragnarok@uho.edu.cu',
+            ['ragnarok@uho.edu.cu'],
+            fail_silently=False,
+        )

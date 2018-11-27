@@ -19,4 +19,5 @@ urlpatterns = [
     path('reset/password/complete/', views.PasswordResetCompleteView.as_view(), name='reset_password_complete'),
 
     path('change/status/user/', views.ChangeActiveUsersView.as_view(), name='change_active_users'),
+    path('send/email/', views.SendEmailView.as_view(), name='send_email'),
 ]

@@ -135,3 +135,9 @@ DATE_INPUT_FORMATS = [
     # '%m/%d/%Y', '%m/%d/%y'
     '%Y/%m/%d'
 ]
+
+# email configuration
+EMAIL_HOST = '10.26.0.75'
+EMAIL_PORT = '25'
+EMAIL_HOST_USER = 'ragnarok'
+EMAIL_HOST_PASSWORD = 'lapuerca32+'
