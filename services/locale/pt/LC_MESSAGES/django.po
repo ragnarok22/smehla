@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 12:55-0500\n"
+"POT-Creation-Date: 2018-11-28 09:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr "Viúvo"
 
 #: .\models.py:23 .\models.py:153
 #: .\templates\services\client_detail_template.html:12
-#: .\templates\services\client_list.html:18
+#: .\templates\services\client_list.html:19
 #: .\templates\services\residencemarriage_detail.html:29
 msgid "Identity card"
 msgstr "Carteira de identidade"
@@ -58,7 +58,7 @@ msgid "Last name"
 msgstr "Apelido"
 
 #: .\models.py:27 .\templates\services\client_detail_template.html:15
-#: .\templates\services\client_list.html:19
+#: .\templates\services\client_list.html:20
 msgid "Born date"
 msgstr "Data de nascimento"
 
@@ -88,7 +88,7 @@ msgstr "Residência"
 
 #: .\models.py:34 .\models.py:233
 #: .\templates\services\client_detail_template.html:53
-#: .\templates\services\client_list.html:20
+#: .\templates\services\client_list.html:21
 #: .\templates\services\visa_detail.html:78
 msgid "Email"
 msgstr "Endereço Eletrônico"
@@ -142,17 +142,17 @@ msgid "Passport"
 msgstr "Passaporte"
 
 #: .\models.py:62 .\templates\services\client_detail.html:83
-#: .\templates\services\tools.html:35
+#: .\templates\services\tools.html:29
 msgid "Residence renovation"
 msgstr "Renovação de residência"
 
 #: .\models.py:63 .\templates\services\client_detail.html:88
-#: .\templates\services\tools.html:39
+#: .\templates\services\tools.html:34
 msgid "Residence by marriage"
 msgstr "Residência por casamento"
 
 #: .\models.py:64 .\models.py:173 .\templates\services\client_detail.html:93
-#: .\templates\services\tools.html:43
+#: .\templates\services\tools.html:39
 msgid "Residence authorization"
 msgstr "Autorização de residência"
 
@@ -517,7 +517,7 @@ msgid "Migratory acts"
 msgstr "Actos migratórios"
 
 #: .\templates\services\client_detail.html:24
-#: .\templates\services\tools.html:65
+#: .\templates\services\tools.html:58
 msgid "Type"
 msgstr "Tipo"
 
@@ -573,17 +573,38 @@ msgstr "Baixar"
 msgid "Add client"
 msgstr "Adicionar cliente"
 
+#: .\templates\services\client_form.html:11
+#: .\templates\services\passport_detail.html:13
+#: .\templates\services\residenceauthorization_detail.html:13
+#: .\templates\services\residencemarriage_detail.html:13
+#: .\templates\services\residencerenovation_detail.html:13
+#: .\templates\services\visa_detail.html:14
+msgid "Personal data"
+msgstr "Dados pessoais"
+
+#: .\templates\services\client_form.html:59
+msgid "Filiation"
+msgstr "Filiação"
+
 #: .\templates\services\client_list.html:10
 msgid "Clients list"
 msgstr "Lista de utentes"
 
-#: .\templates\services\client_list.html:17
+#: .\templates\services\client_list.html:18
 msgid "Full name"
 msgstr "Nome completo"
 
-#: .\templates\services\client_list.html:39
+#: .\templates\services\client_list.html:40
 msgid "Client detail"
 msgstr "Detalhe de utente"
+
+#: .\templates\services\client_list.html:68
+msgid "No client found in the system."
+msgstr "Não se encontrarão cliente no sistema."
+
+#: .\templates\services\client_list.html:70 .\templates\services\tools.html:16
+msgid "Create new client"
+msgstr "Criar novo cliente"
 
 #: .\templates\services\entity_form.html:10
 #: .\templates\services\visa_detail.html:62
@@ -632,14 +653,6 @@ msgstr "Quota para"
 #: .\templates\services\visa_confirm_delete.html:11
 msgid "Expire date"
 msgstr "Data de validade"
-
-#: .\templates\services\passport_detail.html:13
-#: .\templates\services\residenceauthorization_detail.html:13
-#: .\templates\services\residencemarriage_detail.html:13
-#: .\templates\services\residencerenovation_detail.html:13
-#: .\templates\services\visa_detail.html:14
-msgid "Personal data"
-msgstr "Dados pessoais"
 
 #: .\templates\services\passport_detail.html:20
 msgid "Passport details"
@@ -705,55 +718,55 @@ msgstr "Ferramentas"
 msgid "Services tools"
 msgstr "Ferramentas de serviços"
 
-#: .\templates\services\tools.html:16
-msgid "Create new client"
-msgstr "Criar novo cliente"
-
-#: .\templates\services\tools.html:25
+#: .\templates\services\tools.html:24
 msgid "Visa for a client"
 msgstr "Visto para um cliente"
 
-#: .\templates\services\tools.html:30
-msgid "Residence types"
-msgstr "Tipo de residência"
-
-#: .\templates\services\tools.html:51
+#: .\templates\services\tools.html:45
 msgid "Passport for a client"
 msgstr "Passaporte para um cliente"
 
-#: .\templates\services\tools.html:59
+#: .\templates\services\tools.html:52
 msgid "Services Request's List"
 msgstr "Lista de pedidos de serviços"
 
-#: .\templates\services\tools.html:66
+#: .\templates\services\tools.html:59
 msgid "Client's name"
 msgstr "Nome do clientes"
 
-#: .\templates\services\tools.html:67
+#: .\templates\services\tools.html:60
 msgid "State"
 msgstr "Estado"
 
-#: .\templates\services\tools.html:68
+#: .\templates\services\tools.html:61
 msgid "Actions"
 msgstr "Ações"
 
-#: .\templates\services\tools.html:175
+#: .\templates\services\tools.html:168
 msgid "Has no service created yet"
 msgstr "Não tem serviço criado ainda"
 
-#: .\templates\services\tools.html:187
+#: .\templates\services\tools.html:175
+msgid "Page"
+msgstr "Página"
+
+#: .\templates\services\tools.html:175
+msgid "of"
+msgstr "de"
+
+#: .\templates\services\tools.html:180
 msgid "Previous"
 msgstr "Anterior"
 
-#: .\templates\services\tools.html:191
+#: .\templates\services\tools.html:184
 msgid "Next"
 msgstr "Siguiente"
 
-#: .\templates\services\tools.html:217
+#: .\templates\services\tools.html:210
 msgid "Unexpected error"
 msgstr "Erro inesperado"
 
-#: .\templates\services\tools.html:218
+#: .\templates\services\tools.html:211
 msgid "An error happened"
 msgstr "Um erro aconteceu"
 
@@ -774,3 +787,6 @@ msgstr "Está em endamento"
 #, python-format
 msgid "Has no found any request with %(value)s ci"
 msgstr "Não encontrou nenhum pedido com %(value)s ci"
+
+#~ msgid "Residence types"
+#~ msgstr "Tipo de residência"

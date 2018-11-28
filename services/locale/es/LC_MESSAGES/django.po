@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 19:15-0500\n"
+"POT-Creation-Date: 2018-11-28 09:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -572,6 +572,19 @@ msgstr "Descargar"
 msgid "Add client"
 msgstr "Añadir cliente"
 
+#: .\templates\services\client_form.html:11
+#: .\templates\services\passport_detail.html:13
+#: .\templates\services\residenceauthorization_detail.html:13
+#: .\templates\services\residencemarriage_detail.html:13
+#: .\templates\services\residencerenovation_detail.html:13
+#: .\templates\services\visa_detail.html:14
+msgid "Personal data"
+msgstr "Datos personales"
+
+#: .\templates\services\client_form.html:59
+msgid "Filiation"
+msgstr "Filiación"
+
 #: .\templates\services\client_list.html:10
 msgid "Clients list"
 msgstr "Listado de cliente"
@@ -639,14 +652,6 @@ msgstr "Asignado a"
 #: .\templates\services\visa_confirm_delete.html:11
 msgid "Expire date"
 msgstr "Fecha de expiración"
-
-#: .\templates\services\passport_detail.html:13
-#: .\templates\services\residenceauthorization_detail.html:13
-#: .\templates\services\residencemarriage_detail.html:13
-#: .\templates\services\residencerenovation_detail.html:13
-#: .\templates\services\visa_detail.html:14
-msgid "Personal data"
-msgstr "Datos personales"
 
 #: .\templates\services\passport_detail.html:20
 msgid "Passport details"

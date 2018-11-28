@@ -8,7 +8,7 @@
 
 {% block main %}
 <div class="container-fluid">
-    <h1 class="h1 text-center">Datos Personales</h1>
+    <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
     <form method="post" enctype="multipart/form-data" class="form-row">
         {% csrf_token %}
         <div class="col-4">
@@ -56,7 +56,7 @@
                 <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
             </div>
         </div>
-        <div class="col-12"><h3 class="h3 text-center">Filiacion</h3></div>
+        <div class="col-12"><h3 class="h3 text-center">{% trans 'Filiation' %}</h3></div>
         <div class="col-6">
             <div class="md-form">
                 {{ form.father }}
