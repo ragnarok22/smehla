@@ -19,31 +19,25 @@
             </div>
             <!-- Create services -->
             <div class="row">
-
                 <div class="col">
                     <a href="{% url 'services:client_list' 'visa' %}" class="btn btn-default">
                         {% trans 'Visa for a client' %}
                     </a>
                 </div>
-
                 <div class="col">
-                    <h4 class="h4 text-center w-100 font-weight-bold">{% trans 'Residence types' %}</h4>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <a href="{% url 'services:client_list' 'renovation' %}"
-                                   class="btn btn-default">{% trans 'Residence renovation' %}</a>
-                            </div>
-                            <div class="col">
-                                <a href="{% url 'services:client_list' 'marriage' %}"
-                                   class="btn btn-default">{% trans 'Residence by marriage' %}</a>
-                            </div>
-                            <div class="col">
-                                <a href="{% url 'services:client_list' 'authorization' %}"
-                                   class="btn btn-default">{% trans 'Residence authorization' %}</a>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="{% url 'services:client_list' 'renovation' %}" class="btn btn-default">
+                        {% trans 'Residence renovation' %}
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'services:client_list' 'marriage' %}" class="btn btn-default">
+                        {% trans 'Residence by marriage' %}
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'services:client_list' 'authorization' %}" class="btn btn-default">
+                        {% trans 'Residence authorization' %}
+                    </a>
                 </div>
 
                 <div class="col">
@@ -51,7 +45,6 @@
                         {% trans 'Passport for a client' %}
                     </a>
                 </div>
-
             </div>
             <!-- Create services -->
         {% endif %}
@@ -179,7 +172,7 @@
 
                     </tbody>
                 </table>
-                <p>Page {{ page_obj.number }} of {{ paginator.num_pages }}</p>
+                <p>{% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ paginator.num_pages }}</p>
                 <nav aria-label="Page navigation">
                     <ul class="pagination pg-blue justify-content-center">
                         <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
