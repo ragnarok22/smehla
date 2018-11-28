@@ -218,6 +218,7 @@
                         message: $('#message').val(),
                     },
                     success: function () {
+                        $('#contact').modal('hide');
                         swal({
                             title: "{% trans 'Sended' %}",
                             html: "{% trans 'Your message has sended correctly' %}",
