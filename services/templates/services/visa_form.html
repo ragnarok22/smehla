@@ -173,6 +173,21 @@
             const visaForm = $('#visa-form');
             let createNewEntity = true;
             let entity = $('#entity');
+            let entity_pk = null;
+
+            {% if visa.tutelary_entity %}
+                let ent = {
+                    'pk': '{{ visa.tutelary_entity.pk }}',
+                    'name': '{{ visa.tutelary_entity.name }}',
+                    'localization': '{{ visa.tutelary_entity.localization }}',
+                    'identification_no': '{{ visa.tutelary_entity.identification_no }}',
+                    'issuance_date': '{{ visa.tutelary_entity.issuance_date }}',
+                    'expiration_date': '{{ visa.tutelary_entity.expiration_date }}',
+                    'telephone': '{{ visa.tutelary_entity.telephone }}',
+                    'email': '{{ visa.tutelary_entity.email }}',
+                };
+                refillEntityData(null, ent, true);
+            {% endif %}
 
             function checkSpecificationStatus() {
                 if (specification.val() === 'VT') {
@@ -208,18 +223,33 @@
                             const option = '<option value="' + response['pk'] + '">' + entity_name + '</option>';
                             $('#{{ form.tutelary_entity.id_for_label }}').append(option);
                             $('#{{ form.tutelary_entity.id_for_label }}').val(response['pk']);
+                            visaForm.submit();
                         },
                         error: function (response, status) {
                             swal('Ha ocurrido un error', response.responseText, status);
                             console.log(response);
+                            console.log(response.statusText);
+                            console.log(status);
+                            alert('error');
                         }
                     });
+                } else {
+                    if (entity_pk != null) {
+                        $('#{{ form.tutelary_entity.id_for_label }}').val(entity_pk);
+                    }
+                    if (specification.val() !== 'VT') {
+                        $('#{{ form.tutelary_entity.id_for_label }}').val("");
+                    }
+                    visaForm.submit();
                 }
-                visaForm.submit();
+
             });
 
-            function refillEntityData(event, entity) {
+            function refillEntityData(event, entity, change_entity = true) {
                 createNewEntity = false;
+                if (change_entity) {
+                    entity_pk = entity['pk'];
+                }
                 $('#{{ entity_form.name.id_for_label }}').val(entity['name']);
                 $('#{{ entity_form.localization.id_for_label }}').val(entity['localization']);
                 $('#{{ entity_form.identification_no.id_for_label }}').val(entity['identification_no']);
