@@ -219,15 +219,15 @@
                     },
                     success: function () {
                         swal({
-                            title: 'Enviado',
-                            html: 'Se ha enviado correctamente',
+                            title: "{% trans 'Sended' %}",
+                            html: "{% trans 'Your message has sended correctly' %}",
                             type: 'success'
                         });
                     },
                     error: function () {
                         swal({
-                            title: 'No enviado',
-                            html: 'No se ha podido enviar',
+                            title: '{% trans "Not send" %}',
+                            html: "{% trans 'Error sending your message' %}",
                             type: 'error'
                         });
                     },

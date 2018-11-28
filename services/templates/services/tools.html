@@ -192,6 +192,7 @@
 {% endblock %}
 
 {% block script %}
+    {{ block.super }}
     <script>
         $(function () {
             $('a[data-type=change]').click(function (event) {

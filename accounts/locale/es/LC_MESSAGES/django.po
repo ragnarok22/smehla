@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 14:45-0500\n"
+"POT-Creation-Date: 2018-11-28 10:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,11 +271,11 @@ msgstr "Consultar"
 msgid "News"
 msgstr "Noticias"
 
-#: .\templates\navbar.html:73
+#: .\templates\navbar.html:71
 msgid "Your name"
 msgstr "Tu nombre"
 
-#: .\templates\navbar.html:81
+#: .\templates\navbar.html:80
 msgid "Your email"
 msgstr "Tu correo"
 
@@ -287,53 +287,69 @@ msgstr "Asunto"
 msgid "Your message"
 msgstr "Tu Mensaje"
 
-#: .\templates\navbar.html:107
+#: .\templates\navbar.html:106
 msgid "Send"
 msgstr "Enviar"
 
-#: .\templates\navbar.html:127
+#: .\templates\navbar.html:126
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\templates\navbar.html:130
+#: .\templates\navbar.html:129
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\templates\navbar.html:133
+#: .\templates\navbar.html:132
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\navbar.html:166
+#: .\templates\navbar.html:165
 msgid "Manage System"
 msgstr "Sistema de Gestión"
 
-#: .\templates\navbar.html:167
+#: .\templates\navbar.html:166
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de inmigración y extranjería"
 
-#: .\templates\navbar.html:183
+#: .\templates\navbar.html:182
 msgid "Go"
 msgstr "Ir"
 
-#: .\templates\navbar.html:188
+#: .\templates\navbar.html:187
 msgid "Links"
 msgstr "Direcciones"
 
-#: .\templates\navbar.html:191
+#: .\templates\navbar.html:190
 msgid "Citizen Portal"
 msgstr "Portal del cuidadano"
 
-#: .\templates\navbar.html:194
+#: .\templates\navbar.html:193
 msgid "Ministry of Interior"
 msgstr "Ministerio del Interior"
 
-#: .\templates\navbar.html:197
+#: .\templates\navbar.html:196
 msgid "Company's only booth"
 msgstr "Único stand de la compañía"
 
-#: .\templates\navbar.html:204
+#: .\templates\navbar.html:203
 msgid "Copyright: Created by University of Holguin"
 msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
+
+#: .\templates\navbar.html:222
+msgid "Sended"
+msgstr "Enviado"
+
+#: .\templates\navbar.html:223
+msgid "Your message has sended correctly"
+msgstr "Su mensaje ha sido enviado correctamente"
+
+#: .\templates\navbar.html:229
+msgid "Not send"
+msgstr "No enviado"
+
+#: .\templates\navbar.html:230
+msgid "Error sending your message"
+msgstr "Error enviando su mensaje"
 
 #: .\validators.py:10
 #, python-format
