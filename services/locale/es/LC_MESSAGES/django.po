@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 19:09-0500\n"
+"POT-Creation-Date: 2018-11-27 19:15-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr "Viudo"
 
 #: .\models.py:23 .\models.py:153
 #: .\templates\services\client_detail_template.html:12
-#: .\templates\services\client_list.html:18
+#: .\templates\services\client_list.html:19
 #: .\templates\services\residencemarriage_detail.html:29
 msgid "Identity card"
 msgstr "Carnet de identidad"
@@ -58,7 +58,7 @@ msgid "Last name"
 msgstr "Apellidos"
 
 #: .\models.py:27 .\templates\services\client_detail_template.html:15
-#: .\templates\services\client_list.html:19
+#: .\templates\services\client_list.html:20
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
@@ -88,7 +88,7 @@ msgstr "Dirección"
 
 #: .\models.py:34 .\models.py:233
 #: .\templates\services\client_detail_template.html:53
-#: .\templates\services\client_list.html:20
+#: .\templates\services\client_list.html:21
 #: .\templates\services\visa_detail.html:78
 msgid "Email"
 msgstr "Correo electrónico"
@@ -576,13 +576,21 @@ msgstr "Añadir cliente"
 msgid "Clients list"
 msgstr "Listado de cliente"
 
-#: .\templates\services\client_list.html:17
+#: .\templates\services\client_list.html:18
 msgid "Full name"
 msgstr "Nombre completo"
 
-#: .\templates\services\client_list.html:39
+#: .\templates\services\client_list.html:40
 msgid "Client detail"
 msgstr "Detalle del cliente"
+
+#: .\templates\services\client_list.html:68
+msgid "No client found in the system."
+msgstr "No se encontraron clientes en el sistema."
+
+#: .\templates\services\client_list.html:70 .\templates\services\tools.html:16
+msgid "Create new client"
+msgstr "Añadir nuevo cliente"
 
 #: .\templates\services\entity_form.html:10
 #: .\templates\services\visa_detail.html:62
@@ -703,10 +711,6 @@ msgstr "Herramientas"
 #: .\templates\services\tools.html:12
 msgid "Services tools"
 msgstr "Herramientas de servicios"
-
-#: .\templates\services\tools.html:16
-msgid "Create new client"
-msgstr "Añadir nuevo cliente"
 
 #: .\templates\services\tools.html:24
 msgid "Visa for a client"

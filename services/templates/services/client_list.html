@@ -11,53 +11,66 @@
 {% endblock %}
 
 {% block main %}
-    <table class="table table-bordered table-hover mouse-pointer" cellspacing="0" width="100%">
-        <thead>
-        <tr>
-            <th class="th-sm">{% trans 'Full name' %}</th>
-            <th class="th-sm">{% trans 'Identity card' %}</th>
-            <th class="th-sm">{% trans 'Born date' %}</th>
-            <th class="th-sm">{% trans 'Email' %}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for client in client_list %}
+    {% if client_list %}
+        <table class="table table-bordered table-hover mouse-pointer" cellspacing="0" width="100%">
+            <thead>
             <tr>
-                <td>
-                    <a href="{% url 'services:service_create' service_type client.pk %}">
-                        {{ client.get_full_name }}
-                    </a>
-                    <i class="fa fa-eye float-lg-right" data-toggle="modal"
-                       data-target="#client-{{ forloop.counter }}"></i>
-                    <!-- Client detail modal -->
-                    <div class="modal fade" id="client-{{ forloop.counter }}" tabindex="-1" role="dialog"
-                         aria-labelledby="client-{{ forloop.counter }}"
-                         aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header text-center">
-                                    <h4 class="modal-title w-100 font-weight-bold">{% trans 'Client detail' %}</h4>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <!-- Modal body-->
-                                <div class="modal-body mx-3">
-                                    <div class="container-fluid">
-                                        {% include 'services/client_detail_template.html' with client=client %}
+                <th class="th-sm">{% trans 'Full name' %}</th>
+                <th class="th-sm">{% trans 'Identity card' %}</th>
+                <th class="th-sm">{% trans 'Born date' %}</th>
+                <th class="th-sm">{% trans 'Email' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for client in client_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'services:service_create' service_type client.pk %}">
+                            {{ client.get_full_name }}
+                        </a>
+                        <i class="fa fa-eye float-lg-right" data-toggle="modal"
+                           data-target="#client-{{ forloop.counter }}"></i>
+                        <!-- Client detail modal -->
+                        <div class="modal fade" id="client-{{ forloop.counter }}" tabindex="-1" role="dialog"
+                             aria-labelledby="client-{{ forloop.counter }}"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                        <h4 class="modal-title w-100 font-weight-bold">{% trans 'Client detail' %}</h4>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
+                                    <!-- Modal body-->
+                                    <div class="modal-body mx-3">
+                                        <div class="container-fluid">
+                                            {% include 'services/client_detail_template.html' with client=client %}
+                                        </div>
+                                    </div>
+                                    <!-- Modal body-->
                                 </div>
-                                <!-- Modal body-->
                             </div>
                         </div>
-                    </div>
-                    <!-- Client detail modal -->
-                </td>
-                <td>{{ client.ci }}</td>
-                <td>{{ client.born_date }}</td>
-                <td>{{ client.email }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                        <!-- Client detail modal -->
+                    </td>
+                    <td>{{ client.ci }}</td>
+                    <td>{{ client.born_date }}</td>
+                    <td>{{ client.email }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h3 class="text-muted">{% trans 'No client found in the system.' %}</h3>
+                    <a href="{% url 'services:client_create' %}" class="btn btn-outline-default">
+                        {% trans 'Create new client' %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
