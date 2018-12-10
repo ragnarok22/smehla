@@ -50,9 +50,10 @@ class DashBoardView(mixins.SuperuserRequiredMixin, mixins.NavbarMixin, generic.L
     def get_context_data(self, **kwargs):
         context = super(DashBoardView, self).get_context_data(**kwargs)
         now = timezone.now().today()
-        context['visa_to_expire'] = Visa.objects.filter(
-            Q(visa_expiration_date__gte=datetime.date(now.year, now.month, now.day - 5)) &
-            Q(visa_expiration_date__lte=datetime.date(now.year, now.month, now.day))
+        print(now)
+        context['visa_to_expire'] = Visa.objects.filter(  # arreglar consulta
+            Q(visa_expiration_date__gte=datetime.date(now.year, now.month, now.day)) &
+            Q(visa_expiration_date__lte=datetime.date(now.year, now.month, now.day + 5))
         )
         context['expired_visa'] = Visa.objects.filter(
             Q(visa_expiration_date__lt=now)
