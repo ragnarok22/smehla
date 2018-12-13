@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block main %}
+    {{ form }}
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -13,11 +14,30 @@
                     <div class="card-header">
                         Buscar estado
                     </div>
-                    <div class="card-body">
-                        <form method="get">
+                    <form method="post" action="{% url 'services:status' %}">
+                        {% csrf_token %}
+                        <div>
+                            <input type="radio" id="national" name="{{ form.request_type.name }}">
+                            <label for="national">Nacionales</label>
+                            <input type="radio" id="foreigner" name="{{ form.request_type.name }}">
+                            <label for="foreigner">Extranjeros</label>
+                        </div>
+                        <div id="national-form">
+                            <input type="radio" id="national-ci" name="{{ form.search_type.name }}">
+                            <label for="national-ci">Carnet de identidad</label>
+                            <input type="radio" id="national-passport" name="{{ form.search_type.name }}">
+                            <label for="national-passport">Numero de pasaporte</label>
+                        </div>
+                        <div id="foreigner-form" class="hidden">
+                            <input type="radio" id="foreigner-passport" name="{{ form.search_type.name }}">
+                            <label for="foreigner-passport">Numero de pasaporte</label>
+                            <input type="radio" id="foreigner-residence" name="{{ form.search_type.name }}">
+                            <label for="foreigner-residence">Numero de residencia</label>
+                        </div>
+                        <div class="card-body">
                             <div class="md-form">
                                 <label for="search">{% trans 'Search' %}</label>
-                                <input type="text" class="form-control" id="search" name="search"
+                                <input type="text" class="form-control" id="search" name="{{ form.search.name }}"
                                        {% if value %}value="{{ value }}"{% endif %}>
                             </div>
                             <button type="submit" class="btn btn-default">{% trans 'Accept' %}</button>
@@ -45,10 +65,61 @@
                             {% else %}
                                 <h5 class="h5 text-center text-danger">{{ message }}</h5>
                             {% endif %}
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function () {
+            const request_type = $('#{{ form.request_type.id_for_label }}');
+            const search_type = $('#{{ form.search_type.id_for_label }}');
+            $('#national').click(function () {
+                $('#national-form').removeClass('hidden');
+                $('#foreigner-form').addClass('hidden');
+                $('#national-ci').prop('checked', 'true');
+                request_type.val('national');
+            });
+            $('#foreigner').click(function () {
+                $('#foreigner-form').removeClass('hidden');
+                $('#national-form').addClass('hidden');
+                $('#foreigner-passport').prop('checked', 'true');
+                request_type.val('foreigner');
+            });
+            $('#national-ci').click(function () {
+                search_type.val('ci');
+            });
+            $('#national-passport').click(function () {
+                search_type.val('passport');
+            });
+            $('#foreigner-passport').click(function () {
+                search_type.val('passport');
+            });
+            $('#foreigner-residence').click(function () {
+                search_type.val('residence');
+            });
+        });
+
+        $('form').submit(function (event) {
+            event.preventDefault();
+            $.ajax($(this).prop('action'), {
+                method: 'POST',
+                data: {
+                    'request_type': $('#{{ form.request_type.id_for_label }}').val(),
+                    'search_type': $('#{{ form.search_type.id_for_label }}').val(),
+                    'search': $('#search').val(),
+                },
+                success: function (response, status) {
+                    console.log(response);
+                },
+                error: function (response) {
+                    console.log(response);
+                },
+            });
+        });
+    </script>
 {% endblock %}

@@ -88,8 +88,10 @@ class AjaxableResponseMixin(generic.FormView):
         response = super(AjaxableResponseMixin, self).form_valid(form)
         if self.request.is_ajax():
             data = {
-                'pk': self.object.pk,
+                'status': 'success',
             }
+            if self.extra_context:
+                data.update(self.extra_context)
             return JsonResponse(data)
         else:
             return response

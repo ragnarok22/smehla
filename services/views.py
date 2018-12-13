@@ -29,9 +29,23 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
     paginate_by = 5
 
 
-class SearchStatusServiceView(mixins.NavbarMixin, generic.TemplateView):
+class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
     template_name = 'services/status_service.html'
     tab_name = 'status'
+    form_class = forms.ServiceStatusFrom
+    success_url = reverse_lazy('services:status')
+
+    def post(self, request, *args, **kwargs):
+        print(request.POST)
+        return super().post(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        if self.request.is_ajax():
+            data = {
+                'asdf': form.search_status()
+            }
+            return JsonResponse(data)
+        return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super(SearchStatusServiceView, self).get_context_data(**kwargs)

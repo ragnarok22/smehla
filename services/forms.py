@@ -1,4 +1,6 @@
 from django import forms
+from django.db.models import Q
+from django.utils.translation import gettext_lazy as _
 
 from services import models
 from . import widgets
@@ -113,3 +115,85 @@ class ResidenceRenovationForm(forms.ModelForm):
             'issuance_passport_date': widgets.DateInput(),
             'valid_passport_date': widgets.DateInput(),
         }
+
+
+class ServiceStatusFrom(forms.Form):
+    REQUEST_TYPE_CHOICES = (
+        ('national', _('National')),
+        ('foreigner', _('Foreigner')),
+    )
+    SEARCH_TYPE_CHOICES = (
+        ('ci', _('Identity Card')),
+        ('passport', _('Passport')),
+        ('residence', _('Number of Residence')),
+    )
+    request_type = forms.ChoiceField(choices=REQUEST_TYPE_CHOICES)
+    search_type = forms.ChoiceField(choices=SEARCH_TYPE_CHOICES)
+    search = forms.CharField()
+
+    def search_status(self):
+        search_type = self.cleaned_data['search_type']
+        search = self.cleaned_data['search']
+        print(self.cleaned_data['request_type'])
+        print(search_type)
+        print(search)
+        if self.cleaned_data['request_type'] == 'national':  # visa passport
+            if search_type == 'ci':
+                visa_result = models.Visa.objects.filter(
+                    Q(client__ci__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+                passport_result = models.Passport.objects.filter(
+                    Q(client__ci__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+            elif search_type == 'passport':
+                visa_result = models.Visa.objects.filter(
+                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+                passport_result = models.Passport.objects.filter(
+                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+            else:
+                visa_result = []
+                passport_result = []
+            result = []
+            for v in visa_result:
+                result.append(v)
+            for p in passport_result:
+                result.append(p)
+            print(result)
+            return result
+        elif self.cleaned_data['request_type'] == 'foreigner':  # renovation marriage authorization
+            if search_type == 'passport':
+                renovation = models.ResidenceRenovation.objects.filter(
+                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+                marriage = models.ResidenceMarriage.objects.filter(
+                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+                authorization = models.ResidenceAuthorization.objects.filter(
+                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+            elif search_type == 'residence':
+                renovation = models.ResidenceRenovation.objects.filter(
+                    Q(residence_authorization_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+                marriage = models.ResidenceMarriage.objects.filter(
+                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+                authorization = models.ResidenceAuthorization.objects.filter(
+                    Q(authorization_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
+                )
+            else:
+                renovation = []
+                marriage = []
+                authorization = []
+            result = []
+            for r in renovation:
+                result.append(r)
+            for m in marriage:
+                result.append(m)
+            for a in authorization:
+                result.append(a)
+            return result
+        else:
+            pass  # raise error

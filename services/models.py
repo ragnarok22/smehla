@@ -153,6 +153,7 @@ class ResidenceMarriage(Service):
     ci = models.CharField(_('Identity card'), max_length=13)
     issuance_date = models.DateField(_('Issuance date'))
     valid_date = models.DateField(_('Valid date'))
+    passport_no = models.CharField(max_length=14)
 
     class Meta:
         verbose_name = _('Residence by Marriage')
@@ -161,7 +162,7 @@ class ResidenceMarriage(Service):
 
 class ResidenceAuthorization(Service):
     service_type = 'authorization'
-    authorization_no = models.PositiveIntegerField(_('Authorization No.'))
+    authorization_no = models.CharField(_('Authorization No.'), max_length=30)
     issued_place = models.CharField(_('Issued in'), max_length=100)
     issuance_date = models.DateField(_('Issuance date'))
     valid_date = models.DateField(_('Valid until'))
