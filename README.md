@@ -26,3 +26,4 @@ Para ejecutar el sitio abra la consola en la dirección donde descargó el proye
 
 ## Dudas
 Si tienes dudas crea un nuevo [issue en Github](https://github.com/ragnarok22/smehla/issues/new) y has tu pregunta.
+Esto es una prueba
