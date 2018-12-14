@@ -23,3 +23,6 @@ Para la creación de la base de datos y la creación del primer usuario administ
 
 ## Ejecutar el sitio
 Para ejecutar el sitio abra la consola en la dirección donde descargó el proyecto y escriba `python manage.py runserver`. La página se ejecutará localmente en el puerto 8000. Abra el navegador en la dirección [http://127.0.0.1:8000](http://127.0.0.1:8000) y podrá ver el sitio ejecutándose en su computador. En caso de que desee que desde otro computador se vea ejecute el comando `python manage.py runserver 0.0.0.0`.
+
+## Dudas
+Si tienes dudas crea un nuevo [issue en Github](https://github.com/ragnarok22/smehla/issues/new) y has tu pregunta.
