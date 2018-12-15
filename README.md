@@ -18,5 +18,11 @@ Primero debe descargar el proyecto o clonarlo con [Git](https://git-scm.com/) co
 - Una vez realizado esto escribir `python manage.py migrate` y ya se ha creado la base de datos.
 - Debe crear un usuario administrador la primera vez que ejecuta el programa, para hacerlo escriba `python manage.py createsuperuser` y siga las instrucciones.
 
+### Instalar el proyecto mucho más fácil
+Para la creación de la base de datos y la creación del primer usuario administrador ejecute `install_project.bat` y siga las indicaciones para crear el usuario administrador. Para ejecutar el sitio solo tiene que ejecutar el fichero `start_project.bat`.
+
 ## Ejecutar el sitio
 Para ejecutar el sitio abra la consola en la dirección donde descargó el proyecto y escriba `python manage.py runserver`. La página se ejecutará localmente en el puerto 8000. Abra el navegador en la dirección [http://127.0.0.1:8000](http://127.0.0.1:8000) y podrá ver el sitio ejecutándose en su computador. En caso de que desee que desde otro computador se vea ejecute el comando `python manage.py runserver 0.0.0.0`.
+
+## Dudas
+Si tienes dudas crea un nuevo [issue en Github](https://github.com/ragnarok22/smehla/issues/new) y has tu pregunta.
