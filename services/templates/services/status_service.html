@@ -100,7 +100,7 @@
                     'search_type': $('#{{ form.search_type.id_for_label }}').val(),
                     'search': $('#search').val(),
                 },
-                success: function (response, status) {
+                success: function (response) {
                     console.log(response);
                     $('table[class="table"]').removeClass('hidden');
                     let html = '';
@@ -108,14 +108,19 @@
                         html = '<tr><td colspan="2">' + response['message'] + '</td></tr>';
                     } else {
                         for (let i = 0; i < response['data'].length; i++) {
-                            html += '<tr><td>' + response['data'][i]['client_name'] +
-                                '</td><td>' + response['data'][i]['passport_no'] +'</td></tr>';
+                            let service = response['data'][i];
+                            html += '<tr><td>' + service['client_name'] +
+                                '</td><td>' + service['passport_no'] + '</td></tr>';
                         }
                     }
                     $('#results').html(html);
                 },
-                error: function (response) {
-                    console.log(response);
+                error: function (response, status) {
+                    swal({
+                        title: '{% trans "Error processing request" %}',
+                        type: status,
+                        html: '{% trans "Could not connect to server" %}'
+                    });
                 },
             });
         });

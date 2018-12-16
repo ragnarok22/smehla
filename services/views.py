@@ -40,7 +40,7 @@ class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
         if self.request.is_ajax():
             data = None
             if search == {}:
-                data = {'message': 'There are not request that correspond with that search'}
+                data = {'message': _('There are not request that correspond with that search')}
             else:
                 data = search
             return JsonResponse(data)
