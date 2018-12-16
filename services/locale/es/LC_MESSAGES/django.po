@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-15 22:12-0500\n"
+"POT-Creation-Date: 2018-12-16 16:41-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,6 +64,7 @@ msgstr "Viudo"
 #: .\templates\services\client_detail_template.html:12
 #: .\templates\services\client_list.html:19
 #: .\templates\services\residencemarriage_detail.html:29
+#: .\templates\services\status_service.html:27
 msgid "Identity card"
 msgstr "Carnet de identidad"
 
@@ -398,7 +399,8 @@ msgstr "Entidad"
 msgid "Entities"
 msgstr "Entidades"
 
-#: .\models.py:228 .\templates\services\visa_detail.html:67
+#: .\models.py:228 .\templates\services\status_service.html:47
+#: .\templates\services\visa_detail.html:67
 msgid "Name"
 msgstr "Nombre"
 
@@ -718,6 +720,28 @@ msgstr "Nuestros servicios"
 #: .\templates\services\status_service.html:5
 msgid "Service status"
 msgstr "Estado del servicio"
+
+#: .\templates\services\status_service.html:15
+msgid "Search status"
+msgstr "Buscar estado"
+
+#: .\templates\services\status_service.html:21
+msgid "Nationals"
+msgstr "Nacionales"
+
+#: .\templates\services\status_service.html:23
+msgid "Foreigners"
+msgstr "Extranjeros"
+
+#: .\templates\services\status_service.html:29
+#: .\templates\services\status_service.html:33
+#: .\templates\services\status_service.html:48
+msgid "Passport number"
+msgstr "Número de pasaporte"
+
+#: .\templates\services\status_service.html:35
+msgid "Residence number"
+msgstr "Número de residencia"
 
 #: .\templates\services\status_service.html:39
 msgid "Search"

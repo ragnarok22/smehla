@@ -12,27 +12,27 @@
             <div class="col-lg-12">
                 <div class="card text-center">
                     <div class="card-header">
-                        Buscar estado
+                        {% trans 'Search status' %}
                     </div>
-                    <form method="post" action="{% url 'services:status' %}">
+                    <form method="post" action="{% url 'services:status' %}" id="search-form">
                         {% csrf_token %}
                         <div>
                             <input type="radio" id="national" name="{{ form.request_type.name }}">
-                            <label for="national">Nacionales</label>
+                            <label for="national">{% trans 'Nationals' %}</label>
                             <input type="radio" id="foreigner" name="{{ form.request_type.name }}">
-                            <label for="foreigner">Extranjeros</label>
+                            <label for="foreigner">{% trans 'Foreigners' %}</label>
                         </div>
                         <div id="national-form">
                             <input type="radio" id="national-ci" name="{{ form.search_type.name }}">
-                            <label for="national-ci">Carnet de identidad</label>
+                            <label for="national-ci">{% trans 'Identity card' %}</label>
                             <input type="radio" id="national-passport" name="{{ form.search_type.name }}">
-                            <label for="national-passport">Numero de pasaporte</label>
+                            <label for="national-passport">{% trans 'Passport number' %}</label>
                         </div>
                         <div id="foreigner-form" class="hidden">
                             <input type="radio" id="foreigner-passport" name="{{ form.search_type.name }}">
-                            <label for="foreigner-passport">Numero de pasaporte</label>
+                            <label for="foreigner-passport">{% trans 'Passport number' %}</label>
                             <input type="radio" id="foreigner-residence" name="{{ form.search_type.name }}">
-                            <label for="foreigner-residence">Numero de residencia</label>
+                            <label for="foreigner-residence">{% trans 'Residence number' %}</label>
                         </div>
                         <div class="card-body">
                             <div class="md-form">
@@ -44,14 +44,13 @@
                             <table class="table hidden">
                                 <thead>
                                 <tr>
-                                    <th class="th-sm">Nombre</th>
-                                    <th class="th-sm">Numero de pasaporte</th>
+                                    <th class="th-sm">{% trans 'Name' %}</th>
+                                    <th class="th-sm">{% trans 'Passport number' %}</th>
                                 </tr>
                                 </thead>
                                 <tbody id="results">
                                 </tbody>
                             </table>
-                            <h5 class="h5 text-center text-danger">{{ message }}</h5>
                         </div>
                     </form>
                 </div>
@@ -91,7 +90,7 @@
             });
         });
 
-        $('form').submit(function (event) {
+        $('#search-form').submit(function (event) {
             event.preventDefault();
             $.ajax($(this).prop('action'), {
                 method: 'POST',
@@ -105,7 +104,8 @@
                     $('table.table').removeClass('hidden');
                     let html = '';
                     if (response['message']) {
-                        html = '<tr><td colspan="2">' + response['message'] + '</td></tr>';
+                        html = '<tr><td colspan="2"><h5 class="h5 text-center text-danger">'
+                            + response['message'] + '</h5></td></tr>';
                     } else {
                         for (let i = 0; i < response['data'].length; i++) {
                             let service = response['data'][i];
