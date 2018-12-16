@@ -35,15 +35,14 @@ class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
     form_class = forms.ServiceStatusFrom
     success_url = reverse_lazy('services:status')
 
-    def post(self, request, *args, **kwargs):
-        print(request.POST)
-        return super().post(request, *args, **kwargs)
-
     def form_valid(self, form):
+        search = form.search_status()
         if self.request.is_ajax():
-            data = {
-                'asdf': form.search_status()
-            }
+            data = None
+            if search == {}:
+                data = {'message': 'There are not request that correspond with that search'}
+            else:
+                data = search
             return JsonResponse(data)
         return super().form_valid(form)
 

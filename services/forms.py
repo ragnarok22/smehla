@@ -134,9 +134,6 @@ class ServiceStatusFrom(forms.Form):
     def search_status(self):
         search_type = self.cleaned_data['search_type']
         search = self.cleaned_data['search']
-        print(self.cleaned_data['request_type'])
-        print(search_type)
-        print(search)
         if self.cleaned_data['request_type'] == 'national':  # visa passport
             if search_type == 'ci':
                 visa_result = models.Visa.objects.filter(
@@ -155,45 +152,58 @@ class ServiceStatusFrom(forms.Form):
             else:
                 visa_result = []
                 passport_result = []
-            result = []
+            results = []
             for v in visa_result:
-                result.append(v)
+                results.append({
+                    'client_name': v.client.get_full_name(),
+                    'passport_no': v.passport_no
+                })
             for p in passport_result:
-                result.append(p)
-            print(result)
-            return result
+                results.append({
+                    'client_name': p.client.get_full_name(),
+                    'passport_no': p.passport_no
+                })
         elif self.cleaned_data['request_type'] == 'foreigner':  # renovation marriage authorization
             if search_type == 'passport':
-                renovation = models.ResidenceRenovation.objects.filter(
+                renovation_result = models.ResidenceRenovation.objects.filter(
                     Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
                 )
-                marriage = models.ResidenceMarriage.objects.filter(
+                marriage_result = models.ResidenceMarriage.objects.filter(
                     Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
                 )
-                authorization = models.ResidenceAuthorization.objects.filter(
+                authorization_result = models.ResidenceAuthorization.objects.filter(
                     Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
                 )
             elif search_type == 'residence':
-                renovation = models.ResidenceRenovation.objects.filter(
+                renovation_result = models.ResidenceRenovation.objects.filter(
                     Q(residence_authorization_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
                 )
-                marriage = models.ResidenceMarriage.objects.filter(
+                marriage_result = models.ResidenceMarriage.objects.filter(
                     Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
                 )
-                authorization = models.ResidenceAuthorization.objects.filter(
+                authorization_result = models.ResidenceAuthorization.objects.filter(
                     Q(authorization_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
                 )
             else:
-                renovation = []
-                marriage = []
-                authorization = []
-            result = []
-            for r in renovation:
-                result.append(r)
-            for m in marriage:
-                result.append(m)
-            for a in authorization:
-                result.append(a)
-            return result
+                renovation_result = []
+                marriage_result = []
+                authorization_result = []
+            results = []
+            for r in renovation_result:
+                results.append({
+                    'client_name': r.client.get_full_name(),
+                    'passport_no': r.passport_no
+                })
+            for m in marriage_result:
+                results.append({
+                    'client_name': m.client.get_full_name(),
+                    'passport_no': m.passport_no
+                })
+            for a in authorization_result:
+                results.append({
+                    'client_name': a.client.get_full_name(),
+                    'passport_no': a.passport_no
+                })
         else:
-            pass  # raise error
+            results = []  # raise error
+        return {} if results == [] else {'data': results}
