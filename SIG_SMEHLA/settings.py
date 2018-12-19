@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tr)^75(t!@gn)5m2_9v(j$2jmxud4f&h&m#1%&ydw*wh-ql7m_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -118,6 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = 'accounts:login'
@@ -144,3 +145,12 @@ EMAIL_HOST_PASSWORD = 'lapuerca32+'
 
 # admin email
 ADMINS = ['ragnarok@uho.edu.cu']
+
+# deployment configuration
+SECURE_HSTS_SECONDS = ''
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent the browser from identifying content types incorrectly
+SECURE_BROWSER_XSS_FILTER = True  # Activate the browser's XSS filtering and help prevent XSS attacks
+SECURE_SSL_REDIRECT = False  # Redirect all connections to HTTPS
+SESSION_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to hijack user sessions
+CSRF_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to steal the CSRF token
+X_FRAME_OPTIONS = 'DENY'  # unless there is a good reason for your site to serve other parts of itself in a frame
