@@ -13,7 +13,7 @@
 {% block mask %}
     <div class="" id="intro">
         <div class="mask rgba-black-strong">
-            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+            <div class="container-fluid d-flex flex-column align-items-center justify-content-center h-100">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-md-10">
                         <!-- Heading -->
@@ -29,13 +29,16 @@
                         </h4>
                     </div>
                 </div>
+                <div class="arrow-down text-center">
+                    <a data-scroll href="#content"><i class="fa fa-angle-down fa-4x"></i></a>
+                </div>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block main %}
-    <div class="mt-4">
+    <div class="mt-4" id="content">
         <div class="container">
             <section class="text-center">
                 <h2 class="mb-3">{% trans 'Mission' %}</h2>

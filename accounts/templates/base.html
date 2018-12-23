@@ -44,6 +44,8 @@
 <script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.js' %}"></script>
 <script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.es.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.pt.min.js' %}"></script>
+<!-- Smooth Scroll animation -->
+<script type="text/javascript" src="{% static 'accounts/js/smooth-scroll.min.js' %}"></script>
 <!-- My custom JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
 <script>
@@ -55,6 +57,12 @@
         $('.datepicker').datepicker({
             language: '{{ LANGUAGE_CODE }}',
             format:"yyyy/mm/dd",
+        });
+
+        let scroll = SmoothScroll("a[data-scroll]", {
+            speed: 1000,
+            offset: 22,
+            updateURL: false,
         });
     });
 </script>

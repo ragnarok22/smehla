@@ -16,3 +16,38 @@
 .mask {
     height: 100%;
 }
+
+@keyframes mov-down {
+    from {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(6px);
+        -moz-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+        -o-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.arrow-down {
+    margin-top: auto;
+    -webkit-animation: mov-down 1.5s ease-in-out infinite;
+    -o-animation: mov-down 1.5s ease-in-out infinite;
+    animation: mov-down 1.5s ease-in-out infinite;
+}
+
+.arrow-down a {
+    color: #fff;
+}
