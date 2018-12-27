@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import load_config
+
+config = load_config.ConfigLoader()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.utils.translation import gettext_lazy as _
@@ -21,12 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'tr)^75(t!@gn)5m2_9v(j$2jmxud4f&h&m#1%&ydw*wh-ql7m_'
+SECRET_KEY = config.to_python(load_config.SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = config.to_python(load_config.ALLOWED_HOSTS)
 
 # Application definition
 
@@ -76,12 +79,7 @@ WSGI_APPLICATION = 'SIG_SMEHLA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = config.get_database_config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -106,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = config.to_python(load_config.TIMEZONE)
 
 USE_I18N = True
 
@@ -138,19 +136,19 @@ DATE_INPUT_FORMATS = [
 ]
 
 # email configuration
-EMAIL_HOST = '10.26.0.75'
-EMAIL_PORT = '25'
-EMAIL_HOST_USER = 'ragnarok'
-EMAIL_HOST_PASSWORD = 'lapuerca32+'
+EMAIL_HOST = config.to_python(load_config.EMAIL_HOST)
+EMAIL_PORT = config.to_python(load_config.EMAIL_PORT)
+EMAIL_HOST_USER = config.to_python(load_config.EMAIL_HOST_USER)
+EMAIL_HOST_PASSWORD = config.to_python(load_config.EMAIL_HOST_PASSWORD)
 
 # admin email
-ADMINS = ['ragnarok@uho.edu.cu']
+ADMINS = config.to_python(load_config.ADMINS)
 
 # deployment configuration
 SECURE_HSTS_SECONDS = ''
 SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent the browser from identifying content types incorrectly
 SECURE_BROWSER_XSS_FILTER = True  # Activate the browser's XSS filtering and help prevent XSS attacks
 SECURE_SSL_REDIRECT = False  # Redirect all connections to HTTPS
-SESSION_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to hijack user sessions
+# SESSION_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to hijack user sessions
 CSRF_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to steal the CSRF token
 X_FRAME_OPTIONS = 'DENY'  # unless there is a good reason for your site to serve other parts of itself in a frame
