@@ -108,3 +108,4 @@ venv.bak/
 *.pyc
 media/
 migrations/
+config.ini
