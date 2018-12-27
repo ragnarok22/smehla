@@ -1,10 +1,19 @@
 from datetime import date
 
-from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth.models import User, AbstractUser, UserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from .validators import validate_born_date
+
+
+class CustomUserManager(UserManager):
+    def create_superuser(self, username, email, password, **extra_fields):
+        extra_fields.setdefault('occupation', 'ADMIN')
+
+        if extra_fields.get('occupation') is not 'ADMIN':
+            raise ValueError('Superuser must have occupation=ADMIN.')
+        return super().create_superuser(username, email, password, **extra_fields)
 
 
 class Profile(AbstractUser):
@@ -17,6 +26,8 @@ class Profile(AbstractUser):
     )
     born_date = models.DateField(_('Born date'), blank=True, null=True, validators=[validate_born_date])
     occupation = models.CharField(_('Occupation'), max_length=5, choices=OCCUPATION_TYPE, default='FAC')
+
+    objects = CustomUserManager()
 
     class Meta:
         verbose_name = _('Profile')
