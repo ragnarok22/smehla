@@ -12,12 +12,13 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import load_config
+from django.utils.translation import gettext_lazy as _
 
+
+# configuration loader from config.ini file
 config = load_config.ConfigLoader()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from django.utils.translation import gettext_lazy as _
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
