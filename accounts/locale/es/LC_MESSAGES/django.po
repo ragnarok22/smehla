@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-28 10:17-0500\n"
+"POT-Creation-Date: 2019-01-02 12:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,195 +18,196 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\admin.py:12
+#: .\accounts\admin.py:12
 msgid "Personal info"
 msgstr "Información personal"
 
-#: .\admin.py:13
+#: .\accounts\admin.py:13
 msgid "Permissions"
 msgstr "Permisos"
 
-#: .\admin.py:15
+#: .\accounts\admin.py:15
 msgid "Important dates"
 msgstr "Fechas importantes"
 
-#: .\admin.py:16
+#: .\accounts\admin.py:16
 msgid "Others dates"
 msgstr "Otras fechas"
 
-#: .\forms.py:27
+#: .\accounts\forms.py:27
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\forms.py:31
+#: .\accounts\forms.py:31
 msgid "Repeat password"
 msgstr "Repita la contraseña"
 
-#: .\forms.py:50
+#: .\accounts\forms.py:50
 msgid "Passwords don't match"
 msgstr "Las contraseñas no coinciden"
 
-#: .\forms.py:82
+#: .\accounts\forms.py:82
 msgid "Old password"
 msgstr "Contraseña anterior"
 
-#: .\forms.py:87
+#: .\accounts\forms.py:87
 msgid "New password"
 msgstr "Nueva contraseña"
 
-#: .\forms.py:93
+#: .\accounts\forms.py:93
 msgid "New password confirmation"
 msgstr "Confirme la nueva contraseña"
 
-#: .\forms.py:106
+#: .\accounts\forms.py:106
 msgid "{} <{}> send you a email: {}"
 msgstr "{} <{}> te envió un mensaje: {}"
 
-#: .\mixins.py:31
+#: .\accounts\mixins.py:31
 msgid "Profile not found"
 msgstr "Perfil no encontrado"
 
-#: .\models.py:12
+#: .\accounts\models.py:21
 msgid "Functionary of Attention to Customer"
 msgstr "Funcionario de atención al cliente"
 
-#: .\models.py:13
+#: .\accounts\models.py:22
 msgid "Boss of Attention to Customer"
 msgstr "Jefe de Atención al cliente"
 
-#: .\models.py:14
+#: .\accounts\models.py:23
 msgid "Boss of Departament of Attention to Customer"
 msgstr "Jefe del Departamento de Atención al Cliente"
 
-#: .\models.py:15
+#: .\accounts\models.py:24
 msgid "Director"
 msgstr "Director"
 
-#: .\models.py:16
+#: .\accounts\models.py:25
 msgid "Administrator"
 msgstr "Administrador"
 
-#: .\models.py:18 .\templates\accounts\profile_detail.html:27
+#: .\accounts\models.py:27 .\accounts\templates\accounts\profile_detail.html:27
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\models.py:19 .\templates\accounts\dashboard.html:93
-#: .\templates\accounts\profile_detail.html:37
+#: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:93
+#: .\accounts\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupación"
 
-#: .\models.py:22
+#: .\accounts\models.py:33
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\models.py:23
+#: .\accounts\models.py:34
 msgid "Profiles"
 msgstr "Perfiles"
 
-#: .\models.py:27
+#: .\accounts\models.py:38
 #, python-format
 msgid "%(years)d years"
 msgstr "%(years)d años"
 
-#: .\templates\accounts\dashboard.html:5 .\templates\navbar.html:43
+#: .\accounts\templates\accounts\dashboard.html:5
+#: .\accounts\templates\navbar.html:43
 msgid "Administrate"
 msgstr "Administrar"
 
-#: .\templates\accounts\dashboard.html:13
+#: .\accounts\templates\accounts\dashboard.html:13
 msgid "Visa to expire"
 msgstr "Visas a expirar"
 
-#: .\templates\accounts\dashboard.html:21
-#: .\templates\accounts\dashboard.html:56
+#: .\accounts\templates\accounts\dashboard.html:21
+#: .\accounts\templates\accounts\dashboard.html:56
 msgid "Type"
 msgstr "Tipo"
 
-#: .\templates\accounts\dashboard.html:22
-#: .\templates\accounts\dashboard.html:57
+#: .\accounts\templates\accounts\dashboard.html:22
+#: .\accounts\templates\accounts\dashboard.html:57
 msgid "Client's name"
 msgstr "Nombre del cliente"
 
-#: .\templates\accounts\dashboard.html:23
-#: .\templates\accounts\dashboard.html:58
+#: .\accounts\templates\accounts\dashboard.html:23
+#: .\accounts\templates\accounts\dashboard.html:58
 msgid "Visa expiration date"
 msgstr "Fecha de expiración de la visa"
 
-#: .\templates\accounts\dashboard.html:48
+#: .\accounts\templates\accounts\dashboard.html:48
 msgid "Expired visas"
 msgstr "Visas expiradas"
 
-#: .\templates\accounts\dashboard.html:81
+#: .\accounts\templates\accounts\dashboard.html:81
 msgid "Users System"
 msgstr "Usuarios del sistema"
 
-#: .\templates\accounts\dashboard.html:83
+#: .\accounts\templates\accounts\dashboard.html:83
 msgid "Add user"
 msgstr "Añadir usuario"
 
-#: .\templates\accounts\dashboard.html:90
-#: .\templates\accounts\profile_detail.html:24
+#: .\accounts\templates\accounts\dashboard.html:90
+#: .\accounts\templates\accounts\profile_detail.html:24
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\templates\accounts\dashboard.html:91
+#: .\accounts\templates\accounts\dashboard.html:91
 msgid "Full name"
 msgstr "Nombre completo"
 
-#: .\templates\accounts\dashboard.html:92
+#: .\accounts\templates\accounts\dashboard.html:92
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\templates\accounts\dashboard.html:94
-#: .\templates\accounts\dashboard.html:107
-#: .\templates\accounts\dashboard.html:147
-#: .\templates\accounts\profile_detail.html:15
+#: .\accounts\templates\accounts\dashboard.html:94
+#: .\accounts\templates\accounts\dashboard.html:107
+#: .\accounts\templates\accounts\dashboard.html:147
+#: .\accounts\templates\accounts\profile_detail.html:15
 msgid "Is active"
 msgstr "Está activo"
 
-#: .\templates\accounts\dashboard.html:95
+#: .\accounts\templates\accounts\dashboard.html:95
 msgid "Actions"
 msgstr "Acciones"
 
-#: .\templates\accounts\dashboard.html:108
-#: .\templates\accounts\dashboard.html:149
-#: .\templates\accounts\profile_detail.html:17
+#: .\accounts\templates\accounts\dashboard.html:108
+#: .\accounts\templates\accounts\dashboard.html:149
+#: .\accounts\templates\accounts\profile_detail.html:17
 msgid "Is inactive"
 msgstr "Está inactivo"
 
-#: .\templates\accounts\dashboard.html:142
+#: .\accounts\templates\accounts\dashboard.html:142
 msgid "The user status has been changed"
 msgstr "El estado del usuario ha sido cambiado"
 
-#: .\templates\accounts\dashboard.html:156
+#: .\accounts\templates\accounts\dashboard.html:156
 msgid "An error has been happened"
 msgstr "Ha ocurrido un error"
 
-#: .\templates\accounts\login.html:22
+#: .\accounts\templates\accounts\login.html:22
 msgid "Login"
 msgstr "Entrar"
 
-#: .\templates\accounts\login.html:45
+#: .\accounts\templates\accounts\login.html:45
 msgid "Remember me"
 msgstr "Recuérdame"
 
-#: .\templates\accounts\login.html:50
+#: .\accounts\templates\accounts\login.html:50
 msgid "Forgot your password?"
 msgstr "¿Olvidó su contraseña?"
 
-#: .\templates\accounts\login.html:57
+#: .\accounts\templates\accounts\login.html:57
 msgid "Get in"
 msgstr "Entrar"
 
-#: .\templates\accounts\password_change_form.html:5
+#: .\accounts\templates\accounts\password_change_form.html:5
 msgid "Change password"
 msgstr "Cambiar la contraseña"
 
-#: .\templates\accounts\password_change_form.html:47
-#: .\templates\accounts\password_reset_form.html:32
+#: .\accounts\templates\accounts\password_change_form.html:47
+#: .\accounts\templates\accounts\password_reset_form.html:32
 msgid "Accept"
 msgstr "Aceptar"
 
-#: .\templates\accounts\password_reset_done.html:10
+#: .\accounts\templates\accounts\password_reset_done.html:10
 msgid ""
 "Continue to be the steps that they have sent to the mail to reestablish your "
 "password."
@@ -214,144 +215,144 @@ msgstr ""
 "Continue los pasos que se han enviado al correo para restablecer su "
 "contraseña."
 
-#: .\templates\accounts\password_reset_done.html:12
+#: .\accounts\templates\accounts\password_reset_done.html:12
 msgid "Home"
 msgstr "Inicio"
 
-#: .\templates\accounts\profile_detail.html:5
+#: .\accounts\templates\accounts\profile_detail.html:5
 #, python-format
 msgid "%(profile)s's profile "
 msgstr "Perfil de %(profile)s"
 
-#: .\templates\accounts\profile_detail.html:31
+#: .\accounts\templates\accounts\profile_detail.html:31
 msgid "Age"
 msgstr "Edad"
 
-#: .\templates\accounts\profile_detail.html:43
-#: .\templates\accounts\profile_update_form.html:55
+#: .\accounts\templates\accounts\profile_detail.html:43
+#: .\accounts\templates\accounts\profile_update_form.html:55
 msgid "Update password"
 msgstr "Cambiar contraseña"
 
-#: .\templates\accounts\profile_detail.html:46
-#: .\templates\accounts\profile_update_form.html:53
+#: .\accounts\templates\accounts\profile_detail.html:46
+#: .\accounts\templates\accounts\profile_update_form.html:53
 msgid "Update"
 msgstr "Actualizar"
 
-#: .\templates\accounts\profile_update_form.html:5
+#: .\accounts\templates\accounts\profile_update_form.html:5
 #, python-format
 msgid "Update %(profile)s's profile"
 msgstr "Actualizar perfil de %(profile)s"
 
-#: .\templates\accounts\profile_update_form.html:58
+#: .\accounts\templates\accounts\profile_update_form.html:58
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .\templates\accounts\send_email.html:5 .\templates\navbar.html:54
-#: .\templates\navbar.html:60
+#: .\accounts\templates\accounts\send_email.html:5
+#: .\accounts\templates\navbar.html:54 .\accounts\templates\navbar.html:60
 msgid "Contact us"
 msgstr "Contáctanos"
 
-#: .\templates\navbar.html:30
+#: .\accounts\templates\navbar.html:30
 msgid "Index"
 msgstr "Inicio"
 
-#: .\templates\navbar.html:34
+#: .\accounts\templates\navbar.html:34
 msgid "Services"
 msgstr "Servicios"
 
-#: .\templates\navbar.html:38
+#: .\accounts\templates\navbar.html:38
 msgid "Tools"
 msgstr "Herramientas"
 
-#: .\templates\navbar.html:47
+#: .\accounts\templates\navbar.html:47
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\templates\navbar.html:50
+#: .\accounts\templates\navbar.html:50
 msgid "News"
 msgstr "Noticias"
 
-#: .\templates\navbar.html:71
+#: .\accounts\templates\navbar.html:71
 msgid "Your name"
 msgstr "Tu nombre"
 
-#: .\templates\navbar.html:80
+#: .\accounts\templates\navbar.html:80
 msgid "Your email"
 msgstr "Tu correo"
 
-#: .\templates\navbar.html:89
+#: .\accounts\templates\navbar.html:89
 msgid "Subject"
 msgstr "Asunto"
 
-#: .\templates\navbar.html:99
+#: .\accounts\templates\navbar.html:98
 msgid "Your message"
 msgstr "Tu Mensaje"
 
-#: .\templates\navbar.html:106
+#: .\accounts\templates\navbar.html:105
 msgid "Send"
 msgstr "Enviar"
 
-#: .\templates\navbar.html:126
+#: .\accounts\templates\navbar.html:125
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\templates\navbar.html:129
+#: .\accounts\templates\navbar.html:128
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\templates\navbar.html:132
+#: .\accounts\templates\navbar.html:131
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\navbar.html:165
+#: .\accounts\templates\navbar.html:164
 msgid "Manage System"
 msgstr "Sistema de Gestión"
 
-#: .\templates\navbar.html:166
+#: .\accounts\templates\navbar.html:165
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de inmigración y extranjería"
 
-#: .\templates\navbar.html:182
+#: .\accounts\templates\navbar.html:181
 msgid "Go"
 msgstr "Ir"
 
-#: .\templates\navbar.html:187
+#: .\accounts\templates\navbar.html:186
 msgid "Links"
 msgstr "Direcciones"
 
-#: .\templates\navbar.html:190
+#: .\accounts\templates\navbar.html:189
 msgid "Citizen Portal"
 msgstr "Portal del cuidadano"
 
-#: .\templates\navbar.html:193
+#: .\accounts\templates\navbar.html:192
 msgid "Ministry of Interior"
 msgstr "Ministerio del Interior"
 
-#: .\templates\navbar.html:196
+#: .\accounts\templates\navbar.html:195
 msgid "Company's only booth"
 msgstr "Único stand de la compañía"
 
-#: .\templates\navbar.html:203
+#: .\accounts\templates\navbar.html:202
 msgid "Copyright: Created by University of Holguin"
 msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
 
-#: .\templates\navbar.html:222
+#: .\accounts\templates\navbar.html:222
 msgid "Sended"
 msgstr "Enviado"
 
-#: .\templates\navbar.html:223
+#: .\accounts\templates\navbar.html:223
 msgid "Your message has sended correctly"
 msgstr "Su mensaje ha sido enviado correctamente"
 
-#: .\templates\navbar.html:229
+#: .\accounts\templates\navbar.html:229
 msgid "Not send"
 msgstr "No enviado"
 
-#: .\templates\navbar.html:230
+#: .\accounts\templates\navbar.html:230
 msgid "Error sending your message"
 msgstr "Error enviando su mensaje"
 
-#: .\validators.py:10
+#: .\accounts\validators.py:10
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"

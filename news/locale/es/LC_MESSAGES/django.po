@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 21:05-0500\n"
+"POT-Creation-Date: 2019-01-02 12:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\models.py:6
+#: .\news\models.py:10
+msgid "Picture"
+msgstr "Imagen"
+
+#: .\news\models.py:11
 msgid "Title"
 msgstr "Título"
 
-#: .\models.py:7
+#: .\news\models.py:12
 msgid "Content"
 msgstr "Contenido"
 
-#: .\models.py:8
+#: .\news\models.py:13
 msgid "Publication date"
 msgstr "Fecha de publicación"
 
-#: .\templates\news\news_detail.html:18
+#: .\news\templates\news\news_detail.html:23
 msgid "Update"
 msgstr "Actualizar"
 
-#: .\templates\news\news_detail.html:19
+#: .\news\templates\news\news_detail.html:24
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .\templates\news\news_list.html:5
+#: .\news\templates\news\news_form.html:6
+#: .\news\templates\news\news_list.html:6
 msgid "News"
 msgstr "Noticias"
 
-#: .\templates\news\news_list.html:12
+#: .\news\templates\news\news_form.html:44
+msgid "Accept"
+msgstr "Aceptar"
+
+#: .\news\templates\news\news_list.html:13
 msgid "Add news"
 msgstr "Añadir noticas"
+
+#: .\news\templates\news\news_list.html:43
+msgid "View news"
+msgstr "Ver noticias"
