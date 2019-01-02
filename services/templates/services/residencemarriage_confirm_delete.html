@@ -6,12 +6,22 @@
 {% endblock %}
 
 {% block main %}
-    <h1>{% trans 'Are you sure to delete this residence by marriage?' %}</h1>
-    <p>{% trans 'Allottee to' %}: {{ residencemarriage.client }}</p>
-    <p>{% trans 'Issuance date' %}: {{ residencemarriage.issuance_date }}</p>
-    <p>{% trans 'Valid date' %}: {{ residencemarriage.valid_date }}</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger">{% trans 'Accept' %}</button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>{% trans 'Are you sure to delete this residence by marriage?' %}</h1>
+            </div>
+            <div class="col-12">
+                <p>{% trans 'Allottee to' %}: {{ residencemarriage.client }}</p>
+                <p>{% trans 'Issuance date' %}: {{ residencemarriage.issuance_date }}</p>
+                <p>{% trans 'Valid date' %}: {{ residencemarriage.valid_date }}</p>
+            </div>
+            <div class="col-12">
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">{% trans 'Accept' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

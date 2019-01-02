@@ -166,6 +166,7 @@
 {% endblock %}
 
 {% block script %}
+    {{ block.super }}
     <script>
         $(function () {
             let specification = $('#{{ form.specification.id_for_label }}');

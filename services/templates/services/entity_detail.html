@@ -1,4 +1,9 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Entity detail' %}
+{% endblock %}
 
 {% block main %}
     <div class="container">
@@ -8,15 +13,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">Localization: {{ entity.localization }}</div>
-            <div class="col">No. de identificacion: {{ entity.identification_no }}</div>
-            <div class="col">Telefono: {{ entity.telephone }}</div>
-            <div class="col">Email: {{ entity.email }}</div>
+            <div class="col">{% trans 'Localization' %}: {{ entity.localization }}</div>
+            <div class="col">{% trans 'Identification No.' %}: {{ entity.identification_no }}</div>
+            <div class="col">{% trans 'Telephone' %}: {{ entity.telephone }}</div>
+            <div class="col">{% trans 'Email' %}: {{ entity.email }}</div>
         </div>
         <div class="row">
             <div class="col">
-                <a href="{% url 'services:entity_update' entity.pk %}">editar</a>
-                <a href="#">eliminar</a>
+                <a href="{% url 'services:entity_update' entity.pk %}" class="btn btn-default">{% trans 'Update' %}</a>
+                <a href="{% url 'services:entity_delete' entity.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
             </div>
         </div>
     </div>

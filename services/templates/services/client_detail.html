@@ -48,10 +48,10 @@
         </div>
     </div>
     <div class="row">
-        <a href="{% url 'services:client_update' client.pk %}" class="btn btn-success">{% trans 'Update' %}</a>
-        <a href="{% url 'services:client_delete' client.pk %}" class="btn btn-success">{% trans 'Delete' %}</a>
+        <a href="{% url 'services:client_update' client.pk %}" class="btn btn-default">{% trans 'Update' %}</a>
+        <a href="{% url 'services:client_delete' client.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
         {% if user.occupation == 'FAC' %}
-            <a href="#" class="btn btn-success" data-toggle="modal"
+            <a href="#" class="btn btn-primary" data-toggle="modal"
                data-target="#add-service">{% trans 'Add service' %}</a>
         {% endif %}
     </div>

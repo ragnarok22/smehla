@@ -3,7 +3,7 @@
 {% load service_tags %}
 
 {% block title %}
-    Peticion de Pasaporte
+    {% trans 'Passport request' %}
 {% endblock %}
 
 {% block main %}
@@ -54,8 +54,8 @@
         {% if can_mod %}
             <div class="row">
                 <div class="col">
-                    <a href="#" class="btn btn-default">{% trans 'Update' %}</a>
-                    <a href="#" class="btn btn-danger">{% trans 'Delete' %}</a>
+                    <a href="{% url 'services:service_update' 'passport' passport.pk %}" class="btn btn-default">{% trans 'Update' %}</a>
+                    <a href="{% url 'services:service_delete' 'passport' passport.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
                 </div>
             </div>
         {% endif %}

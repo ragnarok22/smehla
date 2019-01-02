@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block styles %}
+    {{ block.super }}
     <link rel="stylesheet" href="{% static 'services/css/styles.css' %}">
 {% endblock %}
 

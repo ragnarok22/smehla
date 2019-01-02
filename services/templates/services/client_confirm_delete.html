@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block main %}
-    <h1>
-        {% blocktrans %}Are you sure to delete the client {{ client }} from the system?{% endblocktrans %}
-    </h1>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">{% trans 'Accept' %}</button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="h2 text-center">
+                    {% blocktrans %}Are you sure to delete the client {{ client }} from the system?{% endblocktrans %}
+                </h2>
+            </div>
+            <div class="col-12">
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">{% trans 'Accept' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

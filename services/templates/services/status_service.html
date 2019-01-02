@@ -60,6 +60,7 @@
 {% endblock %}
 
 {% block script %}
+    {{ block.super }}
     <script>
         $(function () {
             const request_type = $('#{{ form.request_type.id_for_label }}');

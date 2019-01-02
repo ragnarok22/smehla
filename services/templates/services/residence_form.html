@@ -22,6 +22,7 @@
 {% endblock %}
 
 {% block script %}
+    {{ block.super }}
     <script>
         $(function () {
             $('input[type=radio]').click(function () {

@@ -1,10 +1,25 @@
 {% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Delete entity' %}
+{% endblock %}
 
 {% block main %}
-    <h1 class="h1 text-center">Estas seguro de eliminar esta entidad?</h1>
-    <h2 class="h2">{{ entity.name }}</h2>
-    <form method="post">
-        {% csrf_token %}
-        <button class="btn btn-default">Aceptar</button>
-    </form>
+    <div class="container">
+        <div class="row col-12">
+            <h1 class="h1 text-center">{% trans 'Are you shure to delete this entity?' %}</h1>
+        </div>
+
+        <div class="col-12">
+            <h2 class="h2">{% trans 'Entity name' %}: {{ entity.name }}</h2>
+        </div>
+
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-danger">{% trans 'Accept' %}</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
