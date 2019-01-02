@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-02 13:24-0500\n"
+"POT-Creation-Date: 2019-01-02 13:49-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -458,7 +458,7 @@ msgid "Are you sure to delete the client %(client)s from the system?"
 msgstr "Tem certeza de excluir o cliente %(client)s do sistema?"
 
 #: .\services\templates\services\client_confirm_delete.html:18
-#: .\services\templates\services\entity_confirm_delete.html:21
+#: .\services\templates\services\entity_confirm_delete.html:23
 #: .\services\templates\services\entity_form.html:70
 #: .\services\templates\services\passport_confirm_delete.html:22
 #: .\services\templates\services\passport_form.html:64
@@ -582,11 +582,11 @@ msgstr "Criar novo cliente"
 msgid "Delete entity"
 msgstr "Excluir entidade"
 
-#: .\services\templates\services\entity_confirm_delete.html:11
+#: .\services\templates\services\entity_confirm_delete.html:12
 msgid "Are you shure to delete this entity?"
 msgstr "Tem certeza de excluir este entidade?"
 
-#: .\services\templates\services\entity_confirm_delete.html:15
+#: .\services\templates\services\entity_confirm_delete.html:17
 msgid "Entity name"
 msgstr "Nome do entidade"
 

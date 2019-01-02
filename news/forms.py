@@ -9,5 +9,5 @@ class NewsCreateForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control textarea-md'}),
+            'content': forms.Textarea(attrs={'class': 'form-control md-textarea'}),
         }

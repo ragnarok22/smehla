@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1>{{ news.title }}</h1><span>Publicado {{ news.pub_date }}</span>
+                <h1>{{ news.title }}</h1><span>{% trans 'Publication date' %}: {{ news.pub_date }}</span>
                 <p>{{ news.content }}</p>
             </div>
             {% if news.picture %}
