@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}
     Error 403
@@ -7,7 +8,7 @@
 {% block content %}
     <div class="text-center">
         <h1>Error 403</h1>
-        <h3>No tienes permisos para acceder a este sitio:(</h3>
-        <a href="{% url 'services:index' %}" class="btn btn-primary">Regresar al inicio</a>
+        <h3>{% trans 'You have not permission to access to this site' %} :(</h3>
+        <a href="{% url 'services:index' %}" class="btn btn-primary">{% trans 'Go to home' %}</a>
     </div>
 {% endblock %}

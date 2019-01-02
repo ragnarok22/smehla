@@ -146,10 +146,10 @@ EMAIL_HOST_PASSWORD = config.to_python(load_config.EMAIL_HOST_PASSWORD)
 ADMINS = config.to_python(load_config.ADMINS)
 
 # deployment configuration
-SECURE_HSTS_SECONDS = ''
+# SECURE_HSTS_SECONDS = 3600  # 1 hours refuse to connect to your domain name via an insecure connection
 SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent the browser from identifying content types incorrectly
 SECURE_BROWSER_XSS_FILTER = True  # Activate the browser's XSS filtering and help prevent XSS attacks
-SECURE_SSL_REDIRECT = False  # Redirect all connections to HTTPS
+# SECURE_SSL_REDIRECT = True  # Redirect all connections to HTTPS
 # SESSION_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to hijack user sessions
 CSRF_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to steal the CSRF token
 X_FRAME_OPTIONS = 'DENY'  # unless there is a good reason for your site to serve other parts of itself in a frame

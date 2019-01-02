@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-02 12:37-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\SIG_SMEHLA\settings.py:129
+msgid "Spanish"
+msgstr "Español"
+
+#: .\SIG_SMEHLA\settings.py:130
+msgid "English"
+msgstr "Inglés"
+
+#: .\SIG_SMEHLA\settings.py:131
+msgid "Portuguese"
+msgstr "Portugués"
+
+#: .\templates\403.html:11
+msgid "You have not permission to access to this site"
+msgstr "No tienes permisos para acceder a este sitio"
+
+#: .\templates\403.html:12 .\templates\404.html:11
+msgid "Go to home"
+msgstr "Ir al inicio"
+
+#: .\templates\404.html:5
+msgid "Page not found"
+msgstr "Página no encontrada"
+
+#: .\templates\404.html:10
+msgid "The page that you looking for do not exists"
+msgstr "La página que buscas no existe"
+
+#: .\templates\500.html:5
+msgid "Internal error"
+msgstr "Error interno"
+
+#: .\templates\500.html:12
+msgid "Internal Error in the server, please, contact with the administrator"
+msgstr "Error interno en el servidor, por favor, contacte con el administrador"

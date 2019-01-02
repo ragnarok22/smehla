@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}
-Error 500
+{% trans 'Internal error' %}
 {% endblock %}
 
 {% block content %}
 
     <div class="text-center">
     <h1>Error 500</h1>
-    <h3>Error interno en el servidor, por favor contacte con el administrador</h3>
+    <h3>{% trans 'Internal Error in the server, please, contact with the administrator' %}</h3>
     </div>
 {% endblock %}
