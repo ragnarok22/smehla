@@ -122,6 +122,7 @@ class Visa(Service):
         ('VCD', _('Short-term visa')),
     )
     REQUEST_TYPE = (
+        ('N', _('Normal')),
         ('C', _('Caducity')),
         ('M', _('Misplacing')),
     )
@@ -200,6 +201,7 @@ class Passport(Service):
 
 class ResidenceRenovation(Service):
     REASON = (
+        ('N', _('Normal')),
         ('C', _('Caducity')),
         ('M', _('Misplacing')),
     )
