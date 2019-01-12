@@ -17,27 +17,18 @@
                     <form method="post" action="{% url 'services:status' %}" id="search-form">
                         {% csrf_token %}
                         <div>
-                            <input type="radio" id="national" name="{{ form.request_type.name }}">
-                            <label for="national">{% trans 'Nationals' %}</label>
-                            <input type="radio" id="foreigner" name="{{ form.request_type.name }}">
-                            <label for="foreigner">{% trans 'Foreigners' %}</label>
-                        </div>
-                        <div id="national-form">
-                            <input type="radio" id="national-ci" name="{{ form.search_type.name }}">
-                            <label for="national-ci">{% trans 'Identity card' %}</label>
-                            <input type="radio" id="national-passport" name="{{ form.search_type.name }}">
-                            <label for="national-passport">{% trans 'Passport number' %}</label>
-                        </div>
-                        <div id="foreigner-form" class="hidden">
-                            <input type="radio" id="foreigner-passport" name="{{ form.search_type.name }}">
-                            <label for="foreigner-passport">{% trans 'Passport number' %}</label>
-                            <input type="radio" id="foreigner-residence" name="{{ form.search_type.name }}">
-                            <label for="foreigner-residence">{% trans 'Residence number' %}</label>
+                            <input type="radio" id="passport" name="{{ form.request_type.name }}">
+                            <label for="passport">{% trans 'Passport' %}</label>
+                            <input type="radio" id="visa" name="{{ form.request_type.name }}">
+                            <label for="visa">{% trans 'Visa' %}</label>
+                            <input type="radio" id="residence" name="{{ form.request_type.name }}">
+                            <label for="residence">{% trans 'Residence' %}</label>
                         </div>
                         <div class="card-body">
                             <div class="md-form">
                                 <label for="search">{% trans 'Search' %}</label>
-                                <input type="text" class="form-control" id="search" name="{{ form.search.name }}"
+                                <input type="text" class="form-control" id="search"
+                                       name="{{ form.search.name }}"
                                        {% if value %}value="{{ value }}"{% endif %} required>
                             </div>
                             <button type="submit" class="btn btn-default">{% trans 'Accept' %}</button>
@@ -64,66 +55,51 @@
     <script>
         $(function () {
             const request_type = $('#{{ form.request_type.id_for_label }}');
-            const search_type = $('#{{ form.search_type.id_for_label }}');
-            $('#national').click(function () {
-                $('#national-form').removeClass('hidden');
-                $('#foreigner-form').addClass('hidden');
-                $('#national-ci').prop('checked', 'true');
-                request_type.val('national');
+            $('#passport').click(function () {
+                $("label[for='search']").html('{% trans "Identity card" %}');
+                request_type.val('passport');
             });
-            $('#foreigner').click(function () {
-                $('#foreigner-form').removeClass('hidden');
-                $('#national-form').addClass('hidden');
-                $('#foreigner-passport').prop('checked', 'true');
-                request_type.val('foreigner');
+            $('#visa').click(function () {
+                $("label[for='search']").html('{% trans "Passport no" %}');
+                request_type.val('visa');
             });
-            $('#national-ci').click(function () {
-                search_type.val('ci');
+            $('#residence').click(function () {
+                $("label[for='search']").html('{% trans "Passport no" %}');
+                request_type.val('residence');
             });
-            $('#national-passport').click(function () {
-                search_type.val('passport');
-            });
-            $('#foreigner-passport').click(function () {
-                search_type.val('passport');
-            });
-            $('#foreigner-residence').click(function () {
-                search_type.val('residence');
-            });
-        });
 
-        $('#search-form').submit(function (event) {
-            event.preventDefault();
-            console.log($(this).serialize());
-            $.ajax($(this).prop('action'), {
-                method: 'POST',
-                data: {
-                    'request_type': $('#{{ form.request_type.id_for_label }}').val(),
-                    'search_type': $('#{{ form.search_type.id_for_label }}').val(),
-                    'search': $('#search').val(),
-                },
-                success: function (response) {
-                    console.log(response);
-                    $('table.table').removeClass('hidden');
-                    let html = '';
-                    if (response['message']) {
-                        html = '<tr><td colspan="2"><h5 class="h5 text-center text-danger">'
-                            + response['message'] + '</h5></td></tr>';
-                    } else {
-                        for (let i = 0; i < response['data'].length; i++) {
-                            let service = response['data'][i];
-                            html += '<tr><td>' + service['client_name'] +
-                                '</td><td>' + service['passport_no'] + '</td></tr>';
+            $('#search-form').submit(function (event) {
+                event.preventDefault();
+                $.ajax($(this).prop('action'), {
+                    method: 'POST',
+                    data: {
+                        'request_type': $('#{{ form.request_type.id_for_label }}').val(),
+                        'search': $('#search').val(),
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        $('table.table').removeClass('hidden');
+                        let html = '';
+                        if (response['message']) {
+                            html = '<tr><td colspan="2"><h5 class="h5 text-center text-danger">'
+                                + response['message'] + '</h5></td></tr>';
+                        } else {
+                            for (let i = 0; i < response['data'].length; i++) {
+                                let service = response['data'][i];
+                                html += '<tr><td>' + service['client_name'] +
+                                    '</td><td>' + service['passport_no'] + '</td></tr>';
+                            }
                         }
-                    }
-                    $('#results').html(html);
-                },
-                error: function (response, status) {
-                    swal({
-                        title: '{% trans "Error processing request" %}',
-                        type: status,
-                        html: '{% trans "Could not connect to server" %}'
-                    });
-                },
+                        $('#results').html(html);
+                    },
+                    error: function (response, status) {
+                        swal({
+                            title: '{% trans "Error processing request" %}',
+                            type: status,
+                            html: '{% trans "Could not connect to server" %}'
+                        });
+                    },
+                });
             });
         });
     </script>

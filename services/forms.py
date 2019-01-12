@@ -120,91 +120,70 @@ class ResidenceRenovationForm(forms.ModelForm):
 
 class ServiceStatusFrom(forms.Form):
     REQUEST_TYPE_CHOICES = (
-        ('national', _('National')),
-        ('foreigner', _('Foreigner')),
-    )
-    SEARCH_TYPE_CHOICES = (
-        ('ci', _('Identity Card')),
         ('passport', _('Passport')),
-        ('residence', _('Number of Residence')),
+        ('visa', _('Visa')),
+        ('residence', _('Residence')),
     )
     request_type = forms.ChoiceField(choices=REQUEST_TYPE_CHOICES)
-    search_type = forms.ChoiceField(choices=SEARCH_TYPE_CHOICES)
     search = forms.CharField()
 
     def search_status(self):
-        search_type = self.cleaned_data['search_type']
+        request_type = self.cleaned_data['request_type']
         search = self.cleaned_data['search']
-        if self.cleaned_data['request_type'] == 'national':  # visa passport
-            if search_type == 'ci':
-                visa_result = models.Visa.objects.filter(
-                    Q(client__ci__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-                passport_result = models.Passport.objects.filter(
-                    Q(client__ci__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-            elif search_type == 'passport':
-                visa_result = models.Visa.objects.filter(
-                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-                passport_result = models.Passport.objects.filter(
-                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
+        if request_type == 'passport':  # passport, search by ci
+            results = models.Passport.objects.filter(
+                Q(client__ci__exact=search)
+            )
+            if results:
+                results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                if results_done:
+                    data = []
+                    for i in results_done:
+                        data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                    results = data
+                else:
+                    return {'message': _('Has been process')}
             else:
-                visa_result = []
-                passport_result = []
-            results = []
-            for v in visa_result:
-                results.append({
-                    'client_name': v.client.get_full_name(),
-                    'passport_no': v.passport_no
-                })
-            for p in passport_result:
-                results.append({
-                    'client_name': p.client.get_full_name(),
-                    'passport_no': p.passport_no
-                })
-        elif self.cleaned_data['request_type'] == 'foreigner':  # renovation marriage authorization
-            if search_type == 'passport':
-                renovation_result = models.ResidenceRenovation.objects.filter(
-                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-                marriage_result = models.ResidenceMarriage.objects.filter(
-                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-                authorization_result = models.ResidenceAuthorization.objects.filter(
-                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-            elif search_type == 'residence':
-                renovation_result = models.ResidenceRenovation.objects.filter(
-                    Q(residence_authorization_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-                marriage_result = models.ResidenceMarriage.objects.filter(
-                    Q(passport_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
-                authorization_result = models.ResidenceAuthorization.objects.filter(
-                    Q(authorization_no__exact=search) & Q(status=models.Service.SERVICE_STATUS[4][0])
-                )
+                results = {}
+        elif request_type == 'visa':  # visa, search by passport no
+            results = models.Visa.objects.filter(Q(passport_no__exact=search))
+            if results:
+                results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                if results_done:
+                    data = []
+                    for i in results_done:
+                        data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                    results = data
+                else:
+                    return {'message': _('Has been process')}
             else:
-                renovation_result = []
-                marriage_result = []
-                authorization_result = []
-            results = []
-            for r in renovation_result:
-                results.append({
-                    'client_name': r.client.get_full_name(),
-                    'passport_no': r.passport_no
-                })
-            for m in marriage_result:
-                results.append({
-                    'client_name': m.client.get_full_name(),
-                    'passport_no': m.passport_no
-                })
-            for a in authorization_result:
-                results.append({
-                    'client_name': a.client.get_full_name(),
-                    'passport_no': a.passport_no
-                })
+                results = {}
+        elif request_type == 'residence':  # all residence, search by passport no
+            marriage = models.ResidenceMarriage.objects.filter(Q(passport_no__exact=search))
+            authorization = models.ResidenceAuthorization.objects.filter(Q(passport_no__exact=search))
+            renovation = models.ResidenceRenovation.objects.filter(Q(passport_no__exact=search))
+
+            if marriage or authorization or renovation:
+                marriage_done = marriage.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                authorization_done = authorization.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                renovation_done = renovation.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+
+                if marriage_done or authorization_done or renovation_done:
+                    data = []
+                    if marriage_done:
+                        for i in marriage_done:
+                            data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                    if authorization_done:
+                        for i in authorization_done:
+                            data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                    if renovation_done:
+                        for i in renovation_done:
+                            data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                    results = data
+                else:
+                    return {'message': _('Has been process')}
+            else:
+                results = {}
         else:
-            results = []  # raise error
+            results = {}  # raise error
         return {} if results == [] else {'data': results}

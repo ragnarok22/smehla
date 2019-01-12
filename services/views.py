@@ -38,7 +38,7 @@ class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
         search = form.search_status()
         if self.request.is_ajax():
             data = None
-            if search == {}:
+            if search.get('data', None) == {}:
                 data = {'message': _('There are not request that correspond with that search')}
             else:
                 data = search
