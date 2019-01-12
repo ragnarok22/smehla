@@ -142,7 +142,7 @@ class ServiceStatusFrom(forms.Form):
                         data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
                     results = data
                 else:
-                    return {'message': _('Has been process')}
+                    return {'message': _('It is in process')}
             else:
                 results = {}
         elif request_type == 'visa':  # visa, search by passport no
@@ -155,7 +155,7 @@ class ServiceStatusFrom(forms.Form):
                         data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
                     results = data
                 else:
-                    return {'message': _('Has been process')}
+                    return {'message': _('It is in process')}
             else:
                 results = {}
         elif request_type == 'residence':  # all residence, search by passport no
@@ -181,7 +181,7 @@ class ServiceStatusFrom(forms.Form):
                             data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
                     results = data
                 else:
-                    return {'message': _('Has been process')}
+                    return {'message': _('It is in process')}
             else:
                 results = {}
         else:
