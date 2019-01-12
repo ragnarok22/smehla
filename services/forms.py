@@ -97,6 +97,7 @@ class ResidenceMarriageForm(forms.ModelForm):
         widgets = {
             'married_to': widgets.TextInput(),
             'ci': widgets.TextInput(),
+            'passport_no': widgets.TextInput(),
             'issuance_date': widgets.DateInput(),
             'valid_date': widgets.DateInput(),
         }
