@@ -31,7 +31,7 @@
                                 <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item" id="services">
-                            <a href="{% url 'services:services' %}" class="nav-link">{% trans 'Services' %}</a>
+                            <a href="{% url 'news:services' %}" class="nav-link">{% trans 'Services' %}</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item" id="tools">

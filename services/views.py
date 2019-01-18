@@ -13,11 +13,6 @@ class IndexView(mixins.NavbarMixin, generic.TemplateView):
     tab_name = 'init'
 
 
-class ServicesView(mixins.NavbarMixin, generic.TemplateView):
-    template_name = 'services/services.html'
-    tab_name = 'services'
-
-
 class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.ListView):
     tab_name = 'tools'
     template_name = 'services/tools.html'

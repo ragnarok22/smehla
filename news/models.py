@@ -14,3 +14,24 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = _('News')
+        verbose_name_plural = _('News')
+
+
+class Service(models.Model):
+    def file_services(self, filename):
+        ext = filename.split('.')[-1]
+        return 'services/{}.{}'.format(self.service_type, ext)
+
+    service_type = models.CharField(_('Service Type'), max_length=100)
+    description = models.CharField(_('Description'), max_length=250)
+    file = models.FileField(_('File'), upload_to=file_services)
+
+    def __str__(self):
+        return self.service_type
+
+    class Meta:
+        verbose_name = _('Service')
+        verbose_name_plural = _('Services')
