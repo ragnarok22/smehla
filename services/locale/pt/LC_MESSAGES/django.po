@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-12 12:13-0500\n"
+"POT-Creation-Date: 2019-01-13 13:32-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgstr "Casado"
 msgid "Widower"
 msgstr "Viúvo"
 
-#: .\services\models.py:23 .\services\models.py:154
+#: .\services\models.py:23 .\services\models.py:1 54
 #: .\services\templates\services\client_detail_template.html:12
 #: .\services\templates\services\client_list.html:20
 #: .\services\templates\services\residencemarriage_detail.html:29
@@ -614,8 +614,8 @@ msgid ""
 "For a migration service more fortress and dynamic, on the way to "
 "modernization and excellence"
 msgstr ""
-"Por um Serviço de Migração mais forte e dinãmico, rumo à Modernização e "
-"Excelẽncia."
+"Por um Serviço de Migração mais forte e dinámico, rumo à Modernização e "
+"Exceléncia."
 
 #: .\services\templates\services\index.html:44
 msgid "Mission"
