@@ -176,7 +176,8 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     )
     service_type = 'residence'
     type_request = models.CharField(_('Type request'), max_length=3, choices=TYPE_REQUEST_CHOICES)
-    extension_type = models.CharField(_('Extension type'), choices=EXTENSION_TYPE_CHOICES)
+    extension_type = models.CharField(_('Extension type'), max_length=2, choices=EXTENSION_TYPE_CHOICES, null=True,
+                                      blank=True)
     observations = models.TextField(_('Observations'))
     # clients data
     naturalness = models.CharField(_('Naturalness'), max_length=100)
@@ -200,18 +201,45 @@ class ResidenceAuthorization(Service):  # in progress to fixed
 
 class Passport(Service):
     PASSPORT_TYPE = (
-        ('N', _('Normal')),
-        ('S', _('Service')),
+        ('E', _('Emission')),
+        ('R', _('Remission')),
+    )
+    REMISSION_TYPE_CHOICES = (
+        ('BC', _('Bad conservation')),
+        ('LT', _('Lost/Theft')),
+        ('PE', _('Page exhaustion')),
+        ('EX', _('Expiration')),
     )
     service_type = 'passport'
     passport_type = models.CharField(_('Passport type'), max_length=1, choices=PASSPORT_TYPE)
-    emission_date = models.DateField(_('Emission date'))
-    remission_type = models.CharField(_('Remission type'), max_length=1, choices=Visa.REQUEST_TYPE)
-    remission_date = models.DateField(_('Remission date'))
-    personal_no = models.CharField(_('Personal No.'), max_length=50)
-    passport_no = models.CharField(_('Passport No.'), max_length=100)
-    passport_issuance_date = models.DateField(_('Passport issuance date'))
-    passport_expiration_date = models.DateField(_('Passport expiration date'))
+    remission_type = models.CharField(_('Remission type'), max_length=2, choices=REMISSION_TYPE_CHOICES, blank=True,
+                                      null=True)
+    # birth certificate
+    issued_in = models.CharField(_('Issued in'), max_length=100)
+    # indentity card
+    date = models.DateField(_('Date'))  # ver a candido esta fecha de que es
+    cp = models.CharField(_('Cédula pessoal'), max_length=4)
+    cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100)
+    date_cp_issue = models.CharField(_('Date of cédula pessoal issue'))
+    ci = models.CharField(_('Identity card'), max_length=14)
+    ci_issued_in = models.CharField(_('Identity card issued in'), max_length=100)
+    spouse = models.CharField(_('Spouse'), max_length=200)
+    observations = models.TextField(_('Observations'))
+    # client data
+    # birth address
+    province_birth = models.CharField(_('Province'), max_length=50)
+    municipality_birth = models.CharField(_('Municipality'), max_length=50)
+    commune_birth = models.CharField(_('Commune'), max_length=50)
+    neighborhood_birth = models.CharField(_('Neighborhood'), max_length=50)
+    street_birth = models.CharField(_('Street'), max_length=50)
+    home_no_birth = models.CharField(_('Home No.'), max_length=10)
+    # for use of the reception
+    date_reception = models.DateField(_('Date'))
+    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
+    # for official use
+    passport_no = models.CharField(_('Pasport No.'), max_length=100)
+    passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
+    date_issue_passport = models.DateField(_('Date issue passport'))
 
     class Meta:
         verbose_name = _('passport')
