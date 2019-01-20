@@ -1,39 +1,52 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from accounts.models import Profile
 from services import validators
 
 
 class Client(models.Model):
     CIVIL_STATUS = (
         ('S', _('Single')),
-        ('E', _('Engaged')),
         ('M', _('Married')),
         ('W', _('Widower')),
+        ('D', _('Divorced')),
+    )
+    SEX_CHOICES = (
+        ('M', _('Man')),
+        ('W', _('Woman')),
     )
 
     def upload_file(self, filename):
         ext = filename.split('.')[-1]
-        return 'clients/{}.{}'.format(self.ci, ext)
+        return 'clients/{}.{}'.format(self.get_full_name(), ext)
 
     def upload_image(self, filename):
         ext = filename.split('.')[-1]
-        return 'clients/picture/{}.{}'.format(self.first_name, ext)
+        return 'clients/picture/{}.{}'.format(self.get_full_name(), ext)
 
-    ci = models.CharField(_('Identity card'), max_length=13, unique=True)
-    picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
-    first_name = models.CharField(_('First name'), max_length=30)
-    last_name = models.CharField(_('Last name'), max_length=150)
-    born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])
-    civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)
-    naturalness = models.CharField(_("Naturalness"), max_length=30)
-    nationality = models.CharField(_('Nationality'), max_length=30)
-    father = models.CharField(_('Father name'), max_length=200)
-    mother = models.CharField(_('Mother name'), max_length=200)
-    address = models.TextField(_('Address'))
-    email = models.EmailField(_('Email'))
-    phone = models.PositiveIntegerField(_('Phone number'))
-    data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
+    first_name = models.CharField(_('First name'), max_length=30)  # ok
+    last_name = models.CharField(_('Last name'), max_length=150)  # ok
+    born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])  # ok
+    civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)  # ok
+    sex = models.CharField(_('Sex'), max_length=1, choices=SEX_CHOICES)
+    picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)  # ok
+    father = models.CharField(_('Father name'), max_length=200)  # ok
+    mother = models.CharField(_('Mother name'), max_length=200)  # ok
+    email = models.EmailField(_('Email'))  # ok
+    phone = models.PositiveIntegerField(_('Phone number'))  # ok
+    data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)  # ok
+    # Work data
+    profession = models.CharField(_('Profession'), max_length=200)
+    funcion = models.CharField(_('Function'), max_length=200)
+    work_name = models.CharField(_('Work name'), max_length=200)
+    # Current Address
+    province = models.CharField(_('Province'), max_length=50)
+    municipality = models.CharField(_('Municipality'), max_length=50)
+    commune = models.CharField(_('Commune'), max_length=50)
+    neighborhood = models.CharField(_('Neighborhood'), max_length=50)
+    street = models.CharField(_('Street'), max_length=50)
+    home_no = models.CharField(_('Home No.'), max_length=10)
 
     def get_full_name(self):
         full_name = '%s %s' % (self.first_name, self.last_name)
@@ -59,13 +72,13 @@ class Service(models.Model):
         'None': _('Unknown service type'),
         'visa': _('Visa'),
         'passport': _('Passport'),
-        'renovation': _('Residence renovation'),
-        'marriage': _('Residence by marriage'),
-        'authorization': _('Residence authorization'),
+        'residence': _('Residence authorization'),
     }
-    client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
+    client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)  # ok
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
     service_type = None
+    type_request = models.CharField(_('Type request'), max_length=3)
+    process_no = models.PositiveSmallIntegerField()
 
     def get_service_type(self):
         if self.service_type:
@@ -148,32 +161,41 @@ class Visa(Service):
         return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_specification_display())
 
 
-class ResidenceMarriage(Service):
-    service_type = 'marriage'
-    married_to = models.CharField(_('Married to'), max_length=100)
-    ci = models.CharField(_('Identity card'), max_length=13)
-    issuance_date = models.DateField(_('Issuance date'))
-    valid_date = models.DateField(_('Valid date'))
-    passport_no = models.CharField(max_length=14)
-
-    class Meta:
-        verbose_name = _('Residence by Marriage')
-        verbose_name_plural = _('Residences by Marriage')
-
-
-class ResidenceAuthorization(Service):
-    service_type = 'authorization'
-    authorization_no = models.CharField(_('Authorization No.'), max_length=30)
-    issued_place = models.CharField(_('Issued in'), max_length=100)
-    issuance_date = models.DateField(_('Issuance date'))
-    valid_date = models.DateField(_('Valid until'))
-    passport_no = models.CharField(_('Passport No.'), max_length=20)
-    passport_issuance_date = models.DateField(_('Passport issuance date'))
-    passport_expiration_date = models.DateField(_('Passport expiration date'))
+class ResidenceAuthorization(Service):  # in progress to fixed
+    TYPE_REQUEST_CHOICES = (
+        ('TTA', _('Temporary type A')),
+        ('TTB', _('Temporary type B')),
+        ('PER', _('Permanent')),
+        ('EMI', _('Emission')),
+        ('EXT', _('Extension')),
+    )
+    EXTENSION_TYPE_CHOICES = (
+        ('BC', _('Bad conservation')),
+        ('LT', _('Lost/Theft')),
+        ('EX', _('Expiration')),
+    )
+    service_type = 'residence'
+    type_request = models.CharField(_('Type request'), max_length=3, choices=TYPE_REQUEST_CHOICES)
+    extension_type = models.CharField(_('Extension type'), choices=EXTENSION_TYPE_CHOICES)
+    observations = models.TextField(_('Observations'))
+    # clients data
+    naturalness = models.CharField(_('Naturalness'), max_length=100)
+    nationality = models.CharField(_('Nationality'), max_length=100)
+    passport_no = models.CharField(_('Passsport No.'), max_length=14)
+    passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
+    date_issuance_passport = models.DateField(_('Date of issuance of passport'))
+    father_nationality = models.CharField(_('Father nationality'), max_length=100)
+    mother_nationality = models.CharField(_('Father nationality'), max_length=100)
+    # for non-local use of the reception
+    location = models.CharField(_('Location'), max_length=100)
+    date = models.DateField(_("Date"))
+    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
+    # for official use
+    date_official_use = models.DateField(_('Date'))
 
     class Meta:
         verbose_name = _('Residence authorization')
-        verbose_name_plural = _('Residences authorization')
+        verbose_name_plural = _('Authorization of residences')
 
 
 class Passport(Service):
@@ -197,26 +219,6 @@ class Passport(Service):
 
     def __str__(self):
         return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())
-
-
-class ResidenceRenovation(Service):
-    REASON = (
-        ('N', _('Normal')),
-        ('C', _('Caducity')),
-        ('M', _('Misplacing')),
-    )
-    service_type = 'renovation'
-    residence_authorization_no = models.CharField(_('Residence authorization No.'), max_length=100)
-    issuance_date = models.DateField(_('Residence authorization issuance date'))
-    expiration_date = models.DateField(_('Residence authorization expiration date'))
-    reason = models.CharField(_('Renovation reason'), max_length=1, choices=REASON)
-    passport_no = models.CharField(_('Passport No.'), max_length=20)
-    issuance_passport_date = models.DateField(_('Issuance passport date'))
-    valid_passport_date = models.DateField(_('Valid passport date'))  # v'alido at'e
-
-    class Meta:
-        verbose_name = _('Residence Renovation')
-        verbose_name_plural = _('Residences Renovation')
 
 
 class Entity(models.Model):
