@@ -69,10 +69,10 @@ class Service(models.Model):
         ('5', _('Deliver')),
     )
     SERVICE_TYPE = {
-        'None': _('Unknown service type'),
-        'visa': _('Visa'),
-        'passport': _('Passport'),
-        'residence': _('Residence authorization'),
+        'None': _('Unknown service type'),  # ok
+        'visa': _('Visa'),  # ok
+        'passport': _('Passport'),  # ok
+        'residence': _('Residence authorization'),  # ok, falta renovacion de visa
     }
     client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)  # ok
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
@@ -124,41 +124,135 @@ class Service(models.Model):
 
 
 class Visa(Service):
-    REQUEST_SPECIFICATION = (
+    REQUEST_TYPE_CHOICES = (
         ('VT', _('Work visa')),
-        ('VPT', _('Temporary stay visa')),
         ('VP', _('Privileged visa')),
+        ('RP', _('Resident visa')),
         ('VE', _('Study visa')),
         ('VTM', _('Medical Treatment visa')),
-        ('VOR', _('Ordinary visa')),
-        ('VTU', _('Tourist visa')),
+        ('VPT', _('Temporary stay visa')),
         ('VCD', _('Short-term visa')),
-    )
-    REQUEST_TYPE = (
-        ('N', _('Normal')),
-        ('C', _('Caducity')),
-        ('M', _('Misplacing')),
+        ('VTU', _('Tourist visa')),
+        ('VOR', _('Ordinary visa')),
     )
 
     service_type = 'visa'
-    specification = models.CharField(_('Specification'), max_length=3, choices=REQUEST_SPECIFICATION)
-    extension_request_date = models.DateField(_('Extension request date'))
-    request_type = models.CharField(_('Request type'), max_length=1, choices=REQUEST_TYPE)
+    request_type = models.CharField(_('Request type'), max_length=3, choices=REQUEST_TYPE_CHOICES)
+    # Client data
+    place_of_birth = models.CharField(_('Place of birth'), max_length=100)
+    birth_country = models.CharField(_('Birth country'), max_length=100)
+    nationality = models.CharField(_('Origin nationality'), max_length=100)
+    current_nationality = models.CharField(_('Current nationality'), max_length=100)
+    # passport data
     passport_no = models.CharField(_('Passport No.'), max_length=100)
+    passport_issuance_place = models.CharField(_('Passport issuance place'), max_length=100)
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
-    visa_no = models.CharField(_('Visa No.'), max_length=100)
-    visa_issuance_date = models.DateField(_('Visa issuance date'))
-    visa_expiration_date = models.DateField(_('Visa expiration date'))
-    tutelary_entity = models.ForeignKey('Entity', verbose_name=_('Tutelary Entity'), on_delete=models.CASCADE,
-                                        blank=True, null=True)
+
+    father_nationality = models.CharField(_('Father nationality'), max_length=100)
+    mother_nationality = models.CharField(_('Mother nationality'), max_length=100)
+    hospedaje = models.CharField(_('Hospedaje'), max_length=100)
+    city_hospedaje = models.CharField(_('City hospedaje'), max_length=100)
+    street_hospedaje = models.CharField(_('Street hospedaje'), max_length=100)
+    house_no = models.CharField(_('House No.'), max_length=5)
+    last_entry_angola_date = models.DateField(_('Last entry angola date'))
+    frontier = models.CharField(_('Frontier used'), max_length=100)
 
     class Meta:
         verbose_name = _('Visa')
         verbose_name_plural = _('Visas')
 
     def __str__(self):
-        return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_specification_display())
+        return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_request_type_display())
+
+
+class WorkVisa(Visa):
+    # if is a work visa
+    organism_name = models.CharField(_('Organism name'), max_length=100)
+    organism_enderecao = models.CharField(_('Organism enderecao'), max_length=100)
+    funcion = models.CharField(_('Funtion'), max_length=100)
+    init_contract_date = models.DateField(_('Init contract date'))
+    end_contract_date = models.DateField(_('End contract date'))
+    entity_name = models.CharField(_('Entity name'), max_length=100)
+    entity_enderecao = models.CharField(_('Entity enderecao'), max_length=100)
+
+
+class MedicalTreatmentVisa(Visa):
+    # if is a medical treatment visa
+    UNITY_TYPE_CHOICES = (
+        ('P', _('Public')),
+        ('V', _('Private')),
+    )
+    unity_medical_name = models.CharField(_('Unity medical name'), max_length=100)
+    unity_type = models.CharField(_('Unity type'), max_length=1, choices=UNITY_TYPE_CHOICES)
+    date_init_treatment = models.DateField(_('Date init treatment'))
+    data_end_treatment = models.DateField(_('Date end treatment'))
+
+
+class ResidentVisa(Visa):
+    # if is a fijacion de residencia
+    reason = models.TextField(_('Reason'))
+    TYPE_RESIDENCE_CHOICES = (
+        ('T', _('Temporary')),
+        ('P', _('Permanent')),
+    )
+    type_residence = models.CharField(_('Type residence'), choices=TYPE_RESIDENCE_CHOICES)
+    ADDED_FAMILIAR_CHOICES = (
+        ('Y', _('Yes')),
+        ('N', _('No')),
+        ('W', _('Wife')),
+        ('H', _('Husband')),
+        ('C', _('Children')),
+        ('O', _('Others')),
+    )
+    added_familiar = models.CharField(_('Residence in familiar house'), max_length=1)
+    familiars = models.TextField(_('Familiars'))
+    subsistencia = models.TextField(_('Subsistencia'))
+    enderecao_angola = models.CharField(_('Endrecao angola'), max_length=100)
+
+
+class TemporaryVisa(Visa):
+    # if is a temporary visa
+    REASON_CHOICES = (
+        ('HR', _('Humanitary reason')),
+        ('RI', _('Religion Institution')),
+        ('SR', _('Science Research')),
+        ('FA', _('Family acompanamiento')),
+        ('VR', _('Valid residence')),
+        ('MC', _('Married Citizen')),
+    )
+    reason = models.CharField(_('Reason'), max_length=2, choices=REASON_CHOICES)
+    medios_subsistencia = models.TextField(_('Medios'))
+    endrecao_angola = models.TextField(_('Enderecao angola'))
+
+
+class PrivilegedVisa(Visa):
+    # if is a privileged visa
+    research_company = models.CharField(_('Research company'), max_length=100)
+    CONDITION_CHOICES = (
+        ('R', _('Research')),
+        ('E', _('Represent')),
+        ('P', _('Procurator')),
+    )
+    condition = models.CharField(_('Condition'), max_length=1, choices=CONDITION_CHOICES)
+    enderecao_angola = models.CharField(_('Enderecao angola'), max_length=100)
+
+
+class StudyVisa(Visa):
+    # if is a study visa
+    STUDY_PROGRAM_CHOICES = (
+        ('P', _('Private')),
+        ('U', _('Public')),
+        ('F', _('Formation')),
+    )
+    ESTAGIOS_CHOICES = (
+        ('PC', _('Private companies')),
+        ('UC', _('Public companies')),
+    )
+    study_program = models.CharField(_('Study program'), max_length=1, choices=STUDY_PROGRAM_CHOICES)
+    init_date = models.DateField(_('Init date'))
+    end_date = models.DateField(_('End date'))
+    estagios_in = models.CharField(_('Estagios en'), max_length=1, choices=ESTAGIOS_CHOICES)
 
 
 class ResidenceAuthorization(Service):  # in progress to fixed
@@ -247,32 +341,3 @@ class Passport(Service):
 
     def __str__(self):
         return '{}-> passport type: {}'.format(self.client, self.get_passport_type_display())
-
-
-class Entity(models.Model):
-    class Meta:
-        verbose_name = _('Entity')
-        verbose_name_plural = _('Entities')
-
-    def __str__(self):
-        return '{}'.format(self.name)
-
-    name = models.CharField(_('Name'), max_length=100)
-    localization = models.CharField(_('Localization'), max_length=200)
-    identification_no = models.CharField(_('Identification No.'), max_length=50)
-    issuance_date = models.DateField(_('Issuance date'))
-    expiration_date = models.DateField(_('Expiration date'))
-    telephone = models.PositiveIntegerField(_('Telephone'))
-    email = models.EmailField(_('Email'))
-
-    def to_dict(self):
-        return {
-            'pk': self.pk,
-            'name': self.name,
-            'localization': self.localization,
-            'identification_no': self.identification_no,
-            'issuance_date': self.issuance_date,
-            'expiration_date': self.expiration_date,
-            'telephone': self.telephone,
-            'email': self.email,
-        }
