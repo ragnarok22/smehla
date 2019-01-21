@@ -44,19 +44,28 @@ class ClientForm(forms.ModelForm):
         model = models.Client
         fields = '__all__'
         widgets = {
-            'ci': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
             'civil_status': forms.Select(attrs={'class': 'form-control'}),
-            'naturalness': forms.TextInput(attrs={'class': 'form-control'}),
-            'nationality': forms.TextInput(attrs={'class': 'form-control'}),
+            'sex': forms.Select(attrs={'class': 'form-control'}),
+            # picture
             'father': forms.TextInput(attrs={'class': 'form-control'}),
             'mother': forms.TextInput(attrs={'class': 'form-control'}),
-            'address': forms.Textarea(attrs={'class': 'md-textarea', 'rows': 2}),
-            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
             'data_attachment': forms.ClearableFileInput(attrs={'multiple': True, 'class': 'form-control'}),
-            'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
+            # work data
+            'profession': forms.TextInput(attrs={'class': 'form-control'}),
+            'funcion': forms.TextInput(attrs={'class': 'form-control'}),
+            'work_name': forms.TextInput(attrs={'class': 'form-control'}),
+            # Current address
+            'province': forms.TextInput(attrs={'class': 'form-control'}),
+            'municipality': forms.TextInput(attrs={'class': 'form-control'}),
+            'commune': forms.TextInput(attrs={'class': 'form-control'}),
+            'neighborhood': forms.TextInput(attrs={'class': 'form-control'}),
+            'street': forms.TextInput(attrs={'class': 'form-control'}),
+            'home_no': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 
