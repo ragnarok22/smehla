@@ -29,13 +29,31 @@ class PassportCreateForm(forms.ModelForm):
         exclude = ['client', 'status']
         widgets = {
             'passport_type': widgets.Select(),
-            'emission_date': widgets.DateInput(),
             'remission_type': widgets.Select(),
-            'remission_date': widgets.DateInput(),
-            'personal_no': widgets.TextInput(),
+            # birth certificate
+            'issued_in': widgets.TextInput(),
+            # identity card
+            'date': widgets.DateInput(),
+            'cp': widgets.TextInput(),
+            'cp_issued_in': widgets.TextInput(),
+            'date_cp_issue': widgets.DateInput(),
+            'ci': widgets.TextInput(),
+            'ci_issued_in': widgets.TextInput(),
+            'spouse': widgets.TextInput(),
+            'observations': widgets.TextInput(),
+            # client data, birth address
+            'province_birth': widgets.TextInput(),
+            'municipality_birth': widgets.TextInput(),
+            'commune_birth': widgets.TextInput(),
+            'neighborhood_birth': widgets.TextInput(),
+            'street_birth': widgets.TextInput(),
+            'home_no_birth': widgets.TextInput(),
+            # for use of the reception
+            'date_reception': widgets.DateInput(),
+            # for official use
             'passport_no': widgets.TextInput(),
-            'passport_issuance_date': widgets.DateInput(),
-            'passport_expiration_date': widgets.DateInput(),
+            'passport_issued_in': widgets.TextInput(),
+            'date_issue_passport': widgets.DateInput(),
         }
 
 

@@ -325,7 +325,7 @@ class Passport(Service):
     date_cp_issue = models.CharField(_('Date of cédula pessoal issue'))
     ci = models.CharField(_('Identity card'), max_length=14)
     ci_issued_in = models.CharField(_('Identity card issued in'), max_length=100)
-    spouse = models.CharField(_('Spouse'), max_length=200)
+    spouse = models.CharField(_('Spouse'), max_length=200, null=True, blank=True)
     observations = models.TextField(_('Observations'))
     # client data
     # birth address
