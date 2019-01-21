@@ -74,13 +74,22 @@ class ResidenceAuthorizationForm(forms.ModelForm):
         model = models.ResidenceAuthorization
         exclude = ['client', 'status']
         widgets = {
-            'authorization_no': widgets.NumberInput(),
-            'issued_place': widgets.TextInput(),
-            'issuance_date': widgets.DateInput(),
-            'valid_date': widgets.DateInput(),
+            'type_request': widgets.Select(),
+            'extension_type': widgets.Select(),
+            'observations': widgets.TextInput(),
+            # Client data
+            'naturalness': widgets.TextInput(),
+            'nationality': widgets.TextInput(),
             'passport_no': widgets.TextInput(),
-            'passport_issuance_date': widgets.DateInput(),
-            'passport_expiration_date': widgets.DateInput(),
+            'passport_issued_in': widgets.TextInput(),
+            'date_issuance_passport': widgets.DateInput(),
+            'father_nationality': widgets.TextInput(),
+            'mother_nationality': widgets.TextInput(),
+            # for non-local use of reception
+            'location': widgets.TextInput(),
+            'date': widgets.DateInput(),
+            # for official use
+            'date_official_use': widgets.DateInput(),
         }
 
 
