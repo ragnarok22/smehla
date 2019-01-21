@@ -32,7 +32,6 @@ class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
     def form_valid(self, form):
         search = form.search_status()
         if self.request.is_ajax():
-            data = None
             if search.get('data', None) == {}:
                 data = {'message': _('There are not request that correspond with that search')}
             else:
@@ -110,43 +109,6 @@ class ServiceUpdateView(services_mixins.ServiceMixin, mixins.ServiceOccupationRe
 
 class ServiceDeleteView(services_mixins.ServiceMixin, mixins.ServiceOccupationRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:tools')
-
-
-class EntityListView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMixin):
-    model = models.Entity
-
-
-class EntityCreateView(mixins.LoginRequiredMixin, mixins.AjaxableResponseMixin, generic.CreateView):
-    model = models.Entity
-    form_class = forms.EntityForm
-    success_url = reverse_lazy('services:entity_list')
-
-
-class EntityDetailView(mixins.LoginRequiredMixin, generic.DetailView):
-    model = models.Entity
-
-
-class EntityUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
-    model = models.Entity
-    form_class = forms.EntityForm
-
-    def get_success_url(self):
-        return reverse_lazy('services:entity_detail', kwargs={'pk': self.object.pk})
-
-
-class EntityDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
-    model = models.Entity
-    success_url = reverse_lazy('services:entity_list')
-
-
-class EntitySearchView(mixins.LoginRequiredMixin, mixins.AjaxableListResponseMixin):
-    model = models.Entity
-
-    def get_queryset(self):
-        name = self.request.GET.get('name', None)
-        if name:
-            return self.model.objects.filter(name__contains=name)
-        return super().get_queryset()
 
 
 class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
