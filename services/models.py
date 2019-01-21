@@ -79,6 +79,7 @@ class Service(models.Model):
     service_type = None
     type_request = models.CharField(_('Type request'), max_length=3)
     process_no = models.PositiveSmallIntegerField()
+    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
 
     def get_service_type(self):
         if self.service_type:
@@ -255,6 +256,13 @@ class StudyVisa(Visa):
     estagios_in = models.CharField(_('Estagios en'), max_length=1, choices=ESTAGIOS_CHOICES)
 
 
+class ExtensionVisa(Visa):
+    visa_no = models.CharField(_('Visa No.'), max_length=20)
+    valid_date = models.DateField(_('Valid date'))
+    reason_extension = models.CharField(_('Reason extension'), max_length=250)
+    cant_days_extension = models.PositiveIntegerField(_('Number of days of extension'))
+
+
 class ResidenceAuthorization(Service):  # in progress to fixed
     TYPE_REQUEST_CHOICES = (
         ('TTA', _('Temporary type A')),
@@ -284,7 +292,6 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     # for non-local use of the reception
     location = models.CharField(_('Location'), max_length=100)
     date = models.DateField(_("Date"))
-    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
     # for official use
     date_official_use = models.DateField(_('Date'))
 
@@ -329,7 +336,6 @@ class Passport(Service):
     home_no_birth = models.CharField(_('Home No.'), max_length=10)
     # for use of the reception
     date_reception = models.DateField(_('Date'))
-    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
     # for official use
     passport_no = models.CharField(_('Pasport No.'), max_length=100)
     passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
