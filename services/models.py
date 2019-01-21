@@ -25,17 +25,17 @@ class Client(models.Model):
         ext = filename.split('.')[-1]
         return 'clients/picture/{}.{}'.format(self.get_full_name(), ext)
 
-    first_name = models.CharField(_('First name'), max_length=30)  # ok
-    last_name = models.CharField(_('Last name'), max_length=150)  # ok
-    born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])  # ok
-    civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)  # ok
+    first_name = models.CharField(_('First name'), max_length=30)
+    last_name = models.CharField(_('Last name'), max_length=150)
+    born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])
+    civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)
     sex = models.CharField(_('Sex'), max_length=1, choices=SEX_CHOICES)
-    picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)  # ok
-    father = models.CharField(_('Father name'), max_length=200)  # ok
-    mother = models.CharField(_('Mother name'), max_length=200)  # ok
-    email = models.EmailField(_('Email'))  # ok
-    phone = models.PositiveIntegerField(_('Phone number'))  # ok
-    data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)  # ok
+    picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
+    father = models.CharField(_('Father name'), max_length=200)
+    mother = models.CharField(_('Mother name'), max_length=200)
+    email = models.EmailField(_('Email'))
+    phone = models.PositiveIntegerField(_('Phone number'))
+    data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
     # Work data
     profession = models.CharField(_('Profession'), max_length=200)
     funcion = models.CharField(_('Function'), max_length=200)
@@ -69,12 +69,13 @@ class Service(models.Model):
         ('5', _('Deliver')),
     )
     SERVICE_TYPE = {
-        'None': _('Unknown service type'),  # ok
-        'visa': _('Visa'),  # ok
-        'passport': _('Passport'),  # ok
-        'residence': _('Residence authorization'),  # ok, falta renovacion de visa
+        'None': _('Unknown service type'),
+        'visa': _('Visa'),
+        'extension': _('Visa Extension'),
+        'passport': _('Passport'),
+        'residence': _('Residence authorization'),
     }
-    client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)  # ok
+    client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
     service_type = None
     type_request = models.CharField(_('Type request'), max_length=3)
@@ -152,10 +153,10 @@ class Visa(Service):
 
     father_nationality = models.CharField(_('Father nationality'), max_length=100)
     mother_nationality = models.CharField(_('Mother nationality'), max_length=100)
-    hospedaje = models.CharField(_('Hospedaje'), max_length=100)
-    city_hospedaje = models.CharField(_('City hospedaje'), max_length=100)
-    street_hospedaje = models.CharField(_('Street hospedaje'), max_length=100)
-    house_no = models.CharField(_('House No.'), max_length=5)
+    lodging = models.CharField(_('Lodging'), max_length=100)  # hospedaje
+    city_lodging = models.CharField(_('City lodging'), max_length=100)
+    street_lodging = models.CharField(_('Street lodging'), max_length=100)
+    no_lodging_house = models.CharField(_('Lodging house No.'), max_length=5)
     last_entry_angola_date = models.DateField(_('Last entry angola date'))
     frontier = models.CharField(_('Frontier used'), max_length=100)
 
@@ -170,12 +171,12 @@ class Visa(Service):
 class WorkVisa(Visa):
     # if is a work visa
     organism_name = models.CharField(_('Organism name'), max_length=100)
-    organism_enderecao = models.CharField(_('Organism enderecao'), max_length=100)
+    organism_address = models.CharField(_('Organism address'), max_length=100)
     funcion = models.CharField(_('Funtion'), max_length=100)
     init_contract_date = models.DateField(_('Init contract date'))
     end_contract_date = models.DateField(_('End contract date'))
     entity_name = models.CharField(_('Entity name'), max_length=100)
-    entity_enderecao = models.CharField(_('Entity enderecao'), max_length=100)
+    entity_address = models.CharField(_('Entity address'), max_length=100)
 
 
 class MedicalTreatmentVisa(Visa):
@@ -198,7 +199,7 @@ class ResidentVisa(Visa):
         ('P', _('Permanent')),
     )
     type_residence = models.CharField(_('Type residence'), choices=TYPE_RESIDENCE_CHOICES)
-    ADDED_FAMILIAR_CHOICES = (
+    LIVE_FAMILIAR_CHOICES = (
         ('Y', _('Yes')),
         ('N', _('No')),
         ('W', _('Wife')),
@@ -206,25 +207,25 @@ class ResidentVisa(Visa):
         ('C', _('Children')),
         ('O', _('Others')),
     )
-    added_familiar = models.CharField(_('Residence in familiar house'), max_length=1)
+    live_familiar = models.CharField(_('Live with a familiar'), max_length=1, choices=LIVE_FAMILIAR_CHOICES)
     familiars = models.TextField(_('Familiars'))
-    subsistencia = models.TextField(_('Subsistencia'))
-    enderecao_angola = models.CharField(_('Endrecao angola'), max_length=100)
+    subsistence = models.TextField(_('Subsistence'))
+    address_angola = models.CharField(_('Address angola'), max_length=100)
 
 
 class TemporaryVisa(Visa):
     # if is a temporary visa
     REASON_CHOICES = (
-        ('HR', _('Humanitary reason')),
-        ('RI', _('Religion Institution')),
-        ('SR', _('Science Research')),
-        ('FA', _('Family acompanamiento')),
-        ('VR', _('Valid residence')),
-        ('MC', _('Married Citizen')),
+        ('HR', _('Humanitarian reason')),
+        ('RI', _('Mission in favor of a religious institution')),
+        ('SR', _('Carrying out scientific research')),
+        ('FA', _('Family Accompaniment')),
+        ('VR', _('Familiar with a valid residence permit holder')),
+        ('MC', _('Spouse of national citizen')),
     )
     reason = models.CharField(_('Reason'), max_length=2, choices=REASON_CHOICES)
-    medios_subsistencia = models.TextField(_('Medios'))
-    endrecao_angola = models.TextField(_('Enderecao angola'))
+    subsistence = models.TextField(_('Subsistence'))
+    address_angola = models.TextField(_('address angola'))
 
 
 class PrivilegedVisa(Visa):
@@ -236,7 +237,7 @@ class PrivilegedVisa(Visa):
         ('P', _('Procurator')),
     )
     condition = models.CharField(_('Condition'), max_length=1, choices=CONDITION_CHOICES)
-    enderecao_angola = models.CharField(_('Enderecao angola'), max_length=100)
+    address_angola = models.CharField(_('address angola'), max_length=100)
 
 
 class StudyVisa(Visa):
@@ -246,14 +247,14 @@ class StudyVisa(Visa):
         ('U', _('Public')),
         ('F', _('Formation')),
     )
-    ESTAGIOS_CHOICES = (
+    STAGES_CHOICES = (
         ('PC', _('Private companies')),
         ('UC', _('Public companies')),
     )
     study_program = models.CharField(_('Study program'), max_length=1, choices=STUDY_PROGRAM_CHOICES)
     init_date = models.DateField(_('Init date'))
     end_date = models.DateField(_('End date'))
-    estagios_in = models.CharField(_('Estagios en'), max_length=1, choices=ESTAGIOS_CHOICES)
+    stages_in = models.CharField(_('Estagios en'), max_length=1, choices=STAGES_CHOICES)
 
 
 class ExtensionVisa(Visa):
@@ -317,7 +318,7 @@ class Passport(Service):
                                       null=True)
     # birth certificate
     issued_in = models.CharField(_('Issued in'), max_length=100)
-    # indentity card
+    # identity card
     date = models.DateField(_('Date'))  # ver a candido esta fecha de que es
     cp = models.CharField(_('Cédula pessoal'), max_length=4)
     cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100)
