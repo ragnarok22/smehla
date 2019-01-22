@@ -9,8 +9,9 @@ from . import widgets
 class VisaCreateForm(forms.ModelForm):
     class Meta:
         model = models.Visa
-        exclude = ['client', 'status']
+        exclude = ['client', 'status', 'official']
         widgets = {
+            'process_no': widgets.NumberInput(),
             'specification': widgets.Select(),
             'request_type': widgets.Select(),
             'passport_no': widgets.TextInput(),
@@ -26,7 +27,7 @@ class VisaCreateForm(forms.ModelForm):
 class VisaRenovationForm(forms.ModelForm):
     class Meta:
         model = models.ExtensionVisa
-        exclude = ['client', 'status']
+        exclude = ['client', 'status', 'official']
 
 
 class PassportCreateForm(forms.ModelForm):
