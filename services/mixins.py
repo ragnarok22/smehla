@@ -44,6 +44,7 @@ class ServiceFormMixin(ServiceMixin, ModelFormMixin):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.service_type = self.service_type
+        self.object.official = self.request.user
         self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
         response = super(ServiceFormMixin, self).form_valid(form)
         return response

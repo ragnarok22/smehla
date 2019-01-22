@@ -7,6 +7,17 @@
 
 {% block main %}
     <div class="container-fluid">
+        <form method="post">
+            {% csrf_token %}
+            {% if type == 'renovation' %}
+                {% include 'services/residence_renovation_form.html' with form=form %}
+            {% elif type == 'marriage' %}
+                {% include 'services/residence_marriage_form.html' with form=form %}
+            {% elif type == 'authorization' %}
+                {% include 'services/residence_authorization_form.html' with form=form %}
+            {% endif %}
+            <button class="btn btn-default">{% trans 'Accept' %}</button>
+        </form>
         <form method="post" id="visa-form">
             {% csrf_token %}
             <div class="row">

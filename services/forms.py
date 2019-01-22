@@ -97,8 +97,9 @@ class ClientForm(forms.ModelForm):
 class ResidenceAuthorizationForm(forms.ModelForm):
     class Meta:
         model = models.ResidenceAuthorization
-        exclude = ['client', 'status']
+        exclude = ['client', 'status', 'official']
         widgets = {
+            'process_no': widgets.NumberInput(),
             'type_request': widgets.Select(),
             'extension_type': widgets.Select(),
             'observations': widgets.TextInput(),

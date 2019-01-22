@@ -9,36 +9,106 @@
     <div class="container-fluid">
         <form method="post">
             {% csrf_token %}
-            {% if type == 'renovation' %}
-                {% include 'services/residence_renovation_form.html' with form=form %}
-            {% elif type == 'marriage' %}
-                {% include 'services/residence_marriage_form.html' with form=form %}
-            {% elif type == 'authorization' %}
-                {% include 'services/residence_authorization_form.html' with form=form %}
-            {% endif %}
-            <button class="btn btn-default">{% trans 'Accept' %}</button>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h3 text-center">
+                        {% trans 'Authorization residence' %}
+                    </h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="{{ form.type_request.id_for_label }}">{{ form.type_request.label }}</label>
+                    {{ form.type_request }}
+                </div>
+                <div class="col">
+                    <label for="{{ form.extension_type.id_for_label }}">{{ form.extension_type.label }}</label>
+                    {{ form.extension_type }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.process_no }}
+                        <label for="{{ form.process_no.id_for_label }}">{{ form.process_no.label }}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h3 text-center">{% trans 'Client data' %}</h3>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.naturalness }}
+                        <label for="{{ form.naturalness.id_for_label }}">{{ form.naturalness.label }}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.nationality }}
+                        <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.passport_no }}
+                        <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.passport_issued_in }}
+                        <label for="{{ form.passport_issued_in.id_for_label }}">{{ form.passport_issued_in.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.date_issuance_passport }}
+                        <label for="{{ form.date_issuance_passport.id_for_label }}">{{ form.date_issuance_passport.label }}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.father_nationality }}
+                        <label for="{{ form.father_nationality.id_for_label }}">{{ form.father_nationality.label }}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.mother_nationality }}
+                        <label for="{{ form.mother_nationality.id_for_label }}">{{ form.mother_nationality.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="md-form">
+                        {{ form.observations }}
+                        <label for="{{ form.observations.id_for_label }}">{{ form.observations.label }}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h4 class="h4">{% trans 'For non-local use of the reception' %}</h4>
+                    <div class="md-form">
+                        {{ form.location }}
+                        <label for="{{ form.location.id_for_label }}">{{ form.location.label }}</label>
+                    </div>
+                    <div class="md-form">
+                        {{ form.date }}
+                        <label for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h4 class="h4">{% trans 'For official use' %}</h4>
+                    <div class="md-form">
+                        {{ form.date_official_use }}
+                        <label for="{{ form.date_official_use.id_for_label }}">{{ form.date_official_use.label }}</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default" type="submit">{% trans 'Accept' %}</button>
         </form>
     </div>
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script>
-        $(function () {
-            $('input[type=radio]').click(function () {
-                const form_container = $('#form-container');
-                switch ($(this).prop('id')) {
-                    case 'residence':
-                        form_container.html('residence');
-                        break;
-                    case 'marriage':
-                        form_container.html('marriage');
-                        break;
-                    case 'renovation':
-                        form_container.html("<p id=\"talla\">renovation</p> \n<em>tocate</em>");
-                }
-
-            });
-        });
-    </script>
 {% endblock %}

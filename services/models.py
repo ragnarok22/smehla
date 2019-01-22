@@ -284,11 +284,11 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     # clients data
     naturalness = models.CharField(_('Naturalness'), max_length=100)
     nationality = models.CharField(_('Nationality'), max_length=100)
-    passport_no = models.CharField(_('Passsport No.'), max_length=14)
+    passport_no = models.CharField(_('Passport No.'), max_length=14)
     passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
     date_issuance_passport = models.DateField(_('Date of issuance of passport'))
     father_nationality = models.CharField(_('Father nationality'), max_length=100)
-    mother_nationality = models.CharField(_('Father nationality'), max_length=100)
+    mother_nationality = models.CharField(_('Mother nationality'), max_length=100)
     # for non-local use of the reception
     location = models.CharField(_('Location'), max_length=100)
     date = models.DateField(_("Date"))

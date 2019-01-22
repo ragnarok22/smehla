@@ -97,12 +97,6 @@ class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
     def get_success_url(self):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
-    def form_valid(self, form):
-        user = self.request.user
-        service = form.save(commit=False)
-        service.official = user
-        return super().form_valid(form)
-
 
 class ServiceDetailView(services_mixins.ServiceMixin, generic.DetailView):
     pass
