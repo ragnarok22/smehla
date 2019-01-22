@@ -32,8 +32,9 @@ class VisaRenovationForm(forms.ModelForm):
 class PassportCreateForm(forms.ModelForm):
     class Meta:
         model = models.Passport
-        exclude = ['client', 'status']
+        exclude = ['client', 'status', 'official']
         widgets = {
+            'process_no': widgets.NumberInput(),
             'passport_type': widgets.Select(),
             'remission_type': widgets.Select(),
             # birth certificate

@@ -7,6 +7,7 @@
 
 {% block main %}
     <div class="container-fluid">
+    {{ form.errors }}
         <form method="post">
             {% csrf_token %}
             <div class="row">
@@ -15,47 +16,146 @@
                     {{ form.passport_type }}
                 </div>
                 <div class="col">
-                    <div class="md-form">
-                        {{ form.emission_date }}
-                        <label for="{{ form.emission_date.id_for_label }}">{{ form.emission_date.label }}</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
                     <label for="{{ form.remission_type.id_for_label }}">{{ form.remission_type.label }}</label>
                     {{ form.remission_type }}
                 </div>
-                <div class="col">
+            </div>
+            <div class="row">
+                <div class="col-4">
                     <div class="md-form">
-                        {{ form.remission_date }}
-                        <label for="{{ form.remission_date.id_for_label }}">{{ form.remission_date.label }}</label>
+                        {{ form.process_no }}
+                        <label for="{{ form.process_no.id_for_label }}">{{ form.process_no.label }}</label>
                     </div>
                 </div>
-                <div class="col">
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h3 text-center">
+                        {% trans 'Birth address' %}
+                    </h3>
+                </div>
+                <div class="col-4">
                     <div class="md-form">
-                        {{ form.personal_no }}
-                        <label for="{{ form.personal_no.id_for_label }}">{{ form.personal_no.label }}</label>
+                        {{ form.province_birth }}
+                        <label for="{{ form.province_birth.id_for_label }}">{{ form.province_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.municipality_birth }}
+                        <label for="{{ form.municipality_birth.id_for_label }}">{{ form.municipality_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.commune_birth }}
+                        <label for="{{ form.commune_birth.id_for_label }}">{{ form.commune_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.neighborhood_birth }}
+                        <label for="{{ form.neighborhood_birth.id_for_label }}">{{ form.neighborhood_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.street_birth }}
+                        <label for="{{ form.street_birth.id_for_label }}">{{ form.street_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.home_no_birth }}
+                        <label for="{{ form.home_no_birth.id_for_label }}">{{ form.home_no_birth.label }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h3 text-center">{% trans 'Birth certificate' %}</h3>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.issued_in }}
+                        <label for="{{ form.issued_in.id_for_label }}">{{ form.issued_in.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h3 class="h3 text-center">
+                        {% trans 'Identity card' %}
+                    </h3>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.date }}
+                        <label for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.cp }}
+                        <label for="{{ form.cp.id_for_label }}">{{ form.cp.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.cp_issued_in }}
+                        <label for="{{ form.cp_issued_in.id_for_label }}">{{ form.cp_issued_in.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.date_cp_issue }}
+                        <label for="{{ form.date_cp_issue.id_for_label }}">{{ form.date_cp_issue.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.ci }}
+                        <label for="{{ form.ci.id_for_label }}">{{ form.ci.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.ci_issued_in }}
+                        <label for="{{ form.ci_issued_in.id_for_label }}">{{ form.ci_issued_in.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="md-form">
+                        {{ form.spouse }}
+                        <label for="{{ form.spouse.id_for_label }}">{{ form.spouse.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="md-form">
+                        {{ form.observations }}
+                        <label for="{{ form.observations.id_for_label }}">{{ form.observations.label }}</label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
+                    <h4 class="h4">{% trans 'For use of the reception' %}</h4>
+                    <div class="md-form">
+                        {{ form.date_reception }}
+                        <label for="{{ form.date_reception.id_for_label }}">{{ form.date_reception.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="h4">{% trans 'For official use' %}</h4>
                     <div class="md-form">
                         {{ form.passport_no }}
                         <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
                     </div>
-                </div>
-                <div class="col">
                     <div class="md-form">
-                        {{ form.passport_issuance_date }}
-                        <label for="{{ form.passport_issuance_date.id_for_label }}">{{ form.passport_issuance_date.label }}</label>
+                        {{ form.passport_issued_in }}
+                        <label for="{{ form.passport_issued_in.id_for_label }}">{{ form.passport_issued_in.label }}</label>
                     </div>
-                </div>
-                <div class="col">
                     <div class="md-form">
-                        {{ form.passport_expiration_date }}
-                        <label for="{{ form.passport_expiration_date.id_for_label }}">{{ form.passport_expiration_date.label }}</label>
+                        {{ form.date_issue_passport }}
+                        <label for="{{ form.date_issue_passport.id_for_label }}">{{ form.date_issue_passport.label }}</label>
                     </div>
                 </div>
             </div>
