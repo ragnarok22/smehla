@@ -92,74 +92,6 @@
         </form>
     </div>
 
-    {% if entity_form %}
-        <div id="entity" class="container-fluid hidden">
-            <form method="post" id="entity-form" action="{% url 'services:entity_create' %}">
-                {% csrf_token %}
-                <div class="row">
-                    <div class="col">
-                        <h1 class="h1 text-center">{% trans 'Tutelary Entity data' %}</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.name }}
-                            <label for="{{ entity_form.name.id_for_label }}">{{ entity_form.name.label }}</label>
-                            <span class="text-danger">{{ entity_form.name.errors }}</span>
-                            <ol id="entity-list"></ol>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.localization }}
-                            <label for="{{ entity_form.localization.id_for_label }}">{{ entity_form.localization.label }}</label>
-                            <span class="text-danger">{{ entity_form.localization.errors }}</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.identification_no }}
-                            <label for="{{ entity_form.identification_no.id_for_label }}">{{ entity_form.identification_no.label }}</label>
-                            <span class="text-danger">{{ entity_form.identification_no.errors }}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.issuance_date }}
-                            <label for="{{ entity_form.issuance_date.id_for_label }}">{{ entity_form.issuance_date.label }}</label>
-                            <span class="text-danger">{{ entity_form.issuance_date.errors }}</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.expiration_date }}
-                            <label for="{{ entity_form.expiration_date.id_for_label }}">{{ entity_form.expiration_date.label }}</label>
-                            <span class="text-danger">{{ entity_form.expiration_date.errors }}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.telephone }}
-                            <label for="{{ entity_form.telephone.id_for_label }}">{{ entity_form.telephone.label }}</label>
-                            <span class="text-danger">{{ entity_form.telephone.errors }}</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="md-form">
-                            {{ entity_form.email }}
-                            <label for="{{ entity_form.email.id_for_label }}">{{ entity_form.email.label }}</label>
-                            <span class="text-danger">{{ entity_form.email.errors }}</span>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    {% endif %}
     <div class="row">
         <button type="submit" class="btn btn-default" id="submit">{% trans 'Accept' %}</button>
     </div>
@@ -170,25 +102,7 @@
     <script>
         $(function () {
             let specification = $('#{{ form.specification.id_for_label }}');
-            const entityForm = $('#entity-form');
             const visaForm = $('#visa-form');
-            let createNewEntity = true;
-            let entity = $('#entity');
-            let entity_pk = null;
-
-            {% if visa.tutelary_entity %}
-                let ent = {
-                    'pk': '{{ visa.tutelary_entity.pk }}',
-                    'name': '{{ visa.tutelary_entity.name }}',
-                    'localization': '{{ visa.tutelary_entity.localization }}',
-                    'identification_no': '{{ visa.tutelary_entity.identification_no }}',
-                    'issuance_date': '{{ visa.tutelary_entity.issuance_date }}',
-                    'expiration_date': '{{ visa.tutelary_entity.expiration_date }}',
-                    'telephone': '{{ visa.tutelary_entity.telephone }}',
-                    'email': '{{ visa.tutelary_entity.email }}',
-                };
-                refillEntityData(null, ent, true);
-            {% endif %}
 
             function checkSpecificationStatus() {
                 if (specification.val() === 'VT') {
@@ -203,99 +117,6 @@
             specification.change(function () {
                 checkSpecificationStatus();
             });
-
-            $('button[type=submit]').click(function (event) {
-                event.preventDefault();
-                if (createNewEntity && specification.val() === 'VT') {
-                    $.ajax(entityForm.attr('action'), {
-                        method: 'POST',
-                        data: {
-                            'name': $('#{{ entity_form.name.id_for_label }}').val(),
-                            'localization': $('#{{ entity_form.localization.id_for_label }}').val(),
-                            'identification_no': $('#{{ entity_form.identification_no.id_for_label }}').val(),
-                            'issuance_date': $('#{{ entity_form.issuance_date.id_for_label }}').val(),
-                            'expiration_date': $('#{{ entity_form.expiration_date.id_for_label }}').val(),
-                            'telephone': $('#{{ entity_form.telephone.id_for_label }}').val(),
-                            'email': $('#{{ entity_form.email.id_for_label }}').val(),
-                        },
-                        success: function (response) {
-                            console.log(response['pk']);
-                            const entity_name = $('#{{ entity_form.name.id_for_label }}').val();
-                            const option = '<option value="' + response['pk'] + '">' + entity_name + '</option>';
-                            $('#{{ form.tutelary_entity.id_for_label }}').append(option);
-                            $('#{{ form.tutelary_entity.id_for_label }}').val(response['pk']);
-                            visaForm.submit();
-                        },
-                        error: function (response, status) {
-                            swal('Ha ocurrido un error', response.responseText, status);
-                            console.log(response);
-                            console.log(response.statusText);
-                            console.log(status);
-                            alert('error');
-                        }
-                    });
-                } else {
-                    if (entity_pk != null) {
-                        $('#{{ form.tutelary_entity.id_for_label }}').val(entity_pk);
-                    }
-                    if (specification.val() !== 'VT') {
-                        $('#{{ form.tutelary_entity.id_for_label }}').val("");
-                    }
-                    visaForm.submit();
-                }
-
-            });
-
-            function refillEntityData(event, entity, change_entity = true) {
-                createNewEntity = false;
-                if (change_entity) {
-                    entity_pk = entity['pk'];
-                }
-                $('#{{ entity_form.name.id_for_label }}').val(entity['name']);
-                $('#{{ entity_form.localization.id_for_label }}').val(entity['localization']);
-                $('#{{ entity_form.identification_no.id_for_label }}').val(entity['identification_no']);
-                $('#{{ entity_form.issuance_date.id_for_label }}').val(entity['issuance_date']);
-                $('#{{ entity_form.expiration_date.id_for_label }}').val(entity['expiration_date']);
-                $('#{{ entity_form.telephone.id_for_label }}').val(entity['telephone']);
-                $('#{{ entity_form.email.id_for_label }}').val(entity['email']);
-            }
-
-            let typingTimer; //timer identifier
-            const typingInterval = 1000; //
-            let entity_name = $('#{{ entity_form.name.id_for_label }}');
-            entity_name.keyup(function () {
-                clearTimeout(typingTimer);
-                if ($(this).val) {
-                    typingTimer = setTimeout(doneTyping, typingInterval);
-                }
-            });
-
-            function doneTyping() {
-                let result = '';
-                let en_list = [];
-                $.ajax("{% url 'services:entity_search' %}", {
-                    method: 'GET',
-                    data: {'name': entity_name.val()},
-                    success: function (data) {
-                        for (let i = 0; i < data.length; i++) {
-                            en_list[i] = data[i];
-                            result += '<li><a href="#" id="entity-' + en_list[i]['pk'] + '">' + en_list[i]['name'] +
-                                '</a></li>' + '\n';
-                        }
-                        $("#entity-list").html(result);
-                        for (let i = 0; i < en_list.length; i++) {
-                            let ent = $('#entity-' + en_list[i]['pk']);
-                            ent.on('custom', refillEntityData);
-                            ent.on('click', function (event) {
-                                event.preventDefault();
-                                ent.trigger('custom', [en_list[i]]);
-                            });
-                        }
-                    },
-                    error: function (response, status) {
-                    }
-                });
-            }
         });
     </script>
 {% endblock %}
