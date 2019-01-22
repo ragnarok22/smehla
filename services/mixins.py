@@ -25,30 +25,19 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
             self.model = models.Passport
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.PassportCreateForm
-        elif _type == 'authorization':
+        elif _type == 'residence':
             self.model = models.ResidenceAuthorization
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ResidenceAuthorizationForm
                 self.template_name = 'services/residence_form.html'
-        elif _type == 'renovation':
-            self.model = models.ResidenceRenovation
+        elif _type == 'extension':
+            self.model = models.ExtensionVisa
             if issubclass(self.__class__, ModelFormMixin):
-                self.form_class = forms.ResidenceRenovationForm
-                self.template_name = 'services/residence_form.html'
-        elif _type == 'marriage':
-            self.model = models.ResidenceMarriage
-            if issubclass(self.__class__, ModelFormMixin):
-                self.form_class = forms.ResidenceMarriageForm
+                self.form_class = forms.VisaRenovationForm
                 self.template_name = 'services/residence_form.html'
         else:
             raise Http404(_('Service type not found'))
         self.extra_context = {'type': _type}
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        if self.service_type == 'visa':
-            context['entity_form'] = forms.EntityForm
-        return context
 
 
 class ServiceFormMixin(ServiceMixin, ModelFormMixin):
