@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Add visa' %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-default">{% trans 'Accept' %}</button>
+        </form>
+    </div>
+{% endblock %}
