@@ -325,7 +325,7 @@ class Passport(Service):
     ci = models.CharField(_('Identity card'), max_length=14)
     ci_issued_in = models.CharField(_('Identity card issued in'), max_length=100)
     spouse = models.CharField(_('Spouse'), max_length=200, null=True, blank=True)
-    observations = models.TextField(_('Observations'))
+    observations = models.TextField(_('Observations'), null=True, blank=True)
     # client data
     # birth address
     province_birth = models.CharField(_('Province'), max_length=50)
