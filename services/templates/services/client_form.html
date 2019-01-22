@@ -39,25 +39,30 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="md-form">
-                    {{ form.ci }}
-                    <label for="{{ form.ci.id_for_label }}">{{ form.ci.label }}</label>
-                </div>
+                <label for="{{ form.sex.id_for_label }}">{{ form.sex.label }}</label>
+                {{ form.sex }}
             </div>
             <div class="col-4">
                 <label for="{{ form.civil_status.id_for_label }}">{{ form.civil_status.label }}</label>
                 {{ form.civil_status }}
             </div>
-            <div class="col-6">
+            <div class="col-12"><h3 class="h3 text-center">{% trans 'Work data' %}</h3></div>
+            <div class="col-4">
                 <div class="md-form">
-                    {{ form.naturalness }}
-                    <label for="{{ form.naturalness.id_for_label }}">{{ form.naturalness.label }}</label>
+                    {{ form.profession }}
+                    <label for="{{ form.profession.id_for_label }}">{{ form.profession.label }}</label>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
                 <div class="md-form">
-                    {{ form.nationality }}
-                    <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
+                    {{ form.funcion }}
+                    <label for="{{ form.funcion.id_for_label }}">{{ form.funcion.label }}</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="md-form">
+                    {{ form.work_name }}
+                    <label for="{{ form.work_name.id_for_label }}">{{ form.work_name.label }}</label>
                 </div>
             </div>
             <div class="col-12"><h3 class="h3 text-center">{% trans 'Filiation' %}</h3></div>
@@ -75,12 +80,6 @@
             </div>
             <div class="col-4">
                 <div class="md-form">
-                    {{ form.address }}
-                    <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="md-form">
                     {{ form.phone }}
                     <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
                 </div>
@@ -92,11 +91,47 @@
                 </div>
             </div>
             <div class="col-4">
+                <label for="{{ form.data_attachment.id_for_label }}">{{ form.data_attachment.label }}</label>
+                {{ form.data_attachment }}
+            </div>
+            <div class="col-12"><h3 class="h3 text-center">{% trans 'Current address' %}</h3></div>
+            <div class="col-4">
                 <div class="md-form">
-                    {{ form.data_attachment }}
-                    <label for="{{ form.data_attachment.id_for_label }}">{{ form.data_attachment.label }}</label>
+                    {{ form.province }}
+                    <label for="{{ form.province.id_for_label }}">{{ form.province.label }}</label>
                 </div>
             </div>
+            <div class="col-4">
+                <div class="md-form">
+                    {{ form.municipality }}
+                    <label for="{{ form.municipality.id_for_label }}">{{ form.municipality.label }}</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="md-form">
+                    {{ form.commune }}
+                    <label for="{{ form.commune.id_for_label }}">{{ form.commune.label }}</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="md-form">
+                    {{ form.neighborhood }}
+                    <label for="{{ form.neighborhood.id_for_label }}">{{ form.neighborhood.label }}</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="md-form">
+                    {{ form.street }}
+                    <label for="{{ form.street.id_for_label }}">{{ form.street.label }}</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="md-form">
+                    {{ form.home_no }}
+                    <label for="{{ form.home_no.id_for_label }}">{{ form.home_no.label }}</label>
+                </div>
+            </div>
+
             <div class="col-12">
                 <button class="btn btn-success float-right" type="submit">Aceptar</button>
             </div>

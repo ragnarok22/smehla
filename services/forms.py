@@ -23,6 +23,12 @@ class VisaCreateForm(forms.ModelForm):
         }
 
 
+class VisaRenovationForm(forms.ModelForm):
+    class Meta:
+        model = models.ExtensionVisa
+        exclude = ['client', 'status']
+
+
 class PassportCreateForm(forms.ModelForm):
     class Meta:
         model = models.Passport
@@ -67,7 +73,7 @@ class ClientForm(forms.ModelForm):
             'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
             'civil_status': forms.Select(attrs={'class': 'form-control'}),
             'sex': forms.Select(attrs={'class': 'form-control'}),
-            'picture': forms.ImageField(),
+            # 'picture': forms.ImageField(),
             'father': forms.TextInput(attrs={'class': 'form-control'}),
             'mother': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
