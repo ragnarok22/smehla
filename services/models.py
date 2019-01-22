@@ -78,7 +78,6 @@ class Service(models.Model):
     client = models.ForeignKey(verbose_name=_('Client'), to=Client, on_delete=models.CASCADE)
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
     service_type = None
-    type_request = models.CharField(_('Type request'), max_length=3)
     process_no = models.PositiveSmallIntegerField()
     official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
 
@@ -198,7 +197,7 @@ class ResidentVisa(Visa):
         ('T', _('Temporary')),
         ('P', _('Permanent')),
     )
-    type_residence = models.CharField(_('Type residence'), choices=TYPE_RESIDENCE_CHOICES)
+    type_residence = models.CharField(_('Type residence'), max_length=1, choices=TYPE_RESIDENCE_CHOICES)
     LIVE_FAMILIAR_CHOICES = (
         ('Y', _('Yes')),
         ('N', _('No')),
@@ -322,7 +321,7 @@ class Passport(Service):
     date = models.DateField(_('Date'))  # ver a candido esta fecha de que es
     cp = models.CharField(_('Cédula pessoal'), max_length=4)
     cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100)
-    date_cp_issue = models.CharField(_('Date of cédula pessoal issue'))
+    date_cp_issue = models.DateField(_('Date of cédula pessoal issue'))
     ci = models.CharField(_('Identity card'), max_length=14)
     ci_issued_in = models.CharField(_('Identity card issued in'), max_length=100)
     spouse = models.CharField(_('Spouse'), max_length=200, null=True, blank=True)
