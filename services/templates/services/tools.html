@@ -20,8 +20,23 @@
             <!-- Create services -->
             <div class="row">
                 <div class="col">
-                    <a href="{% url 'services:client_list' 'visa' %}" class="btn btn-default">
-                        {% trans 'Visa for a client' %}
+                    <a href="{% url 'services:client_list' 'workvisa' %}" class="btn btn-default">
+                        {% trans 'Work Visa for a client' %}
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'services:client_list' 'medicalvisa' %}" class="btn btn-default">
+                        {% trans 'Medical Visa for a client' %}
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'services:client_list' 'residentvisa' %}" class="btn btn-default">
+                        {% trans 'Resident Visa for a client' %}
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'services:client_list' 'temporaryvisa' %}" class="btn btn-default">
+                        {% trans 'Temporary Visa for a client' %}
                     </a>
                 </div>
                 <div class="col">
