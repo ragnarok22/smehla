@@ -24,6 +24,48 @@ class VisaCreateForm(forms.ModelForm):
         }
 
 
+class WorkVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.WorkVisa
+        exclude = ['client', 'status', 'official']
+
+
+class MedicalTreatmentVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.MedicalTreatmentVisa
+        exclude = ['client', 'status', 'official']
+
+
+class ResidentVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.ResidentVisa
+        exclude = ['client', 'status', 'official']
+
+
+class TemporaryVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.TemporaryVisa
+        exclude = ['client', 'status', 'official']
+
+
+class PrivilegedVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.PrivilegedVisa
+        exclude = ['client', 'status', 'official']
+
+
+class StudyVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.StudyVisa
+        exclude = ['client', 'status', 'official']
+
+
+class ExtensionVisaForm(forms.ModelForm):
+    class Meta:
+        model = models.ExtensionVisa
+        exclude = ['client', 'status', 'official']
+
+
 class VisaRenovationForm(forms.ModelForm):
     class Meta:
         model = models.ExtensionVisa
