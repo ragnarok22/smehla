@@ -20,27 +20,12 @@
             <!-- Create services -->
             <div class="row">
                 <div class="col">
-                    <a href="{% url 'services:client_list' 'workvisa' %}" class="btn btn-default">
-                        {% trans 'Work Visa for a client' %}
+                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#visa-types">
+                        {% trans 'Visa for a client' %}
                     </a>
                 </div>
                 <div class="col">
-                    <a href="{% url 'services:client_list' 'medicalvisa' %}" class="btn btn-default">
-                        {% trans 'Medical Visa for a client' %}
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="{% url 'services:client_list' 'residentvisa' %}" class="btn btn-default">
-                        {% trans 'Resident Visa for a client' %}
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="{% url 'services:client_list' 'temporaryvisa' %}" class="btn btn-default">
-                        {% trans 'Temporary Visa for a client' %}
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="{% url 'services:client_list' 'renovation' %}" class="btn btn-default">
+                    <a href="{% url 'services:client_list' 'extension' %}" class="btn btn-default">
                         {% trans 'Request visa extension' %}
                     </a>
                 </div>
@@ -199,6 +184,73 @@
         </div>
         <!-- List of services -->
     </div>
+    <!-- Visa types list -->
+    <div class="modal fade" id="visa-types" tabindex="-1" role="dialog" aria-labelledby="visa-types" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">{% trans 'Visa types' %}</h4>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal body-->
+                <div class="modal-body mx-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'workvisa' %}" class="btn btn-default">
+                                    {% trans 'Work visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'medicalvisa' %}" class="btn btn-default">
+                                    {% trans 'Medical Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'residentvisa' %}" class="btn btn-default">
+                                    {% trans 'Resident Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'temporaryvisa' %}" class="btn btn-default">
+                                    {% trans 'Temporary Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'privilegedvisa' %}" class="btn btn-default">
+                                    {% trans 'Privileged Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'studyvisa' %}" class="btn btn-default">
+                                    {% trans 'Study Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'shortvisa' %}" class="btn btn-default">
+                                    {% trans 'Short-term Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'touristvisa' %}" class="btn btn-default">
+                                    {% trans 'Tourist Visa for a client' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'ordinaryvisa' %}" class="btn btn-default">
+                                    {% trans 'Ordinary Visa for a client' %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal body-->
+            </div>
+        </div>
+    </div>
+    <!--./ Visa types list -->
 {% endblock %}
 
 {% block script %}
