@@ -9,11 +9,10 @@ from . import widgets
 class VisaCreateForm(forms.ModelForm):
     class Meta:
         model = models.Visa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
             'specification': widgets.Select(),
-            'request_type': widgets.Select(),
             'passport_no': widgets.TextInput(),
             'visa_no': widgets.TextInput(),
             'extension_request_date': widgets.DateInput(),
@@ -27,46 +26,40 @@ class VisaCreateForm(forms.ModelForm):
 class WorkVisaForm(forms.ModelForm):
     class Meta:
         model = models.WorkVisa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
 
 
 class MedicalTreatmentVisaForm(forms.ModelForm):
     class Meta:
         model = models.MedicalTreatmentVisa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
 
 
 class ResidentVisaForm(forms.ModelForm):
     class Meta:
         model = models.ResidentVisa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
 
 
 class TemporaryVisaForm(forms.ModelForm):
     class Meta:
         model = models.TemporaryVisa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
 
 
 class PrivilegedVisaForm(forms.ModelForm):
     class Meta:
         model = models.PrivilegedVisa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
 
 
 class StudyVisaForm(forms.ModelForm):
     class Meta:
         model = models.StudyVisa
-        exclude = ['client', 'status', 'official']
+        exclude = ['client', 'status', 'official', 'request_type']
 
 
 class ExtensionVisaForm(forms.ModelForm):
-    class Meta:
-        model = models.ExtensionVisa
-        exclude = ['client', 'status', 'official']
-
-
-class VisaRenovationForm(forms.ModelForm):
     class Meta:
         model = models.ExtensionVisa
         exclude = ['client', 'status', 'official']

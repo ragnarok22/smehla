@@ -17,6 +17,10 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
     def _set_attr_model(self, kwargs):
         _type = kwargs.get('type')
         self.service_type = _type
+        if _type == 'touristvisa' or _type == 'shortvisa' or _type == 'ordinaryvisa':
+            self.model = models.Visa
+            if issubclass(self.__class__, ModelFormMixin):
+                self.form_class = forms.VisaCreateForm
         if _type == 'workvisa':
             self.model = models.WorkVisa
             if issubclass(self.__class__, ModelFormMixin):
@@ -41,7 +45,7 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
             self.model = models.StudyVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.StudyVisaForm
-        elif _type == 'extensionvisa':
+        elif _type == 'extension':
             self.model = models.ExtensionVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ExtensionVisaForm
@@ -54,10 +58,6 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ResidenceAuthorizationForm
                 self.template_name = 'services/residence_form.html'
-        elif _type == 'extension':
-            self.model = models.ExtensionVisa
-            if issubclass(self.__class__, ModelFormMixin):
-                self.form_class = forms.VisaRenovationForm
         else:
             raise Http404(_('Service type not found'))
         self.extra_context = {'type': _type}
