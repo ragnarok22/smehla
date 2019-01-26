@@ -21,6 +21,8 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
             self.model = models.Visa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.VisaCreateForm
+            else:
+                self.template_name = 'services/visa_detail.html'
         elif _type == 'WV':
             self.model = models.WorkVisa
             if issubclass(self.__class__, ModelFormMixin):

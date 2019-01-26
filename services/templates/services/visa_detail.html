@@ -8,78 +8,7 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
-            </div>
-        </div>
-
-        {% include 'services/client_detail_template.html' with client=visa.client only %}
-
-        <div class="row">
-            <div class="col">
-                <h1 class="h1 text-center">{% trans 'Migratory acts' %}</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>{% trans 'Specification' %}: {{ visa.get_specification_display }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Extension request date' %}: {{ visa.extension_request_date }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Request type' %}: {{ visa.get_request_type_display }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>{% trans 'Passport No.' %}: {{ visa.passport_no }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Passport issuance date' %}: {{ visa.passport_issuance_date }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Passport expiration date' %}: {{ visa.passport_expiration_date }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>{% trans 'Visa No.' %}: {{ visa.visa_no }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Visa issuance date' %}: {{ visa.visa_issuance_date }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Visa expiration date' %}: {{ visa.visa_expiration_date }}</p>
-            </div>
-        </div>
-
-        {% if visa.tutelary_entity %}
-            <div class="row">
-                <div class="col">
-                    <h1 class="h1 text-center">{% trans 'Tutelary Entity data' %}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>{% trans 'Name' %}: {{ visa.tutelary_entity.name }}</p>
-                </div>
-                <div class="col">
-                    <p>{% trans 'Identification No.' %}: {{ visa.tutelary_entity.identification_no }}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>{% trans 'Telephone' %}: {{ visa.tutelary_entity.telephone }}</p>
-                </div>
-                <div class="col">
-                    <p>{% trans 'Email' %}: {{ visa.tutelary_entity.email }}</p>
-                </div>
-            </div>
-        {% endif %}
-    </div>
+    {% include 'services/visa_detail_template.html' with visa=visa only %}
     {% user_can_mod_service visa user as can_mod %}
     {% if can_mod %}
         <div class="row">
