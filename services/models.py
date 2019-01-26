@@ -245,7 +245,7 @@ class StudyVisa(Visa):
     STUDY_PROGRAM_CHOICES = (
         ('P', _('Private')),
         ('U', _('Public')),
-        ('F', _('Formation')),
+        ('F', _('Professional training to obtain an academic or professional degree')),
     )
     STAGES_CHOICES = (
         ('PC', _('Private companies')),
@@ -254,7 +254,7 @@ class StudyVisa(Visa):
     study_program = models.CharField(_('Study program'), max_length=1, choices=STUDY_PROGRAM_CHOICES)
     init_date = models.DateField(_('Init date'))
     end_date = models.DateField(_('End date'))
-    stages_in = models.CharField(_('Estagios en'), max_length=1, choices=STAGES_CHOICES)
+    stages_in = models.CharField(_('internships in'), max_length=2, choices=STAGES_CHOICES)
 
 
 class ExtensionVisa(Visa):
