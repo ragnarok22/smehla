@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    Visa {{ temporaryvisa.client }}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        {% include 'services/visa_detail_template.html' with visa=temporaryvisa only %}
+        <div class="row">
+            <div class="col-12">
+                <h3 class="h3 text-center">{% trans 'Temporary visa data' %}</h3>
+            </div>
+            <div class="col-12">
+                {% trans 'intends to remain in Angola based on the following' %}: {{ temporaryvisa.get_reason_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Subsistence' %}: {{ temporaryvisa.subsistence }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Angola address' %}: {{ temporaryvisa.address_angola }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Official' %}: {{ temporaryvisa.official }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
