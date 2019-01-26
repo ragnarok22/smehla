@@ -17,7 +17,6 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
     tab_name = 'tools'
     template_name = 'services/tools.html'
     model = models.Service
-    paginate_by = 5
 
     def get_queryset(self):
         return models.Service.objects.all().order_by('id')

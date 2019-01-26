@@ -20,6 +20,7 @@
     <link href="{% static 'accounts/css/sweetalert2.min.css' %}" rel="stylesheet">
     <!-- Bootstrap Datepicker -->
     <link href="{% static 'accounts/css/bootstrap-datepicker.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/datatables.min.css' %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="{% static 'accounts/css/styles.css' %}" rel="stylesheet">
     {% block styles %}{% endblock %}
@@ -46,10 +47,12 @@
 <script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.pt.min.js' %}"></script>
 <!-- Smooth Scroll animation -->
 <script type="text/javascript" src="{% static 'accounts/js/smooth-scroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/datatables.min.js' %}"></script>
 <!-- My custom JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
 <script>
     $(function () {
+        $('table').DataTable();
         {% if tab %}
             $('#{{ tab }}').addClass('active');
             $('#{{ tab }} a').attr('href', '#');
