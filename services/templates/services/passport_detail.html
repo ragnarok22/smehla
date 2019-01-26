@@ -21,41 +21,121 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-md-4">
                 <p>{% trans 'Passport type' %}: {{ passport.get_passport_type_display }}</p>
             </div>
-            <div class="col">
-                <p>{% trans 'Emission date' %}: {{ passport.emission_date }}</p>
+            <div class="col-12 col-md-4">
+                {% trans 'Remission type' %}: {{ passport.get_remission_type_display }}
             </div>
-            <div class="col">
-                <p>{% trans 'Personal No.' %}: {{ passport.personal_no }}</p>
+            <div class="col-12 col-md-4">
+                {% trans 'Passport status' %}: {{ passport.get_status_display }}
+            </div>
+            <div class="col-12 col-md-4">
+                {% trans 'Process No.' %}: {{ passport.process_no }}
+            </div>
+            <div class="col-12">
+                <h3 class="h3 text-center">{% trans 'Birth certificate' %}</h3>
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Issued in' %}: {{ passport.issued_in }}
+            </div>
+            <div class="col-12">
+                <h3 class="h3 text-center">{% trans 'Identity card' %}</h3>
+            </div>
+            <div class="col-12">
+                <h5 class="h5">{% trans 'Personal card' %}</h5>
+            </div>
+            <div class="col-12 col-md-3">
+                {% trans 'Date' %}: {{ passport.date }}
+            </div>
+            <div class="col-12 col-md-3">
+                {% trans 'Personal ID card' %}: {{ passport.cp }}
+            </div>
+            <div class="col-12 col-md-3">
+                {% trans 'Issued in' %}: {{ passport.cp_issued_in }}
+            </div>
+            <div class="col-12 col-md-3">
+                {% trans 'Date issue' %}: {{ passport.date_cp_issue }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Indentity ID card' %}: {{ passport.ci }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Issued in' %}: {{ passport.ci_issued_in }}
+            </div>
+            <div class="col-12">
+                {% trans 'Spouse' %}: {{ passport.spouse }}
+            </div>
+            <div class="col-12">
+                {% trans 'Observations' %}: {{ passport.observations }}
+            </div>
+            <div class="col-12">
+                <h4 class="h5 text-center">{% trans "Client's birth address" %}</h4>
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Province' %}: {{ passport.province_birth }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Municipality' %}: {{ passport.municipality_birth }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Commune' %}: {{ passport.commune_birth }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Neighborhood' %}: {{ passport.neighborhood_birth }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Street' %}: {{ passport.street_birth }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Home No.' %}: {{ passport.home_no_birth }}
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <p>{% trans 'Remission type' %}: {{ passport.get_remission_type_display }}</p>
+            <div class="col-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="h5 text-center">{% trans 'For use of the reception' %}</h5>
+                        </div>
+                        <div class="col-12">
+                            {% trans 'Date reception' %}: {{ passport.date_reception }}
+                        </div>
+                        <div class="col-12">
+                            {% trans 'Official' %}: {{ passport.official }}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <p>{% trans 'Remission date' %}: {{ passport.remission_date }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>{% trans 'Passport No.' %}: {{ passport.passport_no }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Passport issuance date' %}: {{ passport.passport_issuance_date }}</p>
-            </div>
-            <div class="col">
-                <p>{% trans 'Passport expiration date' %}: {{ passport.passport_expiration_date }}</p>
+            <div class="col-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="h5 text-center">
+                                {% trans 'For official use' %}
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            {% trans 'Passport No.' %}: {{ passport.passport_no }}
+                        </div>
+                        <div class="col-12">
+                            {% trans 'Passport issued in' %}: {{ passport.passport_issued_in }}
+                        </div>
+                        <div class="col-12">
+                            {% trans 'Date issue passport' %}: {{ passport.date_issue_passport }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         {% user_can_mod_service passport user as can_mod %}
         {% if can_mod %}
             <div class="row">
                 <div class="col">
-                    <a href="{% url 'services:service_update' 'passport' passport.pk %}" class="btn btn-default">{% trans 'Update' %}</a>
-                    <a href="{% url 'services:service_delete' 'passport' passport.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
+                    <a href="{% url 'services:service_update' 'passport' passport.pk %}"
+                       class="btn btn-default">{% trans 'Update' %}</a>
+                    <a href="{% url 'services:service_delete' 'passport' passport.pk %}"
+                       class="btn btn-danger">{% trans 'Delete' %}</a>
                 </div>
             </div>
         {% endif %}
