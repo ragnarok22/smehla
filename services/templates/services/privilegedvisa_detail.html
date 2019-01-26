@@ -25,5 +25,6 @@
                 {% trans 'Official' %}: {{ privilegedvisa.official }}
             </div>
         </div>
+        {% include 'services/visa_edit_template.html' with visa=privilegedvisa %}
     </div>
 {% endblock %}

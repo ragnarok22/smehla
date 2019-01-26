@@ -40,5 +40,6 @@
                 {% trans 'Official' %}: {{ workvisa.official }}
             </div>
         </div>
+        {% include 'services/visa_edit_template.html' with visa=workvisa %}
     </div>
 {% endblock %}

@@ -25,5 +25,6 @@
                 {% trans 'Date end treatment' %}: {{ medicaltreatmentvisa.data_end_treatment }}
             </div>
         </div>
+        {% include 'services/visa_edit_template.html' with visa=medicaltreatmentvisa %}
     </div>
 {% endblock %}
