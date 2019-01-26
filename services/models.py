@@ -38,7 +38,7 @@ class Client(models.Model):
     data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
     # Work data
     profession = models.CharField(_('Profession'), max_length=200)
-    funcion = models.CharField(_('Function'), max_length=200)
+    funcion = models.CharField(_('Function'), max_length=200, null=True, blank=True)
     work_name = models.CharField(_('Work name'), max_length=200)
     # Current Address
     province = models.CharField(_('Province'), max_length=50)
