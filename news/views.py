@@ -36,8 +36,9 @@ class NewsDeleteView(auth_mixin.SuperuserRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('news:list')
 
 
-class ServiceCreate(auth_mixin.AdminRequiredMixin, generic.CreateView):
+class ServiceCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
     model = Service
+    occupations = ['ADMIN', 'FAC']
     success_url = reverse_lazy('news:services')
     fields = '__all__'
 
@@ -48,12 +49,14 @@ class ServiceList(auth_mixin.NavbarMixin, generic.ListView):
     tab_name = 'services'
 
 
-class ServiceUpdate(generic.UpdateView):
+class ServiceUpdate(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
     model = Service
+    occupations = ['ADMIN', 'FAC']
     fields = '__all__'
     success_url = reverse_lazy('news:services')
 
 
-class ServiceDelete(generic.DeleteView):
+class ServiceDelete(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
     model = Service
+    occupations = ['ADMIN', 'FAC']
     success_url = reverse_lazy('news:services')
