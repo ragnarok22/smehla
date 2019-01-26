@@ -44,13 +44,25 @@ class SuperuserRequiredMixin(LoginRequiredMixin, View):
             raise PermissionDenied
 
 
-class AdminRequiredMixin(LoginRequiredMixin, View):
+class OccupationRequiredMixin(LoginRequiredMixin, View):
+    occupations = None
+
+    def get_occupations(self):
+        if self.occupations:
+            return self.occupations
+        else:
+            return 'ADMIN'
+
     def dispatch(self, request, *args, **kwargs):
-        response = super(AdminRequiredMixin, self).dispatch(request, *args, **kwargs)
-        if request.user.occupation == 'ADMIN':
+        response = super().dispatch(request, *args, **kwargs)
+        if request.user.occupation in self.get_occupations():
             return response
         else:
             raise PermissionDenied
+
+
+class AdminRequiredMixin(OccupationRequiredMixin):
+    pass
 
 
 class ServiceOccupationRequiredMixin(LoginRequiredMixin, SingleObjectMixin):

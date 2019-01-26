@@ -15,7 +15,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <table class="table table-bordered table-hover" cellspacing="0" width="100%">
+                    <table class="table table-bordered table-hover" cellspacing="0" width="100%" data-page-length="5">
                         <thead>
                         <tr>
                             <th class="th-sm">{% trans 'Type' %}</th>
@@ -26,7 +26,7 @@
                         <tbody>
                         {% for visa in visa_to_expire %}
                             <tr>
-                                <td>{{ visa.get_specification_display }}</td>
+                                <td>{{ visa.get_request_type_display }}</td>
                                 <td>
                                     <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
                                 </td>
@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <table class="table table-bordered table-hover" cellspacing="0" width="100%">
+                    <table class="table table-bordered table-hover" cellspacing="0" width="100%" data-page-length="5">
                         <thead>
                         <tr>
                             <th class="th-sm">{% trans 'Type' %}</th>
@@ -61,7 +61,7 @@
                         <tbody>
                         {% for visa in expired_visa %}
                             <tr>
-                                <td>{{ visa.get_specification_display }}</td>
+                                <td>{{ visa.get_request_type_display }}</td>
                                 <td>
                                     <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
                                 </td>
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="row">
-            <table class="table table-hover" cellspacing="0" width="100%">
+            <table class="table table-hover" cellspacing="0" width="100%" data-page-length="5">
                 <thead>
                 <tr>
                     <th class="th">{% trans 'Username' %}</th>

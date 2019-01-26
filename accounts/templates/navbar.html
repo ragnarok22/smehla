@@ -46,8 +46,14 @@
                         <li class="nav-item" id="status">
                             <a href="{% url 'services:status' %}" class="nav-link">{% trans 'Consult' %}</a>
                         </li>
-                        <li class="nav-item" id="news">
-                            <a href="{% url 'news:list' %}" class="nav-link">{% trans 'News' %}</a>
+                        <li class="nav-item dropdown" id="news">
+                            <a href="#" class="nav-link dropdown-toggle" id="news-dropdown"
+                               role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">{% trans 'News' %}</a>
+                            <div class="dropdown-menu" aria-labelledby="news-dropdown">
+                                <a href="{% url 'news:list' %}" class="dropdown-item">{% trans 'News' %}</a>
+                                <a href="#" class="dropdown-item">{% trans 'Legislation' %}</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="modal"
@@ -93,7 +99,8 @@
                                             <div class="md-form">
                                                 <i class="fa fa-pencil prefix grey-text"></i>
                                                 <textarea name="message" type="text"
-                                                          class="md-textarea form-control" id="message" rows="4"></textarea>
+                                                          class="md-textarea form-control" id="message"
+                                                          rows="4"></textarea>
                                                 <label for="message" data-error="Wrong" data-success="Right">
                                                     {% trans 'Your message' %}
                                                 </label>

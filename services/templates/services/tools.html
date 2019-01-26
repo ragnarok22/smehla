@@ -47,7 +47,7 @@
         <h1 class="text-center">{% trans "Services Request's List" %}</h1>
         <div class="row">
             <div class="col-12">
-                <table class="table table-bordered table-hover" cellspacing="0" width="100%">
+                <table class="table table-bordered table-hover" cellspacing="0" width="100%" data-page-length="5">
                     <thead>
                     <tr>
                         <th class="th-sm">{% trans 'Type' %}</th>
@@ -57,7 +57,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for service in page_obj %}
+                    {% for service in service_list %}
                         <tr>
                             {% if service.visa %}
                                 <td>{{ service.visa.get_service_type }}</td>
@@ -140,19 +140,6 @@
 
                     </tbody>
                 </table>
-                <p>{% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ paginator.num_pages }}</p>
-                <nav aria-label="Page navigation">
-                    <ul class="pagination pg-blue justify-content-center">
-                        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
-                            <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}"
-                               class="page-link" tabindex="'1">{% trans 'Previous' %}</a>
-                        </li>
-                        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
-                            <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}"
-                               class="page-link">{% trans 'Next' %}</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
         <!-- List of services -->
