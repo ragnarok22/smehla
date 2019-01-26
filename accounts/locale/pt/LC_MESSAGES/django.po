@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-13 13:32-0500\n"
+"POT-Creation-Date: 2019-01-26 12:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,46 +67,52 @@ msgid "Profile not found"
 msgstr "Perfil não encontrado"
 
 #: .\accounts\models.py:21
-msgid "Functionary of Attention to Customer"
-msgstr "Funcionário de atenção ao cliente"
+msgid "Employee of Migratory Acts"
+msgstr "Funcionário de Actos Migratorios "
 
 #: .\accounts\models.py:22
+#, fuzzy
+#| msgid "Functionary of Attention to Customer"
+msgid "finance officer"
+msgstr "Funcionario de Finanças"
+
+#: .\accounts\models.py:23
 msgid "Boss of Attention to Customer"
 msgstr "Chefe de atenção ao cliente"
 
-#: .\accounts\models.py:23
-msgid "Boss of Departament of Attention to Customer"
-msgstr "Chefe do departament de atenção ao cliente"
-
 #: .\accounts\models.py:24
+msgid "Head of customer service department"
+msgstr "Chefe do departamento de atenção ao cliente"
+
+#: .\accounts\models.py:25
 msgid "Director"
 msgstr "Diretor"
 
-#: .\accounts\models.py:25
+#: .\accounts\models.py:26
 msgid "Administrator"
 msgstr "Administrador"
 
-#: .\accounts\models.py:27 .\accounts\templates\accounts\profile_detail.html:27
+#: .\accounts\models.py:28 .\accounts\templates\accounts\profile_detail.html:27
 msgid "Born date"
 msgstr "Data de nascimento"
 
-#: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:93
+#: .\accounts\models.py:29 .\accounts\templates\accounts\dashboard.html:93
 #: .\accounts\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupação"
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:34
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:35
 msgid "Profiles"
 msgstr "Perfis"
 
-#: .\accounts\models.py:38
+#: .\accounts\models.py:39
 #, python-format
 msgid "%(years)d years"
-msgstr "%(years)d aos"
+msgstr "%(years)d anos"
 
 #: .\accounts\templates\accounts\dashboard.html:5
 #: .\accounts\templates\navbar.html:43
@@ -155,7 +161,7 @@ msgstr "Nome completo"
 
 #: .\accounts\templates\accounts\dashboard.html:92
 msgid "Email"
-msgstr "Correio eletrõnico"
+msgstr "Correio electrónico"
 
 #: .\accounts\templates\accounts\dashboard.html:94
 #: .\accounts\templates\accounts\dashboard.html:107
@@ -175,8 +181,8 @@ msgid "Is inactive"
 msgstr "Está inativo"
 
 #: .\accounts\templates\accounts\dashboard.html:142
-msgid "The user status has been changed"
-msgstr "O status do usuário foi alterado"
+msgid "User status changed"
+msgstr "O estado do usuário foi alterado"
 
 #: .\accounts\templates\accounts\dashboard.html:156
 msgid "An error has been happened"
@@ -208,15 +214,14 @@ msgid "Accept"
 msgstr "Aceitar"
 
 #: .\accounts\templates\accounts\password_reset_done.html:10
-msgid ""
-"Continue to be the steps that they have sent to the mail to reestablish your "
-"password."
-msgstr ""
-"Continue as etapas que eles enviaram ao email para restabelecer sua senha"
+msgid "the following steps will send you an email and you will reset your password"
+
+msgstr "continua os seguintes passos lhe van enviar um email y se restablecerá a sua contra-senha"
+
 
 #: .\accounts\templates\accounts\password_reset_done.html:12
 msgid "Home"
-msgstr "Iar"
+msgstr "Inicio"
 
 #: .\accounts\templates\accounts\profile_detail.html:5
 #, python-format
@@ -225,7 +230,7 @@ msgstr "Perfil de %(profile)s"
 
 #: .\accounts\templates\accounts\profile_detail.html:31
 msgid "Age"
-msgstr "Edade"
+msgstr "Idade"
 
 #: .\accounts\templates\accounts\profile_detail.html:43
 #: .\accounts\templates\accounts\profile_update_form.html:55
@@ -244,7 +249,7 @@ msgstr "Atualizar o perfil de %(profile)s"
 
 #: .\accounts\templates\accounts\profile_update_form.html:58
 msgid "Delete"
-msgstr "Deletar"
+msgstr "Apagar"
 
 #: .\accounts\templates\accounts\send_email.html:5
 #: .\accounts\templates\navbar.html:54 .\accounts\templates\navbar.html:60
@@ -253,7 +258,7 @@ msgstr "Contate-Nos"
 
 #: .\accounts\templates\navbar.html:30
 msgid "Index"
-msgstr "Iar"
+msgstr "Inicio"
 
 #: .\accounts\templates\navbar.html:34
 msgid "Services"
@@ -285,11 +290,11 @@ msgstr "Assunto"
 
 #: .\accounts\templates\navbar.html:98
 msgid "Your message"
-msgstr "Seu mensagem"
+msgstr "Sua mensagem"
 
 #: .\accounts\templates\navbar.html:105
 msgid "Send"
-msgstr "Mandar"
+msgstr "Enviar"
 
 #: .\accounts\templates\navbar.html:125
 msgid "See profile"
@@ -345,7 +350,7 @@ msgstr "Sua mensagem foi enviada corretamente"
 
 #: .\accounts\templates\navbar.html:229
 msgid "Not send"
-msgstr "Não manda"
+msgstr "Não enviado"
 
 #: .\accounts\templates\navbar.html:230
 msgid "Error sending your message"

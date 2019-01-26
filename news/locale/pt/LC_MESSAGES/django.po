@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-13 13:32-0500\n"
+"POT-Creation-Date: 2019-01-26 12:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,46 @@ msgstr "Contenido"
 msgid "Publication date"
 msgstr "Fecha de publicación"
 
+#: .\news\models.py:19 .\news\models.py:20
+#: .\news\templates\news\news_form.html:6
+#: .\news\templates\news\news_list.html:6
+msgid "News"
+msgstr "Noticias"
+
+#: .\news\models.py:28
+msgid "Service Type"
+msgstr "tipo de serviço"
+
+#: .\news\models.py:29
+msgid "Description"
+msgstr "Descrição"
+
+#: .\news\models.py:30
+msgid "File"
+msgstr "Arquivo"
+
+#: .\news\models.py:36
+msgid "Service"
+msgstr "Serviço"
+
+#: .\news\models.py:37 .\news\templates\news\services.html:5
+msgid "Services"
+msgstr "Serviços"
+
 #: .\news\templates\news\news_confirm_delete.html:5
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete news"
-msgstr "Deletar"
+msgstr "Excluir notícias"
 
 #: .\news\templates\news\news_confirm_delete.html:13
 #, python-format
 msgid "Are you shure to delete the \"%(news)s\" news?"
-msgstr ""
+msgstr " Tens a Certeza de excluir a Noticia \"%(news)s\""
 
 #: .\news\templates\news\news_confirm_delete.html:20
 #: .\news\templates\news\news_form.html:44
+#: .\news\templates\news\service_confirm_delete.html:17
 msgid "Accept"
 msgstr "Aceitar"
 
@@ -56,12 +83,7 @@ msgstr "Atualizar"
 
 #: .\news\templates\news\news_detail.html:24
 msgid "Delete"
-msgstr "Deletar"
-
-#: .\news\templates\news\news_form.html:6
-#: .\news\templates\news\news_list.html:6
-msgid "News"
-msgstr "Noticias"
+msgstr "Eliminar"
 
 #: .\news\templates\news\news_list.html:13
 msgid "Add news"
@@ -70,3 +92,21 @@ msgstr "Adicionar noticias"
 #: .\news\templates\news\news_list.html:43
 msgid "View news"
 msgstr "Ver noticias"
+
+#: .\news\templates\news\service_confirm_delete.html:5
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete service"
+msgstr "Excluir Servicios"
+
+#: .\news\templates\news\service_confirm_delete.html:12
+msgid "Are you sure you want to delete this service?"
+msgstr "Tens a certeza que desejas excluir este serviço?"
+
+#: .\news\templates\news\service_form.html:5
+msgid "Create service"
+msgstr "Criar serviço"
+
+#: .\news\templates\news\services.html:12
+msgid "Our services"
+msgstr "Nossos serviços"
