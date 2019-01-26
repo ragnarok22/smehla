@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-13 13:32-0500\n"
+"POT-Creation-Date: 2019-01-26 12:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,32 @@ msgstr "Contenido"
 msgid "Publication date"
 msgstr "Fecha de publicación"
 
+#: .\news\models.py:19 .\news\models.py:20
+#: .\news\templates\news\news_form.html:6
+#: .\news\templates\news\news_list.html:6
+msgid "News"
+msgstr "Noticias"
+
+#: .\news\models.py:28
+msgid "Service Type"
+msgstr ""
+
+#: .\news\models.py:29
+msgid "Description"
+msgstr ""
+
+#: .\news\models.py:30
+msgid "File"
+msgstr ""
+
+#: .\news\models.py:36
+msgid "Service"
+msgstr ""
+
+#: .\news\models.py:37 .\news\templates\news\services.html:5
+msgid "Services"
+msgstr ""
+
 #: .\news\templates\news\news_confirm_delete.html:5
 msgid "Delete news"
 msgstr "Eliminar noticia"
@@ -45,6 +71,7 @@ msgstr "¿Estás seguro de eliminar la noticia \"%(news)s\"?"
 
 #: .\news\templates\news\news_confirm_delete.html:20
 #: .\news\templates\news\news_form.html:44
+#: .\news\templates\news\service_confirm_delete.html:17
 msgid "Accept"
 msgstr "Aceptar"
 
@@ -56,11 +83,6 @@ msgstr "Actualizar"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .\news\templates\news\news_form.html:6
-#: .\news\templates\news\news_list.html:6
-msgid "News"
-msgstr "Noticias"
-
 #: .\news\templates\news\news_list.html:13
 msgid "Add news"
 msgstr "Añadir noticas"
@@ -68,3 +90,23 @@ msgstr "Añadir noticas"
 #: .\news\templates\news\news_list.html:43
 msgid "View news"
 msgstr "Ver noticias"
+
+#: .\news\templates\news\service_confirm_delete.html:5
+#, fuzzy
+#| msgid "Delete news"
+msgid "Delete service"
+msgstr "Eliminar noticia"
+
+#: .\news\templates\news\service_confirm_delete.html:12
+#, fuzzy
+#| msgid "Are you shure to delete the \"%(news)s\" news?"
+msgid "Are you shure to delete this service?"
+msgstr "¿Estás seguro de eliminar la noticia \"%(news)s\"?"
+
+#: .\news\templates\news\service_form.html:5
+msgid "Create service"
+msgstr ""
+
+#: .\news\templates\news\services.html:12
+msgid "Our services"
+msgstr ""

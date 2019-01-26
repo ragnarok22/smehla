@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-13 13:32-0500\n"
+"POT-Creation-Date: 2019-01-26 12:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,39 +71,45 @@ msgid "Functionary of Attention to Customer"
 msgstr "Funcionario de atención al cliente"
 
 #: .\accounts\models.py:22
+#, fuzzy
+#| msgid "Functionary of Attention to Customer"
+msgid "Functionary of Finance"
+msgstr "Funcionario de atención al cliente"
+
+#: .\accounts\models.py:23
 msgid "Boss of Attention to Customer"
 msgstr "Jefe de Atención al cliente"
 
-#: .\accounts\models.py:23
+#: .\accounts\models.py:24
 msgid "Boss of Departament of Attention to Customer"
 msgstr "Jefe del Departamento de Atención al Cliente"
 
-#: .\accounts\models.py:24
+#: .\accounts\models.py:25
 msgid "Director"
 msgstr "Director"
 
-#: .\accounts\models.py:25
+#: .\accounts\models.py:26
 msgid "Administrator"
 msgstr "Administrador"
 
-#: .\accounts\models.py:27 .\accounts\templates\accounts\profile_detail.html:27
+#: .\accounts\models.py:28 .\accounts\templates\accounts\profile_detail.html:27
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:93
+#: .\accounts\models.py:29 .\accounts\templates\accounts\dashboard.html:93
 #: .\accounts\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupación"
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:34
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:35
 msgid "Profiles"
 msgstr "Perfiles"
 
-#: .\accounts\models.py:38
+#: .\accounts\models.py:39
 #, python-format
 msgid "%(years)d years"
 msgstr "%(years)d años"
