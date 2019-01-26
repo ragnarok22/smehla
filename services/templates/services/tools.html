@@ -63,10 +63,6 @@
                                 <td>{{ service.visa.get_service_type }}</td>
                             {% elif service.passport %}
                                 <td>{{ service.passport.get_service_type }}</td>
-                            {% elif service.residencerenovation %}
-                                <td>{{ service.residencerenovation.get_service_type }}</td>
-                            {% elif service.residencemarriage %}
-                                <td>{{ service.residencemarriage.get_service_type }}</td>
                             {% elif service.residenceauthorization %}
                                 <td>{{ service.residenceauthorization.get_service_type }}</td>
                             {% else %}
@@ -84,11 +80,6 @@
                                     </a>
                                 {% elif service.passport %}
                                     <a href="{% url 'services:service_detail' service.passport.service_type service.pk %}"
-                                       class="btn btn-default">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                {% elif service.residencerenovation %}
-                                    <a href="{% url 'services:service_detail' service.residencerenovation.service_type service.pk %}"
                                        class="btn btn-default">
                                         <i class="fa fa-eye"></i>
                                     </a>
@@ -120,24 +111,6 @@
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="{% url 'services:service_delete' service.passport.service_type service.pk %}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-remove"></i>
-                                        </a>
-                                    {% elif service.residencerenovation %}
-                                        <a href="{% url 'services:service_update' service.residencerenovation.service_type service.pk %}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="{% url 'services:service_delete' service.residencerenovation.service_type service.pk %}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-remove"></i>
-                                        </a>
-                                    {% elif service.residencemarriage %}
-                                        <a href="{% url 'services:service_update' service.residencemarriage.service_type service.pk %}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="{% url 'services:service_delete' service.residencemarriage.service_type service.pk %}"
                                            class="btn btn-default">
                                             <i class="fa fa-remove"></i>
                                         </a>
