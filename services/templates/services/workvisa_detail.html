@@ -1,0 +1,44 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    Visa {{ workvisa.client }}
+{% endblock %}
+
+{% block main %}
+    {% include 'services/visa_detail_template.html' with visa=workvisa only %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="h3 text-center">
+                    {% trans 'Work visa detail' %}
+                </h3>
+            </div>
+            <div class="col-12">
+                {% trans 'Organism name' %}: {{ workvisa.organism_name }}
+            </div>
+            <div class="col-12">
+                {% trans 'Organism address' %}: {{ workvisa.organism_address }}
+            </div>
+            <div class="col-12">
+                {% trans 'Function' %}: {{ workvisa.funcion }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Init contract date' %}: {{ workvisa.init_contract_date }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'End contract date' %}: {{ workvisa.end_contract_date }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Entity name' %}: {{ workvisa.entity_name }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Entity address' %}: {{ workvisa.entity_address }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Official' %}: {{ workvisa.official }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
