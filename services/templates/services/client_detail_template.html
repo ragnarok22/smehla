@@ -8,19 +8,14 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="row">
-            <div class="col-lg-6">
-                <p>{% trans 'Identity card' %}: {{ client.ci }}</p>
+            <div class="col-12 col-md-4">
+                <p>{% trans 'Civil status' %}: {{ client.get_civil_status_display }}</p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-12 col-md-4">
                 <p>{% trans 'Born date' %}: {{ client.born_date }}</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <p>{% trans 'Naturalness' %}: {{ client.naturalness }}</p>
-            </div>
-            <div class="col-lg-6">
-                <p>{% trans 'Nationality' %}: {{ client.nationality }}</p>
+            <div class="col-12 col-md-4">
+                <p>{% trans 'Sex' %}: {{ client.get_sex_display }}</p>
             </div>
         </div>
         <div class="row">
@@ -36,19 +31,49 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <p>{% trans 'Address' %}: {{ client.address }}</p>
+                <h3 class="h3 text-center">{% trans 'Address' %}</h3>
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Province' %}: {{ client.province }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Municipality' %}: {{ client.municipality }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Commune' %}: {{ client.commune }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Neighborhood' %}: {{ client.neighborhood }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Street' %}: {{ client.street }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Home No.' %}: {{ client.home_no }}
             </div>
         </div>
     </div>
     <div class="col-lg-4">
-        <img src="{% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
+        <img src="
+                {% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
              alt="{{ client.first_name }}" width="150em" height="150em" class="img-thumbnail">
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-4">
-        <p>{% trans 'Civil status' %}: {{ client.get_civil_status_display }}</p>
+    <div class="col-12">
+        <h3 class="h3 text-center">{% trans 'Work data' %}</h3>
     </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Profession' %}: {{ client.profession }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Function' %}: {{ client.funcion }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Work name' %}: {{ client.work_name }}
+    </div>
+</div>
+<div class="row">
     <div class="col-lg-4">
         <p>{% trans 'Email' %}: <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
     </div>
@@ -61,8 +86,9 @@
         {% if client.data_attachment %}
             <p>{% trans 'Data attachment' %}:
                 <a href="{{ client.data_attachment.url }}"
-                   download="{{ client.get_full_name }}_{{ client.data_attachment.name }}">
-                    {% trans 'Download' %}
+                   download="{{ client.get_full_name }}_{{ client.data_attachment.name }}"
+                   class="btn btn-default btn-sm">
+                    {% trans 'Download data attachment' %}
                 </a>
             </p>
         {% endif %}

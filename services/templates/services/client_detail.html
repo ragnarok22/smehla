@@ -32,6 +32,8 @@
                             <td>{{ service.visa.get_service_type }}</td>
                         {% elif service.passport %}
                             <td>{{ service.passport.get_service_type }}</td>
+                        {% elif service.residenceauthorization %}
+                            <td>{{ service.residenceauthorization.get_service_type }}</td>
                         {% else %}
                             <td>{{ service.get_service_type }}</td>
                         {% endif %}
