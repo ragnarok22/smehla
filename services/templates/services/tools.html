@@ -78,7 +78,7 @@
                             <td>{{ service.get_status_display }}</td>
                             <td class="btn-group-sm">
                                 {% if service.visa %}
-                                    <a href="{% url 'services:service_detail' service.visa.service_type service.pk %}"
+                                    <a href="{% url 'services:service_detail' service.visa.request_type service.pk %}"
                                        class="btn btn-default">
                                         <i class="fa fa-eye"></i>
                                     </a>
