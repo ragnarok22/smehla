@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+{% load service_tags %}
+
+{% block title %}
+    Visa {{ studyvisa.client }}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        {% include 'services/visa_detail_template.html' with visa=studivisa only %}
+        <div class="row">
+            <div class="col-12">
+                <h3 class="h3 text-center">{% trans 'Study visa data' %}</h3>
+            </div>
+            <div class="col-12">
+                {% trans 'Attend school program' %}: {{ studyvisa.get_study_program_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Init date' %}: {{ studyvisa.init_date }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'End date' %}: {{ studyvisa.end_date }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Perform internships in' %}: {{ studyvisa.get_stages_in_display }}
+            </div>
+            <div class="col-12">
+                {% trans 'Official' %}: {{ studyvisa.official }}
+            </div>
+        </div>
+        {% include 'services/visa_edit_template.html' with visa=studyvisa %}
+    </div>
+{% endblock %}
