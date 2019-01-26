@@ -26,7 +26,7 @@
                         <tbody>
                         {% for visa in visa_to_expire %}
                             <tr>
-                                <td>{{ visa.get_specification_display }}</td>
+                                <td>{{ visa.get_request_type_display }}</td>
                                 <td>
                                     <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
                                 </td>
@@ -61,7 +61,7 @@
                         <tbody>
                         {% for visa in expired_visa %}
                             <tr>
-                                <td>{{ visa.get_specification_display }}</td>
+                                <td>{{ visa.get_request_type_display }}</td>
                                 <td>
                                     <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
                                 </td>
