@@ -20,7 +20,6 @@ class Profile(AbstractUser):
     OCCUPATION_TYPE = (
         ('FAC', _('Functionary of Attention to Customer')),
         ('FUF', _('Functionary of Finance')),
-        ('BAC', _('Boss of Attention to Customer')),
         ('BDAC', _('Boss of Departament of Attention to Customer')),
         ('DIR', _('Director')),
         ('ADMIN', _('Administrator')),
