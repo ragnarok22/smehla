@@ -126,15 +126,15 @@ class Service(models.Model):
 
 class Visa(Service):
     REQUEST_TYPE_CHOICES = (
-        ('VT', _('Work visa')),
-        ('VP', _('Privileged visa')),
-        ('RP', _('Resident visa')),
-        ('VE', _('Study visa')),
-        ('VTM', _('Medical Treatment visa')),
-        ('VPT', _('Temporary stay visa')),
-        ('VCD', _('Short-term visa')),
-        ('VTU', _('Tourist visa')),
-        ('VOR', _('Ordinary visa')),
+        ('WV', _('Work visa')),
+        ('PV', _('Privileged visa')),
+        ('RV', _('Resident visa')),
+        ('SV', _('Study visa')),
+        ('MTV', _('Medical Treatment visa')),
+        ('TSV', _('Temporary stay visa')),
+        ('STV', _('Short-term visa')),
+        ('TV', _('Tourist visa')),
+        ('OV', _('Ordinary visa')),
     )
 
     service_type = 'visa'

@@ -17,31 +17,31 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
     def _set_attr_model(self, kwargs):
         _type = kwargs.get('type')
         self.service_type = _type
-        if _type == 'touristvisa' or _type == 'shortvisa' or _type == 'ordinaryvisa':
+        if _type == 'TV' or _type == 'STV' or _type == 'OV':
             self.model = models.Visa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.VisaCreateForm
-        if _type == 'workvisa':
+        elif _type == 'WV':
             self.model = models.WorkVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.WorkVisaForm
-        elif _type == 'medicalvisa':
+        elif _type == 'MTV':
             self.model = models.MedicalTreatmentVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.MedicalTreatmentVisaForm
-        elif _type == 'residentvisa':
+        elif _type == 'RV':
             self.model = models.ResidentVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.ResidentVisaForm
-        elif _type == 'temporaryvisa':
+        elif _type == 'TSV':
             self.model = models.TemporaryVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.TemporaryVisaForm
-        elif _type == 'privilegedvisa':
+        elif _type == 'PV':
             self.model = models.PrivilegedVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.PrivilegedVisaForm
-        elif _type == 'studyvisa':
+        elif _type == 'SV':
             self.model = models.StudyVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.StudyVisaForm
@@ -59,7 +59,7 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
                 self.form_class = forms.ResidenceAuthorizationForm
                 self.template_name = 'services/residence_form.html'
         else:
-            raise Http404(_('Service type not found'))
+            raise Http404(_('Service {} type not found'.format(self.service_type)))
         self.extra_context = {'type': _type}
 
 
@@ -67,6 +67,8 @@ class ServiceFormMixin(ServiceMixin, ModelFormMixin):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.service_type = self.service_type
+        if issubclass(self.object.__class__, models.Visa):
+            self.object.request_type = self.service_type
         self.object.official = self.request.user
         self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
         response = super(ServiceFormMixin, self).form_valid(form)
