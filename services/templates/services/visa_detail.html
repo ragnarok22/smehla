@@ -8,16 +8,18 @@
 {% endblock %}
 
 {% block main %}
-    {% include 'services/visa_detail_template.html' with visa=visa only %}
-    {% user_can_mod_service visa user as can_mod %}
-    {% if can_mod %}
-        <div class="row">
-            <div class="col">
-                <a href="{% url 'services:service_update' type visa.pk %}"
-                   class="btn btn-default">{% trans 'Update' %}</a>
-                <a href="{% url 'services:service_delete' type visa.pk %}"
-                   class="btn btn-danger">{% trans 'Delete' %}</a>
+    <div class="container-fluid">
+        {% include 'services/visa_detail_template.html' with visa=visa only %}
+        {% user_can_mod_service visa user as can_mod %}
+        {% if can_mod %}
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'services:service_update' type visa.pk %}"
+                       class="btn btn-default">{% trans 'Update' %}</a>
+                    <a href="{% url 'services:service_delete' type visa.pk %}"
+                       class="btn btn-danger">{% trans 'Delete' %}</a>
+                </div>
             </div>
-        </div>
-    {% endif %}
+        {% endif %}
+    </div>
 {% endblock %}

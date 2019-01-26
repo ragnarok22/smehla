@@ -1,89 +1,134 @@
 {% load i18n %}
 {% load static %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12"><h3 class="h3 text-center">{% trans 'Visa request detail' %}</h3></div>
-        <div class="col-6 col-md-4 col-lg-3">
-            {% trans 'Visa type' %}: {{ visa.get_request_type_display }}
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            {% trans 'Visa expiration date' %}: {{ visa.visa_expiration_date }}
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            {% trans 'Client' %}: {{ visa.client.get_full_name }}
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            {% if visa.client.picture %}
-                <img src="{{ visa.client.picture.url }}" alt="User picture" class="img-fluid" width="100"
-                     height="100">
-            {% else %}
-                <img src="{% static 'accounts/img/user.png' %}" alt="User picture" class="img-fluid" width="100"
-                     height="100">
-            {% endif %}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Civil status' %}: {{ visa.client.get_civil_status_display }}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Sex' %}: {{ visa.client.get_sex_display }}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Born date' %}: {{ visa.client.born_date }}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Place of birth' %}: {{ visa.place_of_birth }}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Birth country' %}: {{ visa.birth_country }}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Nationality' %}: {{ visa.nationality }}
-        </div>
-        <div class="col-6 col-md-3">
-            {% trans 'Current nationality' %}: {{ visa.current_nationality }}
-        </div>
-        <div class="col-12 col-md-6">
-            {% trans 'Passport No.' %}: {{ visa.passport_no }}
-        </div>
-        <div class="col-12 col-md-6">
-            {% trans 'Passport issuance place' %}: {{ visa.passport_issuance_place }}
-        </div>
-        <div class="col-12 col-md-6">
-            {% trans 'Passport issuance date' %}: {{ visa.passport_issuance_date }}
-        </div>
-        <div class="col-12 col-md-6">
-            {% trans 'Passport expiration date' %}: {{ visa.passport_expiration_date }}
-        </div>
-        <div class="col-12 col-md-6">
-            {% trans 'Profession' %}: {{ visa.client.profession }}
-        </div>
-        <div class="col-12 col-md-6">
-            {% trans 'Function' %}: {{ visa.client.funcion }}
-        </div>
-        <div class="col-12">
-            {% trans 'Work name' %}: {{ visa.client.work_name }}
-        </div>
-        <div class="col-12">
-            <h3 class="h3 text-center">{% trans 'Current address' %}</h3>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            {% trans 'Province' %}: {{ visa.client.province }}
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            {% trans 'Municipality' %}: {{ visa.client.municipality }}
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            {% trans 'Commune' %}: {{ visa.client.commune }}
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            {% trans 'Neighborhood' %}: {{ visa.client.neighborhood }}
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            {% trans 'Street' %}: {{ visa.client.street }}
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            {% trans 'Home No.' %}: {{ visa.client.home_no }}
-        </div>
+<div class="row">
+    <div class="col-12"><h3 class="h3 text-center">{% trans 'Visa request detail' %}</h3></div>
+    <div class="col-6 col-md-4 col-lg-3">
+        {% trans 'Visa type' %}: {{ visa.get_request_type_display }}
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+        {% trans 'Visa expiration date' %}: {{ visa.visa_expiration_date }}
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+        {% trans 'Client' %}: {{ visa.client.get_full_name }}
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+        {% if visa.client.picture %}
+            <img src="{{ visa.client.picture.url }}" alt="User picture" class="img-fluid" width="100"
+                 height="100">
+        {% else %}
+            <img src="{% static 'accounts/img/user.png' %}" alt="User picture" class="img-fluid" width="100"
+                 height="100">
+        {% endif %}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Civil status' %}: {{ visa.client.get_civil_status_display }}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Sex' %}: {{ visa.client.get_sex_display }}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Born date' %}: {{ visa.client.born_date }}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Place of birth' %}: {{ visa.place_of_birth }}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Birth country' %}: {{ visa.birth_country }}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Nationality' %}: {{ visa.nationality }}
+    </div>
+    <div class="col-6 col-md-3">
+        {% trans 'Current nationality' %}: {{ visa.current_nationality }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Passport No.' %}: {{ visa.passport_no }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Passport issuance place' %}: {{ visa.passport_issuance_place }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Passport issuance date' %}: {{ visa.passport_issuance_date }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Passport expiration date' %}: {{ visa.passport_expiration_date }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Profession' %}: {{ visa.client.profession }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Function' %}: {{ visa.client.funcion }}
+    </div>
+    <div class="col-12">
+        {% trans 'Work name' %}: {{ visa.client.work_name }}
+    </div>
+    <div class="col-12">
+        <h3 class="h3 text-center">{% trans 'Current address' %}</h3>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        {% trans 'Province' %}: {{ visa.client.province }}
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        {% trans 'Municipality' %}: {{ visa.client.municipality }}
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        {% trans 'Commune' %}: {{ visa.client.commune }}
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        {% trans 'Neighborhood' %}: {{ visa.client.neighborhood }}
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        {% trans 'Street' %}: {{ visa.client.street }}
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        {% trans 'Home No.' %}: {{ visa.client.home_no }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Email' %}: {{ visa.client.email }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Phone' %}: {{ visa.client.phone }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Father name' %}: {{ visa.client.father }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Father nationality' %}: {{ visa.father_nationality }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Mother name' %}: {{ visa.client.mother }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Mother nationality' %}: {{ visa.mother_nationality }}
+    </div>
+    <div class="col-12">
+        <h3 class="h3 text-center">
+            {% trans 'Lodging address' %}
+        </h3>
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Lodging' %}: {{ visa.lodging }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'City' %}: {{ visa.city_lodging }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Street' %}: {{ visa.street_lodging }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'House No.' %}: {{ visa.no_lodging_house }}
+    </div>
+    <div class="col-12">
+        <h3 class="h3 text-center">{% trans 'Other dates' %}</h3>
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Last entry Angola date' %}: {{ visa.last_entry_angola_date }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Frontier' %}: {{ visa.frontier }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Visa expiration date' %}: {{ visa.visa_expiration_date }}
     </div>
 </div>
