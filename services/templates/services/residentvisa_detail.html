@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    Visa {{ residentvisa.client }}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        {% include 'services/visa_detail_template.html' with visa=residentvisa only %}
+        <div class="row">
+            <div class="col-12">
+                <h3 class="h3 text-center">{% trans 'Resident visa data' %}</h3>
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Reason' %}: {{ residentvisa.reason }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Type resident' %}: {{ residentvisa.get_type_residence_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Intends to reside with your household' %}: {{ residentvisa.get_live_familiar_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Familiar' %}: {{ residentvisa.familiars }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Subsistence' %}: {{ residentvisa.subsistence }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Address in Angola' %}: {{ residentvisa.address_angola }}
+            </div>
+
+            <div class="col-12 col-md-6">
+                {% trans 'Official' %}: {{ residentvisa.official }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
