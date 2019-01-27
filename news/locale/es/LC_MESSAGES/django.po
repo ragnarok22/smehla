@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 15:00-0500\n"
+"POT-Creation-Date: 2019-01-27 15:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,23 +42,23 @@ msgstr "Noticias"
 
 #: .\news\models.py:28
 msgid "Service Type"
-msgstr ""
+msgstr "Tipo de servicio"
 
 #: .\news\models.py:29
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: .\news\models.py:30
 msgid "File"
-msgstr ""
+msgstr "Archivo"
 
 #: .\news\models.py:36
 msgid "Service"
-msgstr ""
+msgstr "Servicio"
 
 #: .\news\models.py:37 .\news\templates\news\services.html:5
 msgid "Services"
-msgstr ""
+msgstr "Servicios"
 
 #: .\news\templates\news\news_confirm_delete.html:5
 msgid "Delete news"
@@ -92,14 +92,11 @@ msgid "View news"
 msgstr "Ver noticias"
 
 #: .\news\templates\news\service_confirm_delete.html:5
-#, fuzzy
-#| msgid "Delete news"
+
 msgid "Delete service"
 msgstr "Eliminar noticia"
 
 #: .\news\templates\news\service_confirm_delete.html:12
-#, fuzzy
-#| msgid "Are you shure to delete the \"%(news)s\" news?"
 msgid "Are you shure to delete this service?"
 msgstr "¿Estás seguro de eliminar la noticia \"%(news)s\"?"
 

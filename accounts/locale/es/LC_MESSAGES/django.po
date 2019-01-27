@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 15:00-0500\n"
+"POT-Creation-Date: 2019-01-27 15:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,7 +90,7 @@ msgstr "Administrador"
 
 #: .\accounts\models.py:27 .\accounts\templates\accounts\profile_detail.html:27
 msgid "Born date"
-msgstr "Fecha de nacimiento"
+msgstr "Fecha de Nacimiento"
 
 #: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:23
 #: .\accounts\templates\accounts\profile_detail.html:37
@@ -249,7 +249,7 @@ msgstr "Consultar"
 
 #: .\accounts\templates\navbar.html:52
 msgid "Information"
-msgstr ""
+msgstr "Información"
 
 #: .\accounts\templates\navbar.html:54
 msgid "News"
@@ -257,7 +257,7 @@ msgstr "Noticias"
 
 #: .\accounts\templates\navbar.html:55
 msgid "Legislation"
-msgstr ""
+msgstr "Legislación"
 
 #: .\accounts\templates\navbar.html:77
 msgid "Your name"
@@ -344,20 +344,3 @@ msgstr "Error enviando su mensaje"
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"
 
-#~ msgid "Visa to expire"
-#~ msgstr "Visas a expirar"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#~ msgid "Client's name"
-#~ msgstr "Nombre del cliente"
-
-#~ msgid "Visa expiration date"
-#~ msgstr "Fecha de expiración de la visa"
-
-#~ msgid "Expired visas"
-#~ msgstr "Visas expiradas"
-
-#~ msgid "Boss of Attention to Customer"
-#~ msgstr "Jefe de Atención al cliente"
