@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-26 12:00-0500\n"
+"POT-Creation-Date: 2019-01-27 10:51-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,15 +36,15 @@ msgstr "Outras datas"
 
 #: .\accounts\forms.py:27
 msgid "Password"
-msgstr "Contra-senha"
+msgstr "Contra-Senha"
 
 #: .\accounts\forms.py:31
 msgid "Repeat password"
-msgstr "Repita a contra-senha"
+msgstr "Repita a Contra-senha"
 
 #: .\accounts\forms.py:50
 msgid "Passwords don't match"
-msgstr "Senhas não correspondem"
+msgstr "Contra-Senhas não correspondem"
 
 #: .\accounts\forms.py:82
 msgid "Old password"
@@ -56,7 +56,7 @@ msgstr "Nova contra-senha"
 
 #: .\accounts\forms.py:93
 msgid "New password confirmation"
-msgstr "Nova confirmação de Senha"
+msgstr "Nova confirmação de Contra-Senha"
 
 #: .\accounts\forms.py:106
 msgid "{} <{}> send you a email: {}"
@@ -67,49 +67,47 @@ msgid "Profile not found"
 msgstr "Perfil não encontrado"
 
 #: .\accounts\models.py:21
-msgid "Employee of Migratory Acts"
-msgstr "Funcionário de Actos Migratorios "
+#, fuzzy
+#| msgid "Boss of Attention to Customer"
+msgid "Functionary of Attention to Customer"
+msgstr "Chefe de atenção ao cliente"
 
 #: .\accounts\models.py:22
-#, fuzzy
-#| msgid "Functionary of Attention to Customer"
-msgid "finance officer"
-msgstr "Funcionario de Finanças"
+msgid "Functionary of Finance"
+msgstr "Funcionario das Finanças"
 
 #: .\accounts\models.py:23
-msgid "Boss of Attention to Customer"
+#, fuzzy
+#| msgid "Boss of Attention to Customer"
+msgid "Boss of Departament of Attention to Customer"
 msgstr "Chefe de atenção ao cliente"
 
 #: .\accounts\models.py:24
-msgid "Head of customer service department"
-msgstr "Chefe do departamento de atenção ao cliente"
-
-#: .\accounts\models.py:25
 msgid "Director"
 msgstr "Diretor"
 
-#: .\accounts\models.py:26
+#: .\accounts\models.py:25
 msgid "Administrator"
 msgstr "Administrador"
 
-#: .\accounts\models.py:28 .\accounts\templates\accounts\profile_detail.html:27
+#: .\accounts\models.py:27 .\accounts\templates\accounts\profile_detail.html:27
 msgid "Born date"
 msgstr "Data de nascimento"
 
-#: .\accounts\models.py:29 .\accounts\templates\accounts\dashboard.html:93
+#: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:93
 #: .\accounts\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupação"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:33
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\accounts\models.py:35
+#: .\accounts\models.py:34
 msgid "Profiles"
 msgstr "Perfis"
 
-#: .\accounts\models.py:39
+#: .\accounts\models.py:38
 #, python-format
 msgid "%(years)d years"
 msgstr "%(years)d anos"
@@ -161,7 +159,7 @@ msgstr "Nome completo"
 
 #: .\accounts\templates\accounts\dashboard.html:92
 msgid "Email"
-msgstr "Correio electrónico"
+msgstr "Correio electrônico"
 
 #: .\accounts\templates\accounts\dashboard.html:94
 #: .\accounts\templates\accounts\dashboard.html:107
@@ -181,7 +179,9 @@ msgid "Is inactive"
 msgstr "Está inativo"
 
 #: .\accounts\templates\accounts\dashboard.html:142
-msgid "User status changed"
+#, fuzzy
+#| msgid "User status changed"
+msgid "The user status has been changed"
 msgstr "O estado do usuário foi alterado"
 
 #: .\accounts\templates\accounts\dashboard.html:156
@@ -198,7 +198,7 @@ msgstr "Lembre de mim"
 
 #: .\accounts\templates\accounts\login.html:50
 msgid "Forgot your password?"
-msgstr "Esqueceu sua senha?"
+msgstr "Esqueceu sua Contra-Senha?"
 
 #: .\accounts\templates\accounts\login.html:57
 msgid "Get in"
@@ -206,7 +206,7 @@ msgstr "Entrar"
 
 #: .\accounts\templates\accounts\password_change_form.html:5
 msgid "Change password"
-msgstr "Mudar senha"
+msgstr "Mudar Contra-Senha"
 
 #: .\accounts\templates\accounts\password_change_form.html:47
 #: .\accounts\templates\accounts\password_reset_form.html:32
@@ -214,10 +214,10 @@ msgid "Accept"
 msgstr "Aceitar"
 
 #: .\accounts\templates\accounts\password_reset_done.html:10
-msgid "the following steps will send you an email and you will reset your password"
-
-msgstr "continua os seguintes passos lhe van enviar um email y se restablecerá a sua contra-senha"
-
+msgid ""
+"Continue to be the steps that they have sent to the mail to reestablish your "
+"password."
+msgstr ""
 
 #: .\accounts\templates\accounts\password_reset_done.html:12
 msgid "Home"
@@ -249,10 +249,10 @@ msgstr "Atualizar o perfil de %(profile)s"
 
 #: .\accounts\templates\accounts\profile_update_form.html:58
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Excluir"
 
 #: .\accounts\templates\accounts\send_email.html:5
-#: .\accounts\templates\navbar.html:54 .\accounts\templates\navbar.html:60
+#: .\accounts\templates\navbar.html:60 .\accounts\templates\navbar.html:66
 msgid "Contact us"
 msgstr "Contate-Nos"
 
@@ -272,87 +272,91 @@ msgstr "Ferramentas"
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\accounts\templates\navbar.html:50
+#: .\accounts\templates\navbar.html:52 .\accounts\templates\navbar.html:54
 msgid "News"
 msgstr "Notícia"
 
-#: .\accounts\templates\navbar.html:71
+#: .\accounts\templates\navbar.html:55
+msgid "Legislation"
+msgstr ""
+
+#: .\accounts\templates\navbar.html:77
 msgid "Your name"
 msgstr "Seu nome"
 
-#: .\accounts\templates\navbar.html:80
+#: .\accounts\templates\navbar.html:86
 msgid "Your email"
 msgstr "Seu email"
 
-#: .\accounts\templates\navbar.html:89
+#: .\accounts\templates\navbar.html:95
 msgid "Subject"
 msgstr "Assunto"
 
-#: .\accounts\templates\navbar.html:98
+#: .\accounts\templates\navbar.html:105
 msgid "Your message"
 msgstr "Sua mensagem"
 
-#: .\accounts\templates\navbar.html:105
+#: .\accounts\templates\navbar.html:112
 msgid "Send"
 msgstr "Enviar"
 
-#: .\accounts\templates\navbar.html:125
+#: .\accounts\templates\navbar.html:132
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\accounts\templates\navbar.html:128
+#: .\accounts\templates\navbar.html:135
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\accounts\templates\navbar.html:131
+#: .\accounts\templates\navbar.html:138
 msgid "Logout"
 msgstr "Sair"
 
-#: .\accounts\templates\navbar.html:164
+#: .\accounts\templates\navbar.html:171
 msgid "Manage System"
 msgstr "Gerenciar sistema"
 
-#: .\accounts\templates\navbar.html:165
+#: .\accounts\templates\navbar.html:172
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de migração e estrangeiros"
 
-#: .\accounts\templates\navbar.html:181
+#: .\accounts\templates\navbar.html:188
 msgid "Go"
 msgstr "Ir"
 
-#: .\accounts\templates\navbar.html:186
+#: .\accounts\templates\navbar.html:193
 msgid "Links"
 msgstr "Ligações"
 
-#: .\accounts\templates\navbar.html:189
+#: .\accounts\templates\navbar.html:196
 msgid "Citizen Portal"
 msgstr "Portal do cidadão"
 
-#: .\accounts\templates\navbar.html:192
+#: .\accounts\templates\navbar.html:199
 msgid "Ministry of Interior"
 msgstr "Ministério do Interior"
 
-#: .\accounts\templates\navbar.html:195
+#: .\accounts\templates\navbar.html:202
 msgid "Company's only booth"
 msgstr "Guichê único da empresa"
 
-#: .\accounts\templates\navbar.html:202
+#: .\accounts\templates\navbar.html:209
 msgid "Copyright: Created by University of Holguin"
 msgstr "Direito autoral: Criado pela Universidade de Holguín"
 
-#: .\accounts\templates\navbar.html:222
+#: .\accounts\templates\navbar.html:229
 msgid "Sended"
 msgstr "Mandado"
 
-#: .\accounts\templates\navbar.html:223
+#: .\accounts\templates\navbar.html:230
 msgid "Your message has sended correctly"
 msgstr "Sua mensagem foi enviada corretamente"
 
-#: .\accounts\templates\navbar.html:229
+#: .\accounts\templates\navbar.html:236
 msgid "Not send"
 msgstr "Não enviado"
 
-#: .\accounts\templates\navbar.html:230
+#: .\accounts\templates\navbar.html:237
 msgid "Error sending your message"
 msgstr "Erro ao enviar sua mensagem"
 
@@ -360,3 +364,21 @@ msgstr "Erro ao enviar sua mensagem"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
+
+#~ msgid "Employee of Migratory Acts"
+#~ msgstr "Funcionário de Actos Migratorios "
+
+#, fuzzy
+#~| msgid "Functionary of Attention to Customer"
+#~ msgid "finance officer"
+#~ msgstr "Funcionario de Finanças"
+
+#~ msgid "Head of customer service department"
+#~ msgstr "Chefe do departamento de atenção ao cliente"
+
+#~ msgid ""
+#~ "the following steps will send you an email and you will reset your "
+#~ "password"
+#~ msgstr ""
+#~ "continua os seguintes passos lhe van enviar um email y se restablecerá a "
+#~ "sua contra-senha"
