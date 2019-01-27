@@ -9,8 +9,32 @@
     <div class="container-fluid">
         <form method="post">
             {% csrf_token %}
-            {{ form }}
-            <button class="btn btn-default">{% trans 'Accept' %}</button>
+            {% include 'services/visa_form_template.html' %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="md-form">
+                        {{ form.unity_medical_name }}
+                        <label for="{{ form.unity_medical_name.id_for_label }}">{{ form.unity_medical_name.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="{{ form.unity_type.id_for_label }}">{{ form.unity_type.label }}</label>
+                    {{ form.unity_type }}
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="{{ form.date_init_treatment.id_for_label }}">{{ form.date_init_treatment.label }}</label>
+                    {{ form.date_init_treatment }}
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="{{ form.date_end_treatment.id_for_label }}">{{ form.date_end_treatment.label }}</label>
+                    {{ form.date_end_treatment }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-default">{% trans 'Accept' %}</button>
+                </div>
+            </div>
         </form>
     </div>
 {% endblock %}
