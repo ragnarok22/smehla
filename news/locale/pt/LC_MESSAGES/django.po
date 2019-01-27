@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 10:51-0500\n"
+"POT-Creation-Date: 2019-01-27 15:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,6 @@ msgid "Services"
 msgstr "Serviços"
 
 #: .\news\templates\news\news_confirm_delete.html:5
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete news"
 msgstr "Excluir notícias"
 
@@ -94,14 +92,10 @@ msgid "View news"
 msgstr "Ver noticias"
 
 #: .\news\templates\news\service_confirm_delete.html:5
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete service"
 msgstr "Excluir Servicios"
 
 #: .\news\templates\news\service_confirm_delete.html:12
-#, fuzzy
-#| msgid "Are you sure you want to delete this service?"
 msgid "Are you shure to delete this service?"
 msgstr "Tens a certeza que desejas excluir este serviço?"
 
