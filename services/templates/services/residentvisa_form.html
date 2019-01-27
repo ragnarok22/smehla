@@ -9,8 +9,46 @@
     <div class="container-fluid">
         <form method="post">
             {% csrf_token %}
-            {{ form }}
-            <button class="btn btn-default">{% trans 'Accept' %}</button>
+            {% include 'services/visa_form_template.html' %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="md-form">
+                        {{ form.reason }}
+                        <label for="{{ form.reason.id_for_label }}">{{ form.reason.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="{{ form.type_residence.id_for_label }}">{{ form.type_residence.label }}</label>
+                    {{ form.type_residence }}
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="{{ form.live_familiars.id_for_label }}">{{ form.live_familiar.label }}</label>
+                    {{ form.live_familiar }}
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="md-form">
+                        {{ form.familiars }}
+                        <label for="{{ form.familiars.id_for_label }}">{{ form.familiars.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="md-form">
+                        {{ form.subsistence }}
+                        <label for="{{ form.subsistence.id_for_label }}">{{ form.subsistence.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="md-form">
+                        {{ form.address_angola }}
+                        <label for="{{ form.address_angola.id_for_label }}">{{ form.address_angola.label }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-default">{% trans 'Accept' %}</button>
+                </div>
+            </div>
         </form>
     </div>
 {% endblock %}
