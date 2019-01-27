@@ -67,6 +67,7 @@ class Service(models.Model):
         ('3', _('Revision')),
         ('4', _('Authenticating')),
         ('5', _('Deliver')),
+        ('6', _('Denied')),
     )
     SERVICE_TYPE = {
         'None': _('Unknown service type'),
@@ -89,10 +90,11 @@ class Service(models.Model):
 
     def can_mod(self, user):
         if user:
-            if (self.status == '1' and user.occupation == 'FAC') or (
-                    self.status == '2' and user.occupation == 'BAC') or (
-                    self.status == '3' and user.occupation == 'BDAC') or (
-                    self.status == '4' and user.occupation == 'DIR'):
+            if user.occupation == 'DIR':
+                return True
+            elif (self.status == '1' and user.occupation == 'FAC') or (
+                    self.status == '2' and user.occupation == 'FUF') or (
+                    self.status == '3' and user.occupation == 'BDAC'):
                 return True
         return False
 
