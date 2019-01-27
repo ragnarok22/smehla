@@ -3,7 +3,7 @@ from django.views import generic
 
 from accounts import mixins as auth_mixin
 from news import forms
-from news.models import News, Service
+from news.models import News, Service, Legislation
 
 
 class NewsCreateView(auth_mixin.OccupationRequiredMixin, generic.CreateView):
@@ -63,3 +63,28 @@ class ServiceDelete(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
     model = Service
     occupations = ['ADMIN', 'FAC']
     success_url = reverse_lazy('news:services')
+
+
+class LegislationCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
+    model = Legislation
+    occupations = ['ADMIN', 'FAC']
+    success_url = reverse_lazy('news:legislation')
+    fields = '__all__'
+
+
+class LegislationList(auth_mixin.NavbarMixin, generic.ListView):
+    model = Legislation
+    tab_name = 'legislations'
+
+
+class LegislationUpdate(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
+    model = Legislation
+    occupations = ['ADMIN', 'FAC']
+    fields = '__all__'
+    success_url = reverse_lazy('news:legislations')
+
+
+class LegislationDelete(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
+    model = Legislation
+    occupations = ['ADMIN', 'FAC']
+    success_url = reverse_lazy('news:legislations')

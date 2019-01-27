@@ -14,4 +14,9 @@ urlpatterns = [
     path('services/create/', views.ServiceCreate.as_view(), name='service-create'),
     path('services/<int:pk>/update/', views.ServiceUpdate.as_view(), name='service-update'),
     path('services/<int:pk>/delete/', views.ServiceDelete.as_view(), name='service-delete'),
+
+    path('legislation/', views.LegislationList.as_view(), name='legislation'),
+    path('legislation/create/', views.LegislationCreate.as_view(), name='legislation-create'),
+    path('legislation/<int:pk>/update/', views.LegislationUpdate.as_view(), name='legislation-update'),
+    path('legislation/<int:pk>/delete/', views.LegislationDelete.as_view(), name='legislation-delete'),
 ]

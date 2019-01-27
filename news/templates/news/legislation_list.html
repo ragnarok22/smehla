@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Services' %}
+{% endblock %}
+
+{% block main %}
+    <div class="mt-4">
+        <div class="container">
+            <section class="text-center">
+                <h2 class="mb-4">{% trans 'Legislations' %}</h2>
+                {% if user.occupation == 'ADMIN' %}
+                    <a href="{% url 'news:legislation-create' %}" class="btn btn-default">{% trans 'Add Legislation' %}</a>
+                {% endif %}
+                <div class="row">
+                    {% for legislation in legislation_list %}
+                        <div class="col-12 col-md-4 my-2">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">{{ legislation.service_type }}</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text">{{ legislation.description }}</div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{{ legislation.file.url }}" class="btn btn-sm btn-primary"
+                                       download="{{ legislation.file }}">Descargar</a>
+                                    {% if user.occupation == 'ADMIN' %}
+                                        <a href="{% url 'news:legislation-update' legislation.pk %}" class="btn btn-sm btn-primary">{% trans 'Update' %}</a>
+                                        <a href="{% url 'news:legislation-delete' legislation.pk %}" class="btn btn-sm btn-danger">{% trans 'Delete' %}</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}
