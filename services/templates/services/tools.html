@@ -197,13 +197,21 @@
                                         </a>
                                     {% endif %}
                                     {% if service.status != '1' %}
-                                        <a href="#" class="btn btn-default" data-type="change" data-request="down" data-pk="{{ service.pk }}">
+                                        <a href="#" class="btn btn-default" data-type="change" data-request="down"
+                                           data-pk="{{ service.pk }}">
                                             <i class="fa fa-arrow-left"></i>
                                         </a>
                                     {% endif %}
-                                    <a href="#" class="btn btn-default" data-type="change" data-request="up" data-pk="{{ service.pk }}">
+                                    <a href="#" class="btn btn-default" data-type="change" data-request="up"
+                                       data-pk="{{ service.pk }}">
                                         <i class="fa fa-arrow-right"></i>
                                     </a>
+                                    {% if service.status != '5' %}
+                                        <a href="#" class="btn btn-default" data-type="change" data-request="denied"
+                                           data-pk="{{ service.pk }}">
+                                            <i class="fa fa-lock"></i>
+                                        </a>
+                                    {% endif %}
                                 {% endif %}
                             </td>
                         </tr>

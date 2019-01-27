@@ -144,6 +144,8 @@ class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
                     service.status = '4'
                 elif service.status == '4':
                     service.status = '5'
+            elif type_request == 'denied':
+                service.status = '6'
             else:
                 if service.status == '2':
                     service.status = '1'
