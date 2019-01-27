@@ -24,6 +24,9 @@
                         </p>
                     </div>
                 </div>
+                {% if user.occupation == 'ADMIN' %}
+                    <a href="{% url 'news:service-create' %}" class="btn btn-default">{% trans 'Add service' %}</a>
+                {% endif %}
                 <div class="row">
                     {% for service in service_list %}
                         <div class="col-12 col-md-4 my-2">
@@ -37,6 +40,10 @@
                                 <div class="card-footer">
                                     <a href="{{ service.file.url }}" class="btn btn-sm btn-primary"
                                        download="{{ service.file }}">Descargar</a>
+                                    {% if user.occupation == 'ADMIN' %}
+                                        <a href="{% url 'news:service-update' service.pk %}" class="btn btn-sm btn-primary">{% trans 'Update' %}</a>
+                                        <a href="{% url 'news:service-delete' service.pk %}" class="btn btn-sm btn-danger">{% trans 'Delete' %}</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
