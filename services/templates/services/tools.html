@@ -160,11 +160,6 @@
                                        class="btn btn-default">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                {% elif service.residencemarriage %}
-                                    <a href="{% url 'services:service_detail' service.residencemarriage.service_type service.pk %}"
-                                       class="btn btn-default">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
                                 {% elif service.residenceauthorization %}
                                     <a href="{% url 'services:service_detail' service.residenceauthorization.service_type service.pk %}"
                                        class="btn btn-default">
@@ -174,11 +169,11 @@
                                 {% user_can_mod_service service user as can_mod %}
                                 {% if can_mod %}
                                     {% if service.visa %}
-                                        <a href="{% url 'services:service_update' service.visa.service_type service.pk %}"
+                                        <a href="{% url 'services:service_update' service.visa.request_type service.pk %}"
                                            class="btn btn-default">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{% url 'services:service_delete' service.visa.service_type service.pk %}"
+                                        <a href="{% url 'services:service_delete' service.visa.request_type service.pk %}"
                                            class="btn btn-default">
                                             <i class="fa fa-remove"></i>
                                         </a>
@@ -201,7 +196,12 @@
                                             <i class="fa fa-remove"></i>
                                         </a>
                                     {% endif %}
-                                    <a href="#" class="btn btn-default" data-type="change" data-pk="{{ service.pk }}">
+                                    {% if service.status != '1' %}
+                                        <a href="#" class="btn btn-default" data-type="change" data-request="down" data-pk="{{ service.pk }}">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    {% endif %}
+                                    <a href="#" class="btn btn-default" data-type="change" data-request="up" data-pk="{{ service.pk }}">
                                         <i class="fa fa-arrow-right"></i>
                                     </a>
                                 {% endif %}
@@ -299,7 +299,10 @@
                 //$(this).html('<i class="fa fa-lock"></i>'); //loader
                 $.ajax('{% url "services:change_status" %}', {
                     method: 'POST',
-                    data: {'pk': $(this).attr('data-pk')},
+                    data: {
+                        'pk': $(this).attr('data-pk'),
+                        'type_request': $(this).attr('data-request'),
+                    },
                     success: function () {
                         location.reload();
                     },

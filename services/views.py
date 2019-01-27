@@ -132,16 +132,26 @@ class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
 
     def post(self, request, *args, **kwargs):
         pk = request.POST.get('pk', None)
-        if pk:
+        type_request = request.POST.get('type_request', None)
+        if pk and type_request:
             service = models.Service.objects.get(pk=pk)
-            if service.status == '1':
-                service.status = '2'
-            elif service.status == '2':
-                service.status = '3'
-            elif service.status == '3':
-                service.status = '4'
-            elif service.status == '4':
-                service.status = '5'
+            if type_request == 'up':
+                if service.status == '1':
+                    service.status = '2'
+                elif service.status == '2':
+                    service.status = '3'
+                elif service.status == '3':
+                    service.status = '4'
+                elif service.status == '4':
+                    service.status = '5'
+            else:
+                if service.status == '2':
+                    service.status = '1'
+                elif service.status == '3':
+                    service.status = '2'
+                elif service.status == '4':
+                    service.status = '3'
+
             service.save()
             if request.is_ajax():
                 return JsonResponse({'pk': pk, 'status': service.status})
