@@ -322,7 +322,7 @@ class Passport(Service):
     issued_in = models.CharField(_('Issued in'), max_length=100)
     # identity card
     date = models.DateField(_('Date'))  # ver a candido esta fecha de que es
-    cp = models.CharField(_('Cédula pessoal'), max_length=4)
+    cp = models.CharField(_('Cédula pessoal'), max_length=4, blank=True, null=True)
     cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100)
     date_cp_issue = models.DateField(_('Date of cédula pessoal issue'))
     ci = models.CharField(_('Identity card'), max_length=14)
