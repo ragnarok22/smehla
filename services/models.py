@@ -67,6 +67,7 @@ class Service(models.Model):
         ('3', _('Revision')),
         ('4', _('Authenticating')),
         ('5', _('Deliver')),
+        ('6', _('Denied')),
     )
     SERVICE_TYPE = {
         'None': _('Unknown service type'),
