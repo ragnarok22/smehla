@@ -90,10 +90,11 @@ class Service(models.Model):
 
     def can_mod(self, user):
         if user:
-            if (self.status == '1' and user.occupation == 'FAC') or (
+            if user.occupation == 'DIR':
+                return True
+            elif (self.status == '1' and user.occupation == 'FAC') or (
                     self.status == '2' and user.occupation == 'FUF') or (
-                    self.status == '3' and user.occupation == 'BDAC') or (
-                    self.status == '4' and user.occupation == 'DIR'):
+                    self.status == '3' and user.occupation == 'BDAC'):
                 return True
         return False
 
