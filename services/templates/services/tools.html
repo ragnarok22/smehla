@@ -43,6 +43,83 @@
             </div>
             <!-- Create services -->
         {% endif %}
+        {% if user.occupation == 'BDAC' or user.occupation == 'DIR' or user.occupation == 'ADMIN' %}
+            <!-- Visa to expire -->
+            {% if visa_to_expire %}
+                <div class="row">
+                    <div class="col">
+                        <h3 class="h3 w-100 text-center">{% trans 'Visa to expire' %}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered table-hover" cellspacing="0" width="100%"
+                               data-page-length="5">
+                            <thead>
+                            <tr>
+                                <th class="th-sm">{% trans 'Type' %}</th>
+                                <th class="th-sm">{% trans "Client's name" %}</th>
+                                <th class="th-sm">{% trans 'Visa expiration date' %}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for visa in visa_to_expire %}
+                                <tr>
+                                    <td>{{ visa.get_request_type_display }}</td>
+                                    <td>
+                                        <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
+                                    </td>
+                                    <td>{{ visa.visa_expiration_date }}
+                                        <a href="{% url 'services:service_detail' 'visa' visa.pk %}"><i
+                                                class="fa fa-eye float-lg-right"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endif %}
+            <!--./Visa to expire -->
+            <!-- Expired visa -->
+            {% if expired_visa %}
+                <div class="row">
+                    <div class="col">
+                        <h3 class="h3 w-100 text-center">{% trans 'Expired visas' %}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered table-hover" cellspacing="0" width="100%"
+                               data-page-length="5">
+                            <thead>
+                            <tr>
+                                <th class="th-sm">{% trans 'Type' %}</th>
+                                <th class="th-sm">{% trans "Client's name" %}</th>
+                                <th class="th-sm">{% trans 'Visa expiration date' %}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for visa in expired_visa %}
+                                <tr>
+                                    <td>{{ visa.get_request_type_display }}</td>
+                                    <td>
+                                        <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
+                                    </td>
+                                    <td>{{ visa.visa_expiration_date }}
+                                        <a href="{% url 'services:service_detail' 'visa' visa.pk %}"><i
+                                                class="fa fa-eye float-lg-right"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endif %}
+            <!--./Expired visa -->
+        {% endif %}
+
         <!-- List of services -->
         <h1 class="text-center">{% trans "Services Request's List" %}</h1>
         <div class="row">

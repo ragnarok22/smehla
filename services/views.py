@@ -1,7 +1,11 @@
+import datetime
+
+from django.db.models import Q
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
-from django.http import HttpResponseRedirect, JsonResponse
 
 from accounts import mixins
 from services import mixins as services_mixins
@@ -20,6 +24,19 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
 
     def get_queryset(self):
         return models.Service.objects.all().order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super(ServiceToolsView, self).get_context_data(**kwargs)
+        now = timezone.now().today()
+        future_date = now.date() + datetime.timedelta(days=5)
+        context['visa_to_expire'] = models.Visa.objects.filter(  # arreglar consulta
+            Q(visa_expiration_date__gte=datetime.date(now.year, now.month, now.day)) &
+            Q(visa_expiration_date__lte=future_date)
+        )
+        context['expired_visa'] = models.Visa.objects.filter(
+            Q(visa_expiration_date__lt=now)
+        )
+        return context
 
 
 class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
