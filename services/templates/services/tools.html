@@ -212,7 +212,7 @@
                                     {% endif %}
                                     {% if service.status != '5' or service.status != '6' %}
                                         <a href="{% url 'services:change_status' service.pk 'denied' %}" class="btn btn-default">
-                                            <i class="fa fa-lock"></i>
+                                            <i class="fa fa-ban"></i>
                                         </a>
                                     {% endif %}
                                 {% endif %}
