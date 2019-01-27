@@ -19,4 +19,7 @@ urlpatterns = [
     path('legislation/create/', views.LegislationCreate.as_view(), name='legislation-create'),
     path('legislation/<int:pk>/update/', views.LegislationUpdate.as_view(), name='legislation-update'),
     path('legislation/<int:pk>/delete/', views.LegislationDelete.as_view(), name='legislation-delete'),
+
+    path('history/', views.HistoryView.as_view(), name='history'),
+    path('director/profile/', views.DirectorProfileView.as_view(), name='director'),
 ]

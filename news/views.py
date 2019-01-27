@@ -88,3 +88,11 @@ class LegislationDelete(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
     model = Legislation
     occupations = ['ADMIN', 'FAC']
     success_url = reverse_lazy('news:legislations')
+
+
+class HistoryView(generic.TemplateView):
+    template_name = 'news/history.html'
+
+
+class DirectorProfileView(generic.TemplateView):
+    template_name = 'news/director_profile.html'
