@@ -7,13 +7,17 @@
 
 {% block main %}
     <div class="container">
-        <div class="row col-12">
-            <h1>{% trans 'Are you sure to delete this passport?' %}</h1>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="h1 text-center">{% trans 'Are you sure to delete this passport?' %}</h1>
+            </div>
         </div>
 
-        <div class="row col-12">
-            <p>{% trans 'Allottee to' %}: {{ passport.client }}</p>
-            <p>{% trans 'Expire date' %}: {{ passport.passport_expiration_date }}</p>
+        <div class="row">
+            <div class="col-12">
+                <p>{% trans 'Allottee to' %}: {{ passport.client }}</p>
+                <p>{% trans 'Passport type' %}: {{ passport.get_passport_type_display }}</p>
+            </div>
         </div>
 
         <div class="row col-12">
