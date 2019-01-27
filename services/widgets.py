@@ -12,6 +12,11 @@ class Select(BMDWidget, forms.Select):
         super(Select, self).__init__({'class': 'form-control custom-select'})
 
 
+class IntegerInput(BMDWidget, forms.TextInput):
+    def __init__(self):
+        super(IntegerInput, self).__init__({'class': 'form-control', 'type': 'number'})
+
+
 class TextInput(BMDWidget, forms.TextInput):
     def __init__(self):
         super(TextInput, self).__init__()
