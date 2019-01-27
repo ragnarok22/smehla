@@ -13,8 +13,9 @@
             </div>
 
             <div class="col-23">
-                <p>{% trans 'Allottee to' %}: {{ visa.client }}</p>
-                <p>{% trans 'Expire date' %}: {{ visa.visa_expiration_date }}</p>
+                <p>{% trans 'Allottee to' %}: {{ object.client }}</p>
+                <p>{% trans 'Visa request type' %}: {{ object.get_request_type_display }}</p>
+                <p>{% trans 'Expire date' %}: {{ object.visa_expiration_date }}</p>
             </div>
 
             <div class="col-12">

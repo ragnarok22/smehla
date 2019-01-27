@@ -126,6 +126,12 @@ class ServiceUpdateView(services_mixins.ServiceMixin, mixins.ServiceOccupationRe
 class ServiceDeleteView(services_mixins.ServiceMixin, mixins.ServiceOccupationRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:tools')
 
+    def get_template_names(self):
+        if issubclass(self.model, models.Visa):
+            return 'services/visa_confirm_delete.html'
+        else:
+            return super().get_template_names()
+
 
 class ChangeStatusServiceView(generic.RedirectView):
     pattern_name = 'services:tools'
