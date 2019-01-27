@@ -1,0 +1,127 @@
+{% load i18n %}
+
+<div class="row">
+    <div class="col-4">
+        <div class="md-form">
+            {{ form.process_no }}
+            <label for="{{ form.process_no.id_for_label }}">{{ form.process_no.label }}</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h3 class="h3 text-center">
+            {% trans 'Client data' %}
+        </h3>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.place_of_birth }}
+            <label for="{{ form.place_of_birth.id_for_label }}">{{ form.place_of_birth.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.birth_country }}
+            <label for="{{ form.birth_country.id_for_label }}">{{ form.birth_country.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.nationality }}
+            <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.current_nationality }}
+            <label for="{{ form.current_nationality.id_for_label }}">{{ form.current_nationality.label }}</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h3 class="h3 text-center">
+            {% trans 'Passport data' %}
+        </h3>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.passport_no }}
+            <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
+            <p class="text-muted">{{ form.passport_no.errors }}</p>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.passport_issuance_place }}
+            <label for="{{ form.passport_issuance_place.id_for_label }}">{{ form.passport_issuance_place.label }}</label>
+            <p class="text-muted">{{ form.passport_issuance_place.errors }}</p>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <label for="{{ form.passport_issuance_date.id_for_label }}">{{ form.passport_issuance_date.label }}</label>
+        {{ form.passport_issuance_date }}
+        <p class="text-muted">{{ form.passport_issuance_date.errors }}</p>
+    </div>
+    <div class="col-12 col-md-6">
+        <label for="{{ form.passport_expiration_date.id_for_label }}">{{ form.passport_expiration_date.label }}</label>
+        {{ form.passport_expiration_date }}
+        <p class="text-muted">{{ form.passport_expiration_date.errors }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h3 class="h3 text-center">{% trans 'Other data' %}</h3>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.father_nationality }}
+            <label for="{{ form.father_nationality.id_for_label }}">{{ form.father_nationality.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.mother_nationality }}
+            <label for="{{ form.mother_nationality.id_for_label }}">{{ form.mother_nationality.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.lodging }}
+            <label for="{{ form.lodging.id_for_label }}">{{ form.lodging.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.city_lodging }}
+            <label for="{{ form.city_lodging.id_for_label }}">{{ form.city_lodging.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.street_lodging }}
+            <label for="{{ form.street_lodging.id_for_label }}">{{ form.street_lodging.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.no_lodging_house }}
+            <label for="{{ form.no_lodging_house.id_for_label }}">{{ form.no_lodging_house.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <label for="{{ form.last_entry_angola_date.id_for_label }}">{{ form.last_entry_angola_date.label }}</label>
+        {{ form.last_entry_angola_date }}
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="md-form">
+            {{ form.frontier }}
+            <label for="{{ form.frontier.id_for_label }}">{{ form.frontier.label }}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <label for="{{ form.visa_expiration_date.id_for_label }}">{{ form.visa_expiration_date.label }}</label>
+        {{ form.visa_expiration_date }}
+    </div>
+</div>

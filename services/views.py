@@ -1,7 +1,11 @@
+import datetime
+
+from django.db.models import Q
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
-from django.http import HttpResponseRedirect, JsonResponse
 
 from accounts import mixins
 from services import mixins as services_mixins
@@ -20,6 +24,19 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
 
     def get_queryset(self):
         return models.Service.objects.all().order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super(ServiceToolsView, self).get_context_data(**kwargs)
+        now = timezone.now().today()
+        future_date = now.date() + datetime.timedelta(days=5)
+        context['visa_to_expire'] = models.Visa.objects.filter(  # arreglar consulta
+            Q(visa_expiration_date__gte=datetime.date(now.year, now.month, now.day)) &
+            Q(visa_expiration_date__lte=future_date)
+        )
+        context['expired_visa'] = models.Visa.objects.filter(
+            Q(visa_expiration_date__lt=now)
+        )
+        return context
 
 
 class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
@@ -109,23 +126,39 @@ class ServiceUpdateView(services_mixins.ServiceMixin, mixins.ServiceOccupationRe
 class ServiceDeleteView(services_mixins.ServiceMixin, mixins.ServiceOccupationRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('services:tools')
 
+    def get_template_names(self):
+        if issubclass(self.model, models.Visa):
+            return 'services/visa_confirm_delete.html'
+        else:
+            return super().get_template_names()
 
-class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
-    success_url = reverse_lazy('services:tools')
 
-    def post(self, request, *args, **kwargs):
-        pk = request.POST.get('pk', None)
-        if pk:
+class ChangeStatusServiceView(generic.RedirectView):
+    pattern_name = 'services:tools'
+
+    def get(self, request, *args, **kwargs):
+        pk = kwargs.get('pk', None)
+        type_request = kwargs.get('type_request', None)
+        if pk and type_request:
             service = models.Service.objects.get(pk=pk)
-            if service.status == '1':
-                service.status = '2'
-            elif service.status == '2':
-                service.status = '3'
-            elif service.status == '3':
-                service.status = '4'
-            elif service.status == '4':
-                service.status = '5'
+            if type_request == 'up':
+                if service.status == '1':
+                    service.status = '2'
+                elif service.status == '2':
+                    service.status = '3'
+                elif service.status == '3':
+                    service.status = '4'
+                elif service.status == '4':
+                    service.status = '5'
+            elif type_request == 'denied':
+                service.status = '6'
+            else:
+                if service.status == '2':
+                    service.status = '1'
+                elif service.status == '3':
+                    service.status = '2'
+                elif service.status == '4':
+                    service.status = '3'
+
             service.save()
-            if request.is_ajax():
-                return JsonResponse({'pk': pk, 'status': service.status})
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(reverse_lazy(self.pattern_name))

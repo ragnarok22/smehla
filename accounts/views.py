@@ -47,19 +47,6 @@ class DashBoardView(mixins.SuperuserRequiredMixin, mixins.NavbarMixin, generic.L
     tab_name = 'dashboard'
     model = Profile
 
-    def get_context_data(self, **kwargs):
-        context = super(DashBoardView, self).get_context_data(**kwargs)
-        now = timezone.now().today()
-        future_date = now.date() + datetime.timedelta(days=5)
-        context['visa_to_expire'] = Visa.objects.filter(  # arreglar consulta
-            Q(visa_expiration_date__gte=datetime.date(now.year, now.month, now.day)) &
-            Q(visa_expiration_date__lte=future_date)
-        )
-        context['expired_visa'] = Visa.objects.filter(
-            Q(visa_expiration_date__lt=now)
-        )
-        return context
-
 
 class ProfileCreateView(mixins.SuperuserRequiredMixin, generic.CreateView):
     model = Profile
