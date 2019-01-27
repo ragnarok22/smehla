@@ -52,7 +52,7 @@
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
 <script>
     $(function () {
-        $('table').DataTable();
+        $('.table-search').DataTable();
         {% if tab %}
             $('#{{ tab }}').addClass('active');
             $('#{{ tab }} a').attr('href', '#');
