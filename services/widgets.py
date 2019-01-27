@@ -19,7 +19,7 @@ class TextInput(BMDWidget, forms.TextInput):
 
 class DateInput(BMDWidget, forms.DateInput):
     def __init__(self):
-        super(DateInput, self).__init__({'class': 'form-control datepicker'})
+        super(DateInput, self).__init__({'class': 'form-control datepicker', 'type': 'date'})
 
 
 class EmailInput(BMDWidget, forms.EmailInput):

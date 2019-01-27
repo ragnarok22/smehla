@@ -12,14 +12,26 @@ class VisaCreateForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
-            'specification': widgets.Select(),
+            # client data
+            'place_of_birth': widgets.TextInput(),
+            'birth_country': widgets.TextInput(),
+            'nationality': widgets.TextInput(),
+            'current_nationality': widgets.TextInput(),
+            # passport data
             'passport_no': widgets.TextInput(),
-            'visa_no': widgets.TextInput(),
-            'extension_request_date': widgets.DateInput(),
-            'passport_expiration_date': widgets.DateInput(),
+            'passport_issuance_place': widgets.TextInput(),
             'passport_issuance_date': widgets.DateInput(),
+            'passport_expiration_date': widgets.DateInput(),
+
+            'father_nationality': widgets.TextInput(),
+            'mother_nationality': widgets.TextInput(),
+            'lodging': widgets.TextInput(),
+            'city_lodging': widgets.TextInput(),
+            'street_lodging': widgets.TextInput(),
+            'no_lodging_house': widgets.TextInput(),
+            'last_entry_angola_date': widgets.DateInput(),
+            'frontier': widgets.TextInput(),
             'visa_expiration_date': widgets.DateInput(),
-            'visa_issuance_date': widgets.DateInput(),
         }
 
 

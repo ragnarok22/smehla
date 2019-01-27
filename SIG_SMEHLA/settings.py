@@ -131,10 +131,10 @@ LANGUAGES = [
     ('pt', _('Portuguese')),
 ]
 
-DATE_INPUT_FORMATS = [
-    # '%m/%d/%Y', '%m/%d/%y'
-    '%Y/%m/%d'
-]
+# DATE_INPUT_FORMATS = [
+#     # '%m/%d/%Y', '%m/%d/%y'
+#     '%Y/%m/%d'
+# ]
 
 # email configuration
 EMAIL_HOST = config.to_python(load_config.EMAIL_HOST)
