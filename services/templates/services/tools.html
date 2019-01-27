@@ -137,7 +137,7 @@
                     {% for service in service_list %}
                         <tr>
                             {% if service.visa %}
-                                <td>{{ service.visa.get_service_type }}</td>
+                                <td>{{ service.visa.get_request_type_display }}</td>
                             {% elif service.passport %}
                                 <td>{{ service.passport.get_service_type }}</td>
                             {% elif service.residenceauthorization %}
@@ -196,19 +196,22 @@
                                             <i class="fa fa-remove"></i>
                                         </a>
                                     {% endif %}
-                                    {% if service.status != '1' %}
-                                        <a href="#" class="btn btn-default" data-type="change" data-request="down"
-                                           data-pk="{{ service.pk }}">
-                                            <i class="fa fa-arrow-left"></i>
+                                    {% if user.occupation != 'DIR' %}
+                                        {% if service.status != '1' %}
+                                            <a href="{% url 'services:change_status' service.pk 'down' %}" class="btn btn-default">
+                                                <i class="fa fa-arrow-left"></i>
+                                            </a>
+                                        {% endif %}
+
+                                    {% endif %}
+                                    {% if user.occupation != 'DIR' or service.status == '4' %}
+                                        <a href="{% url 'services:change_status' service.pk 'up' %}"
+                                           class="btn btn-default">
+                                            <i class="fa fa-arrow-right"></i>
                                         </a>
                                     {% endif %}
-                                    <a href="#" class="btn btn-default" data-type="change" data-request="up"
-                                       data-pk="{{ service.pk }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                    </a>
-                                    {% if service.status != '5' %}
-                                        <a href="#" class="btn btn-default" data-type="change" data-request="denied"
-                                           data-pk="{{ service.pk }}">
+                                    {% if service.status != '5' or service.status != '6' %}
+                                        <a href="{% url 'services:change_status' service.pk 'denied' %}" class="btn btn-default">
                                             <i class="fa fa-lock"></i>
                                         </a>
                                     {% endif %}
@@ -296,36 +299,4 @@
         </div>
     </div>
     <!--./ Visa types list -->
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script>
-        $(function () {
-            $('a[data-type=change]').click(function (event) {
-                event.preventDefault();
-                //$(this).html('<i class="fa fa-lock"></i>'); //loader
-                $.ajax('{% url "services:change_status" %}', {
-                    method: 'POST',
-                    data: {
-                        'pk': $(this).attr('data-pk'),
-                        'type_request': $(this).attr('data-request'),
-                    },
-                    success: function () {
-                        location.reload();
-                    },
-                    error: function (data, status) {
-                        swal({
-                            position: 'top-end',
-                            type: status,
-                            title: '{% trans "Unexpected error" %}',
-                            html: '{% trans "An error happened" %}',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 {% endblock %}

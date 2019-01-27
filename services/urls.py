@@ -19,5 +19,5 @@ urlpatterns = [
     path('service/<type>/<int:pk>/update/', views.ServiceUpdateView.as_view(), name='service_update'),
     path('service/<str:type>/<int:pk>/delete/', views.ServiceDeleteView.as_view(), name='service_delete'),
 
-    path('service/change/', views.ChangeStatusServiceView.as_view(), name='change_status'),
+    path('service/change/<int:pk>/<str:type_request>', views.ChangeStatusServiceView.as_view(), name='change_status'),
 ]

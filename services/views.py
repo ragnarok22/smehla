@@ -127,12 +127,12 @@ class ServiceDeleteView(services_mixins.ServiceMixin, mixins.ServiceOccupationRe
     success_url = reverse_lazy('services:tools')
 
 
-class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
-    success_url = reverse_lazy('services:tools')
+class ChangeStatusServiceView(generic.RedirectView):
+    pattern_name = 'services:tools'
 
-    def post(self, request, *args, **kwargs):
-        pk = request.POST.get('pk', None)
-        type_request = request.POST.get('type_request', None)
+    def get(self, request, *args, **kwargs):
+        pk = kwargs.get('pk', None)
+        type_request = kwargs.get('type_request', None)
         if pk and type_request:
             service = models.Service.objects.get(pk=pk)
             if type_request == 'up':
@@ -155,6 +155,4 @@ class ChangeStatusServiceView(mixins.AjaxableResponseMixin):
                     service.status = '3'
 
             service.save()
-            if request.is_ajax():
-                return JsonResponse({'pk': pk, 'status': service.status})
-        return HttpResponseRedirect(self.success_url)
+        return HttpResponseRedirect(reverse_lazy(self.pattern_name))
