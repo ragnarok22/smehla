@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 10:51-0500\n"
+"POT-Creation-Date: 2019-01-27 15:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,7 +92,7 @@ msgstr "Administrador"
 msgid "Born date"
 msgstr "Fecha de nacimiento"
 
-#: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:93
+#: .\accounts\models.py:28 .\accounts\templates\accounts\dashboard.html:23
 #: .\accounts\templates\accounts\profile_detail.html:37
 msgid "Occupation"
 msgstr "Ocupación"
@@ -115,72 +115,49 @@ msgstr "%(years)d años"
 msgid "Administrate"
 msgstr "Administrar"
 
-#: .\accounts\templates\accounts\dashboard.html:13
-msgid "Visa to expire"
-msgstr "Visas a expirar"
-
-#: .\accounts\templates\accounts\dashboard.html:21
-#: .\accounts\templates\accounts\dashboard.html:56
-msgid "Type"
-msgstr "Tipo"
-
-#: .\accounts\templates\accounts\dashboard.html:22
-#: .\accounts\templates\accounts\dashboard.html:57
-msgid "Client's name"
-msgstr "Nombre del cliente"
-
-#: .\accounts\templates\accounts\dashboard.html:23
-#: .\accounts\templates\accounts\dashboard.html:58
-msgid "Visa expiration date"
-msgstr "Fecha de expiración de la visa"
-
-#: .\accounts\templates\accounts\dashboard.html:48
-msgid "Expired visas"
-msgstr "Visas expiradas"
-
-#: .\accounts\templates\accounts\dashboard.html:81
+#: .\accounts\templates\accounts\dashboard.html:11
 msgid "Users System"
 msgstr "Usuarios del sistema"
 
-#: .\accounts\templates\accounts\dashboard.html:83
+#: .\accounts\templates\accounts\dashboard.html:13
 msgid "Add user"
 msgstr "Añadir usuario"
 
-#: .\accounts\templates\accounts\dashboard.html:90
+#: .\accounts\templates\accounts\dashboard.html:20
 #: .\accounts\templates\accounts\profile_detail.html:24
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: .\accounts\templates\accounts\dashboard.html:91
+#: .\accounts\templates\accounts\dashboard.html:21
 msgid "Full name"
 msgstr "Nombre completo"
 
-#: .\accounts\templates\accounts\dashboard.html:92
+#: .\accounts\templates\accounts\dashboard.html:22
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\accounts\templates\accounts\dashboard.html:94
-#: .\accounts\templates\accounts\dashboard.html:107
-#: .\accounts\templates\accounts\dashboard.html:147
+#: .\accounts\templates\accounts\dashboard.html:24
+#: .\accounts\templates\accounts\dashboard.html:37
+#: .\accounts\templates\accounts\dashboard.html:77
 #: .\accounts\templates\accounts\profile_detail.html:15
 msgid "Is active"
 msgstr "Está activo"
 
-#: .\accounts\templates\accounts\dashboard.html:95
+#: .\accounts\templates\accounts\dashboard.html:25
 msgid "Actions"
 msgstr "Acciones"
 
-#: .\accounts\templates\accounts\dashboard.html:108
-#: .\accounts\templates\accounts\dashboard.html:149
+#: .\accounts\templates\accounts\dashboard.html:38
+#: .\accounts\templates\accounts\dashboard.html:79
 #: .\accounts\templates\accounts\profile_detail.html:17
 msgid "Is inactive"
 msgstr "Está inactivo"
 
-#: .\accounts\templates\accounts\dashboard.html:142
+#: .\accounts\templates\accounts\dashboard.html:72
 msgid "The user status has been changed"
 msgstr "El estado del usuario ha sido cambiado"
 
-#: .\accounts\templates\accounts\dashboard.html:156
+#: .\accounts\templates\accounts\dashboard.html:86
 msgid "An error has been happened"
 msgstr "Ha ocurrido un error"
 
@@ -270,7 +247,11 @@ msgstr "Herramientas"
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\accounts\templates\navbar.html:52 .\accounts\templates\navbar.html:54
+#: .\accounts\templates\navbar.html:52
+msgid "Information"
+msgstr ""
+
+#: .\accounts\templates\navbar.html:54
 msgid "News"
 msgstr "Noticias"
 
@@ -362,6 +343,21 @@ msgstr "Error enviando su mensaje"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"
+
+#~ msgid "Visa to expire"
+#~ msgstr "Visas a expirar"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Client's name"
+#~ msgstr "Nombre del cliente"
+
+#~ msgid "Visa expiration date"
+#~ msgstr "Fecha de expiración de la visa"
+
+#~ msgid "Expired visas"
+#~ msgstr "Visas expiradas"
 
 #~ msgid "Boss of Attention to Customer"
 #~ msgstr "Jefe de Atención al cliente"
