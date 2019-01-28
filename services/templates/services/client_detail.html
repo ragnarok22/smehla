@@ -73,26 +73,65 @@
                 <div class="modal-body mx-3">
                     <div class="container-fluid">
                         <div class="row">
-                            <a href="{% url 'services:service_create' 'visa' client.pk %}"
-                               class="col btn btn-default">{% trans 'Visa' %}
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'WV' %}" class="btn btn-default">
+                                    {% trans 'Work visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'MTV' %}" class="btn btn-default">
+                                    {% trans 'Medical Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'RV' %}" class="btn btn-default">
+                                    {% trans 'Resident Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'TSV' %}" class="btn btn-default">
+                                    {% trans 'Temporary Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'PV' %}" class="btn btn-default">
+                                    {% trans 'Privileged Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'SV' %}" class="btn btn-default">
+                                    {% trans 'Study Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'STV' %}" class="btn btn-default">
+                                    {% trans 'Short-term Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'TV' %}" class="btn btn-default">
+                                    {% trans 'Tourist Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:client_list' 'OV' %}" class="btn btn-default">
+                                    {% trans 'Ordinary Visa' %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'services:service_create' 'extension' client.pk %}"
+                                   class="col btn btn-default">{% trans 'Visa extension' %}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a href="{% url 'services:service_create' 'residence' client.pk %}"
+                               class="col btn btn-default">{% trans 'Residence authorization' %}
                             </a>
+                        </div>
+                        <div class="row">
                             <a href="{% url 'services:service_create' 'passport' client.pk %}"
                                class="col btn btn-default">{% trans 'Passport' %}
-                            </a>
-                        </div>
-                        <div class="row">
-                            <a href="{% url 'services:service_create' 'renovation' client.pk %}"
-                               class="col btn btn-default">{% trans 'Residence renovation' %}
-                            </a>
-                        </div>
-                        <div class="row">
-                            <a href="{% url 'services:service_create' 'marriage' client.pk %}"
-                               class="col btn btn-default">{% trans 'Residence by marriage' %}
-                            </a>
-                        </div>
-                        <div class="row">
-                            <a href="{% url 'services:service_create' 'authorization' client.pk %}"
-                               class="col btn btn-default">{% trans 'Residence authorization' %}
                             </a>
                         </div>
                     </div>
