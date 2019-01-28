@@ -316,28 +316,28 @@ class ClientForm(forms.ModelForm):
         model = models.Client
         fields = '__all__'
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'born_date': forms.DateInput(attrs={'class': 'datepicker'}),
-            'civil_status': forms.Select(attrs={'class': 'form-control'}),
-            'sex': forms.Select(attrs={'class': 'form-control'}),
-            # 'picture': forms.ImageField(),
-            'father': forms.TextInput(attrs={'class': 'form-control'}),
-            'mother': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
+            'first_name': widgets.TextInput(),
+            'last_name': widgets.TextInput(),
+            'born_date': widgets.DateInput(),
+            'civil_status': widgets.Select(),
+            'sex': widgets.Select(),
+            'picture': forms.FileInput(),
+            'father': widgets.TextInput(),
+            'mother': widgets.TextInput(),
+            'email': widgets.EmailInput(),
+            'phone': widgets.NumberInput(),
             'data_attachment': forms.ClearableFileInput(attrs={'multiple': True, 'class': 'form-control'}),
             # work data
-            'profession': forms.TextInput(attrs={'class': 'form-control'}),
-            'funcion': forms.TextInput(attrs={'class': 'form-control'}),
-            'work_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'profession': widgets.TextInput(),
+            'funcion': widgets.TextInput(),
+            'work_name': widgets.TextInput(),
             # Current address
-            'province': forms.TextInput(attrs={'class': 'form-control'}),
-            'municipality': forms.TextInput(attrs={'class': 'form-control'}),
-            'commune': forms.TextInput(attrs={'class': 'form-control'}),
-            'neighborhood': forms.TextInput(attrs={'class': 'form-control'}),
-            'street': forms.TextInput(attrs={'class': 'form-control'}),
-            'home_no': forms.TextInput(attrs={'class': 'form-control'}),
+            'province': widgets.TextInput(),
+            'municipality': widgets.TextInput(),
+            'commune': widgets.TextInput(),
+            'neighborhood': widgets.TextInput(),
+            'street': widgets.TextInput(),
+            'home_no': widgets.TextInput(),
         }
 
 

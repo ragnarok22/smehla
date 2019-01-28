@@ -28,23 +28,28 @@
                 </div>
             </div>
             <div class="col-4">
-                <img src="{% static 'accounts/img/user.png' %}" width="150em" height="150em" class="img-thumbnail">
+                {% if client.picture %}
+                    <img src="{{ client.picture.url }}" width="150em" height="150em" class="img-thumbnail">
+                {% else %}
+                    <img src="{% static 'accounts/img/user.png' %}" width="150em" height="150em" class="img-thumbnail">
+                {% endif %}
             </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.born_date }}
-                    <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
-                    <p class="text-muted text-info">{{ form.born_date.help_text }}</p>
-                    <p class="text-muted text-danger">{{ form.born_date.errors|first }}</p>
-                </div>
+            <div class="col-3">
+                <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                {{ form.born_date }}
+                <p class="text-muted text-info">{{ form.born_date.help_text }}</p>
+                <p class="text-muted text-danger">{{ form.born_date.errors|first }}</p>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <label for="{{ form.sex.id_for_label }}">{{ form.sex.label }}</label>
                 {{ form.sex }}
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <label for="{{ form.civil_status.id_for_label }}">{{ form.civil_status.label }}</label>
                 {{ form.civil_status }}
+            </div>
+            <div class="col-3">
+                {{ form.picture }}
             </div>
             <div class="col-12"><h3 class="h3 text-center">{% trans 'Work data' %}</h3></div>
             <div class="col-4">
