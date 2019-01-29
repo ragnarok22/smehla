@@ -125,7 +125,7 @@ class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
             ))
             print(type_request_extension)
             print(cant_extension)
-            if (type_request_extension == 'TSV' or type_request_extension == 'TV') and cant_extension >= 1:
+            if (type_request_extension == 'STV' or type_request_extension == 'TV') and cant_extension >= 1:
                 form.add_error(None,
                                ValidationError(_('Only can one extension of Temporary stay visa or Tourist Visa!'),
                                                code='invalid'))
