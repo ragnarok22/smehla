@@ -248,6 +248,7 @@ class ExtensionVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'request_type': widgets.Select(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),

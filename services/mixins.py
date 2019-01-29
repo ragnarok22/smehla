@@ -69,7 +69,7 @@ class ServiceFormMixin(ServiceMixin, ModelFormMixin):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.service_type = self.service_type
-        if issubclass(self.object.__class__, models.Visa):
+        if issubclass(self.object.__class__, models.Visa) and not issubclass(self.object.__class__, models.ExtensionVisa):
             self.object.request_type = self.service_type
         self.object.official = self.request.user
         self.object.client = models.Client.objects.get(pk=self.kwargs.get('pk'))
