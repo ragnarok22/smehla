@@ -12,11 +12,14 @@
             <div class="row">
                 <div class="col-12">
                     {% if form.non_field_errors %}
-                        <div class="col-12">
+                        <div class="col-12 text-center text-danger">
                             {{ form.non_field_errors }}
                         </div>
+                    {% elif form.errors %}
+                        <div class="col-12 text-center text-danger">
+                            {{ form.errors }}
+                        </div>
                     {% endif %}
-                    {{ form.errors }}
                 </div>
             </div>
             <div class="row">
