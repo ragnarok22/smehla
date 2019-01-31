@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 15:06-0500\n"
+"POT-Creation-Date: 2019-01-29 15:59-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +17,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\services\forms.py:261 .\services\models.py:76
-#: .\services\templates\services\client_detail.html:80
+#: .\services\forms.py:372 .\services\models.py:76
+#: .\services\templates\services\client_detail.html:134
 #: .\services\templates\services\passport_form.html:5
 #: .\services\templates\services\status_service.html:21
 msgid "Passport"
 msgstr "Passaporte"
 
-#: .\services\forms.py:262 .\services\models.py:74 .\services\models.py:166
-#: .\services\templates\services\client_detail.html:77
+#: .\services\forms.py:373 .\services\models.py:74 .\services\models.py:166
 #: .\services\templates\services\status_service.html:23
 msgid "Visa"
 msgstr "Visto"
 
-#: .\services\forms.py:263 .\services\templates\services\residence_form.html:5
+#: .\services\forms.py:374 .\services\templates\services\residence_form.html:5
 #: .\services\templates\services\status_service.html:25
 msgid "Residence"
 msgstr "Residência"
 
-#: .\services\forms.py:283 .\services\forms.py:296 .\services\forms.py:309
+#: .\services\forms.py:394 .\services\forms.py:407 .\services\forms.py:420
 msgid "It is in process"
 msgstr "Está em endamento"
 
@@ -123,7 +121,7 @@ msgstr "No Telefônico"
 #: .\services\models.py:38
 #: .\services\templates\services\client_detail_template.html:87
 msgid "Data attachment"
-msgstr "Data de início do tratamento"
+msgstr "Dados adjuntos"
 
 #: .\services\models.py:40
 #: .\services\templates\services\client_detail_template.html:67
@@ -219,7 +217,7 @@ msgstr "Entregar"
 
 #: .\services\models.py:70
 msgid "Denied"
-msgstr ""
+msgstr "Negado"
 
 #: .\services\models.py:73
 msgid "Unknown service type"
@@ -230,7 +228,7 @@ msgid "Visa Extension"
 msgstr "Prorroga de Visto"
 
 #: .\services\models.py:77 .\services\models.py:302
-#: .\services\templates\services\client_detail.html:95
+#: .\services\templates\services\client_detail.html:129
 #: .\services\templates\services\tools.html:34
 msgid "Residence authorization"
 msgstr "Autorização de Residência"
@@ -249,7 +247,7 @@ msgstr "Estado"
 msgid "Official"
 msgstr "Funcionario"
 
-#: .\services\models.py:131
+#: .\services\models.py:131 .\services\templates\services\client_detail.html:78
 msgid "Work visa"
 msgstr "Visto de Trabalho"
 
@@ -746,16 +744,16 @@ msgid "Are you sure to delete the client %(client)s from the system?"
 msgstr "Tem certeza de excluir o cliente %(client)s do sistema?"
 
 #: .\services\templates\services\client_confirm_delete.html:18
-#: .\services\templates\services\extensionvisa_form.html:13
+#: .\services\templates\services\extensionvisa_form.html:55
 #: .\services\templates\services\medicaltreatmentvisa_form.html:35
 #: .\services\templates\services\passport_confirm_delete.html:26
 #: .\services\templates\services\passport_form.html:153
-#: .\services\templates\services\privilegedvisa_form.html:13
+#: .\services\templates\services\privilegedvisa_form.html:33
 #: .\services\templates\services\residence_form.html:111
 #: .\services\templates\services\residentvisa_form.html:49
 #: .\services\templates\services\status_service.html:34
-#: .\services\templates\services\studyvisa_form.html:13
-#: .\services\templates\services\temporaryvisa_form.html:13
+#: .\services\templates\services\studyvisa_form.html:29
+#: .\services\templates\services\temporaryvisa_form.html:33
 #: .\services\templates\services\visa_confirm_delete.html:24
 #: .\services\templates\services\visa_form.html:140
 #: .\services\templates\services\workvisa_form.html:60
@@ -801,13 +799,41 @@ msgstr "Excluir"
 msgid "Add service"
 msgstr "Adicionar serviço"
 
-#: .\services\templates\services\client_detail.html:85
-msgid "Residence renovation"
-msgstr "Renovação de residência"
+#: .\services\templates\services\client_detail.html:83
+msgid "Medical Visa"
+msgstr "Visto de Tratamento Médico"
 
-#: .\services\templates\services\client_detail.html:90
-msgid "Residence by marriage"
-msgstr "Residência por casamento"
+#: .\services\templates\services\client_detail.html:88
+msgid "Resident Visa"
+msgstr "Visto de Fixaçäo de Residencia"
+
+#: .\services\templates\services\client_detail.html:93
+msgid "Temporary Visa"
+msgstr "Visto de Permanencia Temporária"
+
+#: .\services\templates\services\client_detail.html:98
+msgid "Privileged Visa"
+msgstr "Visto Privilegiado"
+
+#: .\services\templates\services\client_detail.html:103
+msgid "Study Visa"
+msgstr "Visto de estudo"
+
+#: .\services\templates\services\client_detail.html:108
+msgid "Short-term Visa"
+msgstr "Visto de Curta Duraçäo"
+
+#: .\services\templates\services\client_detail.html:113
+msgid "Tourist Visa"
+msgstr "Visto de Turismo"
+
+#: .\services\templates\services\client_detail.html:118
+msgid "Ordinary Visa"
+msgstr "Visto Ordinario"
+
+#: .\services\templates\services\client_detail.html:123
+msgid "Visa extension"
+msgstr "Prorroga de Visto"
 
 #: .\services\templates\services\client_detail_template.html:23
 msgid "Parents"
@@ -826,7 +852,7 @@ msgid "Address"
 msgstr "Residência"
 
 #: .\services\templates\services\client_detail_template.html:64
-#: .\services\templates\services\client_form.html:49
+#: .\services\templates\services\client_form.html:54
 msgid "Work data"
 msgstr "Dados de Trabalho"
 
@@ -848,11 +874,11 @@ msgstr "Adicionar cliente"
 msgid "Personal data"
 msgstr "Dados pessoais"
 
-#: .\services\templates\services\client_form.html:68
+#: .\services\templates\services\client_form.html:73
 msgid "Filiation"
 msgstr "Filiação"
 
-#: .\services\templates\services\client_form.html:97
+#: .\services\templates\services\client_form.html:102
 #: .\services\templates\services\visa_detail_template.html:67
 msgid "Current address"
 msgstr "Indereço Actual"
@@ -879,20 +905,14 @@ msgid "Create new client"
 msgstr "Criar novo cliente"
 
 #: .\services\templates\services\extensionvisa_detail.html:5
-#, fuzzy
-#| msgid "Extension"
 msgid "Extension visa for"
 msgstr "Prorrogação"
 
 #: .\services\templates\services\extensionvisa_detail.html:12
-#, fuzzy
-#| msgid "Extension type"
 msgid "Extension visa request"
 msgstr "Tipo de Reemissão"
 
 #: .\services\templates\services\extensionvisa_detail.html:18
-#, fuzzy
-#| msgid "Resident visa data"
 msgid "Extension visa data"
 msgstr "Datos do Visto de Fixaçäo de Residência"
 
@@ -1198,10 +1218,8 @@ msgid "Passport for a client"
 msgstr "Passaporte para um cliente"
 
 #: .\services\templates\services\tools.html:51
-#, fuzzy
-#| msgid "Visa type"
 msgid "Visa to expire"
-msgstr "Tipo de Visto"
+msgstr "Visto a Expirar"
 
 #: .\services\templates\services\tools.html:61
 #: .\services\templates\services\tools.html:98
@@ -1210,10 +1228,8 @@ msgid "Client's name"
 msgstr "Nome do cliente"
 
 #: .\services\templates\services\tools.html:88
-#, fuzzy
-#| msgid "Expire date"
 msgid "Expired visas"
-msgstr "Data de validade"
+msgstr "Vistos Expirados"
 
 #: .\services\templates\services\tools.html:124
 msgid "Services Request's List"
@@ -1280,10 +1296,8 @@ msgid "Are you sure to delete this visa?"
 msgstr "Tens a certeza de excluir este visto?"
 
 #: .\services\templates\services\visa_confirm_delete.html:17
-#, fuzzy
-#| msgid "Visa request detail"
 msgid "Visa request type"
-msgstr "Detalhe do Pedido de Visto"
+msgstr "Tipo de Pedido de Visto"
 
 #: .\services\templates\services\visa_confirm_delete.html:18
 msgid "Expire date"
@@ -1322,10 +1336,8 @@ msgid "Frontier"
 msgstr "Posto de Fronteira utilizado"
 
 #: .\services\templates\services\visa_form.html:5
-#, fuzzy
-#| msgid "Visa No."
 msgid "Visa form"
-msgstr "Visto No"
+msgstr "Forma do Visto"
 
 #: .\services\templates\services\visa_form.html:54
 #: .\services\templates\services\visa_form_template.html:45
@@ -1346,21 +1358,23 @@ msgstr "Detalhe do visto de trabalho"
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
 
-#: .\services\views.py:52
+#: .\services\views.py:53
 msgid "There are not request that correspond with that search"
 msgstr "Não há pedido que corresponda a esse Bilhete de Identidade"
 
-#: .\services\views.py:71
+#: .\services\views.py:72
 msgid "Is in progress"
 msgstr "Está em endamento"
 
-#: .\services\views.py:73
+#: .\services\views.py:74
 #, python-format
 msgid "Has no found any request with %(value)s ci"
 msgstr "Não encontrou nenhum pedido com %(value)s ci"
 
-#~ msgid "Unexpected error"
-#~ msgstr "Erro inesperado"
+#: .\services\views.py:130
+msgid "Only can one extension of Temporary stay visa or Tourist Visa!"
+msgstr "Só podes Fazer uma Prorroga do visto de Curta Duraçäo ou visto de turismo"
 
-#~ msgid "An error happened"
-#~ msgstr "Um erro aconteceu"
+#: .\services\views.py:134
+msgid "Only can two extension of Ordinary visa!"
+msgstr "Só podes fazer duas vezes a Prorroga para o Visto Ordinario"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 15:06-0500\n"
+"POT-Creation-Date: 2019-01-29 15:59-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,7 +111,7 @@ msgid "%(years)d years"
 msgstr "%(years)d años"
 
 #: .\accounts\templates\accounts\dashboard.html:5
-#: .\accounts\templates\navbar.html:43
+#: .\accounts\templates\navbar.html:53
 msgid "Administrate"
 msgstr "Administrar"
 
@@ -227,7 +227,7 @@ msgid "Delete"
 msgstr "Eliminar"
 
 #: .\accounts\templates\accounts\send_email.html:5
-#: .\accounts\templates\navbar.html:60 .\accounts\templates\navbar.html:66
+#: .\accounts\templates\navbar.html:71 .\accounts\templates\navbar.html:77
 msgid "Contact us"
 msgstr "Contáctanos"
 
@@ -235,107 +235,121 @@ msgstr "Contáctanos"
 msgid "Index"
 msgstr "Inicio"
 
-#: .\accounts\templates\navbar.html:34
+#: .\accounts\templates\navbar.html:36
+msgid "Institucional"
+msgstr ""
+
+#: .\accounts\templates\navbar.html:39
+msgid "History"
+msgstr ""
+
+#: .\accounts\templates\navbar.html:40
+#, fuzzy
+#| msgid "Edit profile"
+msgid "Director profile"
+msgstr "Editar perfil"
+
+#: .\accounts\templates\navbar.html:44
 msgid "Services"
 msgstr "Servicios"
 
-#: .\accounts\templates\navbar.html:38
+#: .\accounts\templates\navbar.html:48
 msgid "Tools"
 msgstr "Herramientas"
 
-#: .\accounts\templates\navbar.html:47
+#: .\accounts\templates\navbar.html:57
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\accounts\templates\navbar.html:52
+#: .\accounts\templates\navbar.html:62
 msgid "Information"
 msgstr "Información"
 
-#: .\accounts\templates\navbar.html:54
+#: .\accounts\templates\navbar.html:64
 msgid "News"
 msgstr "Noticias"
 
-#: .\accounts\templates\navbar.html:55
+#: .\accounts\templates\navbar.html:66
 msgid "Legislation"
 msgstr "Legislación"
 
-#: .\accounts\templates\navbar.html:77
+#: .\accounts\templates\navbar.html:88
 msgid "Your name"
 msgstr "Tu nombre"
 
-#: .\accounts\templates\navbar.html:86
+#: .\accounts\templates\navbar.html:97
 msgid "Your email"
 msgstr "Tu correo"
 
-#: .\accounts\templates\navbar.html:95
+#: .\accounts\templates\navbar.html:106
 msgid "Subject"
 msgstr "Asunto"
 
-#: .\accounts\templates\navbar.html:105
+#: .\accounts\templates\navbar.html:116
 msgid "Your message"
 msgstr "Tu Mensaje"
 
-#: .\accounts\templates\navbar.html:112
+#: .\accounts\templates\navbar.html:123
 msgid "Send"
 msgstr "Enviar"
 
-#: .\accounts\templates\navbar.html:132
+#: .\accounts\templates\navbar.html:143
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\accounts\templates\navbar.html:135
+#: .\accounts\templates\navbar.html:146
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\accounts\templates\navbar.html:138
+#: .\accounts\templates\navbar.html:149
 msgid "Logout"
 msgstr "Salir"
 
-#: .\accounts\templates\navbar.html:171
+#: .\accounts\templates\navbar.html:182
 msgid "Manage System"
 msgstr "Sistema de Gestión"
 
-#: .\accounts\templates\navbar.html:172
+#: .\accounts\templates\navbar.html:183
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de inmigración y extranjería"
 
-#: .\accounts\templates\navbar.html:188
+#: .\accounts\templates\navbar.html:199
 msgid "Go"
 msgstr "Ir"
 
-#: .\accounts\templates\navbar.html:193
+#: .\accounts\templates\navbar.html:204
 msgid "Links"
 msgstr "Direcciones"
 
-#: .\accounts\templates\navbar.html:196
+#: .\accounts\templates\navbar.html:207
 msgid "Citizen Portal"
 msgstr "Portal del cuidadano"
 
-#: .\accounts\templates\navbar.html:199
+#: .\accounts\templates\navbar.html:210
 msgid "Ministry of Interior"
 msgstr "Ministerio del Interior"
 
-#: .\accounts\templates\navbar.html:202
+#: .\accounts\templates\navbar.html:213
 msgid "Company's only booth"
 msgstr "Único stand de la compañía"
 
-#: .\accounts\templates\navbar.html:209
+#: .\accounts\templates\navbar.html:220
 msgid "Copyright: Created by University of Holguin"
 msgstr "Todos los derechos reservados: Creado por la Universidad de Holguín"
 
-#: .\accounts\templates\navbar.html:229
+#: .\accounts\templates\navbar.html:240
 msgid "Sended"
 msgstr "Enviado"
 
-#: .\accounts\templates\navbar.html:230
+#: .\accounts\templates\navbar.html:241
 msgid "Your message has sended correctly"
 msgstr "Su mensaje ha sido enviado correctamente"
 
-#: .\accounts\templates\navbar.html:236
+#: .\accounts\templates\navbar.html:247
 msgid "Not send"
 msgstr "No enviado"
 
-#: .\accounts\templates\navbar.html:237
+#: .\accounts\templates\navbar.html:248
 msgid "Error sending your message"
 msgstr "Error enviando su mensaje"
 
@@ -343,4 +357,3 @@ msgstr "Error enviando su mensaje"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s no es una fecha de nacimiento válida"
-

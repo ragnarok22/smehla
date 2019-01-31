@@ -2,13 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 15:06-0500\n"
+"POT-Creation-Date: 2019-01-29 15:59-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +66,7 @@ msgstr "Perfil não encontrado"
 
 #: .\accounts\models.py:21
 msgid "Functionary of Attention to Customer"
-msgstr "Chefe de atenção ao cliente"
+msgstr "Funcionario de atenção ao Cliente"
 
 #: .\accounts\models.py:22
 msgid "Functionary of Finance"
@@ -109,7 +107,7 @@ msgid "%(years)d years"
 msgstr "%(years)d anos"
 
 #: .\accounts\templates\accounts\dashboard.html:5
-#: .\accounts\templates\navbar.html:43
+#: .\accounts\templates\navbar.html:53
 msgid "Administrate"
 msgstr "Administrar"
 
@@ -124,7 +122,7 @@ msgstr "Adicionar usuário"
 #: .\accounts\templates\accounts\dashboard.html:20
 #: .\accounts\templates\accounts\profile_detail.html:24
 msgid "Username"
-msgstr "Nome de usuário"
+msgstr "Nome do usuário"
 
 #: .\accounts\templates\accounts\dashboard.html:21
 msgid "Full name"
@@ -189,6 +187,8 @@ msgid ""
 "Continue to be the steps that they have sent to the mail to reestablish your "
 "password."
 msgstr ""
+"Continue os seguintes passos que eles enviaram um  correio para restabelecer "
+"a Contra-senha"
 
 #: .\accounts\templates\accounts\password_reset_done.html:12
 msgid "Home"
@@ -223,7 +223,7 @@ msgid "Delete"
 msgstr "Excluir"
 
 #: .\accounts\templates\accounts\send_email.html:5
-#: .\accounts\templates\navbar.html:60 .\accounts\templates\navbar.html:66
+#: .\accounts\templates\navbar.html:71 .\accounts\templates\navbar.html:77
 msgid "Contact us"
 msgstr "Contate-Nos"
 
@@ -231,107 +231,119 @@ msgstr "Contate-Nos"
 msgid "Index"
 msgstr "Inicio"
 
-#: .\accounts\templates\navbar.html:34
+#: .\accounts\templates\navbar.html:36
+msgid "Institucional"
+msgstr "Instituicional"
+
+#: .\accounts\templates\navbar.html:39
+msgid "History"
+msgstr "História"
+
+#: .\accounts\templates\navbar.html:40
+msgid "Director profile"
+msgstr "Perfil do Director"
+
+#: .\accounts\templates\navbar.html:44
 msgid "Services"
 msgstr "Serviços"
 
-#: .\accounts\templates\navbar.html:38
+#: .\accounts\templates\navbar.html:48
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: .\accounts\templates\navbar.html:47
+#: .\accounts\templates\navbar.html:57
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\accounts\templates\navbar.html:52
+#: .\accounts\templates\navbar.html:62
 msgid "Information"
 msgstr "Informaçäo"
 
-#: .\accounts\templates\navbar.html:54
+#: .\accounts\templates\navbar.html:64
 msgid "News"
 msgstr "Notícia"
 
-#: .\accounts\templates\navbar.html:55
+#: .\accounts\templates\navbar.html:66
 msgid "Legislation"
 msgstr "Legislaçäo"
 
-#: .\accounts\templates\navbar.html:77
+#: .\accounts\templates\navbar.html:88
 msgid "Your name"
 msgstr "Seu nome"
 
-#: .\accounts\templates\navbar.html:86
+#: .\accounts\templates\navbar.html:97
 msgid "Your email"
 msgstr "Seu email"
 
-#: .\accounts\templates\navbar.html:95
+#: .\accounts\templates\navbar.html:106
 msgid "Subject"
 msgstr "Assunto"
 
-#: .\accounts\templates\navbar.html:105
+#: .\accounts\templates\navbar.html:116
 msgid "Your message"
 msgstr "Sua mensagem"
 
-#: .\accounts\templates\navbar.html:112
+#: .\accounts\templates\navbar.html:123
 msgid "Send"
 msgstr "Enviar"
 
-#: .\accounts\templates\navbar.html:132
+#: .\accounts\templates\navbar.html:143
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\accounts\templates\navbar.html:135
+#: .\accounts\templates\navbar.html:146
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\accounts\templates\navbar.html:138
+#: .\accounts\templates\navbar.html:149
 msgid "Logout"
 msgstr "Sair"
 
-#: .\accounts\templates\navbar.html:171
+#: .\accounts\templates\navbar.html:182
 msgid "Manage System"
 msgstr "Gerenciar sistema"
 
-#: .\accounts\templates\navbar.html:172
+#: .\accounts\templates\navbar.html:183
 msgid "System of emigration and foreign affairs"
 msgstr "Sistema de migração e estrangeiros"
 
-#: .\accounts\templates\navbar.html:188
+#: .\accounts\templates\navbar.html:199
 msgid "Go"
 msgstr "Ir"
 
-#: .\accounts\templates\navbar.html:193
+#: .\accounts\templates\navbar.html:204
 msgid "Links"
 msgstr "Ligações"
 
-#: .\accounts\templates\navbar.html:196
+#: .\accounts\templates\navbar.html:207
 msgid "Citizen Portal"
 msgstr "Portal do cidadão"
 
-#: .\accounts\templates\navbar.html:199
+#: .\accounts\templates\navbar.html:210
 msgid "Ministry of Interior"
 msgstr "Ministério do Interior"
 
-#: .\accounts\templates\navbar.html:202
+#: .\accounts\templates\navbar.html:213
 msgid "Company's only booth"
 msgstr "Guichê único da empresa"
 
-#: .\accounts\templates\navbar.html:209
+#: .\accounts\templates\navbar.html:220
 msgid "Copyright: Created by University of Holguin"
 msgstr "Direito autoral: Criado pela Universidade de Holguín"
 
-#: .\accounts\templates\navbar.html:229
+#: .\accounts\templates\navbar.html:240
 msgid "Sended"
 msgstr "Mandado"
 
-#: .\accounts\templates\navbar.html:230
+#: .\accounts\templates\navbar.html:241
 msgid "Your message has sended correctly"
 msgstr "Sua mensagem foi enviada corretamente"
 
-#: .\accounts\templates\navbar.html:236
+#: .\accounts\templates\navbar.html:247
 msgid "Not send"
 msgstr "Não enviado"
 
-#: .\accounts\templates\navbar.html:237
+#: .\accounts\templates\navbar.html:248
 msgid "Error sending your message"
 msgstr "Erro ao enviar sua mensagem"
 
@@ -339,18 +351,3 @@ msgstr "Erro ao enviar sua mensagem"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
-
-#~ msgid "Visa to expire"
-#~ msgstr "Visto a expirar"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#~ msgid "Client's name"
-#~ msgstr "Nome do cliente"
-
-#~ msgid "Visa expiration date"
-#~ msgstr "Data de validade do visto"
-
-#~ msgid "Expired visas"
-#~ msgstr "Vistos expirados"
