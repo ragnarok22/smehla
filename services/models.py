@@ -31,8 +31,8 @@ class Client(models.Model):
     civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)
     sex = models.CharField(_('Sex'), max_length=1, choices=SEX_CHOICES)
     picture = models.ImageField(_('Picture'), upload_to=upload_image, null=True, blank=True)
-    father = models.CharField(_('Father name'), max_length=200)
-    mother = models.CharField(_('Mother name'), max_length=200)
+    father = models.CharField(_('Father name'), max_length=200, null=True, blank=True)
+    mother = models.CharField(_('Mother name'), max_length=200, null=True, blank=True)
     email = models.EmailField(_('Email'))
     phone = models.PositiveIntegerField(_('Phone number'))
     data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
@@ -152,8 +152,8 @@ class Visa(Service):
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
 
-    father_nationality = models.CharField(_('Father nationality'), max_length=100)
-    mother_nationality = models.CharField(_('Mother nationality'), max_length=100)
+    father_nationality = models.CharField(_('Father nationality'), max_length=100, null=True, blank=True)
+    mother_nationality = models.CharField(_('Mother nationality'), max_length=100, null=True, blank=True)
     lodging = models.CharField(_('Lodging'), max_length=100)  # hospedaje
     city_lodging = models.CharField(_('City lodging'), max_length=100)
     street_lodging = models.CharField(_('Street lodging'), max_length=100)
@@ -290,8 +290,8 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     passport_no = models.CharField(_('Passport No.'), max_length=14)
     passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
     date_issuance_passport = models.DateField(_('Date of issuance of passport'))
-    father_nationality = models.CharField(_('Father nationality'), max_length=100)
-    mother_nationality = models.CharField(_('Mother nationality'), max_length=100)
+    father_nationality = models.CharField(_('Father nationality'), max_length=100, null=True, blank=True)
+    mother_nationality = models.CharField(_('Mother nationality'), max_length=100, null=True, blank=True)
     # for non-local use of the reception
     location = models.CharField(_('Location'), max_length=100)
     date = models.DateField(_("Date"))
@@ -319,24 +319,24 @@ class Passport(Service):
     remission_type = models.CharField(_('Remission type'), max_length=2, choices=REMISSION_TYPE_CHOICES, blank=True,
                                       null=True)
     # birth certificate
-    issued_in = models.CharField(_('Issued in'), max_length=100)
+    issued_in = models.CharField(_('Issued in'), max_length=100, null=True, blank=True)
     # identity card
-    date = models.DateField(_('Date'))  # ver a candido esta fecha de que es
+    date = models.DateField(_('Date'), null=True, blank=True)  # ver a candido esta fecha de que es
     cp = models.CharField(_('Cédula pessoal'), max_length=4, blank=True, null=True)
-    cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100)
-    date_cp_issue = models.DateField(_('Date of cédula pessoal issue'))
+    cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100, null=True, blank=True)
+    date_cp_issue = models.DateField(_('Date of cédula pessoal issue'), null=True, blank=True)
     ci = models.CharField(_('Identity card'), max_length=14)
     ci_issued_in = models.CharField(_('Identity card issued in'), max_length=100)
     spouse = models.CharField(_('Spouse'), max_length=200, null=True, blank=True)
     observations = models.TextField(_('Observations'), null=True, blank=True)
     # client data
     # birth address
-    province_birth = models.CharField(_('Province'), max_length=50)
-    municipality_birth = models.CharField(_('Municipality'), max_length=50)
-    commune_birth = models.CharField(_('Commune'), max_length=50)
-    neighborhood_birth = models.CharField(_('Neighborhood'), max_length=50)
-    street_birth = models.CharField(_('Street'), max_length=50)
-    home_no_birth = models.CharField(_('Home No.'), max_length=10)
+    province_birth = models.CharField(_('Province'), max_length=50, null=True, blank=True)
+    municipality_birth = models.CharField(_('Municipality'), max_length=50, null=True, blank=True)
+    commune_birth = models.CharField(_('Commune'), max_length=50, null=True, blank=True)
+    neighborhood_birth = models.CharField(_('Neighborhood'), max_length=50, null=True, blank=True)
+    street_birth = models.CharField(_('Street'), max_length=50, null=True, blank=True)
+    home_no_birth = models.CharField(_('Home No.'), max_length=10, null=True, blank=True)
     # for use of the reception
     date_reception = models.DateField(_('Date'))
     # for official use

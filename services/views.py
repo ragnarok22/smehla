@@ -115,10 +115,9 @@ class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
         return reverse_lazy('services:service_detail', kwargs={'pk': self.object.pk, 'type': self.service_type})
 
     def form_valid(self, form):
-        response = super().form_valid(form)
         if issubclass(self.model, models.ExtensionVisa):
             extension = form.save(commit=False)
-            client = extension.client
+            client = models.Client.objects.get(pk=self.kwargs.get('pk'))
             type_request_extension = extension.request_type
             cant_extension = len(models.ExtensionVisa.objects.filter(
                 Q(client=client) & Q(request_type=type_request_extension)
@@ -133,7 +132,7 @@ class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
             elif type_request_extension == 'OV' and cant_extension >= 2:
                 form.add_error(None, ValidationError(_('Only can two extension of Ordinary visa!'), code='invalid'))
                 return self.form_invalid(form)
-        return response
+        return super().form_valid(form)
 
 
 class ServiceDetailView(services_mixins.ServiceMixin, generic.DetailView):

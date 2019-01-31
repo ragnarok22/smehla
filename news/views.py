@@ -28,9 +28,8 @@ class NewsUpdateView(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
         return reverse_lazy('news:detail', kwargs={'pk': self.object.pk})
 
 
-class NewsListView(auth_mixin.NavbarMixin, generic.ListView):
+class NewsListView(generic.ListView):
     model = News
-    tab_name = 'news'
 
 
 class NewsDeleteView(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
@@ -72,22 +71,21 @@ class LegislationCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
     fields = '__all__'
 
 
-class LegislationList(auth_mixin.NavbarMixin, generic.ListView):
+class LegislationList(generic.ListView):
     model = Legislation
-    tab_name = 'legislations'
 
 
 class LegislationUpdate(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
     model = Legislation
     occupations = ['ADMIN', 'FAC']
     fields = '__all__'
-    success_url = reverse_lazy('news:legislations')
+    success_url = reverse_lazy('news:legislation')
 
 
 class LegislationDelete(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
     model = Legislation
     occupations = ['ADMIN', 'FAC']
-    success_url = reverse_lazy('news:legislations')
+    success_url = reverse_lazy('news:legislation')
 
 
 class HistoryView(generic.TemplateView):
