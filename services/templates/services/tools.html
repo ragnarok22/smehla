@@ -322,7 +322,9 @@
                 </div>
                 <!-- Modal body-->
                 <div class="modal-body mx-3">
-                    <table class="table table-bordered table-hover table-search" cellspacing="0" width="100%"
+                    <a href="#" class="btn btn-default"
+                       onclick="Exporter.export('#search', 'search.html'); return false;">{% trans 'Export to excel' %}</a>
+                    <table id="search" class="table table-bordered table-hover table-search" cellspacing="0" width="100%"
                            data-page-length="5">
                         <thead>
                         <tr>

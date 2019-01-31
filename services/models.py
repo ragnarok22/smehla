@@ -321,7 +321,7 @@ class Passport(Service):
     # birth certificate
     issued_in = models.CharField(_('Issued in'), max_length=100, null=True, blank=True)
     # identity card
-    date = models.DateField(_('Date'), null=True, blank=True)  # ver a candido esta fecha de que es
+    date = models.DateField(_('Date'), null=True, blank=True)
     cp = models.CharField(_('Cédula pessoal'), max_length=4, blank=True, null=True)
     cp_issued_in = models.CharField(_('Indentity card issued in'), max_length=100, null=True, blank=True)
     date_cp_issue = models.DateField(_('Date of cédula pessoal issue'), null=True, blank=True)
