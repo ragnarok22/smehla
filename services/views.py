@@ -37,6 +37,7 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
         context['expired_visa'] = models.Visa.objects.filter(
             Q(visa_expiration_date__lt=now)
         )
+        context['visa_list'] = models.Visa.objects.all()
         return context
 
 
