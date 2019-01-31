@@ -76,7 +76,7 @@
                                         <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
                                     </td>
                                     <td>{{ visa.visa_expiration_date }}
-                                        <a href="{% url 'services:service_detail' 'visa' visa.pk %}"><i
+                                        <a href="{% url 'services:service_detail' visa.request_type visa.pk %}"><i
                                                 class="fa fa-eye float-lg-right"></i></a>
                                     </td>
                                 </tr>
@@ -113,7 +113,7 @@
                                         <a href="{% url 'services:client_detail' visa.client.pk %}">{{ visa.client }}</a>
                                     </td>
                                     <td>{{ visa.visa_expiration_date }}
-                                        <a href="{% url 'services:service_detail' 'visa' visa.pk %}"><i
+                                        <a href="{% url 'services:service_detail' visa.request_type visa.pk %}"><i
                                                 class="fa fa-eye float-lg-right"></i></a>
                                     </td>
                                 </tr>
