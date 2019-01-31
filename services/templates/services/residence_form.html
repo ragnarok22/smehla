@@ -18,11 +18,11 @@
             </div>
 
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <label for="{{ form.type_request.id_for_label }}">{{ form.type_request.label }}</label>
                     {{ form.type_request }}
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-6" id="extension_type">
                     <label for="{{ form.extension_type.id_for_label }}">{{ form.extension_type.label }}</label>
                     {{ form.extension_type }}
                 </div>
@@ -105,4 +105,22 @@
             <button class="btn btn-default" type="submit">{% trans 'Accept' %}</button>
         </form>
     </div>
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <script>
+        $(function () {
+            function change_status() {
+                if ($('#{{ form.type_request.id_for_label }}').val() === 'EMI') {
+                    $('#extension_type').removeClass('hidden');
+                } else {
+                    $('#extension_type').addClass('hidden');
+                }
+            }
+
+            $('#{{ form.type_request.id_for_label }}').change(change_status);
+            change_status();
+        });
+    </script>
 {% endblock %}
