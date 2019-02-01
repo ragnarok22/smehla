@@ -265,6 +265,9 @@ class ExtensionVisa(Visa):
     reason_extension = models.CharField(_('Reason extension'), max_length=250)
     cant_days_extension = models.PositiveIntegerField(_('Number of days of extension'))
 
+    def get_extension_type(self):
+        return _('extension of %(extension)s' % {'extension': self.get_request_type_display()})
+
 
 class ResidenceAuthorization(Service):  # in progress to fixed
     TYPE_REQUEST_CHOICES = (

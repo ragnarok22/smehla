@@ -144,7 +144,11 @@
                     {% for service in service_list %}
                         <tr>
                             {% if service.visa %}
-                                <td>{{ service.visa.get_request_type_display }}</td>
+                                {% if service.visa.extensionvisa %}
+                                    <td>{{ service.visa.extensionvisa.get_extension_type }}</td>
+                                {% else %}
+                                    <td>{{ service.visa.get_request_type_display }}</td>
+                                {% endif %}
                             {% elif service.passport %}
                                 <td>{{ service.passport.get_service_type }}</td>
                             {% elif service.residenceauthorization %}
@@ -324,7 +328,8 @@
                 <div class="modal-body mx-3">
                     <a href="#" class="btn btn-default"
                        onclick="Exporter.export('#search', 'search.html'); return false;">{% trans 'Export to excel' %}</a>
-                    <table id="search" class="table table-bordered table-hover table-search" cellspacing="0" width="100%"
+                    <table id="search" class="table table-bordered table-hover table-search" cellspacing="0"
+                           width="100%"
                            data-page-length="5">
                         <thead>
                         <tr>
