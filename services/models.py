@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, gettext as __
 
 from accounts.models import Profile
 from services import validators
@@ -266,7 +266,7 @@ class ExtensionVisa(Visa):
     cant_days_extension = models.PositiveIntegerField(_('Number of days of extension'))
 
     def get_extension_type(self):
-        return _('extension of {}'.format(self.get_request_type_display()))
+        return _('extension of ') + self.get_request_type_display()
 
 
 class ResidenceAuthorization(Service):  # in progress to fixed
