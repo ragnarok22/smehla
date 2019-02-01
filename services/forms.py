@@ -379,9 +379,9 @@ class ServiceStatusFrom(forms.Form):
     def search_status(self):
         request_type = self.cleaned_data['request_type']
         search = self.cleaned_data['search']
-        if request_type == 'passport':  # passport, search by ci
+        if request_type == 'passport':  # passport, search by ci or cedula pesoal
             results = models.Passport.objects.filter(
-                Q(ci__exact=search)
+                Q(ci__exact=search) | Q(cp__exact=search)
             )
             if results:
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
