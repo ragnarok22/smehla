@@ -57,7 +57,7 @@
         $(function () {
             const request_type = $('#{{ form.request_type.id_for_label }}');
             $('#passport').click(function () {
-                $("label[for='search']").html('{% trans "Identity card" %}');
+                $("label[for='search']").html('{% trans "Identity card or Personal card" %}');
                 request_type.val('passport');
             });
             $('#visa').click(function () {
