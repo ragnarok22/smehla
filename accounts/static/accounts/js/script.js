@@ -45,4 +45,6 @@ $(document).ready(function (e) {
         ev.preventDefault();
         $('html, body').animate({scrollTop: 0}, 300);
     });
+    console.log('Created by Ragnarok');
+    console.log('sasuke.reinier@gmail.com');
 });

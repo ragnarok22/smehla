@@ -8,7 +8,7 @@
 
 {% block main %}
     <div class="container-fluid">
-        {% if user.occupation == 'ADMIN' %}
+        {% if user.occupation == 'ADMIN' or user.occupation == 'FAC' %}
             <div class="row">
                 <a href="{% url 'news:create' %}" class="btn btn-default">{% trans 'Add news' %}</a>
             </div>
