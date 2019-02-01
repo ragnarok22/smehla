@@ -348,10 +348,10 @@
                         <tbody>
                         {% for visa in visa_list %}
                             <tr>
-                                <td>{{ visa.client.get_full_name }}</td>
-                                <td>{{ visa.client.work_name }}</td>
-                                <td>{{ visa.client.profession }}</td>
-                                <td>{{ visa.client.funcion }}</td>
+                                <td>{{ visa.full_name }}</td>
+                                <td>{{ visa.work_name }}</td>
+                                <td>{{ visa.profession }}</td>
+                                <td>{{ visa.funcion }}</td>
                                 <td>{{ visa.lodging }}</td>
                             </tr>
                         {% endfor %}

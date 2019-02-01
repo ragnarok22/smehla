@@ -37,7 +37,29 @@ class ServiceToolsView(mixins.LoginRequiredMixin, mixins.NavbarMixin, generic.Li
         context['expired_visa'] = models.Visa.objects.filter(
             Q(visa_expiration_date__lt=now)
         )
-        context['visa_list'] = models.Visa.objects.all()
+        listado = []
+        visas = models.Visa.objects.all()
+        authorization = models.ResidenceAuthorization.objects.all()
+        for v in visas:
+            data = {
+                'full_name': v.client.get_full_name(),
+                'work_name': v.client.work_name,
+                'profession': v.client.profession,
+                'funcion': v.client.funcion,
+                'lodging': v.lodging,
+            }
+            listado.append(data)
+        for a in authorization:
+            data = {
+                'full_name': a.client.get_full_name(),
+                'work_name': a.client.work_name,
+                'profession': a.client.profession,
+                'funcion': a.client.funcion,
+                'lodging': '',
+            }
+            listado.append(data)
+
+        context['visa_list'] = listado
         context['passport_list'] = models.Passport.objects.all()
         return context
 
