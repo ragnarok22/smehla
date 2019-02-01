@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _, gettext as __
+from django.utils.translation import gettext_lazy as _
 
 from accounts.models import Profile
 from services import validators
