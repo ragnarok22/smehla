@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 15:16-0500\n"
+"POT-Creation-Date: 2019-02-01 16:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,10 @@ msgstr "Añadir noticas"
 #: .\news\templates\news\news_list.html:43
 msgid "View news"
 msgstr "Ver noticias"
+
+#: .\news\templates\news\organization.html:5
+msgid "Organization Chart"
+msgstr ""
 
 #: .\news\templates\news\service_confirm_delete.html:5
 msgid "Delete service"

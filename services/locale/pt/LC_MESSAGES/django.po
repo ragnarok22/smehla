@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 15:16-0500\n"
+"POT-Creation-Date: 2019-02-01 16:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,14 +125,14 @@ msgstr "Dados adjuntos"
 
 #: .\services\models.py:40
 #: .\services\templates\services\client_detail_template.html:67
-#: .\services\templates\services\tools.html:339
+#: .\services\templates\services\tools.html:343
 #: .\services\templates\services\visa_detail_template.html:58
 msgid "Profession"
 msgstr "Profissão"
 
 #: .\services\models.py:41
 #: .\services\templates\services\client_detail_template.html:70
-#: .\services\templates\services\tools.html:340
+#: .\services\templates\services\tools.html:344
 #: .\services\templates\services\visa_detail_template.html:61
 #: .\services\templates\services\workvisa_detail.html:25
 msgid "Function"
@@ -140,6 +140,7 @@ msgstr "Função"
 
 #: .\services\models.py:42
 #: .\services\templates\services\client_detail_template.html:73
+#: .\services\templates\services\tools.html:392
 #: .\services\templates\services\visa_detail_template.html:64
 msgid "Work name"
 msgstr "Nome e Endereço do Local de Trabalho"
@@ -147,6 +148,7 @@ msgstr "Nome e Endereço do Local de Trabalho"
 #: .\services\models.py:44 .\services\models.py:337
 #: .\services\templates\services\client_detail_template.html:37
 #: .\services\templates\services\passport_detail.html:76
+#: .\services\templates\services\tools.html:390
 #: .\services\templates\services\visa_detail_template.html:70
 msgid "Province"
 msgstr "Provincia"
@@ -154,6 +156,7 @@ msgstr "Provincia"
 #: .\services\models.py:45 .\services\models.py:338
 #: .\services\templates\services\client_detail_template.html:40
 #: .\services\templates\services\passport_detail.html:79
+#: .\services\templates\services\tools.html:391
 #: .\services\templates\services\visa_detail_template.html:73
 msgid "Municipality"
 msgstr "Município"
@@ -709,6 +712,7 @@ msgstr "Data de emissao da Cédula pessoal"
 
 #: .\services\models.py:331 .\services\templates\services\client_list.html:20
 #: .\services\templates\services\passport_detail.html:43
+#: .\services\templates\services\tools.html:389
 msgid "Identity card"
 msgstr "Bilhete de identidade No"
 
@@ -777,7 +781,7 @@ msgstr "Actos migratórios"
 #: .\services\templates\services\client_detail.html:24
 #: .\services\templates\services\tools.html:60
 #: .\services\templates\services\tools.html:97
-#: .\services\templates\services\tools.html:138
+#: .\services\templates\services\tools.html:142
 msgid "Type"
 msgstr "Tipo"
 
@@ -1232,7 +1236,7 @@ msgstr "Visto a Expirar"
 
 #: .\services\templates\services\tools.html:61
 #: .\services\templates\services\tools.html:98
-#: .\services\templates\services\tools.html:139
+#: .\services\templates\services\tools.html:143
 msgid "Client's name"
 msgstr "Nome do cliente"
 
@@ -1240,83 +1244,88 @@ msgstr "Nome do cliente"
 msgid "Expired visas"
 msgstr "Vistos Expirados"
 
-#: .\services\templates\services\tools.html:126
-msgid "Search Foreigner"
+#: .\services\templates\services\tools.html:125
+#: .\services\templates\services\tools.html:327
+msgid "Search foreigner"
 msgstr "Control de Estrangeiros"
 
-#: .\services\templates\services\tools.html:131
+#: .\services\templates\services\tools.html:130
+#: .\services\templates\services\tools.html:374
+
+msgid "Search national"
+msgstr "Control de Nacioanais"
+
+#: .\services\templates\services\tools.html:135
 msgid "Services Request's List"
 msgstr "Lista de pedidos de serviços"
 
-#: .\services\templates\services\tools.html:140
+#: .\services\templates\services\tools.html:144
 msgid "State"
 msgstr "Estado"
 
-#: .\services\templates\services\tools.html:141
+#: .\services\templates\services\tools.html:145
 msgid "Actions"
 msgstr "Ações"
 
-#: .\services\templates\services\tools.html:238
+#: .\services\templates\services\tools.html:242
 msgid "Has no service created yet"
 msgstr "Não tem serviços criados"
 
-#: .\services\templates\services\tools.html:254
+#: .\services\templates\services\tools.html:258
 msgid "Visa types"
 msgstr "Tipos de Vistos"
 
-#: .\services\templates\services\tools.html:265
+#: .\services\templates\services\tools.html:269
 msgid "Work visa for a client"
 msgstr "Visto de trabalho "
 
-#: .\services\templates\services\tools.html:270
+#: .\services\templates\services\tools.html:274
 msgid "Medical Visa for a client"
 msgstr "Visto de Tratamento Médico"
 
-#: .\services\templates\services\tools.html:275
+#: .\services\templates\services\tools.html:279
 msgid "Resident Visa for a client"
 msgstr "Visto de Fixaçäo de Residencia"
 
-#: .\services\templates\services\tools.html:280
+#: .\services\templates\services\tools.html:284
 msgid "Temporary Visa for a client"
 msgstr "Visto de Permanência Temporária"
 
-#: .\services\templates\services\tools.html:285
+#: .\services\templates\services\tools.html:289
 msgid "Privileged Visa for a client"
 msgstr "Visto Privilegiado"
 
-#: .\services\templates\services\tools.html:290
+#: .\services\templates\services\tools.html:294
 msgid "Study Visa for a client"
 msgstr "Visto de Estudo"
 
-#: .\services\templates\services\tools.html:295
+#: .\services\templates\services\tools.html:299
 msgid "Short-term Visa for a client"
 msgstr "Visto de Curta Duraçäo"
 
-#: .\services\templates\services\tools.html:300
+#: .\services\templates\services\tools.html:304
 msgid "Tourist Visa for a client"
 msgstr "Visto de Turista"
 
-#: .\services\templates\services\tools.html:305
+#: .\services\templates\services\tools.html:309
 msgid "Ordinary Visa for a client"
 msgstr "Visto Ordinario"
 
-#: .\services\templates\services\tools.html:323
-msgid "Search foreigner"
-msgstr "Procurar estrangeiro"
-
-#: .\services\templates\services\tools.html:331
+#: .\services\templates\services\tools.html:335
+#: .\services\templates\services\tools.html:382
 msgid "Export to excel"
 msgstr "Exportar em Excel"
 
-#: .\services\templates\services\tools.html:337
+#: .\services\templates\services\tools.html:341
+#: .\services\templates\services\tools.html:388
 msgid "Client name"
 msgstr "Nome do cliente"
 
-#: .\services\templates\services\tools.html:338
+#: .\services\templates\services\tools.html:342
 msgid "Company name"
 msgstr "Nome do Organismo contratante"
 
-#: .\services\templates\services\tools.html:341
+#: .\services\templates\services\tools.html:345
 msgid "lodging"
 msgstr "Local de hospedagem em Angola"
 
@@ -1391,27 +1400,30 @@ msgstr "Detalhe do visto de trabalho"
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
 
-#: .\services\views.py:54
+#: .\services\views.py:77
 msgid "There are not request that correspond with that search"
 msgstr "Não há pedido que corresponda a esse Bilhete de Identidade"
 
-#: .\services\views.py:73
+#: .\services\views.py:96
 msgid "Is in progress"
 msgstr "Está em endamento"
 
-#: .\services\views.py:75
+#: .\services\views.py:98
 #, python-format
 msgid "Has no found any request with %(value)s ci"
 msgstr "Não encontrou nenhum pedido com %(value)s ci"
 
-#: .\services\views.py:130
+#: .\services\views.py:153
 msgid "Only can one extension of Temporary stay visa or Tourist Visa!"
 msgstr ""
 "Só podes Fazer uma Prorroga do visto de Curta Duraçäo ou visto de turismo"
 
-#: .\services\views.py:134
+#: .\services\views.py:157
 msgid "Only can two extension of Ordinary visa!"
 msgstr "Só podes fazer duas vezes a Prorroga para o Visto Ordinario"
+
+#~ msgid "Search Foreigner"
+#~ msgstr "Control de Estrangeiros"
 
 #~ msgid "extension of %(extension)s"
 #~ msgstr "Prorroga de %(extension)s"

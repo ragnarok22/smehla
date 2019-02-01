@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 15:16-0500\n"
+"POT-Creation-Date: 2019-02-01 16:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Título"
 
 #: .\news\models.py:12
 msgid "Content"
-msgstr "Contenido"
+msgstr "Contiudo"
 
 #: .\news\models.py:13 .\news\templates\news\news_detail.html:12
 msgid "Publication date"
@@ -41,7 +41,7 @@ msgstr "Noticias"
 
 #: .\news\models.py:28
 msgid "Service Type"
-msgstr "tipo de serviço"
+msgstr "Tipo de serviço"
 
 #: .\news\models.py:29 .\news\models.py:46
 msgid "Description"
@@ -131,6 +131,10 @@ msgstr "Adicionar noticias"
 #: .\news\templates\news\news_list.html:43
 msgid "View news"
 msgstr "Ver noticias"
+
+#: .\news\templates\news\organization.html:5
+msgid "Organization Chart"
+msgstr ""
 
 #: .\news\templates\news\service_confirm_delete.html:5
 msgid "Delete service"
