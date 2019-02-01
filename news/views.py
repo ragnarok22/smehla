@@ -94,3 +94,7 @@ class HistoryView(generic.TemplateView):
 
 class DirectorProfileView(generic.TemplateView):
     template_name = 'news/director_profile.html'
+
+
+class OrganizationChartView(generic.TemplateView):
+    template_name = 'news/organization.html'

@@ -22,4 +22,5 @@ urlpatterns = [
 
     path('history/', views.HistoryView.as_view(), name='history'),
     path('director/profile/', views.DirectorProfileView.as_view(), name='director'),
+    path('organization/', views.OrganizationChartView.as_view(), name='organization'),
 ]
