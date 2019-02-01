@@ -16,12 +16,6 @@
                         {% trans 'Create new client' %}
                     </a>
                 </div>
-                <div class="col text-center">
-                    <a href="{% url 'services:client_create' %}" class="btn btn-outline-default" data-toggle="modal"
-                       data-target="#search-foreigner">
-                        {% trans 'Search Foreigner' %}
-                    </a>
-                </div>
             </div>
             <!-- Create services -->
             <div class="row">
@@ -125,7 +119,14 @@
             {% endif %}
             <!--./Expired visa -->
         {% endif %}
-
+        <div class="row">
+            <div class="col text-center">
+                <a href="{% url 'services:client_create' %}" class="btn btn-outline-default" data-toggle="modal"
+                   data-target="#search-foreigner">
+                    {% trans 'Search Foreigner' %}
+                </a>
+            </div>
+        </div>
         <!-- List of services -->
         <h1 class="text-center">{% trans "Services Request's List" %}</h1>
         <div class="row">
