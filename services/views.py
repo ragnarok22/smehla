@@ -108,7 +108,7 @@ class ClientUpdateView(mixins.LoginRequiredMixin, generic.UpdateView):
 
 class ClientDeleteView(mixins.LoginRequiredMixin, generic.DeleteView):
     model = models.Client
-    success_url = reverse_lazy('services:client_list')
+    success_url = reverse_lazy('services:tools')
 
 
 class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
