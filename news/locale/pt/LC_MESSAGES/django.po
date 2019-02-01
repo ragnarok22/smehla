@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 15:06-0500\n"
+"POT-Creation-Date: 2019-01-29 15:59-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,11 +43,11 @@ msgstr "Noticias"
 msgid "Service Type"
 msgstr "tipo de serviço"
 
-#: .\news\models.py:29
+#: .\news\models.py:29 .\news\models.py:46
 msgid "Description"
 msgstr "Descrição"
 
-#: .\news\models.py:30
+#: .\news\models.py:30 .\news\models.py:47
 msgid "File"
 msgstr "Arquivo"
 
@@ -56,9 +55,65 @@ msgstr "Arquivo"
 msgid "Service"
 msgstr "Serviço"
 
-#: .\news\models.py:37 .\news\templates\news\services.html:5
+#: .\news\models.py:37 .\news\templates\news\legislation_list.html:5
+#: .\news\templates\news\services.html:5
 msgid "Services"
 msgstr "Serviços"
+
+#: .\news\models.py:45
+msgid "Legislation Type"
+msgstr "Tipo de Legislaçäo"
+
+#: .\news\models.py:53 .\news\models.py:54
+msgid "Legislation"
+msgstr "Legislaçäo"
+
+#: .\news\templates\news\director_profile.html:6
+msgid "Director profile"
+msgstr "Perfil do Director"
+
+#: .\news\templates\news\history.html:6
+msgid "History"
+msgstr "Historico"
+
+#: .\news\templates\news\legislation_confirm_delete.html:5
+msgid "Delete legislation"
+msgstr "Excluir Legislaçäo"
+
+#: .\news\templates\news\legislation_confirm_delete.html:12
+msgid "Are you shure to delete this legislation?"
+msgstr "Tens a certeza que desejas excluir este serviço?"
+
+#: .\news\templates\news\legislation_confirm_delete.html:17
+#: .\news\templates\news\news_confirm_delete.html:20
+#: .\news\templates\news\news_form.html:44
+#: .\news\templates\news\service_confirm_delete.html:17
+msgid "Accept"
+msgstr "Aceitar"
+
+#: .\news\templates\news\legislation_form.html:5
+msgid "Create legislation"
+msgstr "Criar Legislaçäo"
+
+#: .\news\templates\news\legislation_list.html:12
+msgid "Legislations"
+msgstr "Legislaçöes"
+
+#: .\news\templates\news\legislation_list.html:14
+msgid "Add Legislation"
+msgstr "Adicionar Legislaçäo"
+
+#: .\news\templates\news\legislation_list.html:30
+#: .\news\templates\news\news_detail.html:23
+#: .\news\templates\news\services.html:46
+msgid "Update"
+msgstr "Atualizar"
+
+#: .\news\templates\news\legislation_list.html:31
+#: .\news\templates\news\news_detail.html:24
+#: .\news\templates\news\services.html:47
+msgid "Delete"
+msgstr "Eliminar"
 
 #: .\news\templates\news\news_confirm_delete.html:5
 msgid "Delete news"
@@ -68,20 +123,6 @@ msgstr "Excluir notícias"
 #, python-format
 msgid "Are you shure to delete the \"%(news)s\" news?"
 msgstr " Tens a Certeza de excluir a Noticia \"%(news)s\""
-
-#: .\news\templates\news\news_confirm_delete.html:20
-#: .\news\templates\news\news_form.html:44
-#: .\news\templates\news\service_confirm_delete.html:17
-msgid "Accept"
-msgstr "Aceitar"
-
-#: .\news\templates\news\news_detail.html:23
-msgid "Update"
-msgstr "Atualizar"
-
-#: .\news\templates\news\news_detail.html:24
-msgid "Delete"
-msgstr "Eliminar"
 
 #: .\news\templates\news\news_list.html:13
 msgid "Add news"
@@ -106,3 +147,7 @@ msgstr "Criar serviço"
 #: .\news\templates\news\services.html:12
 msgid "Our services"
 msgstr "Nossos serviços"
+
+#: .\news\templates\news\services.html:30
+msgid "Add service"
+msgstr "Adicionar serviços"
