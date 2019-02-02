@@ -222,7 +222,6 @@ class ExtensionVisa(Visa):
     visa_no = models.CharField(_('Visa No.'), max_length=20)
     valid_date = models.DateField(_('Valid date'))
     reason_extension = models.CharField(_('Reason extension'), max_length=250)
-    cant_days_extension = models.PositiveIntegerField(_('Number of days of extension'))
     # responsible
     name = models.CharField(_('Name'), max_length=200, null=True, blank=True)
     province = models.CharField(_('Province'), max_length=200, null=True, blank=True)

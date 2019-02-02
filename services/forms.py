@@ -167,7 +167,6 @@ class ExtensionVisaForm(forms.ModelForm):
             'visa_no': widgets.TextInput(),
             'valid_date': widgets.DateInput(),
             'reason_extension': widgets.TextInput(),
-            'cant_days_extension': widgets.IntegerInput(),
             # responsible
             'name': widgets.TextInput(),
             'province': widgets.TextInput(),
