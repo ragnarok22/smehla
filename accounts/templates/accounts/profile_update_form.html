@@ -35,17 +35,17 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="md-form">
-                        {{ form.born_date }}
-                        <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
-                        <span class="text-muted text-danger">{{ form.born_date.errors }}</span>
+                    <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                    {{ form.born_date }}
+                    <span class="text-muted text-danger">{{ form.born_date.errors }}</span>
+                </div>
+                {% if user.occupation == 'ADMIN' %}
+                    <div class="col">
+                        <label for="{{ form.occupation.id_for_label }}">{{ form.occupation.label }}</label>
+                        {{ form.occupation }}
+                        <span class="text-muted text-danger">{{ form.occupation.errors }}</span>
                     </div>
-                </div>
-                <div class="col">
-                    <label for="{{ form.occupation.id_for_label }}">{{ form.occupation.label }}</label>
-                    {{ form.occupation }}
-                    <span class="text-muted text-danger">{{ form.occupation.errors }}</span>
-                </div>
+                {% endif %}
             </div>
 
             <div class="row">
@@ -55,7 +55,8 @@
                         {% trans 'Update password' %}
                     </a>
                     {% if user.is_superuser %}
-                        <a href="{% url 'accounts:profile_delete' profile.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>
+                        <a href="{% url 'accounts:profile_delete' profile.pk %}"
+                           class="btn btn-danger">{% trans 'Delete' %}</a>
                     {% endif %}
                 </div>
             </div>

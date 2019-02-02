@@ -68,7 +68,7 @@ class UpdateProfileForm(forms.ModelForm):
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker'}),
+            'born_date': forms.DateInput(attrs={'class': 'form-control datepicker', 'type': 'date'}),
             'occupation': forms.Select(attrs={'class': 'form-control'}),
         }
 
