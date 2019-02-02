@@ -152,9 +152,6 @@ class Visa(Service):
 
     service_type = 'visa'
     request_type = models.CharField(_('Request type'), max_length=3, choices=REQUEST_TYPE_CHOICES)
-    # Client data
-    place_of_birth = models.CharField(_('Place of birth'), max_length=100)
-    birth_country = models.CharField(_('Birth country'), max_length=100)
     # passport data
     passport_no = models.CharField(_('Passport No.'), max_length=100)
     passport_issuance_place = models.CharField(_('Passport issuance place'), max_length=100)
@@ -226,6 +223,15 @@ class ExtensionVisa(Visa):
     valid_date = models.DateField(_('Valid date'))
     reason_extension = models.CharField(_('Reason extension'), max_length=250)
     cant_days_extension = models.PositiveIntegerField(_('Number of days of extension'))
+    # responsible
+    name = models.CharField(_('Name'), max_length=200, null=True, blank=True)
+    province = models.CharField(_('Province'), max_length=200, null=True, blank=True)
+    city = models.CharField(_('City'), max_length=200, null=True, blank=True)
+    neighborhood = models.CharField(_('Neighborhood'), max_length=200, null=True, blank=True)
+    street_no = models.CharField(_('Street No.'), max_length=200, null=True, blank=True)
+    home_no = models.CharField(_('Home No.'), max_length=200, null=True, blank=True)
+    phone = models.CharField(_('Phone'), max_length=200, null=True, blank=True)
+    email = models.EmailField(_('Email'), null=True, blank=True)
 
     def get_extension_type(self):
         return _('extension of ') + self.get_request_type_display()

@@ -9,23 +9,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
-        <h3 class="h3 text-center">
-            {% trans 'Client data' %}
-        </h3>
-    </div>
-    <div class="col-12 col-md-6">
-        <div class="md-form">
-            {{ form.place_of_birth }}
-            <label for="{{ form.place_of_birth.id_for_label }}">{{ form.place_of_birth.label }}</label>
-        </div>
-    </div>
-    <div class="col-12 col-md-6">
-        <div class="md-form">
-            {{ form.birth_country }}
-            <label for="{{ form.birth_country.id_for_label }}">{{ form.birth_country.label }}</label>
-        </div>
-    </div>
     <div class="col-12 col-md-6">
         <div class="md-form">
             {{ form.nationality }}
@@ -65,9 +48,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
-        <h3 class="h3 text-center">{% trans 'Other data' %}</h3>
-    </div>
     <div class="col-12 col-md-6">
         <div class="md-form">
             {{ form.lodging }}
