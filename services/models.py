@@ -247,7 +247,7 @@ class ExtensionVisa(Visa):
     email = models.EmailField(_('Email'), null=True, blank=True)
 
     def get_extension_type(self):
-        return _('extension of ') + self.get_request_type_display()
+        return _('extension of ') + str(self.get_extension_type_display())
 
 
 class ResidenceAuthorization(Service):  # in progress to fixed

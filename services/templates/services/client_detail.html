@@ -74,22 +74,22 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6">
-                                <a href="{% url 'services:client_list' 'MTV' %}" class="btn btn-default">
+                                <a href="{% url 'services:service_create' 'MTV' client.pk %}" class="btn btn-default">
                                     {% trans 'Medical Visa' %}
                                 </a>
                             </div>
                             <div class="col-6">
-                                <a href="{% url 'services:client_list' 'TSV' %}" class="btn btn-default">
+                                <a href="{% url 'services:service_create' 'TSV' client.pk %}" class="btn btn-default">
                                     {% trans 'Temporary Visa' %}
                                 </a>
                             </div>
                             <div class="col-6">
-                                <a href="{% url 'services:client_list' 'SV' %}" class="btn btn-default">
+                                <a href="{% url 'services:service_create' 'SV' client.pk %}" class="btn btn-default">
                                     {% trans 'Study Visa' %}
                                 </a>
                             </div>
                             <div class="col-6">
-                                <a href="{% url 'services:client_list' 'STV' %}" class="btn btn-default">
+                                <a href="{% url 'services:service_create' 'STV' client.pk %}" class="btn btn-default">
                                     {% trans 'Short-term Visa' %}
                                 </a>
                             </div>
