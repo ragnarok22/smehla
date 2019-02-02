@@ -307,6 +307,11 @@ class ResidenceAuthorization(Service):  # in progress to fixed
 
 class Passport(Service):
     PASSPORT_TYPE = (
+        ('O', _('Ordinary')),
+        ('S', _('Service')),
+        ('F', _('Foreigner')),
+    )
+    ACT_TYPE_CHOICES = (
         ('E', _('Emission')),
         ('R', _('Remission')),
     )
@@ -318,6 +323,7 @@ class Passport(Service):
     )
     service_type = 'passport'
     passport_type = models.CharField(_('Passport type'), max_length=1, choices=PASSPORT_TYPE)
+    act_type = models.CharField(_('Act type'), max_length=1, choices=ACT_TYPE_CHOICES)
     remission_type = models.CharField(_('Remission type'), max_length=2, choices=REMISSION_TYPE_CHOICES, blank=True,
                                       null=True)
     # birth certificate

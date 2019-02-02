@@ -284,6 +284,7 @@ class PassportCreateForm(forms.ModelForm):
         widgets = {
             'process_no': widgets.NumberInput(),
             'passport_type': widgets.Select(),
+            'act_type': widgets.Select(),
             'remission_type': widgets.Select(),
             # birth certificate
             'issued_in': widgets.TextInput(),

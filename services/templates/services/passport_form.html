@@ -11,11 +11,15 @@
         <form method="post">
             {% csrf_token %}
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                     <label for="{{ form.passport_type.id_for_label }}">{{ form.passport_type.label }}</label>
                     {{ form.passport_type }}
                 </div>
-                <div class="col" id="remission">
+                <div class="col-12 col-md-4">
+                    <label for="{{ form.act_type.id_for_label }}">{{ form.act_type.label }}</label>
+                    {{ form.act_type }}
+                </div>
+                <div class="col-12 col-md-4" id="remission">
                     <label for="{{ form.remission_type.id_for_label }}">{{ form.remission_type.label }}</label>
                     {{ form.remission_type }}
                 </div>
@@ -162,7 +166,7 @@
     <script>
         $(function () {
             function change_type() {
-                if ($('#{{ form.passport_type.id_for_label }}').val() === 'R') {
+                if ($('#{{ form.act_type.id_for_label }}').val() === 'R') {
                     $('#remission').removeClass('hidden');
                     console.log('show');
                 } else {
@@ -171,7 +175,7 @@
                 }
             }
 
-            $('#{{ form.passport_type.id_for_label }}').change(change_type);
+            $('#{{ form.act_type.id_for_label }}').change(change_type);
             change_type();
         });
     </script>
