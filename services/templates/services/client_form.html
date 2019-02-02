@@ -15,16 +15,10 @@
         <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
         <form method="post" enctype="multipart/form-data" class="form-row">
             {% csrf_token %}
-            <div class="col-4">
+            <div class="col-8">
                 <div class="md-form">
                     {{ form.first_name }}
                     <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.last_name }}
-                    <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
                 </div>
             </div>
             <div class="col-4">

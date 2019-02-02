@@ -25,8 +25,7 @@ class Client(models.Model):
         ext = filename.split('.')[-1]
         return 'clients/picture/{}.{}'.format(self.get_full_name(), ext)
 
-    first_name = models.CharField(_('First name'), max_length=30)
-    last_name = models.CharField(_('Last name'), max_length=150)
+    first_name = models.CharField(_('First name'), max_length=200)
     born_date = models.DateField(_('Born date'), validators=[validators.validate_born_date])
     civil_status = models.CharField(_('Civil status'), choices=CIVIL_STATUS, max_length=1)
     sex = models.CharField(_('Sex'), max_length=1, choices=SEX_CHOICES)
@@ -49,7 +48,7 @@ class Client(models.Model):
     home_no = models.CharField(_('Home No.'), max_length=10, null=True, blank=True)
 
     def get_full_name(self):
-        full_name = '%s %s' % (self.first_name, self.last_name)
+        full_name = '%s' % self.first_name
         return full_name.strip()
 
     class Meta:
