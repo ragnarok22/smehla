@@ -18,9 +18,9 @@ class CustomUserManager(UserManager):
 
 class Profile(AbstractUser):
     OCCUPATION_TYPE = (
-        ('FAC', _('Functionary of Attention to Customer')),
+        ('FAC', _('Functionary of Migratory acts')),
         ('FUF', _('Functionary of Finance')),
-        ('BDAC', _('Boss of Departament of Attention to Customer')),
+        ('BDAC', _('Boss of Migratory acts')),
         ('DIR', _('Director')),
         ('ADMIN', _('Administrator')),
     )
