@@ -298,15 +298,11 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     type_request = models.CharField(_('Type request'), max_length=3, choices=TYPE_REQUEST_CHOICES)
     extension_type = models.CharField(_('Extension type'), max_length=2, choices=EXTENSION_TYPE_CHOICES, null=True,
                                       blank=True)
-    observations = models.TextField(_('Observations'))
+    observations = models.TextField(_('Observations'), null=True, blank=True)
     # clients data
-    naturalness = models.CharField(_('Naturalness'), max_length=100)
-    nationality = models.CharField(_('Nationality'), max_length=100)
     passport_no = models.CharField(_('Passport No.'), max_length=14)
     passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
     date_issuance_passport = models.DateField(_('Date of issuance of passport'))
-    father_nationality = models.CharField(_('Father nationality'), max_length=100, null=True, blank=True)
-    mother_nationality = models.CharField(_('Mother nationality'), max_length=100, null=True, blank=True)
     # for non-local use of the reception
     location = models.CharField(_('Location'), max_length=100)
     date = models.DateField(_("Date"))

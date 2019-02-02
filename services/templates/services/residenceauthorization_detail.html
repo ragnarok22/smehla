@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Residence authorization' %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        {% include 'services/client_detail_template.html' with client=residenceauthorization.client %}
+        <div class="row">
+            <div class="col-12">
+                <h3 class="h3 text-center">
+                    {% trans 'Residence authorization data' %}
+                </h3>
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Type request' %}: {{ residenceauthorization.get_type_request_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Extension type' %}: {{ residenceauthorization.get_extension_type_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Observations' %}: {{ residenceauthorization.observations }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'passport No.' %}: {{ residenceauthorization.passport_no }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Passport issued in' %}: {{ residenceauthorization.passport_issued_in }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Date issuance Passport' %}: {{ residenceauthorization.date_issuance_passport }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h5 class="h5 text-center">for non-local use of the reception</h5>
+                <p>{% trans 'Location' %}: {{ residenceauthorization.location }}</p>
+                <p>{% trans 'Date' %}: {{ residenceauthorization.date }}</p>
+            </div>
+            <div class="col-6">
+                <h5 class="h5 text-center">for official use</h5>
+                <p>{% trans 'Date' %}: {{ residenceauthorization.date_official_use }}</p>
+            </div>
+        </div>
+        {% include 'services/visa_edit_template.html' with visa=residenceauthorization %}
+    </div>
+{% endblock %}

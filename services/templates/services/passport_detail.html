@@ -25,6 +25,9 @@
                 <p>{% trans 'Passport type' %}: {{ passport.get_passport_type_display }}</p>
             </div>
             <div class="col-12 col-md-4">
+                {% trans 'Act type' %}: {{ passport.get_act_type_display }}
+            </div>
+            <div class="col-12 col-md-4">
                 {% trans 'Remission type' %}: {{ passport.get_remission_type_display }}
             </div>
             <div class="col-12 col-md-4">
