@@ -15,16 +15,10 @@
         <h1 class="h1 text-center">{% trans 'Personal data' %}</h1>
         <form method="post" enctype="multipart/form-data" class="form-row">
             {% csrf_token %}
-            <div class="col-4">
+            <div class="col-8">
                 <div class="md-form">
                     {{ form.first_name }}
                     <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="md-form">
-                    {{ form.last_name }}
-                    <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
                 </div>
             </div>
             <div class="col-4">
@@ -70,6 +64,30 @@
                     <label for="{{ form.work_name.id_for_label }}">{{ form.work_name.label }}</label>
                 </div>
             </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.province_work }}
+                    <label for="{{ form.province_work.id_for_label }}">{{ form.province_work.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.neighborhood_work }}
+                    <label for="{{ form.neighborhood_work.id_for_label }}">{{ form.neighborhood_work.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.phone_work }}
+                    <label for="{{ form.phone_work.id_for_label }}">{{ form.phone_work.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.email_work }}
+                    <label for="{{ form.email_work.id_for_label }}">{{ form.email_work.label }}</label>
+                </div>
+            </div>
             <div class="col-12"><h3 class="h3 text-center">{% trans 'Filiation' %}</h3></div>
             <div class="col-6">
                 <div class="md-form">
@@ -79,8 +97,32 @@
             </div>
             <div class="col-6">
                 <div class="md-form">
+                    {{ form.father_nationality }}
+                    <label for="{{ form.father_nationality.id_for_label }}">{{ form.father_nationality.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
                     {{ form.mother }}
                     <label for="{{ form.mother.id_for_label }}">{{ form.mother.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.mother_nationality }}
+                    <label for="{{ form.mother_nationality.id_for_label }}">{{ form.mother_nationality.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.nationality }}
+                    <label for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="md-form">
+                    {{ form.current_nationality }}
+                    <label for="{{ form.current_nationality.id_for_label }}">{{ form.current_nationality.label }}</label>
                 </div>
             </div>
             <div class="col-4">
@@ -98,6 +140,49 @@
             <div class="col-4">
                 <label for="{{ form.data_attachment.id_for_label }}">{{ form.data_attachment.label }}</label>
                 {{ form.data_attachment }}
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h3 text-center">
+                        {% trans 'Birth address' %}
+                    </h3>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.province_birth }}
+                        <label for="{{ form.province_birth.id_for_label }}">{{ form.province_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.municipality_birth }}
+                        <label for="{{ form.municipality_birth.id_for_label }}">{{ form.municipality_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.commune_birth }}
+                        <label for="{{ form.commune_birth.id_for_label }}">{{ form.commune_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.neighborhood_birth }}
+                        <label for="{{ form.neighborhood_birth.id_for_label }}">{{ form.neighborhood_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.street_birth }}
+                        <label for="{{ form.street_birth.id_for_label }}">{{ form.street_birth.label }}</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        {{ form.home_no_birth }}
+                        <label for="{{ form.home_no_birth.id_for_label }}">{{ form.home_no_birth.label }}</label>
+                    </div>
+                </div>
             </div>
             <div class="col-12"><h3 class="h3 text-center">{% trans 'Current address' %}</h3></div>
             <div class="col-4">

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 16:37-0500\n"
+"POT-Creation-Date: 2019-02-01 22:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,16 +65,18 @@ msgid "Profile not found"
 msgstr "Perfil não encontrado"
 
 #: .\accounts\models.py:21
-msgid "Functionary of Attention to Customer"
-msgstr "Funcionario de atenção ao Cliente"
+#, fuzzy
+#| msgid "Functionary of Finance"
+msgid "Functionary of Migratory acts"
+msgstr "Funcionario das Finanças"
 
 #: .\accounts\models.py:22
 msgid "Functionary of Finance"
 msgstr "Funcionario das Finanças"
 
 #: .\accounts\models.py:23
-msgid "Boss of Departament of Attention to Customer"
-msgstr "Chefe de atenção ao cliente"
+msgid "Boss of Migratory acts"
+msgstr ""
 
 #: .\accounts\models.py:24
 msgid "Director"
@@ -218,7 +220,7 @@ msgstr "Atualizar"
 msgid "Update %(profile)s's profile"
 msgstr "Atualizar o perfil de %(profile)s"
 
-#: .\accounts\templates\accounts\profile_update_form.html:58
+#: .\accounts\templates\accounts\profile_update_form.html:59
 msgid "Delete"
 msgstr "Excluir"
 
@@ -355,3 +357,9 @@ msgstr "Erro ao enviar sua mensagem"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
+
+#~ msgid "Functionary of Attention to Customer"
+#~ msgstr "Funcionario de atenção ao Cliente"
+
+#~ msgid "Boss of Departament of Attention to Customer"
+#~ msgstr "Chefe de atenção ao cliente"

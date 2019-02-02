@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 16:37-0500\n"
+"POT-Creation-Date: 2019-02-01 22:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,18 +67,16 @@ msgid "Profile not found"
 msgstr "Perfil no encontrado"
 
 #: .\accounts\models.py:21
-msgid "Functionary of Attention to Customer"
-msgstr "Funcionario de atención al cliente"
+msgid "Functionary of Migratory acts"
+msgstr "Funcionario de actos migratorios"
 
 #: .\accounts\models.py:22
-#, fuzzy
-#| msgid "Functionary of Attention to Customer"
 msgid "Functionary of Finance"
-msgstr "Funcionario de atención al cliente"
+msgstr "Funcionario de finanzas"
 
 #: .\accounts\models.py:23
-msgid "Boss of Departament of Attention to Customer"
-msgstr "Jefe del Departamento de Atención al Cliente"
+msgid "Boss of Migratory acts"
+msgstr "Jefe de actos migratorios"
 
 #: .\accounts\models.py:24
 msgid "Director"
@@ -222,7 +220,7 @@ msgstr "Actualizar"
 msgid "Update %(profile)s's profile"
 msgstr "Actualizar perfil de %(profile)s"
 
-#: .\accounts\templates\accounts\profile_update_form.html:58
+#: .\accounts\templates\accounts\profile_update_form.html:59
 msgid "Delete"
 msgstr "Eliminar"
 

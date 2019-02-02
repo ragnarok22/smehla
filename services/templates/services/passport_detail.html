@@ -25,6 +25,9 @@
                 <p>{% trans 'Passport type' %}: {{ passport.get_passport_type_display }}</p>
             </div>
             <div class="col-12 col-md-4">
+                {% trans 'Act type' %}: {{ passport.get_act_type_display }}
+            </div>
+            <div class="col-12 col-md-4">
                 {% trans 'Remission type' %}: {{ passport.get_remission_type_display }}
             </div>
             <div class="col-12 col-md-4">
@@ -68,27 +71,6 @@
             </div>
             <div class="col-12">
                 {% trans 'Observations' %}: {{ passport.observations }}
-            </div>
-            <div class="col-12">
-                <h4 class="h5 text-center">{% trans "Client's birth address" %}</h4>
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Province' %}: {{ passport.province_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Municipality' %}: {{ passport.municipality_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Commune' %}: {{ passport.commune_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Neighborhood' %}: {{ passport.neighborhood_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Street' %}: {{ passport.street_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Home No.' %}: {{ passport.home_no_birth }}
             </div>
         </div>
         <div class="row">

@@ -166,7 +166,12 @@
                             </td>
                             <td>{{ service.get_status_display }}</td>
                             <td class="btn-group-sm">
-                                {% if service.visa %}
+                                {% if service.visa.extensionvisa %}
+                                    <a href="{% url 'services:service_detail' 'extension' service.pk %}"
+                                       class="btn btn-default">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                {% elif service.visa %}
                                     <a href="{% url 'services:service_detail' service.visa.request_type service.pk %}"
                                        class="btn btn-default">
                                         <i class="fa fa-eye"></i>
@@ -184,7 +189,16 @@
                                 {% endif %}
                                 {% user_can_mod_service service user as can_mod %}
                                 {% if can_mod %}
-                                    {% if service.visa %}
+                                    {% if service.visa.extensionvisa %}
+                                        <a href="{% url 'services:service_update' 'extension' service.pk %}"
+                                           class="btn btn-default">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="{% url 'services:service_delete' 'extension' service.pk %}"
+                                           class="btn btn-default">
+                                            <i class="fa fa-remove"></i>
+                                        </a>
+                                    {% elif service.visa %}
                                         <a href="{% url 'services:service_update' service.visa.request_type service.pk %}"
                                            class="btn btn-default">
                                             <i class="fa fa-edit"></i>
