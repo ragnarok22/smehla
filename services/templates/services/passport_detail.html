@@ -17,7 +17,7 @@
 
         <div class="row">
             <div class="col">
-                <h1 class="h1 text-center">{% trans 'Passport details' %}</h1>
+                <h3 class="h3 text-center">{% trans 'Migratory acts data' %}</h3>
             </div>
         </div>
         <div class="row">
@@ -38,9 +38,6 @@
             </div>
             <div class="col-12 col-md-6">
                 {% trans 'Birth certificate issued in' %}: {{ passport.issued_in }}
-            </div>
-            <div class="col-12">
-                <h5 class="h5">{% trans 'Personal card' %}</h5>
             </div>
             <div class="col-12 col-md-3">
                 {% trans 'Date' %}: {{ passport.date }}
@@ -68,12 +65,12 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-12">
+                <h5 class="h3 text-center">{% trans 'Passport history' %}</h5>
+            </div>
             <div class="col-6">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
-                            <h5 class="h5 text-center">{% trans 'For use of the reception' %}</h5>
-                        </div>
                         <div class="col-12">
                             {% trans 'Date reception' %}: {{ passport.date_reception }}
                         </div>
@@ -86,11 +83,6 @@
             <div class="col-6">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
-                            <h5 class="h5 text-center">
-                                {% trans 'For official use' %}
-                            </h5>
-                        </div>
                         <div class="col-12">
                             {% trans 'Passport No.' %}: {{ passport.passport_no }}
                         </div>

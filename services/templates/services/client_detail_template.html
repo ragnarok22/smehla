@@ -29,58 +29,58 @@
                 <p>{% trans "Mother's name" %}: {{ client.mother }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <h4 class="h4 text-center">{% trans "Client's birth address" %}</h4>
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Province' %}: {{ passport.province_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Municipality' %}: {{ passport.municipality_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Commune' %}: {{ passport.commune_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Neighborhood' %}: {{ passport.neighborhood_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Street' %}: {{ passport.street_birth }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Home No.' %}: {{ passport.home_no_birth }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 class="h3 text-center">{% trans 'Address' %}</h3>
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Province' %}: {{ client.province }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Municipality' %}: {{ client.municipality }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Commune' %}: {{ client.commune }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Neighborhood' %}: {{ client.neighborhood }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Street' %}: {{ client.street }}
-            </div>
-            <div class="col-12 col-md-6">
-                {% trans 'Home No.' %}: {{ client.home_no }}
-            </div>
-        </div>
     </div>
     <div class="col-lg-4">
         <img src="
 
                 {% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
              alt="{{ client.first_name }}" width="150em" height="150em" class="img-thumbnail">
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h4 class="h4 text-center">{% trans "Client's birth address" %}</h4>
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Province' %}: {{ passport.province_birth }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Municipality' %}: {{ passport.municipality_birth }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Commune' %}: {{ passport.commune_birth }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Neighborhood' %}: {{ passport.neighborhood_birth }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Street' %}: {{ passport.street_birth }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Home No.' %}: {{ passport.home_no_birth }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="h3 text-center">{% trans 'Address' %}</h3>
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Province' %}: {{ client.province }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Municipality' %}: {{ client.municipality }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Commune' %}: {{ client.commune }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Neighborhood' %}: {{ client.neighborhood }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Street' %}: {{ client.street }}
+    </div>
+    <div class="col-12 col-md-6">
+        {% trans 'Home No.' %}: {{ client.home_no }}
     </div>
 </div>
 <div class="row">
