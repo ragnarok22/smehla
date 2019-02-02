@@ -333,13 +333,28 @@ class ClientForm(forms.ModelForm):
             'profession': widgets.TextInput(),
             'funcion': widgets.TextInput(),
             'work_name': widgets.TextInput(),
+            'province_work': widgets.TextInput(),
+            'neighborhood_work': widgets.TextInput(),
+            'email_work': widgets.EmailInput(),
+            'phone_work': widgets.NumberInput(),
             # Current address
             'province': widgets.TextInput(),
             'municipality': widgets.TextInput(),
             'commune': widgets.TextInput(),
-            'neighborhood': widgets.TextInput(),
             'street': widgets.TextInput(),
             'home_no': widgets.TextInput(),
+            # birth address
+            'province_birth': widgets.TextInput(),
+            'municipality_birth': widgets.TextInput(),
+            'commune_birth': widgets.TextInput(),
+            'neighborhood_birth': widgets.TextInput(),
+            'street_birth': widgets.TextInput(),
+            'home_no_birth': widgets.TextInput(),
+            # Filiation
+            'father_nationality': widgets.TextInput(),
+            'mother_nationality': widgets.TextInput(),
+            'nationality': widgets.TextInput(),
+            'current_nationality': widgets.TextInput(),
         }
 
 
