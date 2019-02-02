@@ -85,13 +85,12 @@
                 </div>
             </div>
             <div class="row">
+                <div class=" col-12 text-center"><h4 class="h4">{% trans 'Passport History' %}</h4></div>
                 <div class="col">
-                    <h4 class="h4">{% trans 'For use of the reception' %}</h4>
                     <label for="{{ form.date_reception.id_for_label }}">{{ form.date_reception.label }}</label>
                     {{ form.date_reception }}
                 </div>
                 <div class="col">
-                    <h4 class="h4">{% trans 'For official use' %}</h4>
                     <div class="md-form">
                         {{ form.passport_no }}
                         <label for="{{ form.passport_no.id_for_label }}">{{ form.passport_no.label }}</label>
