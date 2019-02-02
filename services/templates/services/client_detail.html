@@ -74,28 +74,13 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6">
-                                <a href="{% url 'services:client_list' 'WV' %}" class="btn btn-default">
-                                    {% trans 'Work visa' %}
-                                </a>
-                            </div>
-                            <div class="col-6">
                                 <a href="{% url 'services:client_list' 'MTV' %}" class="btn btn-default">
                                     {% trans 'Medical Visa' %}
                                 </a>
                             </div>
                             <div class="col-6">
-                                <a href="{% url 'services:client_list' 'RV' %}" class="btn btn-default">
-                                    {% trans 'Resident Visa' %}
-                                </a>
-                            </div>
-                            <div class="col-6">
                                 <a href="{% url 'services:client_list' 'TSV' %}" class="btn btn-default">
                                     {% trans 'Temporary Visa' %}
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="{% url 'services:client_list' 'PV' %}" class="btn btn-default">
-                                    {% trans 'Privileged Visa' %}
                                 </a>
                             </div>
                             <div class="col-6">
@@ -108,17 +93,7 @@
                                     {% trans 'Short-term Visa' %}
                                 </a>
                             </div>
-                            <div class="col-6">
-                                <a href="{% url 'services:client_list' 'TV' %}" class="btn btn-default">
-                                    {% trans 'Tourist Visa' %}
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="{% url 'services:client_list' 'OV' %}" class="btn btn-default">
-                                    {% trans 'Ordinary Visa' %}
-                                </a>
-                            </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <a href="{% url 'services:service_create' 'extension' client.pk %}"
                                    class="col btn btn-default">{% trans 'Visa extension' %}
                                 </a>
