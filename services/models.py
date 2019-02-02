@@ -151,7 +151,8 @@ class Visa(Service):
     )
 
     service_type = 'visa'
-    request_type = models.CharField(_('Request type'), max_length=3, choices=REQUEST_TYPE_CHOICES)
+    request_type = models.CharField(_('Request type'), max_length=3, choices=REQUEST_TYPE_CHOICES, blank=True,
+                                    null=True)
     # passport data
     passport_no = models.CharField(_('Passport No.'), max_length=100)
     passport_issuance_place = models.CharField(_('Passport issuance place'), max_length=100)
@@ -219,6 +220,19 @@ class StudyVisa(Visa):
 
 
 class ExtensionVisa(Visa):
+    EXTENSION_TYPE_CHOICES = (
+        ('WV', _('Work visa')),
+        ('PV', _('Privileged visa')),
+        ('RV', _('Resident visa')),
+        ('SV', _('Study visa')),
+        ('MTV', _('Medical Treatment visa')),
+        ('TSV', _('Temporary stay visa')),
+        ('STV', _('Short-term visa')),
+        ('TV', _('Tourist visa')),
+        ('OV', _('Ordinary visa')),
+    )
+    extension_type = models.CharField(_('Extension type'), max_length=3, null=True, blank=True,
+                                      choices=EXTENSION_TYPE_CHOICES)
     visa_no = models.CharField(_('Visa No.'), max_length=20)
     valid_date = models.DateField(_('Valid date'))
     reason_extension = models.CharField(_('Reason extension'), max_length=250)

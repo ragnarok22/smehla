@@ -141,19 +141,15 @@ class ServiceCreateView(services_mixins.ServiceFormMixin, generic.CreateView):
     def form_valid(self, form):
         if issubclass(self.model, models.ExtensionVisa):
             extension = form.save(commit=False)
-            client = models.Client.objects.get(pk=self.kwargs.get('pk'))
-            type_request_extension = extension.request_type
-            cant_extension = len(models.ExtensionVisa.objects.filter(
-                Q(client=client) & Q(request_type=type_request_extension)
-            ))
-            print(type_request_extension)
-            print(cant_extension)
-            if (type_request_extension == 'STV' or type_request_extension == 'TV') and cant_extension >= 1:
+            visa_no = models.ExtensionVisa.objects.filter(visa_no__exact=extension.visa_no)
+            extension_type = extension.extension_type
+            cant_extension = len(visa_no)
+            if (extension_type == 'STV' or extension_type == 'TV') and cant_extension >= 1:
                 form.add_error(None,
                                ValidationError(_('Only can one extension of Temporary stay visa or Tourist Visa!'),
                                                code='invalid'))
                 return self.form_invalid(form)
-            elif type_request_extension == 'OV' and cant_extension >= 2:
+            elif extension_type == 'OV' and cant_extension >= 2:
                 form.add_error(None, ValidationError(_('Only can two extension of Ordinary visa!'), code='invalid'))
                 return self.form_invalid(form)
         return super().form_valid(form)
