@@ -333,7 +333,7 @@ msgstr "Guichê único da empresa"
 
 #: .\accounts\templates\navbar.html:221
 msgid "Copyright: Created by University of Holguin"
-msgstr "Direito autoral: Criado pela Universidade de Holguín"
+msgstr "Direito autoral: Universidade de Holguín"
 
 #: .\accounts\templates\navbar.html:241
 msgid "Sended"
