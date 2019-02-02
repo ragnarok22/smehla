@@ -144,15 +144,10 @@ class Service(models.Model):
 
 class Visa(Service):
     REQUEST_TYPE_CHOICES = (
-        ('WV', _('Work visa')),
-        ('PV', _('Privileged visa')),
-        ('RV', _('Resident visa')),
         ('SV', _('Study visa')),
         ('MTV', _('Medical Treatment visa')),
         ('TSV', _('Temporary stay visa')),
         ('STV', _('Short-term visa')),
-        ('TV', _('Tourist visa')),
-        ('OV', _('Ordinary visa')),
     )
 
     service_type = 'visa'
@@ -182,17 +177,6 @@ class Visa(Service):
         return '{}: {} -> {}'.format(self.get_service_type(), self.client, self.get_request_type_display())
 
 
-class WorkVisa(Visa):
-    # if is a work visa
-    organism_name = models.CharField(_('Organism name'), max_length=100)
-    organism_address = models.CharField(_('Organism address'), max_length=100)
-    funcion = models.CharField(_('Funtion'), max_length=100)
-    init_contract_date = models.DateField(_('Init contract date'))
-    end_contract_date = models.DateField(_('End contract date'))
-    entity_name = models.CharField(_('Entity name'), max_length=100)
-    entity_address = models.CharField(_('Entity address'), max_length=100)
-
-
 class MedicalTreatmentVisa(Visa):
     # if is a medical treatment visa
     UNITY_TYPE_CHOICES = (
@@ -203,28 +187,6 @@ class MedicalTreatmentVisa(Visa):
     unity_type = models.CharField(_('Unity type'), max_length=1, choices=UNITY_TYPE_CHOICES)
     date_init_treatment = models.DateField(_('Date init treatment'))
     data_end_treatment = models.DateField(_('Date end treatment'))
-
-
-class ResidentVisa(Visa):
-    # if is a fijacion de residencia
-    reason = models.TextField(_('Reason'))
-    TYPE_RESIDENCE_CHOICES = (
-        ('T', _('Temporary')),
-        ('P', _('Permanent')),
-    )
-    type_residence = models.CharField(_('Type residence'), max_length=1, choices=TYPE_RESIDENCE_CHOICES)
-    LIVE_FAMILIAR_CHOICES = (
-        ('Y', _('Yes')),
-        ('N', _('No')),
-        ('W', _('Wife')),
-        ('H', _('Husband')),
-        ('C', _('Children')),
-        ('O', _('Others')),
-    )
-    live_familiar = models.CharField(_('Live with a familiar'), max_length=1, choices=LIVE_FAMILIAR_CHOICES)
-    familiars = models.TextField(_('Familiars'))
-    subsistence = models.TextField(_('Subsistence'))
-    address_angola = models.CharField(_('Address angola'), max_length=100)
 
 
 class TemporaryVisa(Visa):
@@ -240,18 +202,6 @@ class TemporaryVisa(Visa):
     reason = models.CharField(_('Reason'), max_length=2, choices=REASON_CHOICES)
     subsistence = models.TextField(_('Subsistence'))
     address_angola = models.TextField(_('address angola'))
-
-
-class PrivilegedVisa(Visa):
-    # if is a privileged visa
-    research_company = models.CharField(_('Research company'), max_length=100)
-    CONDITION_CHOICES = (
-        ('R', _('Research')),
-        ('E', _('Represent')),
-        ('P', _('Procurator')),
-    )
-    condition = models.CharField(_('Condition'), max_length=1, choices=CONDITION_CHOICES)
-    address_angola = models.CharField(_('address angola'), max_length=100)
 
 
 class StudyVisa(Visa):

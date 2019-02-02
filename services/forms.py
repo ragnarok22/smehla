@@ -35,43 +35,6 @@ class VisaCreateForm(forms.ModelForm):
         }
 
 
-class WorkVisaForm(forms.ModelForm):
-    class Meta:
-        model = models.WorkVisa
-        exclude = ['client', 'status', 'official', 'request_type']
-        widgets = {
-            'process_no': widgets.NumberInput(),
-            # client data
-            'place_of_birth': widgets.TextInput(),
-            'birth_country': widgets.TextInput(),
-            'nationality': widgets.TextInput(),
-            'current_nationality': widgets.TextInput(),
-            # passport data
-            'passport_no': widgets.TextInput(),
-            'passport_issuance_place': widgets.TextInput(),
-            'passport_issuance_date': widgets.DateInput(),
-            'passport_expiration_date': widgets.DateInput(),
-
-            'father_nationality': widgets.TextInput(),
-            'mother_nationality': widgets.TextInput(),
-            'lodging': widgets.TextInput(),
-            'city_lodging': widgets.TextInput(),
-            'street_lodging': widgets.TextInput(),
-            'no_lodging_house': widgets.TextInput(),
-            'last_entry_angola_date': widgets.DateInput(),
-            'frontier': widgets.TextInput(),
-            'visa_expiration_date': widgets.DateInput(),
-
-            'organism_name': widgets.TextInput(),
-            'organism_address': widgets.TextInput(),
-            'funcion': widgets.TextInput(),
-            'init_contract_date': widgets.DateInput(),
-            'end_contract_date': widgets.DateInput(),
-            'entity_name': widgets.TextInput(),
-            'entity_address': widgets.TextInput(),
-        }
-
-
 class MedicalTreatmentVisaForm(forms.ModelForm):
     class Meta:
         model = models.MedicalTreatmentVisa
@@ -106,42 +69,6 @@ class MedicalTreatmentVisaForm(forms.ModelForm):
         }
 
 
-class ResidentVisaForm(forms.ModelForm):
-    class Meta:
-        model = models.ResidentVisa
-        exclude = ['client', 'status', 'official', 'request_type']
-        widgets = {
-            'process_no': widgets.NumberInput(),
-            # client data
-            'place_of_birth': widgets.TextInput(),
-            'birth_country': widgets.TextInput(),
-            'nationality': widgets.TextInput(),
-            'current_nationality': widgets.TextInput(),
-            # passport data
-            'passport_no': widgets.TextInput(),
-            'passport_issuance_place': widgets.TextInput(),
-            'passport_issuance_date': widgets.DateInput(),
-            'passport_expiration_date': widgets.DateInput(),
-
-            'father_nationality': widgets.TextInput(),
-            'mother_nationality': widgets.TextInput(),
-            'lodging': widgets.TextInput(),
-            'city_lodging': widgets.TextInput(),
-            'street_lodging': widgets.TextInput(),
-            'no_lodging_house': widgets.TextInput(),
-            'last_entry_angola_date': widgets.DateInput(),
-            'frontier': widgets.TextInput(),
-            'visa_expiration_date': widgets.DateInput(),
-
-            'reason': widgets.TextInput(),
-            'type_residence': widgets.Select(),
-            'live_familiar': widgets.Select(),
-            'familiars': widgets.TextInput(),
-            'subsistence': widgets.TextInput(),
-            'address_angola': widgets.TextInput(),
-        }
-
-
 class TemporaryVisaForm(forms.ModelForm):
     class Meta:
         model = models.TemporaryVisa
@@ -171,39 +98,6 @@ class TemporaryVisaForm(forms.ModelForm):
 
             'reason': widgets.Select(),
             'subsistence': widgets.TextInput(),
-            'address_angola': widgets.TextInput(),
-        }
-
-
-class PrivilegedVisaForm(forms.ModelForm):
-    class Meta:
-        model = models.PrivilegedVisa
-        exclude = ['client', 'status', 'official', 'request_type']
-        widgets = {
-            'process_no': widgets.NumberInput(),
-            # client data
-            'place_of_birth': widgets.TextInput(),
-            'birth_country': widgets.TextInput(),
-            'nationality': widgets.TextInput(),
-            'current_nationality': widgets.TextInput(),
-            # passport data
-            'passport_no': widgets.TextInput(),
-            'passport_issuance_place': widgets.TextInput(),
-            'passport_issuance_date': widgets.DateInput(),
-            'passport_expiration_date': widgets.DateInput(),
-
-            'father_nationality': widgets.TextInput(),
-            'mother_nationality': widgets.TextInput(),
-            'lodging': widgets.TextInput(),
-            'city_lodging': widgets.TextInput(),
-            'street_lodging': widgets.TextInput(),
-            'no_lodging_house': widgets.TextInput(),
-            'last_entry_angola_date': widgets.DateInput(),
-            'frontier': widgets.TextInput(),
-            'visa_expiration_date': widgets.DateInput(),
-
-            'research_company': widgets.TextInput(),
-            'condition': widgets.Select(),
             'address_angola': widgets.TextInput(),
         }
 

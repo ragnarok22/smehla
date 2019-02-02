@@ -23,26 +23,14 @@ class ServiceMixin(mixins.LoginRequiredMixin, SingleObjectMixin):
                 self.form_class = forms.VisaCreateForm
             else:
                 self.template_name = 'services/visa_detail.html'
-        elif _type == 'WV':
-            self.model = models.WorkVisa
-            if issubclass(self.__class__, ModelFormMixin):
-                self.form_class = forms.WorkVisaForm
         elif _type == 'MTV':
             self.model = models.MedicalTreatmentVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.MedicalTreatmentVisaForm
-        elif _type == 'RV':
-            self.model = models.ResidentVisa
-            if issubclass(self.__class__, ModelFormMixin):
-                self.form_class = forms.ResidentVisaForm
         elif _type == 'TSV':
             self.model = models.TemporaryVisa
             if issubclass(self.__class__, ModelFormMixin):
                 self.form_class = forms.TemporaryVisaForm
-        elif _type == 'PV':
-            self.model = models.PrivilegedVisa
-            if issubclass(self.__class__, ModelFormMixin):
-                self.form_class = forms.PrivilegedVisaForm
         elif _type == 'SV':
             self.model = models.StudyVisa
             if issubclass(self.__class__, ModelFormMixin):
