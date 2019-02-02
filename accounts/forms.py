@@ -7,6 +7,8 @@ from django.core.mail import send_mail
 from SIG_SMEHLA import settings
 from accounts.models import Profile
 
+from services import widgets
+
 
 class LoginForm(auth_forms.AuthenticationForm):
     username = auth_forms.UsernameField(
@@ -34,12 +36,14 @@ class CreateProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['username', 'first_name', 'last_name', 'occupation']
+        fields = ['username', 'first_name', 'last_name', 'occupation', 'born_date', 'email']
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'occupation': forms.Select(attrs={'class': 'form-control'}),
+            'born_date': widgets.DateInput(),
+            'email': widgets.EmailInput(),
         }
 
     def clean_password2(self):

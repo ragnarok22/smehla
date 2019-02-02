@@ -57,6 +57,18 @@
                         <span class="text-danger">{{ form.password2.errors }}</span>
                     </div>
                 </div>
+                <div class="col-6">
+                    <label for="{{ form.born_date.id_for_label }}">{{ form.born_date.label }}</label>
+                    {{ form.born_date }}
+                    <span class="text-danger">{{ form.born_date.errors }}</span>
+                </div>
+                <div class="col-6">
+                    <div class="md-form">
+                        {{ form.email }}
+                        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                        <span class="text-danger">{{ form.email.errors }}</span>
+                    </div>
+                </div>
             </div>
             <button class="btn btn-default">Aceptar</button>
         </form>
