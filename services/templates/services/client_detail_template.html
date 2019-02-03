@@ -17,21 +17,34 @@
             <div class="col-12 col-md-4">
                 <p>{% trans 'Sex' %}: {{ client.get_sex_display }}</p>
             </div>
+            <div class="col-12 col-md-4">
+                <p>{% trans 'Origin nationality' %}: {{ client.nationality }}</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <p>{% trans 'Current nationality' %}: {{ client.current_nationality }}</p>
+            </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-12">
                 <h4 class="h4">{% trans 'Parents' %}</h4>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6">
                 <p>{% trans "Father's name" %}: {{ client.father }}</p>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6">
+                <p>{% trans "Father's nationality" %}: {{ client.father_nationality }}</p>
+            </div>
+            <div class="col-12 col-md-6">
                 <p>{% trans "Mother's name" %}: {{ client.mother }}</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <p>{% trans "Mother's nationality" %}: {{ client.mother_nationality }}</p>
             </div>
         </div>
     </div>
     <div class="col-lg-4">
         <img src="
+
 
                 {% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
              alt="{{ client.first_name }}" width="150em" height="150em" class="img-thumbnail">
@@ -96,13 +109,25 @@
     <div class="col-12 col-md-4">
         {% trans 'Work name' %}: {{ client.work_name }}
     </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Province' %}: {{ client.province_work }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Neighborhood' %}: {{ client.neighborhood_work }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Phone work' %}: {{ client.phone_work }}
+    </div>
+    <div class="col-12 col-md-4">
+        {% trans 'Email work' %}: {{ client.email_work }}
+    </div>
 </div>
 <div class="row">
     <div class="col-lg-4">
-        <p>{% trans 'Email' %}: <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
+        <p>{% trans 'Personal Email' %}: <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
     </div>
     <div class="col-lg-4">
-        <p>{% trans 'Phone' %}: {{ client.phone }}</p>
+        <p>{% trans 'Personal Phone' %}: {{ client.phone }}</p>
     </div>
 </div>
 <div class="row">
