@@ -239,6 +239,7 @@ class ClientForm(forms.ModelForm):
             # Current address
             'province': widgets.TextInput(),
             'municipality': widgets.TextInput(),
+            'neighborhood': widgets.TextInput(),
             'commune': widgets.TextInput(),
             'street': widgets.TextInput(),
             'home_no': widgets.TextInput(),
