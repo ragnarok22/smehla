@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-04 05:26-0500\n"
+"POT-Creation-Date: 2019-02-04 10:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\services\forms.py:290 .\services\models.py:92
+#: .\services\forms.py:291 .\services\models.py:92
 #: .\services\templates\services\client_detail.html:109
 #: .\services\templates\services\passport_form.html:5
 #: .\services\templates\services\status_service.html:21
 msgid "Passport"
 msgstr "Passaporte"
 
-#: .\services\forms.py:291 .\services\models.py:90 .\services\models.py:171
+#: .\services\forms.py:292 .\services\models.py:90 .\services\models.py:171
 #: .\services\templates\services\status_service.html:23
 msgid "Visa"
 msgstr "Visto"
 
-#: .\services\forms.py:292 .\services\templates\services\residence_form.html:5
+#: .\services\forms.py:293 .\services\templates\services\residence_form.html:5
 #: .\services\templates\services\status_service.html:25
 msgid "Residence"
 msgstr "Residência"
 
-#: .\services\forms.py:312 .\services\forms.py:325 .\services\forms.py:338
+#: .\services\forms.py:313 .\services\forms.py:326 .\services\forms.py:339
 msgid "It is in process"
 msgstr "Está em endamento"
 
@@ -104,7 +104,6 @@ msgid "Mother name"
 msgstr "Nome da Mãe"
 
 #: .\services\models.py:35 .\services\models.py:46 .\services\models.py:247
-#: .\services\templates\services\client_detail_template.html:102
 #: .\services\templates\services\client_list.html:22
 #: .\services\templates\services\visa_detail_template.html:88
 msgid "Email"
@@ -115,26 +114,26 @@ msgid "Phone number"
 msgstr "No Telefônico"
 
 #: .\services\models.py:37
-#: .\services\templates\services\client_detail_template.html:111
+#: .\services\templates\services\client_detail_template.html:136
 msgid "Data attachment"
 msgstr "Documentos anexos"
 
 #: .\services\models.py:39
-#: .\services\templates\services\client_detail_template.html:91
+#: .\services\templates\services\client_detail_template.html:104
 #: .\services\templates\services\tools.html:272
 #: .\services\templates\services\visa_detail_template.html:58
 msgid "Profession"
 msgstr "Profissão"
 
 #: .\services\models.py:40
-#: .\services\templates\services\client_detail_template.html:94
+#: .\services\templates\services\client_detail_template.html:107
 #: .\services\templates\services\tools.html:273
 #: .\services\templates\services\visa_detail_template.html:61
 msgid "Function"
 msgstr "Função"
 
 #: .\services\models.py:41
-#: .\services\templates\services\client_detail_template.html:97
+#: .\services\templates\services\client_detail_template.html:110
 #: .\services\templates\services\tools.html:321
 #: .\services\templates\services\visa_detail_template.html:64
 msgid "Work name"
@@ -142,8 +141,9 @@ msgstr "Nome e Endereço do Local de Trabalho"
 
 #: .\services\models.py:43 .\services\models.py:48 .\services\models.py:55
 #: .\services\models.py:241
-#: .\services\templates\services\client_detail_template.html:45
-#: .\services\templates\services\client_detail_template.html:68
+#: .\services\templates\services\client_detail_template.html:58
+#: .\services\templates\services\client_detail_template.html:81
+#: .\services\templates\services\client_detail_template.html:113
 #: .\services\templates\services\tools.html:319
 #: .\services\templates\services\visa_detail_template.html:70
 msgid "Province"
@@ -151,38 +151,39 @@ msgstr "Provincia"
 
 #: .\services\models.py:44 .\services\models.py:51 .\services\models.py:58
 #: .\services\models.py:243
-#: .\services\templates\services\client_detail_template.html:54
-#: .\services\templates\services\client_detail_template.html:77
+#: .\services\templates\services\client_detail_template.html:67
+#: .\services\templates\services\client_detail_template.html:90
+#: .\services\templates\services\client_detail_template.html:116
 #: .\services\templates\services\visa_detail_template.html:79
 msgid "Neighborhood"
 msgstr "Bairro"
 
 #: .\services\models.py:49 .\services\models.py:56
-#: .\services\templates\services\client_detail_template.html:48
-#: .\services\templates\services\client_detail_template.html:71
+#: .\services\templates\services\client_detail_template.html:61
+#: .\services\templates\services\client_detail_template.html:84
 #: .\services\templates\services\tools.html:320
 #: .\services\templates\services\visa_detail_template.html:73
 msgid "Municipality"
 msgstr "Município"
 
 #: .\services\models.py:50 .\services\models.py:57
-#: .\services\templates\services\client_detail_template.html:51
-#: .\services\templates\services\client_detail_template.html:74
+#: .\services\templates\services\client_detail_template.html:64
+#: .\services\templates\services\client_detail_template.html:87
 #: .\services\templates\services\visa_detail_template.html:76
 msgid "Commune"
 msgstr "Comuna"
 
 #: .\services\models.py:52 .\services\models.py:59
-#: .\services\templates\services\client_detail_template.html:57
-#: .\services\templates\services\client_detail_template.html:80
+#: .\services\templates\services\client_detail_template.html:70
+#: .\services\templates\services\client_detail_template.html:93
 #: .\services\templates\services\visa_detail_template.html:82
 #: .\services\templates\services\visa_detail_template.html:117
 msgid "Street"
 msgstr "Rua"
 
 #: .\services\models.py:53 .\services\models.py:60 .\services\models.py:245
-#: .\services\templates\services\client_detail_template.html:60
-#: .\services\templates\services\client_detail_template.html:83
+#: .\services\templates\services\client_detail_template.html:73
+#: .\services\templates\services\client_detail_template.html:96
 #: .\services\templates\services\visa_detail_template.html:85
 msgid "Home No."
 msgstr "Casa No"
@@ -198,10 +199,12 @@ msgid "Mother nationality"
 msgstr "Nacionalidade da Mäe"
 
 #: .\services\models.py:64
+#: .\services\templates\services\client_detail_template.html:21
 msgid "Origin nationality"
 msgstr "Nacionalidade de Origem"
 
 #: .\services\models.py:65
+#: .\services\templates\services\client_detail_template.html:24
 #: .\services\templates\services\visa_detail_template.html:43
 msgid "Current nationality"
 msgstr "Nacionalidade Atual"
@@ -495,7 +498,6 @@ msgid "Street No."
 msgstr "Rua"
 
 #: .\services\models.py:246
-#: .\services\templates\services\client_detail_template.html:105
 #: .\services\templates\services\visa_detail_template.html:91
 msgid "Phone"
 msgstr "Telefone"
@@ -744,32 +746,68 @@ msgstr "Visto de Curta Duraçäo"
 msgid "Visa extension"
 msgstr "Prorroga de Visto"
 
-#: .\services\templates\services\client_detail_template.html:23
+#: .\services\templates\services\client_detail_template.html:29
 msgid "Parents"
 msgstr "Filiação"
 
-#: .\services\templates\services\client_detail_template.html:26
+#: .\services\templates\services\client_detail_template.html:32
 msgid "Father's name"
 msgstr "Nome do Pai"
 
-#: .\services\templates\services\client_detail_template.html:29
+#: .\services\templates\services\client_detail_template.html:35
+#, fuzzy
+#| msgid "Father nationality"
+msgid "Father's nationality"
+msgstr "Nacionalidade do Pai"
+
+#: .\services\templates\services\client_detail_template.html:38
 msgid "Mother's name"
 msgstr "Nome da Mãe"
 
-#: .\services\templates\services\client_detail_template.html:42
+#: .\services\templates\services\client_detail_template.html:41
+#, fuzzy
+#| msgid "Mother nationality"
+msgid "Mother's nationality"
+msgstr "Nacionalidade da Mäe"
+
+#: .\services\templates\services\client_detail_template.html:55
 msgid "Client's birth address"
 msgstr "Residência"
 
-#: .\services\templates\services\client_detail_template.html:65
+#: .\services\templates\services\client_detail_template.html:78
 msgid "Address"
 msgstr "Residência"
 
-#: .\services\templates\services\client_detail_template.html:88
+#: .\services\templates\services\client_detail_template.html:101
 #: .\services\templates\services\client_form.html:48
 msgid "Work data"
 msgstr "Nome e Endereço do Local de Trabalho"
 
-#: .\services\templates\services\client_detail_template.html:115
+#: .\services\templates\services\client_detail_template.html:119
+#, fuzzy
+#| msgid "Phone"
+msgid "Phone work"
+msgstr "Telefone"
+
+#: .\services\templates\services\client_detail_template.html:122
+#, fuzzy
+#| msgid "Email"
+msgid "Email work"
+msgstr "Endereço Eletrônico"
+
+#: .\services\templates\services\client_detail_template.html:127
+#, fuzzy
+#| msgid "Personal data"
+msgid "Personal Email"
+msgstr "Dados Pessoas"
+
+#: .\services\templates\services\client_detail_template.html:130
+#, fuzzy
+#| msgid "Personal No."
+msgid "Personal Phone"
+msgstr "No da Cédula Pessoal"
+
+#: .\services\templates\services\client_detail_template.html:140
 msgid "Download data attachment"
 msgstr "Exportar Dados"
 
