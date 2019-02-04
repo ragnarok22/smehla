@@ -231,14 +231,11 @@ class ClientForm(forms.ModelForm):
             'email': widgets.EmailInput(),
             'phone': widgets.NumberInput(),
             'data_attachment': forms.ClearableFileInput(attrs={'multiple': True, 'class': 'form-control'}),
-            # work data
-            'profession': widgets.TextInput(),
-            'funcion': widgets.TextInput(),
-            'work_name': widgets.TextInput(),
-            'province_work': widgets.TextInput(),
-            'neighborhood_work': widgets.TextInput(),
-            'email_work': widgets.EmailInput(),
-            'phone_work': widgets.NumberInput(),
+            # Filiation
+            'father_nationality': widgets.TextInput(),
+            'mother_nationality': widgets.TextInput(),
+            'nationality': widgets.TextInput(),
+            'current_nationality': widgets.TextInput(),
             # Current address
             'province': widgets.TextInput(),
             'municipality': widgets.TextInput(),
@@ -252,11 +249,14 @@ class ClientForm(forms.ModelForm):
             'neighborhood_birth': widgets.TextInput(),
             'street_birth': widgets.TextInput(),
             'home_no_birth': widgets.TextInput(),
-            # Filiation
-            'father_nationality': widgets.TextInput(),
-            'mother_nationality': widgets.TextInput(),
-            'nationality': widgets.TextInput(),
-            'current_nationality': widgets.TextInput(),
+            # work data
+            'profession': widgets.TextInput(),
+            'funcion': widgets.TextInput(),
+            'work_name': widgets.TextInput(),
+            'province_work': widgets.TextInput(),
+            'neighborhood_work': widgets.TextInput(),
+            'email_work': widgets.EmailInput(),
+            'phone_work': widgets.NumberInput(),
         }
 
 

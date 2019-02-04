@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 22:43-0500\n"
+"POT-Creation-Date: 2019-02-04 05:26-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\services\forms.py:372 .\services\models.py:76
-#: .\services\templates\services\client_detail.html:134
+#: .\services\forms.py:290 .\services\models.py:92
+#: .\services\templates\services\client_detail.html:109
 #: .\services\templates\services\passport_form.html:5
 #: .\services\templates\services\status_service.html:21
 msgid "Passport"
 msgstr "Pasaporte"
 
-#: .\services\forms.py:373 .\services\models.py:74 .\services\models.py:166
+#: .\services\forms.py:291 .\services\models.py:90 .\services\models.py:171
 #: .\services\templates\services\status_service.html:23
 msgid "Visa"
 msgstr "Visa"
 
-#: .\services\forms.py:374 .\services\templates\services\residence_form.html:5
+#: .\services\forms.py:292 .\services\templates\services\residence_form.html:5
 #: .\services\templates\services\status_service.html:25
 msgid "Residence"
 msgstr "Residencia"
 
-#: .\services\forms.py:394 .\services\forms.py:407 .\services\forms.py:420
+#: .\services\forms.py:312 .\services\forms.py:325 .\services\forms.py:338
 msgid "It is in process"
 msgstr "Está en trámite"
 
-#: .\services\mixins.py:64
+#: .\services\mixins.py:52
 #, fuzzy
 #| msgid "Service type not found"
 msgid "Service {} type not found"
@@ -74,686 +74,613 @@ msgid "First name"
 msgstr "Nombre"
 
 #: .\services\models.py:29
-msgid "Last name"
-msgstr "Apellidos"
-
-#: .\services\models.py:30
 #: .\services\templates\services\client_detail_template.html:15
 #: .\services\templates\services\client_list.html:21
 #: .\services\templates\services\visa_detail_template.html:31
 msgid "Born date"
 msgstr "Fecha de Nacimiento"
 
-#: .\services\models.py:31
+#: .\services\models.py:30
 #: .\services\templates\services\client_detail_template.html:12
 #: .\services\templates\services\visa_detail_template.html:25
 msgid "Civil status"
 msgstr "Estado civil"
 
-#: .\services\models.py:32
+#: .\services\models.py:31
 #: .\services\templates\services\client_detail_template.html:18
 #: .\services\templates\services\visa_detail_template.html:28
 msgid "Sex"
 msgstr "Sexo"
 
-#: .\services\models.py:33
+#: .\services\models.py:32
 msgid "Picture"
 msgstr "Imagen"
 
-#: .\services\models.py:34
+#: .\services\models.py:33
 #: .\services\templates\services\visa_detail_template.html:94
 msgid "Father name"
 msgstr "Nombre del Padre"
 
-#: .\services\models.py:35
+#: .\services\models.py:34
 #: .\services\templates\services\visa_detail_template.html:100
 msgid "Mother name"
 msgstr "Nombre de la Madre"
 
-#: .\services\models.py:36
-#: .\services\templates\services\client_detail_template.html:78
+#: .\services\models.py:35 .\services\models.py:46 .\services\models.py:247
+#: .\services\templates\services\client_detail_template.html:102
 #: .\services\templates\services\client_list.html:22
 #: .\services\templates\services\visa_detail_template.html:88
 msgid "Email"
 msgstr "Correo Electrónico"
 
-#: .\services\models.py:37
+#: .\services\models.py:36 .\services\models.py:45
 msgid "Phone number"
 msgstr "Número de teléfono"
 
-#: .\services\models.py:38
-#: .\services\templates\services\client_detail_template.html:87
+#: .\services\models.py:37
+#: .\services\templates\services\client_detail_template.html:111
 msgid "Data attachment"
 msgstr "Datos adjuntos"
 
-#: .\services\models.py:40
-#: .\services\templates\services\client_detail_template.html:67
-#: .\services\templates\services\tools.html:343
+#: .\services\models.py:39
+#: .\services\templates\services\client_detail_template.html:91
+#: .\services\templates\services\tools.html:272
 #: .\services\templates\services\visa_detail_template.html:58
 msgid "Profession"
 msgstr "Profisión"
 
-#: .\services\models.py:41
-#: .\services\templates\services\client_detail_template.html:70
-#: .\services\templates\services\tools.html:344
+#: .\services\models.py:40
+#: .\services\templates\services\client_detail_template.html:94
+#: .\services\templates\services\tools.html:273
 #: .\services\templates\services\visa_detail_template.html:61
-#: .\services\templates\services\workvisa_detail.html:25
 msgid "Function"
 msgstr "Acciones"
 
-#: .\services\models.py:42
-#: .\services\templates\services\client_detail_template.html:73
-#: .\services\templates\services\tools.html:392
+#: .\services\models.py:41
+#: .\services\templates\services\client_detail_template.html:97
+#: .\services\templates\services\tools.html:321
 #: .\services\templates\services\visa_detail_template.html:64
 msgid "Work name"
 msgstr "Nombre del Trabajo"
 
-#: .\services\models.py:44 .\services\models.py:337
-#: .\services\templates\services\client_detail_template.html:37
-#: .\services\templates\services\passport_detail.html:76
-#: .\services\templates\services\tools.html:390
+#: .\services\models.py:43 .\services\models.py:48 .\services\models.py:55
+#: .\services\models.py:241
+#: .\services\templates\services\client_detail_template.html:45
+#: .\services\templates\services\client_detail_template.html:68
+#: .\services\templates\services\tools.html:319
 #: .\services\templates\services\visa_detail_template.html:70
 msgid "Province"
 msgstr "Provincia"
 
-#: .\services\models.py:45 .\services\models.py:338
-#: .\services\templates\services\client_detail_template.html:40
-#: .\services\templates\services\passport_detail.html:79
-#: .\services\templates\services\tools.html:391
-#: .\services\templates\services\visa_detail_template.html:73
-msgid "Municipality"
-msgstr "Municipio"
-
-#: .\services\models.py:46 .\services\models.py:339
-#: .\services\templates\services\client_detail_template.html:43
-#: .\services\templates\services\passport_detail.html:82
-#: .\services\templates\services\visa_detail_template.html:76
-msgid "Commune"
-msgstr "Comunidad"
-
-#: .\services\models.py:47 .\services\models.py:340
-#: .\services\templates\services\client_detail_template.html:46
-#: .\services\templates\services\passport_detail.html:85
+#: .\services\models.py:44 .\services\models.py:51 .\services\models.py:58
+#: .\services\models.py:243
+#: .\services\templates\services\client_detail_template.html:54
+#: .\services\templates\services\client_detail_template.html:77
 #: .\services\templates\services\visa_detail_template.html:79
 msgid "Neighborhood"
 msgstr "Barrio"
 
-#: .\services\models.py:48 .\services\models.py:341
-#: .\services\templates\services\client_detail_template.html:49
-#: .\services\templates\services\passport_detail.html:88
+#: .\services\models.py:49 .\services\models.py:56
+#: .\services\templates\services\client_detail_template.html:48
+#: .\services\templates\services\client_detail_template.html:71
+#: .\services\templates\services\tools.html:320
+#: .\services\templates\services\visa_detail_template.html:73
+msgid "Municipality"
+msgstr "Municipio"
+
+#: .\services\models.py:50 .\services\models.py:57
+#: .\services\templates\services\client_detail_template.html:51
+#: .\services\templates\services\client_detail_template.html:74
+#: .\services\templates\services\visa_detail_template.html:76
+msgid "Commune"
+msgstr "Comunidad"
+
+#: .\services\models.py:52 .\services\models.py:59
+#: .\services\templates\services\client_detail_template.html:57
+#: .\services\templates\services\client_detail_template.html:80
 #: .\services\templates\services\visa_detail_template.html:82
 #: .\services\templates\services\visa_detail_template.html:117
 msgid "Street"
 msgstr "Calle"
 
-#: .\services\models.py:49 .\services\models.py:342
-#: .\services\templates\services\client_detail_template.html:52
-#: .\services\templates\services\passport_detail.html:91
+#: .\services\models.py:53 .\services\models.py:60 .\services\models.py:245
+#: .\services\templates\services\client_detail_template.html:60
+#: .\services\templates\services\client_detail_template.html:83
 #: .\services\templates\services\visa_detail_template.html:85
 msgid "Home No."
 msgstr "Casa No"
 
-#: .\services\models.py:56 .\services\models.py:79
+#: .\services\models.py:62
+#: .\services\templates\services\visa_detail_template.html:97
+msgid "Father nationality"
+msgstr "Nacionalidad del Padre"
+
+#: .\services\models.py:63
+#: .\services\templates\services\visa_detail_template.html:103
+msgid "Mother nationality"
+msgstr "Nacionalidad de la Madre"
+
+#: .\services\models.py:64
+msgid "Origin nationality"
+msgstr "Nacionalidad de origen"
+
+#: .\services\models.py:65
+#: .\services\templates\services\visa_detail_template.html:43
+msgid "Current nationality"
+msgstr "Nacionalidad actual"
+
+#: .\services\models.py:72 .\services\models.py:95
 #: .\services\templates\services\client_form.html:7
 #: .\services\templates\services\visa_detail_template.html:13
 msgid "Client"
 msgstr "Cliente"
 
-#: .\services\models.py:57
+#: .\services\models.py:73
 msgid "Clients"
 msgstr "Clientes"
 
-#: .\services\models.py:65
+#: .\services\models.py:81
 msgid "Request"
 msgstr "Solicitud"
 
-#: .\services\models.py:66
+#: .\services\models.py:82
 msgid "Invoicing"
 msgstr "Facturación"
 
-#: .\services\models.py:67
+#: .\services\models.py:83
 msgid "Revision"
 msgstr "Revisión"
 
-#: .\services\models.py:68
+#: .\services\models.py:84
 msgid "Authenticating"
 msgstr "Autenticar"
 
-#: .\services\models.py:69
+#: .\services\models.py:85
 msgid "Deliver"
 msgstr "Entrega"
 
-#: .\services\models.py:70
+#: .\services\models.py:86
 msgid "Denied"
 msgstr "Negado"
 
-#: .\services\models.py:73
+#: .\services\models.py:89
 msgid "Unknown service type"
 msgstr "tipo de servicio desconocido"
 
-#: .\services\models.py:75
+#: .\services\models.py:91
 msgid "Visa Extension"
 msgstr "Prorroga de Visa"
 
-#: .\services\models.py:77 .\services\models.py:305
-#: .\services\templates\services\client_detail.html:129
+#: .\services\models.py:93 .\services\models.py:282
+#: .\services\templates\services\client_detail.html:104
+#: .\services\templates\services\residenceauthorization_detail.html:5
 #: .\services\templates\services\tools.html:34
 msgid "Residence authorization"
 msgstr "Autorización de residencia"
 
-#: .\services\models.py:80 .\services\templates\services\client_detail.html:25
+#: .\services\models.py:96 .\services\templates\services\client_detail.html:25
 msgid "Status"
 msgstr "Estado"
 
-#: .\services\models.py:83
-#: .\services\templates\services\passport_detail.html:105
-#: .\services\templates\services\privilegedvisa_detail.html:25
+#: .\services\models.py:99
+#: .\services\templates\services\passport_detail.html:78
 #: .\services\templates\services\residentvisa_detail.html:35
 #: .\services\templates\services\studyvisa_detail.html:29
 #: .\services\templates\services\temporaryvisa_detail.html:25
-#: .\services\templates\services\workvisa_detail.html:40
 msgid "Official"
 msgstr "Funcionario"
 
-#: .\services\models.py:131 .\services\templates\services\client_detail.html:78
-msgid "Work visa"
-msgstr "Visa de Trabajo"
-
-#: .\services\models.py:132
-msgid "Privileged visa"
-msgstr "Visa Privilegiada"
-
-#: .\services\models.py:133
-msgid "Resident visa"
-msgstr "Visa de fijación de Residencia"
-
-#: .\services\models.py:134
+#: .\services\models.py:147 .\services\models.py:227
 msgid "Study visa"
 msgstr "Visa de Estudio"
 
-#: .\services\models.py:135
+#: .\services\models.py:148 .\services\models.py:228
 msgid "Medical Treatment visa"
 msgstr "Visa de Tratamiento Médico"
 
-#: .\services\models.py:136
+#: .\services\models.py:149 .\services\models.py:229
 msgid "Temporary stay visa"
 msgstr "Visa de Estancia Temporal"
 
-#: .\services\models.py:137
+#: .\services\models.py:150 .\services\models.py:230
 msgid "Short-term visa"
 msgstr "Visa de corto plazo"
 
-#: .\services\models.py:138
-msgid "Tourist visa"
-msgstr "Visa de turista"
-
-#: .\services\models.py:139
-msgid "Ordinary visa"
-msgstr "Visa ordinaria"
-
-#: .\services\models.py:143
+#: .\services\models.py:154
 #: .\services\templates\services\extensionvisa_detail.html:21
 msgid "Request type"
 msgstr "Tipo de pedido"
 
-#: .\services\models.py:145
-#: .\services\templates\services\visa_detail_template.html:34
-msgid "Place of birth"
-msgstr "Lugar de Nacimiento"
-
-#: .\services\models.py:146
-#: .\services\templates\services\visa_detail_template.html:37
-msgid "Birth country"
-msgstr "País de Nacimiento"
-
-#: .\services\models.py:147
-msgid "Origin nationality"
-msgstr "Nacionalidad de origen"
-
-#: .\services\models.py:148
-#: .\services\templates\services\visa_detail_template.html:43
-msgid "Current nationality"
-msgstr "Nacionalidad actual"
-
-#: .\services\models.py:150 .\services\models.py:293
-#: .\services\templates\services\passport_detail.html:119
+#: .\services\models.py:157 .\services\models.py:272
+#: .\services\templates\services\passport_detail.html:87
 #: .\services\templates\services\status_service.html:64
 #: .\services\templates\services\status_service.html:68
 #: .\services\templates\services\visa_detail_template.html:46
 msgid "Passport No."
 msgstr "No. de pasaporte"
 
-#: .\services\models.py:151
+#: .\services\models.py:158
 #: .\services\templates\services\visa_detail_template.html:49
 #, fuzzy
 #| msgid "Passport issuance date"
 msgid "Passport issuance place"
 msgstr "Fecha de emisión de pasaporte"
 
-#: .\services\models.py:152
+#: .\services\models.py:159
 #: .\services\templates\services\visa_detail_template.html:52
 msgid "Passport issuance date"
 msgstr "Fecha de emisión de pasaporte"
 
-#: .\services\models.py:153
+#: .\services\models.py:160
 #: .\services\templates\services\visa_detail_template.html:55
 msgid "Passport expiration date"
 msgstr "Fecha de expiración del pasaporte"
 
-#: .\services\models.py:155 .\services\models.py:296
-#: .\services\templates\services\visa_detail_template.html:97
-msgid "Father nationality"
-msgstr "Nacionalidad del Padre"
-
-#: .\services\models.py:156 .\services\models.py:297
-#: .\services\templates\services\visa_detail_template.html:103
-msgid "Mother nationality"
-msgstr "Nacionalidad de la Madre"
-
-#: .\services\models.py:157
+#: .\services\models.py:162
 #: .\services\templates\services\visa_detail_template.html:111
 msgid "Lodging"
 msgstr "Alojamiento"
 
-#: .\services\models.py:158
+#: .\services\models.py:163
 msgid "City lodging"
 msgstr "Ciudad"
 
-#: .\services\models.py:159
+#: .\services\models.py:164
 msgid "Street lodging"
 msgstr "Calle"
 
-#: .\services\models.py:160
+#: .\services\models.py:165
 msgid "Lodging house No."
 msgstr "Casa No"
 
-#: .\services\models.py:161
+#: .\services\models.py:166
 msgid "Last entry angola date"
 msgstr "Fecha de la última entrda en Angola"
 
-#: .\services\models.py:162
+#: .\services\models.py:167
 msgid "Frontier used"
 msgstr "Frontera utilizada"
 
-#: .\services\models.py:163 .\services\templates\services\tools.html:62
-#: .\services\templates\services\tools.html:99
+#: .\services\models.py:168 .\services\templates\services\tools.html:363
+#: .\services\templates\services\tools.html:407
 #: .\services\templates\services\visa_detail_template.html:10
 #: .\services\templates\services\visa_detail_template.html:132
 msgid "Visa expiration date"
 msgstr "Fecha de expiración de visa"
 
-#: .\services\models.py:167
+#: .\services\models.py:172
 msgid "Visas"
 msgstr "Visas"
 
-#: .\services\models.py:175
-#: .\services\templates\services\workvisa_detail.html:19
-msgid "Organism name"
-msgstr "Nombre de la Persona o Organismo responsable"
-
-#: .\services\models.py:176
-#: .\services\templates\services\workvisa_detail.html:22
-msgid "Organism address"
-msgstr "Dirección del organismo"
-
-#: .\services\models.py:177
-msgid "Funtion"
-msgstr "Función"
-
-#: .\services\models.py:178
-#: .\services\templates\services\workvisa_detail.html:28
-msgid "Init contract date"
-msgstr "Fecha de contratación inicial"
-
-#: .\services\models.py:179
-#: .\services\templates\services\workvisa_detail.html:31
-msgid "End contract date"
-msgstr "Fecha de finalización del contrato"
-
-#: .\services\models.py:180
-#: .\services\templates\services\workvisa_detail.html:34
-msgid "Entity name"
-msgstr "Nombre de entidad"
-
-#: .\services\models.py:181
-#: .\services\templates\services\workvisa_detail.html:37
-msgid "Entity address"
-msgstr "Dirección de la entidad"
-
-#: .\services\models.py:187 .\services\models.py:249
+#: .\services\models.py:181 .\services\models.py:209
 msgid "Public"
 msgstr "Publico"
 
-#: .\services\models.py:188 .\services\models.py:248
+#: .\services\models.py:182 .\services\models.py:208
 msgid "Private"
 msgstr "Privado"
 
-#: .\services\models.py:190
+#: .\services\models.py:184
 #: .\services\templates\services\medicaltreatmentvisa_detail.html:16
 msgid "Unity medical name"
 msgstr "Nombre de la Uniddad Médica"
 
-#: .\services\models.py:191
+#: .\services\models.py:185
 msgid "Unity type"
 msgstr "Tipo de Unidad"
 
-#: .\services\models.py:192
+#: .\services\models.py:186
 #: .\services\templates\services\medicaltreatmentvisa_detail.html:22
 msgid "Date init treatment"
 msgstr "Fecha de inicio del tratamiento"
 
-#: .\services\models.py:193
+#: .\services\models.py:187
 #: .\services\templates\services\medicaltreatmentvisa_detail.html:25
 msgid "Date end treatment"
 msgstr "Fecha de fin Tratamiento"
 
-#: .\services\models.py:198 .\services\models.py:228
+#: .\services\models.py:193
+msgid "Humanitarian reason"
+msgstr "Razon humanitaria"
+
+#: .\services\models.py:194
+msgid "Mission in favor of a religious institution"
+msgstr "Misión a favor de una institución religiosa."
+
+#: .\services\models.py:195
+msgid "Carrying out scientific research"
+msgstr "Llevando a cabo investigaciones científicas."
+
+#: .\services\models.py:196
+msgid "Family Accompaniment"
+msgstr "Acompañamiento familiar"
+
+#: .\services\models.py:197
+msgid "Familiar with a valid residence permit holder"
+msgstr "Familiarizado con un titular de permiso de residencia válido"
+
+#: .\services\models.py:198
+msgid "Spouse of national citizen"
+msgstr "Cónyuge de ciudadano nacional"
+
+#: .\services\models.py:200
 #: .\services\templates\services\residentvisa_detail.html:16
 msgid "Reason"
 msgstr "Razón"
 
-#: .\services\models.py:200
-msgid "Temporary"
-msgstr "Temporal"
-
-#: .\services\models.py:201 .\services\models.py:276
-msgid "Permanent"
-msgstr "Permanente"
-
-#: .\services\models.py:203
-msgid "Type residence"
-msgstr "Tipo de Residencia"
-
-#: .\services\models.py:205
-msgid "Yes"
-msgstr "Sí"
-
-#: .\services\models.py:206
-msgid "No"
-msgstr "No"
-
-#: .\services\models.py:207
-msgid "Wife"
-msgstr "Esposa"
-
-#: .\services\models.py:208
-msgid "Husband"
-msgstr "Marido"
-
-#: .\services\models.py:209
-msgid "Children"
-msgstr "Niños"
-
-#: .\services\models.py:210
-msgid "Others"
-msgstr "Otros"
-
-#: .\services\models.py:212
-msgid "Live with a familiar"
-msgstr "Vive con un familiar"
-
-#: .\services\models.py:213
-msgid "Familiars"
-msgstr "Familiares"
-
-#: .\services\models.py:214 .\services\models.py:229
+#: .\services\models.py:201
 #: .\services\templates\services\residentvisa_detail.html:28
 #: .\services\templates\services\temporaryvisa_detail.html:19
 msgid "Subsistence"
 msgstr "Subsistencia"
 
-#: .\services\models.py:215
-msgid "Address angola"
-msgstr "Dirección en angola"
-
-#: .\services\models.py:221
-msgid "Humanitarian reason"
-msgstr "Razon humanitaria"
-
-#: .\services\models.py:222
-msgid "Mission in favor of a religious institution"
-msgstr "Misión a favor de una institución religiosa."
-
-#: .\services\models.py:223
-msgid "Carrying out scientific research"
-msgstr "Llevando a cabo investigaciones científicas."
-
-#: .\services\models.py:224
-msgid "Family Accompaniment"
-msgstr "Acompañamiento familiar"
-
-#: .\services\models.py:225
-msgid "Familiar with a valid residence permit holder"
-msgstr "Familiarizado con un titular de permiso de residencia válido"
-
-#: .\services\models.py:226
-msgid "Spouse of national citizen"
-msgstr "Cónyuge de ciudadano nacional"
-
-#: .\services\models.py:230 .\services\models.py:242
+#: .\services\models.py:202
 msgid "address angola"
 msgstr "Dirección en angola"
 
-#: .\services\models.py:235
-msgid "Research company"
-msgstr "Compañía de investigación"
-
-#: .\services\models.py:237
-msgid "Research"
-msgstr "Investigador"
-
-#: .\services\models.py:238
-msgid "Represent"
-msgstr "representante"
-
-#: .\services\models.py:239
-msgid "Procurator"
-msgstr "Procurador"
-
-#: .\services\models.py:241
-msgid "Condition"
-msgstr "Condición"
-
-#: .\services\models.py:250
+#: .\services\models.py:210
 msgid "Professional training to obtain an academic or professional degree"
 msgstr "Formación profesional para obtener un título académico o profesional."
 
-#: .\services\models.py:253
+#: .\services\models.py:213
 msgid "Private companies"
 msgstr "Compañías privadas"
 
-#: .\services\models.py:254
+#: .\services\models.py:214
 msgid "Public companies"
 msgstr "Empresas públicas"
 
-#: .\services\models.py:256
+#: .\services\models.py:216
 msgid "Study program"
 msgstr "Programa de estudio"
 
-#: .\services\models.py:257
+#: .\services\models.py:217
 #: .\services\templates\services\studyvisa_detail.html:20
 msgid "Init date"
 msgstr "Fecha de Inicio"
 
-#: .\services\models.py:258
+#: .\services\models.py:218
 #: .\services\templates\services\studyvisa_detail.html:23
 msgid "End date"
 msgstr "Fecha del Final"
 
-#: .\services\models.py:259
+#: .\services\models.py:219
 msgid "internships in"
 msgstr "pasantías en"
 
-#: .\services\models.py:263
+#: .\services\models.py:224
+msgid "Work visa"
+msgstr "Visa de Trabajo"
+
+#: .\services\models.py:225
+msgid "Privileged visa"
+msgstr "Visa Privilegiada"
+
+#: .\services\models.py:226
+msgid "Resident visa"
+msgstr "Visa de fijación de Residencia"
+
+#: .\services\models.py:231
+msgid "Tourist visa"
+msgstr "Visa de turista"
+
+#: .\services\models.py:232
+msgid "Ordinary visa"
+msgstr "Visa ordinaria"
+
+#: .\services\models.py:234 .\services\models.py:268
+#: .\services\templates\services\residenceauthorization_detail.html:21
+msgid "Extension type"
+msgstr "Tipo de extensión"
+
+#: .\services\models.py:236
 msgid "Visa No."
 msgstr "No. de visa"
 
-#: .\services\models.py:264
+#: .\services\models.py:237
 msgid "Valid date"
 msgstr "Fecha válida hasta"
 
-#: .\services\models.py:265
+#: .\services\models.py:238
 msgid "Reason extension"
 msgstr "Razón de la Prorroga"
 
-#: .\services\models.py:266
-msgid "Number of days of extension"
-msgstr "Número de días de prórroga"
+#: .\services\models.py:240
+#: .\services\templates\services\status_service.html:39
+msgid "Name"
+msgstr "Nombre"
 
-#: .\services\models.py:269
+#: .\services\models.py:242
+#: .\services\templates\services\visa_detail_template.html:114
+msgid "City"
+msgstr ""
+
+#: .\services\models.py:244
+#, fuzzy
+#| msgid "Street"
+msgid "Street No."
+msgstr "Calle"
+
+#: .\services\models.py:246
+#: .\services\templates\services\client_detail_template.html:105
+#: .\services\templates\services\visa_detail_template.html:91
+msgid "Phone"
+msgstr "Teléfono"
+
+#: .\services\models.py:250
 #, fuzzy
 #| msgid "Remission type"
 msgid "extension of "
 msgstr "Tipo de remisión"
 
-#: .\services\models.py:274
+#: .\services\models.py:255
 msgid "Temporary type A"
 msgstr "Tipo temporal A"
 
-#: .\services\models.py:275
+#: .\services\models.py:256
 msgid "Temporary type B"
 msgstr "Tipo temporal B"
 
-#: .\services\models.py:277 .\services\models.py:311
+#: .\services\models.py:257
+msgid "Permanent"
+msgstr "Permanente"
+
+#: .\services\models.py:258 .\services\models.py:293
 msgid "Emission"
 msgstr "Emisión"
 
-#: .\services\models.py:278
+#: .\services\models.py:259
 msgid "Extension"
 msgstr "Prorroga"
 
-#: .\services\models.py:281 .\services\models.py:315
+#: .\services\models.py:262 .\services\models.py:297
 msgid "Bad conservation"
 msgstr "Mala conservacion"
 
-#: .\services\models.py:282 .\services\models.py:316
+#: .\services\models.py:263 .\services\models.py:298
 msgid "Lost/Theft"
 msgstr "Perdido / robo"
 
-#: .\services\models.py:283 .\services\models.py:318
+#: .\services\models.py:264 .\services\models.py:300
 msgid "Expiration"
 msgstr "Fecha de Vencimiento"
 
-#: .\services\models.py:286
+#: .\services\models.py:267
+#: .\services\templates\services\residenceauthorization_detail.html:18
 msgid "Type request"
 msgstr "Tipo de solicitud"
 
-#: .\services\models.py:287
-msgid "Extension type"
-msgstr "Tipo de extensión"
-
-#: .\services\models.py:289 .\services\models.py:334
-#: .\services\templates\services\passport_detail.html:70
+#: .\services\models.py:270 .\services\models.py:317
+#: .\services\templates\services\passport_detail.html:64
+#: .\services\templates\services\residenceauthorization_detail.html:24
 msgid "Observations"
 msgstr "Observaciones"
 
-#: .\services\models.py:291
-msgid "Naturalness"
-msgstr "Naturalidad"
-
-#: .\services\models.py:292
-#: .\services\templates\services\visa_detail_template.html:40
-msgid "Nationality"
-msgstr "Nacionalidad"
-
-#: .\services\models.py:294 .\services\models.py:347
-#: .\services\templates\services\passport_detail.html:122
+#: .\services\models.py:273 .\services\models.py:322
+#: .\services\templates\services\passport_detail.html:90
+#: .\services\templates\services\residenceauthorization_detail.html:30
 msgid "Passport issued in"
 msgstr "Pasaporte emitido en"
 
-#: .\services\models.py:295
+#: .\services\models.py:274
 msgid "Date of issuance of passport"
 msgstr "Fecha de expedición del pasaporte."
 
-#: .\services\models.py:299
+#: .\services\models.py:276
+#: .\services\templates\services\residenceauthorization_detail.html:39
 msgid "Location"
 msgstr "Localización"
 
-#: .\services\models.py:300 .\services\models.py:302 .\services\models.py:327
-#: .\services\models.py:344
-#: .\services\templates\services\passport_detail.html:49
+#: .\services\models.py:277 .\services\models.py:279 .\services\models.py:310
+#: .\services\models.py:319
+#: .\services\templates\services\passport_detail.html:43
+#: .\services\templates\services\residenceauthorization_detail.html:40
+#: .\services\templates\services\residenceauthorization_detail.html:44
 msgid "Date"
 msgstr "Fecha"
 
-#: .\services\models.py:306
+#: .\services\models.py:283
 msgid "Authorization of residences"
 msgstr "Autorización de residencias."
 
-#: .\services\models.py:312
+#: .\services\models.py:288
+#, fuzzy
+#| msgid "Ordinary visa"
+msgid "Ordinary"
+msgstr "Visa ordinaria"
+
+#: .\services\models.py:289
+msgid "Service"
+msgstr "Servicio"
+
+#: .\services\models.py:290
+msgid "Foreigner"
+msgstr ""
+
+#: .\services\models.py:294
 msgid "Remission"
 msgstr "Remisión"
 
-#: .\services\models.py:317
+#: .\services\models.py:299
 msgid "Page exhaustion"
 msgstr "Agotamiento de la página"
 
-#: .\services\models.py:321
+#: .\services\models.py:303
 #: .\services\templates\services\passport_confirm_delete.html:19
 #: .\services\templates\services\passport_detail.html:25
 msgid "Passport type"
 msgstr "Tipo de pasaporte"
 
-#: .\services\models.py:322
+#: .\services\models.py:304
 #: .\services\templates\services\passport_detail.html:28
+#, fuzzy
+#| msgid "Unity type"
+msgid "Act type"
+msgstr "Tipo de Unidad"
+
+#: .\services\models.py:305
+#: .\services\templates\services\passport_detail.html:31
 msgid "Remission type"
 msgstr "Tipo de remisión"
 
-#: .\services\models.py:325
+#: .\services\models.py:308
 #: .\services\templates\services\passport_detail.html:40
-#: .\services\templates\services\passport_detail.html:55
-#: .\services\templates\services\passport_detail.html:64
-msgid "Issued in"
-msgstr "Emitido en"
+#, fuzzy
+#| msgid "Identity card issued in"
+msgid "Birth certificate issued in"
+msgstr "Carnet de identidad emetido en"
 
-#: .\services\models.py:328
-msgid "Cédula pessoal"
-msgstr "Cedula Personal"
+#: .\services\models.py:311
+msgid "Personal No."
+msgstr "No. personal"
 
-#: .\services\models.py:329
-msgid "Indentity card issued in"
-msgstr "Carnet de identidad emitida en"
+#: .\services\models.py:312
+#, fuzzy
+#| msgid "Personal No."
+msgid "Personal No. issued in"
+msgstr "No. personal"
 
-#: .\services\models.py:330
+#: .\services\models.py:313
 msgid "Date of cédula pessoal issue"
 msgstr "Fecha de emisión de la cédula."
 
-#: .\services\models.py:331 .\services\templates\services\client_list.html:20
-#: .\services\templates\services\passport_detail.html:43
-#: .\services\templates\services\tools.html:389
+#: .\services\models.py:314 .\services\templates\services\client_list.html:20
+#: .\services\templates\services\tools.html:318
 msgid "Identity card"
 msgstr "Carnet de identidad"
 
-#: .\services\models.py:332
+#: .\services\models.py:315
 msgid "Identity card issued in"
 msgstr "Carnet de identidad emetido en"
 
-#: .\services\models.py:333
-#: .\services\templates\services\passport_detail.html:67
+#: .\services\models.py:316
+#: .\services\templates\services\passport_detail.html:61
 msgid "Spouse"
 msgstr ""
 
-#: .\services\models.py:346
+#: .\services\models.py:321
 #, fuzzy
 #| msgid "Passport No."
 msgid "Pasport No."
 msgstr "No. de pasaporte"
 
-#: .\services\models.py:348
-#: .\services\templates\services\passport_detail.html:125
+#: .\services\models.py:323
+#: .\services\templates\services\passport_detail.html:93
 #, fuzzy
 #| msgid "Delete passport"
 msgid "Date issue passport"
 msgstr "Eliminar pasaporte"
 
-#: .\services\models.py:351
+#: .\services\models.py:326
 msgid "passport"
 msgstr "Pasaporte"
 
-#: .\services\models.py:352
+#: .\services\models.py:327
 msgid "passports"
 msgstr "Pasaportes"
 
 #: .\services\templates\services\client_confirm_delete.html:4
+#: .\services\templates\services\residenceauthorization_confirm_delete.html:4
 #, python-format
 msgid "Delete client %(client)s"
 msgstr "Eliminar cliente %(client)s"
@@ -764,19 +691,18 @@ msgid "Are you sure to delete the client %(client)s from the system?"
 msgstr "¿Estás seguro de eliminar al cliente %(client)s del sistema?"
 
 #: .\services\templates\services\client_confirm_delete.html:18
-#: .\services\templates\services\extensionvisa_form.html:58
+#: .\services\templates\services\extensionvisa_form.html:105
 #: .\services\templates\services\medicaltreatmentvisa_form.html:35
 #: .\services\templates\services\passport_confirm_delete.html:26
-#: .\services\templates\services\passport_form.html:153
-#: .\services\templates\services\privilegedvisa_form.html:33
+#: .\services\templates\services\passport_form.html:108
 #: .\services\templates\services\residence_form.html:105
+#: .\services\templates\services\residenceauthorization_confirm_delete.html:19
 #: .\services\templates\services\residentvisa_form.html:49
 #: .\services\templates\services\status_service.html:34
 #: .\services\templates\services\studyvisa_form.html:29
 #: .\services\templates\services\temporaryvisa_form.html:33
 #: .\services\templates\services\visa_confirm_delete.html:24
 #: .\services\templates\services\visa_form.html:140
-#: .\services\templates\services\workvisa_form.html:60
 msgid "Accept"
 msgstr "Aceptar"
 
@@ -790,9 +716,9 @@ msgid "Migratory acts"
 msgstr "Actos migratorios"
 
 #: .\services\templates\services\client_detail.html:24
-#: .\services\templates\services\tools.html:60
-#: .\services\templates\services\tools.html:97
-#: .\services\templates\services\tools.html:142
+#: .\services\templates\services\tools.html:82
+#: .\services\templates\services\tools.html:361
+#: .\services\templates\services\tools.html:405
 msgid "Type"
 msgstr "Tipo"
 
@@ -801,14 +727,14 @@ msgid "No requested services found"
 msgstr "No se ha encontrado ninguna petición de servicio"
 
 #: .\services\templates\services\client_detail.html:53
-#: .\services\templates\services\passport_detail.html:136
+#: .\services\templates\services\passport_detail.html:104
 #: .\services\templates\services\visa_detail.html:18
 #: .\services\templates\services\visa_edit_template.html:9
 msgid "Update"
 msgstr "Actualizar"
 
 #: .\services\templates\services\client_detail.html:54
-#: .\services\templates\services\passport_detail.html:138
+#: .\services\templates\services\passport_detail.html:106
 #: .\services\templates\services\visa_detail.html:20
 #: .\services\templates\services\visa_edit_template.html:11
 msgid "Delete"
@@ -819,55 +745,31 @@ msgstr "Eliminar"
 msgid "Add service"
 msgstr "Añadir servicio"
 
-#: .\services\templates\services\client_detail.html:83
+#: .\services\templates\services\client_detail.html:78
 #, fuzzy
 #| msgid "Visa for a client"
 msgid "Medical Visa"
 msgstr "Visa para un cliente"
 
-#: .\services\templates\services\client_detail.html:88
-#, fuzzy
-#| msgid "Resident visa"
-msgid "Resident Visa"
-msgstr "Visa de fijación de Residencia"
-
-#: .\services\templates\services\client_detail.html:93
+#: .\services\templates\services\client_detail.html:83
 #, fuzzy
 #| msgid "Temporary stay visa"
 msgid "Temporary Visa"
 msgstr "Visa de Estancia Temporal"
 
-#: .\services\templates\services\client_detail.html:98
-#, fuzzy
-#| msgid "Privileged visa"
-msgid "Privileged Visa"
-msgstr "Visa Privilegiada"
-
-#: .\services\templates\services\client_detail.html:103
+#: .\services\templates\services\client_detail.html:88
 #, fuzzy
 #| msgid "Study visa"
 msgid "Study Visa"
 msgstr "Visa de Estudio"
 
-#: .\services\templates\services\client_detail.html:108
+#: .\services\templates\services\client_detail.html:93
 #, fuzzy
 #| msgid "Short-term visa"
 msgid "Short-term Visa"
 msgstr "Visa de corto plazo"
 
-#: .\services\templates\services\client_detail.html:113
-#, fuzzy
-#| msgid "Tourist visa"
-msgid "Tourist Visa"
-msgstr "Visa de turista"
-
-#: .\services\templates\services\client_detail.html:118
-#, fuzzy
-#| msgid "Ordinary visa"
-msgid "Ordinary Visa"
-msgstr "Visa ordinaria"
-
-#: .\services\templates\services\client_detail.html:123
+#: .\services\templates\services\client_detail.html:98
 #, fuzzy
 #| msgid "Visa Extension"
 msgid "Visa extension"
@@ -885,23 +787,24 @@ msgstr "Nombre del padre"
 msgid "Mother's name"
 msgstr "Nombre de la madre"
 
-#: .\services\templates\services\client_detail_template.html:34
+#: .\services\templates\services\client_detail_template.html:42
+#, fuzzy
+#| msgid "Address"
+msgid "Client's birth address"
+msgstr "Dirección"
+
+#: .\services\templates\services\client_detail_template.html:65
 msgid "Address"
 msgstr "Dirección"
 
-#: .\services\templates\services\client_detail_template.html:64
-#: .\services\templates\services\client_form.html:54
+#: .\services\templates\services\client_detail_template.html:88
+#: .\services\templates\services\client_form.html:48
 #, fuzzy
 #| msgid "Work visa"
 msgid "Work data"
 msgstr "Visa de trabajo"
 
-#: .\services\templates\services\client_detail_template.html:81
-#: .\services\templates\services\visa_detail_template.html:91
-msgid "Phone"
-msgstr "Teléfono"
-
-#: .\services\templates\services\client_detail_template.html:91
+#: .\services\templates\services\client_detail_template.html:115
 #, fuzzy
 #| msgid "Data attachment"
 msgid "Download data attachment"
@@ -916,11 +819,17 @@ msgstr "Añadir cliente"
 msgid "Personal data"
 msgstr "Datos personales"
 
-#: .\services\templates\services\client_form.html:73
+#: .\services\templates\services\client_form.html:91
 msgid "Filiation"
 msgstr "Filiación"
 
-#: .\services\templates\services\client_form.html:102
+#: .\services\templates\services\client_form.html:147
+#, fuzzy
+#| msgid "Address"
+msgid "Birth address"
+msgstr "Dirección"
+
+#: .\services\templates\services\client_form.html:187
 #: .\services\templates\services\visa_detail_template.html:67
 msgid "Current address"
 msgstr ""
@@ -966,15 +875,17 @@ msgstr "Eliminar visa"
 
 #: .\services\templates\services\extensionvisa_form.html:5
 #: .\services\templates\services\medicaltreatmentvisa_form.html:5
-#: .\services\templates\services\privilegedvisa_form.html:5
 #: .\services\templates\services\residentvisa_form.html:5
 #: .\services\templates\services\studyvisa_form.html:5
 #: .\services\templates\services\temporaryvisa_form.html:5
-#: .\services\templates\services\workvisa_form.html:5
 #, fuzzy
 #| msgid "Study visa"
 msgid "Add visa"
 msgstr "Visa de estudio"
+
+#: .\services\templates\services\extensionvisa_form.html:34
+msgid "Person or responsible body"
+msgstr ""
 
 #: .\services\templates\services\index.html:6
 msgid "Home"
@@ -1096,97 +1007,61 @@ msgid "Passport request"
 msgstr "Petición de pasaporte"
 
 #: .\services\templates\services\passport_detail.html:20
-msgid "Passport details"
-msgstr "Detalle del pasaporte"
+#, fuzzy
+#| msgid "Migratory acts"
+msgid "Migratory acts data"
+msgstr "Actos migratorios"
 
-#: .\services\templates\services\passport_detail.html:31
+#: .\services\templates\services\passport_detail.html:34
 #, fuzzy
 #| msgid "Passport details"
 msgid "Passport status"
 msgstr "Detalle del pasaporte"
 
-#: .\services\templates\services\passport_detail.html:34
+#: .\services\templates\services\passport_detail.html:37
 #, fuzzy
 #| msgid "Home"
 msgid "Process No."
 msgstr "Inicio"
 
-#: .\services\templates\services\passport_detail.html:37
-#: .\services\templates\services\passport_form.html:76
-msgid "Birth certificate"
-msgstr ""
-
 #: .\services\templates\services\passport_detail.html:46
-#, fuzzy
-#| msgid "Personal data"
-msgid "Personal card"
-msgstr "Datos personales"
-
-#: .\services\templates\services\passport_detail.html:52
 #, fuzzy
 #| msgid "Personal data"
 msgid "Personal ID card"
 msgstr "Datos personales"
 
+#: .\services\templates\services\passport_detail.html:49
 #: .\services\templates\services\passport_detail.html:58
+msgid "Issued in"
+msgstr "Emitido en"
+
+#: .\services\templates\services\passport_detail.html:52
 #, fuzzy
 #| msgid "Delete passport"
 msgid "Date issue"
 msgstr "Eliminar pasaporte"
 
-#: .\services\templates\services\passport_detail.html:61
+#: .\services\templates\services\passport_detail.html:55
 #, fuzzy
 #| msgid "Identity card"
 msgid "Indentity ID card"
 msgstr "Carnet de identidad"
 
-#: .\services\templates\services\passport_detail.html:73
+#: .\services\templates\services\passport_detail.html:69
 #, fuzzy
-#| msgid "Address"
-msgid "Client's birth address"
-msgstr "Dirección"
+#| msgid "Passport type"
+msgid "Passport history"
+msgstr "Tipo de pasaporte"
 
-#: .\services\templates\services\passport_detail.html:99
-#: .\services\templates\services\passport_form.html:133
-msgid "For use of the reception"
-msgstr ""
-
-#: .\services\templates\services\passport_detail.html:102
+#: .\services\templates\services\passport_detail.html:75
 msgid "Date reception"
 msgstr ""
 
-#: .\services\templates\services\passport_detail.html:115
-#: .\services\templates\services\passport_form.html:138
-#: .\services\templates\services\residence_form.html:100
-msgid "For official use"
-msgstr ""
-
-#: .\services\templates\services\passport_form.html:34
+#: .\services\templates\services\passport_form.html:88
 #, fuzzy
-#| msgid "Address"
-msgid "Birth address"
-msgstr "Dirección"
-
-#: .\services\templates\services\privilegedvisa_detail.html:13
-#, fuzzy
-#| msgid "Privileged visa"
-msgid "Privileged visa data"
-msgstr "Visa privilegiada"
-
-#: .\services\templates\services\privilegedvisa_detail.html:16
-msgid "Name of researh company"
-msgstr ""
-
-#: .\services\templates\services\privilegedvisa_detail.html:19
-msgid "Condition of the foreign citizen"
-msgstr ""
-
-#: .\services\templates\services\privilegedvisa_detail.html:22
-#: .\services\templates\services\temporaryvisa_detail.html:22
-#, fuzzy
-#| msgid "Address"
-msgid "Angola address"
-msgstr "Dirección"
+#| msgid "Passport type"
+msgid "Passport History"
+msgstr "Tipo de pasaporte"
 
 #: .\services\templates\services\residence_form.html:15
 #, fuzzy
@@ -1196,7 +1071,6 @@ msgstr "No. de autorización"
 
 #: .\services\templates\services\residence_form.html:42
 #: .\services\templates\services\visa_form.html:23
-#: .\services\templates\services\visa_form_template.html:14
 #, fuzzy
 #| msgid "Client detail"
 msgid "Client data"
@@ -1205,6 +1079,36 @@ msgstr "Detalle del cliente"
 #: .\services\templates\services\residence_form.html:91
 msgid "For non-local use of the reception"
 msgstr ""
+
+#: .\services\templates\services\residence_form.html:100
+msgid "For official use"
+msgstr ""
+
+#: .\services\templates\services\residenceauthorization_confirm_delete.html:12
+#, fuzzy
+#| msgid "Are you sure to delete this residence authorization?"
+msgid ""
+"Are you sure to delete this residence authorization from the\n"
+"                        system?"
+msgstr "¿Estás seguro de eliminar esta autorización de residencia?"
+
+#: .\services\templates\services\residenceauthorization_detail.html:14
+#, fuzzy
+#| msgid "Residence authorization"
+msgid "Residence authorization data"
+msgstr "Autorización de residencia"
+
+#: .\services\templates\services\residenceauthorization_detail.html:27
+#, fuzzy
+#| msgid "Passport No."
+msgid "passport No."
+msgstr "No. de pasaporte"
+
+#: .\services\templates\services\residenceauthorization_detail.html:33
+#, fuzzy
+#| msgid "Delete passport"
+msgid "Date issuance Passport"
+msgstr "Eliminar pasaporte"
 
 #: .\services\templates\services\residentvisa_detail.html:13
 #, fuzzy
@@ -1243,10 +1147,6 @@ msgstr "Buscar estado"
 #: .\services\templates\services\status_service.html:29
 msgid "Search"
 msgstr "Buscar"
-
-#: .\services\templates\services\status_service.html:39
-msgid "Name"
-msgstr "Nombre"
 
 #: .\services\templates\services\status_service.html:40
 msgid "Passport number"
@@ -1290,6 +1190,12 @@ msgstr "Visa de estancia temporal"
 msgid "intends to remain in Angola based on the following"
 msgstr ""
 
+#: .\services\templates\services\temporaryvisa_detail.html:22
+#, fuzzy
+#| msgid "Address"
+msgid "Angola address"
+msgstr "Dirección"
+
 #: .\services\templates\services\tools.html:6
 msgid "Tools"
 msgstr "Herramientas"
@@ -1310,135 +1216,112 @@ msgstr ""
 msgid "Passport for a client"
 msgstr "Pasaporte para un cliente"
 
-#: .\services\templates\services\tools.html:51
+#: .\services\templates\services\tools.html:49
+#: .\services\templates\services\tools.html:256
+msgid "Search foreigner"
+msgstr ""
+
+#: .\services\templates\services\tools.html:56
 #, fuzzy
 #| msgid "Visa"
 msgid "Visa to expire"
 msgstr "Visa"
 
-#: .\services\templates\services\tools.html:61
-#: .\services\templates\services\tools.html:98
-#: .\services\templates\services\tools.html:143
-msgid "Client's name"
-msgstr "nombre del cliente"
-
-#: .\services\templates\services\tools.html:88
+#: .\services\templates\services\tools.html:63
+#: .\services\templates\services\tools.html:394
 #, fuzzy
 #| msgid "Expire date"
-msgid "Expired visas"
+msgid "Expired visa"
 msgstr "Fecha de expiración"
 
-#: .\services\templates\services\tools.html:125
-#: .\services\templates\services\tools.html:327
-msgid "Search foreigner"
-msgstr ""
-
-#: .\services\templates\services\tools.html:130
-#: .\services\templates\services\tools.html:374
+#: .\services\templates\services\tools.html:70
+#: .\services\templates\services\tools.html:303
 #, fuzzy
 #| msgid "Father nationality"
 msgid "Search national"
 msgstr "Nacionalidad del Padre"
 
-#: .\services\templates\services\tools.html:135
+#: .\services\templates\services\tools.html:75
 msgid "Services Request's List"
 msgstr "Listado de petición de servicios"
 
-#: .\services\templates\services\tools.html:144
+#: .\services\templates\services\tools.html:83
+#: .\services\templates\services\tools.html:362
+#: .\services\templates\services\tools.html:406
+msgid "Client's name"
+msgstr "nombre del cliente"
+
+#: .\services\templates\services\tools.html:84
 msgid "State"
 msgstr "Estado"
 
-#: .\services\templates\services\tools.html:145
+#: .\services\templates\services\tools.html:85
 msgid "Actions"
 msgstr "Acciones"
 
-#: .\services\templates\services\tools.html:242
+#: .\services\templates\services\tools.html:196
 msgid "Has no service created yet"
 msgstr "No hay ningún servicio todavía"
 
-#: .\services\templates\services\tools.html:258
+#: .\services\templates\services\tools.html:212
 #, fuzzy
 #| msgid "Visas"
 msgid "Visa types"
 msgstr "Visas"
 
-#: .\services\templates\services\tools.html:269
-#, fuzzy
-#| msgid "Visa for a client"
-msgid "Work visa for a client"
-msgstr "Visa para un cliente"
-
-#: .\services\templates\services\tools.html:274
+#: .\services\templates\services\tools.html:223
 #, fuzzy
 #| msgid "Visa for a client"
 msgid "Medical Visa for a client"
 msgstr "Visa para un cliente"
 
-#: .\services\templates\services\tools.html:279
-#, fuzzy
-#| msgid "Visa for a client"
-msgid "Resident Visa for a client"
-msgstr "Visa para un cliente"
-
-#: .\services\templates\services\tools.html:284
+#: .\services\templates\services\tools.html:228
 #, fuzzy
 #| msgid "Visa for a client"
 msgid "Temporary Visa for a client"
 msgstr "Visa para un cliente"
 
-#: .\services\templates\services\tools.html:289
-#, fuzzy
-#| msgid "Visa for a client"
-msgid "Privileged Visa for a client"
-msgstr "Visa para un cliente"
-
-#: .\services\templates\services\tools.html:294
+#: .\services\templates\services\tools.html:233
 #, fuzzy
 #| msgid "Visa for a client"
 msgid "Study Visa for a client"
 msgstr "Visa para un cliente"
 
-#: .\services\templates\services\tools.html:299
+#: .\services\templates\services\tools.html:238
 #, fuzzy
 #| msgid "Visa for a client"
 msgid "Short-term Visa for a client"
 msgstr "Visa para un cliente"
 
-#: .\services\templates\services\tools.html:304
-#, fuzzy
-#| msgid "Visa for a client"
-msgid "Tourist Visa for a client"
-msgstr "Visa para un cliente"
-
-#: .\services\templates\services\tools.html:309
-#, fuzzy
-#| msgid "Visa for a client"
-msgid "Ordinary Visa for a client"
-msgstr "Visa para un cliente"
-
-#: .\services\templates\services\tools.html:335
-#: .\services\templates\services\tools.html:382
+#: .\services\templates\services\tools.html:264
+#: .\services\templates\services\tools.html:311
 msgid "Export to excel"
 msgstr ""
 
-#: .\services\templates\services\tools.html:341
-#: .\services\templates\services\tools.html:388
+#: .\services\templates\services\tools.html:270
+#: .\services\templates\services\tools.html:317
 #, fuzzy
 #| msgid "Client's name"
 msgid "Client name"
 msgstr "nombre del cliente"
 
-#: .\services\templates\services\tools.html:342
+#: .\services\templates\services\tools.html:271
 #, fuzzy
 #| msgid "Entity name"
 msgid "Company name"
 msgstr "Nombre de entidad"
 
-#: .\services\templates\services\tools.html:345
+#: .\services\templates\services\tools.html:274
 #, fuzzy
 #| msgid "Lodging"
 msgid "lodging"
 msgstr "Alojamiento"
+
+#: .\services\templates\services\tools.html:350
+#, fuzzy
+#| msgid "Visa"
+msgid "Visas to expire"
+msgstr "Visa"
 
 #: .\services\templates\services\visa_confirm_delete.html:5
 msgid "Delete visa"
@@ -1470,15 +1353,23 @@ msgstr "Detalle del cliente"
 msgid "Visa type"
 msgstr "Visa"
 
+#: .\services\templates\services\visa_detail_template.html:34
+msgid "Place of birth"
+msgstr "Lugar de Nacimiento"
+
+#: .\services\templates\services\visa_detail_template.html:37
+msgid "Birth country"
+msgstr "País de Nacimiento"
+
+#: .\services\templates\services\visa_detail_template.html:40
+msgid "Nationality"
+msgstr "Nacionalidad"
+
 #: .\services\templates\services\visa_detail_template.html:107
 #, fuzzy
 #| msgid "Address"
 msgid "Lodging address"
 msgstr "Dirección"
-
-#: .\services\templates\services\visa_detail_template.html:114
-msgid "City"
-msgstr ""
 
 #: .\services\templates\services\visa_detail_template.html:120
 #, fuzzy
@@ -1507,24 +1398,17 @@ msgid "Visa form"
 msgstr "No. de visa"
 
 #: .\services\templates\services\visa_form.html:54
-#: .\services\templates\services\visa_form_template.html:45
+#: .\services\templates\services\visa_form_template.html:22
 #, fuzzy
 #| msgid "Passport details"
 msgid "Passport data"
 msgstr "Detalle del pasaporte"
 
 #: .\services\templates\services\visa_form.html:84
-#: .\services\templates\services\visa_form_template.html:75
 #, fuzzy
 #| msgid "Father name"
 msgid "Other data"
 msgstr "Nombre del padre"
-
-#: .\services\templates\services\workvisa_detail.html:15
-#, fuzzy
-#| msgid "Work visa"
-msgid "Work visa detail"
-msgstr "Visa de trabajo"
 
 #: .\services\validators.py:10
 #, python-format
@@ -1544,13 +1428,160 @@ msgstr "Está en progreso"
 msgid "Has no found any request with %(value)s ci"
 msgstr "No se ha encontrado ninguna petición con el ci %(value)s"
 
-#: .\services\views.py:153
+#: .\services\views.py:149
 msgid "Only can one extension of Temporary stay visa or Tourist Visa!"
 msgstr ""
 
-#: .\services\views.py:157
+#: .\services\views.py:153
 msgid "Only can two extension of Ordinary visa!"
 msgstr ""
+
+#~ msgid "Last name"
+#~ msgstr "Apellidos"
+
+#~ msgid "Organism name"
+#~ msgstr "Nombre de la Persona o Organismo responsable"
+
+#~ msgid "Organism address"
+#~ msgstr "Dirección del organismo"
+
+#~ msgid "Funtion"
+#~ msgstr "Función"
+
+#~ msgid "Init contract date"
+#~ msgstr "Fecha de contratación inicial"
+
+#~ msgid "End contract date"
+#~ msgstr "Fecha de finalización del contrato"
+
+#~ msgid "Entity name"
+#~ msgstr "Nombre de entidad"
+
+#~ msgid "Entity address"
+#~ msgstr "Dirección de la entidad"
+
+#~ msgid "Temporary"
+#~ msgstr "Temporal"
+
+#~ msgid "Type residence"
+#~ msgstr "Tipo de Residencia"
+
+#~ msgid "Yes"
+#~ msgstr "Sí"
+
+#~ msgid "No"
+#~ msgstr "No"
+
+#~ msgid "Wife"
+#~ msgstr "Esposa"
+
+#~ msgid "Husband"
+#~ msgstr "Marido"
+
+#~ msgid "Children"
+#~ msgstr "Niños"
+
+#~ msgid "Others"
+#~ msgstr "Otros"
+
+#~ msgid "Live with a familiar"
+#~ msgstr "Vive con un familiar"
+
+#~ msgid "Familiars"
+#~ msgstr "Familiares"
+
+#~ msgid "Address angola"
+#~ msgstr "Dirección en angola"
+
+#~ msgid "Research company"
+#~ msgstr "Compañía de investigación"
+
+#~ msgid "Research"
+#~ msgstr "Investigador"
+
+#~ msgid "Represent"
+#~ msgstr "representante"
+
+#~ msgid "Procurator"
+#~ msgstr "Procurador"
+
+#~ msgid "Condition"
+#~ msgstr "Condición"
+
+#~ msgid "Number of days of extension"
+#~ msgstr "Número de días de prórroga"
+
+#~ msgid "Naturalness"
+#~ msgstr "Naturalidad"
+
+#~ msgid "Cédula pessoal"
+#~ msgstr "Cedula Personal"
+
+#~ msgid "Indentity card issued in"
+#~ msgstr "Carnet de identidad emitida en"
+
+#, fuzzy
+#~| msgid "Resident visa"
+#~ msgid "Resident Visa"
+#~ msgstr "Visa de fijación de Residencia"
+
+#, fuzzy
+#~| msgid "Privileged visa"
+#~ msgid "Privileged Visa"
+#~ msgstr "Visa Privilegiada"
+
+#, fuzzy
+#~| msgid "Tourist visa"
+#~ msgid "Tourist Visa"
+#~ msgstr "Visa de turista"
+
+#, fuzzy
+#~| msgid "Ordinary visa"
+#~ msgid "Ordinary Visa"
+#~ msgstr "Visa ordinaria"
+
+#~ msgid "Passport details"
+#~ msgstr "Detalle del pasaporte"
+
+#, fuzzy
+#~| msgid "Personal data"
+#~ msgid "Personal card"
+#~ msgstr "Datos personales"
+
+#, fuzzy
+#~| msgid "Privileged visa"
+#~ msgid "Privileged visa data"
+#~ msgstr "Visa privilegiada"
+
+#, fuzzy
+#~| msgid "Visa for a client"
+#~ msgid "Work visa for a client"
+#~ msgstr "Visa para un cliente"
+
+#, fuzzy
+#~| msgid "Visa for a client"
+#~ msgid "Resident Visa for a client"
+#~ msgstr "Visa para un cliente"
+
+#, fuzzy
+#~| msgid "Visa for a client"
+#~ msgid "Privileged Visa for a client"
+#~ msgstr "Visa para un cliente"
+
+#, fuzzy
+#~| msgid "Visa for a client"
+#~ msgid "Tourist Visa for a client"
+#~ msgstr "Visa para un cliente"
+
+#, fuzzy
+#~| msgid "Visa for a client"
+#~ msgid "Ordinary Visa for a client"
+#~ msgstr "Visa para un cliente"
+
+#, fuzzy
+#~| msgid "Work visa"
+#~ msgid "Work visa detail"
+#~ msgstr "Visa de trabajo"
 
 #, fuzzy
 #~| msgid "Reason extension"
@@ -1579,9 +1610,6 @@ msgstr ""
 
 #~ msgid "Emission date"
 #~ msgstr "Fecha de emisión"
-
-#~ msgid "Personal No."
-#~ msgstr "No. personal"
 
 #~ msgid "Remission date"
 #~ msgstr "Fecha de Remisión"
@@ -1639,9 +1667,6 @@ msgstr ""
 #~ msgid "Residences authorization"
 #~ msgstr "Autorización de residencias"
 
-#~ msgid "Service"
-#~ msgstr "Servicio"
-
 #~ msgid "Residence authorization No."
 #~ msgstr "No. de autorización de residencia"
 
@@ -1688,9 +1713,6 @@ msgstr ""
 
 #~ msgid "Delete Residence by Marriage"
 #~ msgstr "Eliminar Residencia por matrimonio"
-
-#~ msgid "Are you sure to delete this residence authorization?"
-#~ msgstr "¿Estás seguro de eliminar esta autorización de residencia?"
 
 #~ msgid "Are you sure to delete this residence by marriage?"
 #~ msgstr "¿Estás seguro de eliminar esta residencia por matrimonio?"
