@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 22:43-0500\n"
+"POT-Creation-Date: 2019-02-04 10:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Título"
 
 #: .\news\models.py:12
 msgid "Content"
-msgstr "Contiudo"
+msgstr "Contiúdo"
 
 #: .\news\models.py:13 .\news\templates\news\news_detail.html:12
 msgid "Publication date"
@@ -82,7 +82,7 @@ msgstr "Excluir Legislaçäo"
 
 #: .\news\templates\news\legislation_confirm_delete.html:12
 msgid "Are you shure to delete this legislation?"
-msgstr "Tens a certeza que desejas excluir este serviço?"
+msgstr "Tens a certeza que desejas excluir esta ficha?"
 
 #: .\news\templates\news\legislation_confirm_delete.html:17
 #: .\news\templates\news\news_confirm_delete.html:20
@@ -134,7 +134,7 @@ msgstr "Ver noticias"
 
 #: .\news\templates\news\organization.html:5
 msgid "Organization Chart"
-msgstr ""
+msgstr "Organigrama"
 
 #: .\news\templates\news\service_confirm_delete.html:5
 msgid "Delete service"
@@ -142,7 +142,7 @@ msgstr "Excluir Servicios"
 
 #: .\news\templates\news\service_confirm_delete.html:12
 msgid "Are you shure to delete this service?"
-msgstr "Tens a certeza que desejas excluir este serviço?"
+msgstr "Tens a certeza que desejas excluir esta ficha?"
 
 #: .\news\templates\news\service_form.html:5
 msgid "Create service"

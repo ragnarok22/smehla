@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 22:43-0500\n"
+"POT-Creation-Date: 2019-02-04 10:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,31 +32,31 @@ msgstr "datas importantes"
 msgid "Others dates"
 msgstr "Outros dados"
 
-#: .\accounts\forms.py:27
+#: .\accounts\forms.py:29
 msgid "Password"
 msgstr "Contra-Senha"
 
-#: .\accounts\forms.py:31
+#: .\accounts\forms.py:33
 msgid "Repeat password"
 msgstr "Repita a Contra-senha"
 
-#: .\accounts\forms.py:50
+#: .\accounts\forms.py:54
 msgid "Passwords don't match"
 msgstr "Contra-Senhas não correspondem"
 
-#: .\accounts\forms.py:82
+#: .\accounts\forms.py:86
 msgid "Old password"
 msgstr "Contra-senha antiga"
 
-#: .\accounts\forms.py:87
+#: .\accounts\forms.py:91
 msgid "New password"
 msgstr "Nova contra-senha"
 
-#: .\accounts\forms.py:93
+#: .\accounts\forms.py:97
 msgid "New password confirmation"
 msgstr "Nova confirmação de Contra-Senha"
 
-#: .\accounts\forms.py:106
+#: .\accounts\forms.py:110
 msgid "{} <{}> send you a email: {}"
 msgstr "{} <{}> te envia um email: {}"
 
@@ -65,10 +65,8 @@ msgid "Profile not found"
 msgstr "Perfil não encontrado"
 
 #: .\accounts\models.py:21
-#, fuzzy
-#| msgid "Functionary of Finance"
 msgid "Functionary of Migratory acts"
-msgstr "Funcionario das Finanças"
+msgstr "Funcionario de Actos Migratorios"
 
 #: .\accounts\models.py:22
 msgid "Functionary of Finance"
@@ -76,7 +74,7 @@ msgstr "Funcionario das Finanças"
 
 #: .\accounts\models.py:23
 msgid "Boss of Migratory acts"
-msgstr ""
+msgstr "Chefe de Actos Migratorios"
 
 #: .\accounts\models.py:24
 msgid "Director"
@@ -311,7 +309,7 @@ msgstr "Gerenciar sistema"
 
 #: .\accounts\templates\navbar.html:184
 msgid "System of emigration and foreign affairs"
-msgstr "Sistema de migração e estrangeiros"
+msgstr "SGI - Serviços de Migração e Estrangeiros Provincial"
 
 #: .\accounts\templates\navbar.html:200
 msgid "Go"
@@ -357,9 +355,3 @@ msgstr "Erro ao enviar sua mensagem"
 #, python-format
 msgid "%(born_date)s is not a correct born date"
 msgstr "%(born_date)s não é uma data correta"
-
-#~ msgid "Functionary of Attention to Customer"
-#~ msgstr "Funcionario de atenção ao Cliente"
-
-#~ msgid "Boss of Departament of Attention to Customer"
-#~ msgstr "Chefe de atenção ao cliente"
