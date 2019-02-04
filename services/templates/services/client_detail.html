@@ -29,7 +29,11 @@
                 {% for service in client.service_set.all %}
                     <tr>
                         {% if service.visa %}
-                            <td>{{ service.visa.get_service_type }}</td>
+                            {% if service.visa.extensionvisa %}
+                                <td>{{ service.visa.extensionvisa.get_extension_type }}</td>
+                            {% else %}
+                                <td>{{ service.visa.get_service_type }}</td>
+                            {% endif %}
                         {% elif service.passport %}
                             <td>{{ service.passport.get_service_type }}</td>
                         {% elif service.residenceauthorization %}
