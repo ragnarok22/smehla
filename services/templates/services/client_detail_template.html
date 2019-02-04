@@ -24,33 +24,29 @@
                 <p>{% trans 'Current nationality' %}: {{ client.current_nationality }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <h4 class="h4">{% trans 'Parents' %}</h4>
-            </div>
-            <div class="col-12 col-md-6">
-                <p>{% trans "Father's name" %}: {{ client.father }}</p>
-            </div>
-            <div class="col-12 col-md-6">
-                <p>{% trans "Father's nationality" %}: {{ client.father_nationality }}</p>
-            </div>
-            <div class="col-12 col-md-6">
-                <p>{% trans "Mother's name" %}: {{ client.mother }}</p>
-            </div>
-            <div class="col-12 col-md-6">
-                <p>{% trans "Mother's nationality" %}: {{ client.mother_nationality }}</p>
-            </div>
-        </div>
     </div>
     <div class="col-lg-4">
         <img src="
-
-
                 {% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
              alt="{{ client.first_name }}" width="150em" height="150em" class="img-thumbnail">
     </div>
 </div>
 <div class="row">
+    <div class="col-12">
+        <h4 class="h4 text-center">{% trans 'Parents' %}</h4>
+    </div>
+    <div class="col-12 col-md-6">
+        <p>{% trans "Father's name" %}: {{ client.father }}</p>
+    </div>
+    <div class="col-12 col-md-6">
+        <p>{% trans "Father's nationality" %}: {{ client.father_nationality }}</p>
+    </div>
+    <div class="col-12 col-md-6">
+        <p>{% trans "Mother's name" %}: {{ client.mother }}</p>
+    </div>
+    <div class="col-12 col-md-6">
+        <p>{% trans "Mother's nationality" %}: {{ client.mother_nationality }}</p>
+    </div>
     <div class="col-12">
         <h4 class="h4 text-center">{% trans "Client's birth address" %}</h4>
     </div>
