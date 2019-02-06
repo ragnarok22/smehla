@@ -166,7 +166,7 @@ class Visa(Service):
     no_lodging_house = models.CharField(_('Lodging house No.'), max_length=5)
     last_entry_angola_date = models.DateField(_('Last entry angola date'))
     frontier = models.CharField(_('Frontier used'), max_length=100)
-    visa_expiration_date = models.DateField(_('Visa expiration date'))
+    visa_expiration_date = models.DateField(_('Visa expiration date'), null=True, blank=True)
 
     class Meta:
         verbose_name = _('Visa')
