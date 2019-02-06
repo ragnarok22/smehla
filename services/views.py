@@ -74,7 +74,10 @@ class SearchStatusServiceView(mixins.NavbarMixin, mixins.AjaxableResponseMixin):
         search = form.search_status()
         if self.request.is_ajax():
             if search.get('data', None) == {}:
-                data = {'message': _('There are not request that correspond with that search')}
+                if self.request.POST.get('request_type') == 'passport':
+                    data = {'message': _('No request made on this Identity card or personal card')}
+                else:
+                    data = {'message': _('No request made on this Passport number')}
             else:
                 data = search
             return JsonResponse(data)
