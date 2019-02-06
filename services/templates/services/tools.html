@@ -188,6 +188,12 @@
                                         </a>
                                     {% endif %}
                                 {% endif %}
+                                {% if service.status == '5' %}
+                                    <a href="{% url 'services:change_status' service.pk 'archive' %}"
+                                       class="btn btn-default">
+                                        <i class="fa fa-check"></i>
+                                    </a>
+                                {% endif %}
                             </td>
                         </tr>
                     {% empty %}

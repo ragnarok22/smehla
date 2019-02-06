@@ -193,6 +193,8 @@ class ChangeStatusServiceView(generic.RedirectView):
                     service.status = '5'
             elif type_request == 'denied':
                 service.status = '6'
+            elif type_request == 'archive':
+                service.status = '7'
             else:
                 if service.status == '2':
                     service.status = '1'
