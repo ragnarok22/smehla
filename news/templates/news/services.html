@@ -26,6 +26,23 @@
                         </p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'news:passport-info' %}"
+                           class="btn btn-default">{% trans 'Passport Information' %}
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="{% url 'news:visa-info' %}"
+                           class="btn btn-default">{% trans 'Visa Information' %}
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="{% url 'news:authorization-info' %}"
+                           class="btn btn-default">{% trans 'Residence authorization Information' %}
+                        </a>
+                    </div>
+                </div>
                 {% if user.occupation == 'ADMIN' or user.occupation == 'FAC' %}
                     <a href="{% url 'news:service-create' %}" class="btn btn-default">{% trans 'Add service' %}</a>
                 {% endif %}
@@ -43,8 +60,10 @@
                                     <a href="{{ service.file.url }}" class="btn btn-sm btn-primary"
                                        download="{{ service.file }}">Descargar</a>
                                     {% if user.occupation == 'ADMIN' or user.occupation == 'FAC' %}
-                                        <a href="{% url 'news:service-update' service.pk %}" class="btn btn-sm btn-primary">{% trans 'Update' %}</a>
-                                        <a href="{% url 'news:service-delete' service.pk %}" class="btn btn-sm btn-danger">{% trans 'Delete' %}</a>
+                                        <a href="{% url 'news:service-update' service.pk %}"
+                                           class="btn btn-sm btn-primary">{% trans 'Update' %}</a>
+                                        <a href="{% url 'news:service-delete' service.pk %}"
+                                           class="btn btn-sm btn-danger">{% trans 'Delete' %}</a>
                                     {% endif %}
                                 </div>
                             </div>
