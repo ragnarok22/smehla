@@ -98,3 +98,15 @@ class DirectorProfileView(generic.TemplateView):
 
 class OrganizationChartView(generic.TemplateView):
     template_name = 'news/organization.html'
+
+
+class PassportInformationView(generic.TemplateView):
+    template_name = 'news/passport_info.html'
+
+
+class VisaInformationView(generic.TemplateView):
+    template_name = 'news/visa_info.html'
+
+
+class AuthorizationInformationView(generic.TemplateView):
+    template_name = 'news/authorization_info.html'

@@ -23,4 +23,7 @@ urlpatterns = [
     path('history/', views.HistoryView.as_view(), name='history'),
     path('director/profile/', views.DirectorProfileView.as_view(), name='director'),
     path('organization/', views.OrganizationChartView.as_view(), name='organization'),
+    path('passport/info/', views.PassportInformationView.as_view(), name='passport-info'),
+    path('visa/info/', views.VisaInformationView.as_view(), name='visa-info'),
+    path('authorization/info/', views.VisaInformationView.as_view(), name='authorization-info'),
 ]
