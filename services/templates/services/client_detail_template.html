@@ -17,16 +17,23 @@
             <div class="col-12 col-md-4">
                 <p>{% trans 'Sex' %}: {{ client.get_sex_display }}</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
                 <p>{% trans 'Origin nationality' %}: {{ client.nationality }}</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
                 <p>{% trans 'Current nationality' %}: {{ client.current_nationality }}</p>
+            </div>
+            <div class="col-lg-6">
+                <p>{% trans 'Personal Email' %}: <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
+            </div>
+            <div class="col-lg-6">
+                <p>{% trans 'Personal Phone' %}: {{ client.phone }}</p>
             </div>
         </div>
     </div>
     <div class="col-lg-4">
         <img src="
+
                 {% if client.picture %}{{ client.picture.url }}{% else %}{% static 'accounts/img/user.png' %}{% endif %}"
              alt="{{ client.first_name }}" width="150em" height="150em" class="img-thumbnail">
     </div>
@@ -116,14 +123,6 @@
     </div>
     <div class="col-12 col-md-4">
         {% trans 'Email work' %}: {{ client.email_work }}
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-4">
-        <p>{% trans 'Personal Email' %}: <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
-    </div>
-    <div class="col-lg-4">
-        <p>{% trans 'Personal Phone' %}: {{ client.phone }}</p>
     </div>
 </div>
 <div class="row">
