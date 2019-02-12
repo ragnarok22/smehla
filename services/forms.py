@@ -320,11 +320,14 @@ class ServiceStatusFrom(forms.Form):
             results = models.Visa.objects.filter(Q(passport_no__exact=search))
             if results:
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                results_archive = results.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if results_done:
                     data = []
                     for i in results_done:
                         data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
                     results = data
+                elif results_archive:
+                    return {'message': _('Document collected')}
                 else:
                     return {'message': _('It is in process')}
             else:
@@ -334,10 +337,13 @@ class ServiceStatusFrom(forms.Form):
 
             if authorization:
                 authorization_done = authorization.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                authorization_archive = authorization.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if authorization_done:
                     results = []
                     for i in authorization_done:
                         results.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                elif authorization_archive:
+                    return {'message': _('Document collected')}
                 else:
                     return {'message': _('It is in process')}
             else:
