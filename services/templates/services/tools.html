@@ -44,11 +44,13 @@
             <!-- Create services -->
         {% endif %}
         <div class="row">
-            <div class="col text-center">
-                <a href="#" class="btn btn-outline-default" data-toggle="modal" data-target="#search-foreigner">
-                    {% trans 'Search foreigner' %}
-                </a>
-            </div>
+            {% if user.occupation != 'FUF' %}
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-default" data-toggle="modal" data-target="#search-foreigner">
+                        {% trans 'Search foreigner' %}
+                    </a>
+                </div>
+            {% endif %}
             {% if user.occupation == 'BDAC' or user.occupation == 'DIR' or user.occupation == 'ADMIN' %}
                 {% if visa_to_expire %}
                     <div class="col">
@@ -65,11 +67,13 @@
                     </div>
                 {% endif %}
             {% endif %}
-            <div class="col text-center">
-                <a href="#" class="btn btn-outline-default" data-toggle="modal" data-target="#search-national">
-                    {% trans 'Search national' %}
-                </a>
-            </div>
+            {% if user.occupation != 'FUF' %}
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-default" data-toggle="modal" data-target="#search-national">
+                        {% trans 'Search national' %}
+                    </a>
+                </div>
+            {% endif %}
         </div>
         <!-- List of services -->
         <h1 class="text-center">{% trans "Services Request's List" %}</h1>
@@ -181,12 +185,20 @@
                                             <i class="fa fa-arrow-right"></i>
                                         </a>
                                     {% endif %}
-                                    {% if service.status != '5' or service.status != '6' %}
-                                        <a href="{% url 'services:change_status' service.pk 'denied' %}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-ban"></i>
-                                        </a>
+                                    {% if user.occupation == 'DIR' %}
+                                        {% if service.status != '5' or service.status != '6' %}
+                                            <a href="{% url 'services:change_status' service.pk 'denied' %}"
+                                               class="btn btn-default">
+                                                <i class="fa fa-ban"></i>
+                                            </a>
+                                        {% endif %}
                                     {% endif %}
+                                {% endif %}
+                                {% if service.status == '5' and user.occupation == 'FAC' %}
+                                    <a href="{% url 'services:change_status' service.pk 'archive' %}"
+                                       class="btn btn-default">
+                                        <i class="fa fa-check"></i>
+                                    </a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -262,7 +274,7 @@
                 <div class="modal-body mx-3">
                     <a href="#" class="btn btn-default"
                        onclick="Exporter.export('#search', 'search.html'); return false;">{% trans 'Export to excel' %}</a>
-                    <table id="search" class="table table-bordered table-hover table-search" cellspacing="0"
+                    <table id="search" class="table table-bordered table-hover table-search table-responsive" cellspacing="0"
                            width="100%"
                            data-page-length="5">
                         <thead>
@@ -272,6 +284,7 @@
                             <th class="th-sm">{% trans 'Profession' %}</th>
                             <th class="th-sm">{% trans 'Function' %}</th>
                             <th class="th-sm">{% trans 'lodging' %}</th>
+                            <th class="th-sm">{% trans 'Expiration date' %}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -282,6 +295,7 @@
                                 <td>{{ visa.profession }}</td>
                                 <td>{{ visa.funcion }}</td>
                                 <td>{{ visa.lodging }}</td>
+                                <td>{{ visa.visa_expiration_date }}</td>
                             </tr>
                         {% endfor %}
 

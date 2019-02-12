@@ -24,10 +24,16 @@ class Service(models.Model):
     def file_services(self, filename):
         ext = filename.split('.')[-1]
         return 'services/{}.{}'.format(self.service_type, ext)
+    SERVICES_CHOICES = (
+        ('P', 'Passport'),
+        ('V', 'Visa'),
+        ('R', 'Residence'),
+    )
 
-    service_type = models.CharField(_('Service Type'), max_length=100)
+    service_type = models.CharField(_('Service'), max_length=100)
     description = models.CharField(_('Description'), max_length=250)
     file = models.FileField(_('File'), upload_to=file_services)
+    service = models.CharField(verbose_name=_('Service Type'), max_length=1, choices=SERVICES_CHOICES)
 
     def __str__(self):
         return self.service_type

@@ -37,12 +37,24 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="institutional">
                                 <a href="{% url 'news:history' %}" class="dropdown-item">{% trans 'History' %}</a>
-                                <a href="{% url 'news:director' %}" class="dropdown-item">{% trans 'Director profile' %}</a>
-                                <a href="{% url 'news:organization' %}" class="dropdown-item">{% trans 'Organization chart' %}</a>
+                                <a href="{% url 'news:director' %}"
+                                   class="dropdown-item">{% trans 'Director profile' %}</a>
+                                <a href="{% url 'news:organization' %}"
+                                   class="dropdown-item">{% trans 'Organization chart' %}</a>
                             </div>
                         </li>
-                        <li class="nav-item" id="services">
-                            <a href="{% url 'news:services' %}" class="nav-link">{% trans 'Services' %}</a>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="services" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% trans 'Services' %}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="services">
+                                <a href="{% url 'news:passport-info' %}"
+                                   class="dropdown-item">{% trans 'Passport info' %}</a>
+                                <a href="{% url 'news:visa-info' %}" class="dropdown-item">{% trans 'Visa info' %}</a>
+                                <a href="{% url 'news:authorization-info' %}"
+                                   class="dropdown-item">{% trans 'residence info' %}</a>
+                            </div>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item" id="tools">

@@ -42,13 +42,23 @@ class ServiceCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
     model = Service
     occupations = ['ADMIN', 'FAC']
     success_url = reverse_lazy('news:services')
-    fields = '__all__'
+    fields = ['service_type', 'description', 'file']
 
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.service = self.kwargs.get('type')
+        return super().form_valid(form)
 
-class ServiceList(auth_mixin.NavbarMixin, generic.ListView):
-    model = Service
-    template_name = 'news/services.html'
-    tab_name = 'services'
+    def get_success_url(self):
+        service_type = self.kwargs.get('type')
+        if service_type == 'V':
+            return reverse_lazy('news:visa-info')
+        elif service_type == 'P':
+            return reverse_lazy('news:passport-info')
+        elif service_type == 'R':
+            return reverse_lazy('news:authorization-info')
+        else:
+            return reverse_lazy('services:index')
 
 
 class ServiceUpdate(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
@@ -98,3 +108,21 @@ class DirectorProfileView(generic.TemplateView):
 
 class OrganizationChartView(generic.TemplateView):
     template_name = 'news/organization.html'
+
+
+class PassportInformationView(generic.ListView):
+    model = Service
+    template_name = 'news/passport_info.html'
+    queryset = Service.objects.filter(service='P')
+
+
+class VisaInformationView(generic.ListView):
+    model = Service
+    template_name = 'news/visa_info.html'
+    queryset = Service.objects.filter(service='V')
+
+
+class AuthorizationInformationView(generic.ListView):
+    model = Service
+    template_name = 'news/authorization_info.html'
+    queryset = Service.objects.filter(service='R')

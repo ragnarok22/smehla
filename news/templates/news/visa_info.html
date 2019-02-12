@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Visa Information' %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            informacion relativa a visas
+        </div>
+        {% include 'news/services_template.html' with type='V' %}
+    </div>
+{% endblock %}

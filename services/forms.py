@@ -304,11 +304,14 @@ class ServiceStatusFrom(forms.Form):
             )
             if results:
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                results_archive = results.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if results_done:
                     data = []
                     for i in results_done:
                         data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
                     results = data
+                elif results_archive:
+                    return {'message': _('Document collected')}
                 else:
                     return {'message': _('It is in process')}
             else:

@@ -1,0 +1,33 @@
+{% load i18n %}
+
+<div class="row">
+    <div class="col-12 text-center">
+        {% if user.occupation == 'ADMIN' or user.occupation == 'FAC' %}
+            <a href="{% url 'news:service-create' type %}" class="btn btn-default">{% trans 'Add service' %}</a>
+        {% endif %}
+    </div>
+</div>
+<div class="row">
+    {% for service in service_list %}
+        <div class="col-12 col-md-4 my-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">{{ service.service_type }}</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">{{ service.description }}</div>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ service.file.url }}" class="btn btn-sm btn-primary"
+                       download="{{ service.file }}">Descargar</a>
+                    {% if user.occupation == 'ADMIN' or user.occupation == 'FAC' %}
+                        <a href="{% url 'news:service-update' service.pk %}"
+                           class="btn btn-sm btn-primary">{% trans 'Update' %}</a>
+                        <a href="{% url 'news:service-delete' service.pk %}"
+                           class="btn btn-sm btn-danger">{% trans 'Delete' %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
