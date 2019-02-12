@@ -317,11 +317,11 @@ class Passport(Service):
     spouse = models.CharField(_('Spouse'), max_length=200, null=True, blank=True)
     observations = models.TextField(_('Observations'), null=True, blank=True)
     # for use of the reception
-    date_reception = models.DateField(_('Date'))
+    date_reception = models.DateField(_('Date'), null=True, blank=True)
     # for official use
-    passport_no = models.CharField(_('Pasport No.'), max_length=100)
-    passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
-    date_issue_passport = models.DateField(_('Date issue passport'))
+    passport_no = models.CharField(_('Pasport No.'), max_length=100, null=True, blank=True)
+    passport_issued_in = models.CharField(_('Passport issued in'), max_length=100, null=True, blank=True)
+    date_issue_passport = models.DateField(_('Date issue passport'), null=True, blank=True)
 
     class Meta:
         verbose_name = _('passport')
