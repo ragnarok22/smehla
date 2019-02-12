@@ -273,10 +273,10 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
     date_issuance_passport = models.DateField(_('Date of issuance of passport'))
     # for non-local use of the reception
-    location = models.CharField(_('Location'), max_length=100)
-    date = models.DateField(_("Date"))
+    location = models.CharField(_('Location'), max_length=100, null=True, blank=True)
+    date = models.DateField(_("Date"), null=True, blank=True)
     # for official use
-    date_official_use = models.DateField(_('Date'))
+    date_official_use = models.DateField(_('Date'), null=True, blank=True)
 
     class Meta:
         verbose_name = _('Residence authorization')
