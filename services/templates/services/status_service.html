@@ -33,16 +33,7 @@
                             </div>
                             <button type="submit" class="btn btn-default">{% trans 'Accept' %}</button>
                             <div id="loader" class="mt-3"></div>
-                            <table class="table hidden">
-                                <thead>
-                                <tr>
-                                    <th class="th-sm">{% trans 'Name' %}</th>
-                                    <th class="th-sm">{% trans 'Passport number' %}</th>
-                                </tr>
-                                </thead>
-                                <tbody id="results">
-                                </tbody>
-                            </table>
+                            <div class="hidden" id="results"></div>
                         </div>
                     </form>
                 </div>
@@ -71,7 +62,8 @@
 
             $('#search-form').submit(function (event) {
                 event.preventDefault();
-                $('table.table').addClass('hidden');
+                const results = $('#results');
+                results.addClass('hidden');
                 $('#loader').html('<i class="fa fa-spinner fa-4x fa-pulse"></i>');
                 $.ajax($(this).prop('action'), {
                     method: 'POST',
@@ -82,19 +74,12 @@
                     success: function (response) {
                         console.log(response);
                         $('#loader').html('');
-                        $('table.table').removeClass('hidden');
+                        results.removeClass('hidden');
                         let html = '';
                         if (response['message']) {
-                            html = '<tr><td colspan="2"><h5 class="h5 text-center text-danger">'
-                                + response['message'] + '</h5></td></tr>';
-                        } else {
-                            for (let i = 0; i < response['data'].length; i++) {
-                                let service = response['data'][i];
-                                html += '<tr><td>' + service['client_name'] +
-                                    '</td><td>' + service['passport_no'] + '</td></tr>';
-                            }
+                            html = '<h5 class="h5 text-center text-danger">' + response['message'] + '</h5>';
                         }
-                        $('#results').html(html);
+                        results.html(html);
                     },
                     error: function (response, status) {
                         swal({
