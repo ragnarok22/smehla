@@ -34,13 +34,14 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-12">
+                <h3 class="h3 text-center">{% trans 'Migratory acts' %}</h3>
+            </div>
             <div class="col-6">
-                <h5 class="h5 text-center">for non-local use of the reception</h5>
                 <p>{% trans 'Location' %}: {{ residenceauthorization.location }}</p>
                 <p>{% trans 'Date' %}: {{ residenceauthorization.date }}</p>
             </div>
             <div class="col-6">
-                <h5 class="h5 text-center">for official use</h5>
                 <p>{% trans 'Date' %}: {{ residenceauthorization.date_official_use }}</p>
             </div>
         </div>
