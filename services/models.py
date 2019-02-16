@@ -33,7 +33,7 @@ class Client(models.Model):
     father = models.CharField(_('Father name'), max_length=200, null=True, blank=True)
     mother = models.CharField(_('Mother name'), max_length=200, null=True, blank=True)
     email = models.EmailField(_('Email'), null=True, blank=True)
-    phone = models.CharField(_('Phone number'), null=True, blank=True)
+    phone = models.CharField(_('Phone number'), max_length=15, null=True, blank=True)
     data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
     # Work data
     profession = models.CharField(_('Profession'), max_length=200, null=True, blank=True)
@@ -42,7 +42,7 @@ class Client(models.Model):
     # Work address
     province_work = models.CharField(_('Province'), max_length=50, null=True, blank=True)
     neighborhood_work = models.CharField(_('Neighborhood'), max_length=50, null=True, blank=True)
-    phone_work = models.CharField(_('Phone number'), null=True, blank=True)
+    phone_work = models.CharField(_('Phone number'), max_length=15, null=True, blank=True)
     email_work = models.EmailField(_('Email'), null=True, blank=True)
     # Current Address
     province = models.CharField(_('Province'), max_length=50, null=True, blank=True)
