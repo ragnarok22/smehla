@@ -160,10 +160,10 @@ class Visa(Service):
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
 
-    lodging = models.CharField(_('Lodging'), max_length=100)  # hospedaje
-    city_lodging = models.CharField(_('City lodging'), max_length=100)
-    street_lodging = models.CharField(_('Street lodging'), max_length=100)
-    no_lodging_house = models.CharField(_('Lodging house No.'), max_length=5)
+    lodging = models.CharField(_('Lodging'), max_length=100, null=True, blank=True)  # hospedaje
+    city_lodging = models.CharField(_('City lodging'), max_length=100, null=True, blank=True)
+    street_lodging = models.CharField(_('Street lodging'), max_length=100, null=True, blank=True)
+    no_lodging_house = models.CharField(_('Lodging house No.'), max_length=5, null=True, blank=True)
     last_entry_angola_date = models.DateField(_('Last entry angola date'))
     frontier = models.CharField(_('Frontier used'), max_length=100)
     visa_expiration_date = models.DateField(_('Visa expiration date'), null=True, blank=True)
