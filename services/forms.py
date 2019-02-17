@@ -12,6 +12,7 @@ class VisaCreateForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -41,6 +42,7 @@ class MedicalTreatmentVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -75,6 +77,7 @@ class TemporaryVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -108,6 +111,7 @@ class StudyVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -142,6 +146,7 @@ class ExtensionVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             'extension_type': widgets.Select(),
             # client data
             'place_of_birth': widgets.TextInput(),
@@ -185,6 +190,7 @@ class PassportCreateForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             'passport_type': widgets.Select(),
             'act_type': widgets.Select(),
             'remission_type': widgets.Select(),
@@ -267,6 +273,7 @@ class ResidenceAuthorizationForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             'type_request': widgets.Select(),
             'extension_type': widgets.Select(),
             'observations': widgets.TextInput(),

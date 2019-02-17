@@ -98,6 +98,7 @@ class Service(models.Model):
     service_type = None
     process_no = models.PositiveSmallIntegerField()
     official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
+    price = models.PositiveIntegerField(_('Price'), null=True, blank=True)
 
     def get_service_type(self):
         if self.service_type:
