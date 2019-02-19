@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-04 17:03-0500\n"
+"POT-Creation-Date: 2019-02-18 14:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,19 +66,19 @@ msgstr "Perfil não encontrado"
 
 #: .\accounts\models.py:21
 msgid "Functionary of Migratory acts"
-msgstr "Funcionario de Actos Migratorios"
+msgstr "Gestäo de Actos"
 
 #: .\accounts\models.py:22
 msgid "Functionary of Finance"
-msgstr "Funcionario das Finanças"
+msgstr "Revisäo"
 
 #: .\accounts\models.py:23
 msgid "Boss of Migratory acts"
-msgstr "Chefe de Actos Migratorios"
+msgstr "Superviäo"
 
 #: .\accounts\models.py:24
 msgid "Director"
-msgstr "Diretor"
+msgstr "Entrega"
 
 #: .\accounts\models.py:25
 msgid "Administrator"
@@ -107,7 +107,7 @@ msgid "%(years)d years"
 msgstr "%(years)d anos"
 
 #: .\accounts\templates\accounts\dashboard.html:5
-#: .\accounts\templates\navbar.html:54
+#: .\accounts\templates\navbar.html:66
 msgid "Administrate"
 msgstr "Administrar"
 
@@ -223,7 +223,7 @@ msgid "Delete"
 msgstr "Excluir"
 
 #: .\accounts\templates\accounts\send_email.html:5
-#: .\accounts\templates\navbar.html:72 .\accounts\templates\navbar.html:78
+#: .\accounts\templates\navbar.html:84 .\accounts\templates\navbar.html:90
 msgid "Contact us"
 msgstr "Contate-Nos"
 
@@ -239,115 +239,127 @@ msgstr "Instituiçäo"
 msgid "History"
 msgstr "História"
 
-#: .\accounts\templates\navbar.html:40
+#: .\accounts\templates\navbar.html:41
 msgid "Director profile"
 msgstr "Perfil do Director"
 
-#: .\accounts\templates\navbar.html:41
+#: .\accounts\templates\navbar.html:43
 msgid "Organization chart"
 msgstr "Organigrama"
 
-#: .\accounts\templates\navbar.html:45
+#: .\accounts\templates\navbar.html:49
 msgid "Services"
 msgstr "Serviços"
 
-#: .\accounts\templates\navbar.html:49
+#: .\accounts\templates\navbar.html:53
+msgid "Passport info"
+msgstr "Informação Relativas a Passaportes"
+
+#: .\accounts\templates\navbar.html:54
+msgid "Visa info"
+msgstr "Informação Relativas a Vistos"
+
+#: .\accounts\templates\navbar.html:56
+msgid "residence info"
+msgstr "Informação Relativas a Autorização de Residencia"
+
+#: .\accounts\templates\navbar.html:61
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: .\accounts\templates\navbar.html:58
+#: .\accounts\templates\navbar.html:70
 msgid "Consult"
 msgstr "Consultar"
 
-#: .\accounts\templates\navbar.html:63
+#: .\accounts\templates\navbar.html:75
 msgid "Information"
 msgstr "Informaçäo"
 
-#: .\accounts\templates\navbar.html:65
+#: .\accounts\templates\navbar.html:77
 msgid "News"
 msgstr "Notícia"
 
-#: .\accounts\templates\navbar.html:67
+#: .\accounts\templates\navbar.html:79
 msgid "Legislation"
 msgstr "Legislaçäo"
 
-#: .\accounts\templates\navbar.html:89
+#: .\accounts\templates\navbar.html:101
 msgid "Your name"
 msgstr "Seu nome"
 
-#: .\accounts\templates\navbar.html:98
+#: .\accounts\templates\navbar.html:110
 msgid "Your email"
 msgstr "Seu email"
 
-#: .\accounts\templates\navbar.html:107
+#: .\accounts\templates\navbar.html:119
 msgid "Subject"
 msgstr "Assunto"
 
-#: .\accounts\templates\navbar.html:117
+#: .\accounts\templates\navbar.html:129
 msgid "Your message"
 msgstr "Sua mensagem"
 
-#: .\accounts\templates\navbar.html:124
+#: .\accounts\templates\navbar.html:136
 msgid "Send"
 msgstr "Enviar"
 
-#: .\accounts\templates\navbar.html:144
+#: .\accounts\templates\navbar.html:156
 msgid "See profile"
 msgstr "Ver perfil"
 
-#: .\accounts\templates\navbar.html:147
+#: .\accounts\templates\navbar.html:159
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: .\accounts\templates\navbar.html:150
+#: .\accounts\templates\navbar.html:162
 msgid "Logout"
 msgstr "Sair"
 
-#: .\accounts\templates\navbar.html:183
+#: .\accounts\templates\navbar.html:195
 msgid "Manage System"
 msgstr "Gerenciar sistema"
 
-#: .\accounts\templates\navbar.html:184
+#: .\accounts\templates\navbar.html:196
 msgid "System of emigration and foreign affairs"
 msgstr "SGI - Serviços de Migração e Estrangeiros Provincial"
 
-#: .\accounts\templates\navbar.html:200
+#: .\accounts\templates\navbar.html:212
 msgid "Go"
 msgstr "Ir"
 
-#: .\accounts\templates\navbar.html:205
+#: .\accounts\templates\navbar.html:217
 msgid "Links"
 msgstr "Ligações"
 
-#: .\accounts\templates\navbar.html:208
+#: .\accounts\templates\navbar.html:220
 msgid "Citizen Portal"
 msgstr "Portal do cidadão"
 
-#: .\accounts\templates\navbar.html:211
+#: .\accounts\templates\navbar.html:223
 msgid "Ministry of Interior"
 msgstr "Ministério do Interior"
 
-#: .\accounts\templates\navbar.html:214
+#: .\accounts\templates\navbar.html:226
 msgid "Company's only booth"
 msgstr "Guichê único da empresa"
 
-#: .\accounts\templates\navbar.html:221
+#: .\accounts\templates\navbar.html:233
 msgid "Copyright: Created by University of Holguin"
 msgstr "Direito autoral: Universidade de Holguín"
 
-#: .\accounts\templates\navbar.html:241
+#: .\accounts\templates\navbar.html:253
 msgid "Sended"
 msgstr "Mandado"
 
-#: .\accounts\templates\navbar.html:242
+#: .\accounts\templates\navbar.html:254
 msgid "Your message has sended correctly"
 msgstr "Sua mensagem foi enviada corretamente"
 
-#: .\accounts\templates\navbar.html:248
+#: .\accounts\templates\navbar.html:260
 msgid "Not send"
 msgstr "Não enviado"
 
-#: .\accounts\templates\navbar.html:249
+#: .\accounts\templates\navbar.html:261
 msgid "Error sending your message"
 msgstr "Erro ao enviar sua mensagem"
 

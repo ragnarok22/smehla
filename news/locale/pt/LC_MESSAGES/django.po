@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-04 17:03-0500\n"
+"POT-Creation-Date: 2019-02-18 14:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,34 +39,37 @@ msgstr "Data da Publicaçäo"
 msgid "News"
 msgstr "Noticias"
 
-#: .\news\models.py:28
-msgid "Service Type"
-msgstr "Tipo de serviço"
+#: .\news\models.py:33 .\news\models.py:42
+msgid "Service"
+msgstr "Serviço"
 
-#: .\news\models.py:29 .\news\models.py:46
+#: .\news\models.py:34 .\news\models.py:52
 msgid "Description"
 msgstr "Descrição"
 
-#: .\news\models.py:30 .\news\models.py:47
+#: .\news\models.py:35 .\news\models.py:53
 msgid "File"
 msgstr "Arquivo"
 
 #: .\news\models.py:36
-msgid "Service"
-msgstr "Serviço"
+msgid "Service Type"
+msgstr "Tipo de serviço"
 
-#: .\news\models.py:37 .\news\templates\news\legislation_list.html:5
-#: .\news\templates\news\services.html:5
+#: .\news\models.py:43 .\news\templates\news\legislation_list.html:5
 msgid "Services"
 msgstr "Serviços"
 
-#: .\news\models.py:45
+#: .\news\models.py:51
 msgid "Legislation Type"
 msgstr "Tipo de Legislaçäo"
 
-#: .\news\models.py:53 .\news\models.py:54
+#: .\news\models.py:59 .\news\models.py:60
 msgid "Legislation"
 msgstr "Legislaçäo"
+
+#: .\news\templates\news\authorization_info.html:6
+msgid "Residence Authorization Information"
+msgstr ""
 
 #: .\news\templates\news\director_profile.html:6
 msgid "Director profile"
@@ -105,13 +108,13 @@ msgstr "Adicionar Legislaçäo"
 
 #: .\news\templates\news\legislation_list.html:30
 #: .\news\templates\news\news_detail.html:23
-#: .\news\templates\news\services.html:46
+#: .\news\templates\news\services_template.html:25
 msgid "Update"
 msgstr "Atualizar"
 
 #: .\news\templates\news\legislation_list.html:31
 #: .\news\templates\news\news_detail.html:24
-#: .\news\templates\news\services.html:47
+#: .\news\templates\news\services_template.html:27
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -136,6 +139,10 @@ msgstr "Ver noticias"
 msgid "Organization Chart"
 msgstr "Organigrama"
 
+#: .\news\templates\news\passport_info.html:6
+msgid "Pasport Information"
+msgstr ""
+
 #: .\news\templates\news\service_confirm_delete.html:5
 msgid "Delete service"
 msgstr "Excluir Servicios"
@@ -148,10 +155,10 @@ msgstr "Tens a certeza que desejas excluir esta ficha?"
 msgid "Create service"
 msgstr "Criar serviço"
 
-#: .\news\templates\news\services.html:12
-msgid "Our services"
-msgstr "Nossos serviços"
-
-#: .\news\templates\news\services.html:30
+#: .\news\templates\news\services_template.html:6
 msgid "Add service"
 msgstr "Adicionar serviços"
+
+#: .\news\templates\news\visa_info.html:6
+msgid "Visa Information"
+msgstr ""
