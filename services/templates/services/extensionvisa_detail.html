@@ -7,11 +7,6 @@
 
 {% block main %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="h2 text-center">{% trans 'Extension visa request' %}</h2>
-            </div>
-        </div>
         {% include 'services/client_detail_template.html' with client=extensionvisa.client %}
         <div class="row">
             <div class="col-12">
@@ -19,6 +14,45 @@
             </div>
             <div class="col-12 col-md-6">
                 {% trans 'Request type' %}: {{ extensionvisa.get_extension_type_display }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Visa No.' %}: {{ extensionvisa.visa_no }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Valid date' %}: {{ extensionvisa.valid_date }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Reason extension' %}: {{ extensionvisa.reason_extension }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Passport No.' %}: {{ extensionvisa.passport_no }}
+            </div>
+            <div class="col-12">
+                <h4 class="h4">{% trans 'Responsible data' %}</h4>
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Name' %}: {{ extensionvisa.name }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Province' %}: {{ extensionvisa.province }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'City' %}: {{ extensionvisa.city }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Neighborhood' %}: {{ extensionvisa.neighborhood }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Street No.' %}: {{ extensionvisa.street_no }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Home  No.' %}: {{ extensionvisa.home_no }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Phone' %}: {{ extensionvisa.phone }}
+            </div>
+            <div class="col-12 col-md-6">
+                {% trans 'Email' %}: {{ extensionvisa.email }}
             </div>
         </div>
         {% include 'services/visa_edit_template.html' with visa=extensionvisa %}

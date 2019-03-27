@@ -180,10 +180,43 @@
 
                                     {% endif %}
                                     {% if user.occupation != 'DIR' or service.status == '4' %}
-                                        <a href="{% url 'services:change_status' service.pk 'up' %}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
+                                        {% if user.occupation == 'FUF' and service.status == '2' %}
+                                            <a href="#" class="btn btn-default" data-toggle="modal"
+                                               data-target="#price">
+                                                <i class="fa fa-arrow-right"></i>
+                                            </a>
+                                            <div class="modal" tabindex="-1" role="dialog" id="price">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">{% trans 'Service Price' %}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>{% trans 'Are you sure? The price is correct?' %}</p>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                            <a href="{% url 'services:change_status' service.pk 'up' %}"
+                                                               type="button"
+                                                               class="btn btn-primary">{% trans 'Save changes' %}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <a href="{% url 'services:change_status' service.pk 'up' %}"
+                                               class="btn btn-default">
+                                                <i class="fa fa-arrow-right"></i>
+                                            </a>
+                                        {% endif %}
                                     {% endif %}
                                     {% if user.occupation == 'DIR' %}
                                         {% if service.status != '5' or service.status != '6' %}
@@ -274,9 +307,8 @@
                 <div class="modal-body mx-3">
                     <a href="#" class="btn btn-default"
                        onclick="Exporter.export('#search', 'search.html'); return false;">{% trans 'Export to excel' %}</a>
-                    <table id="search" class="table table-bordered table-hover table-search table-responsive" cellspacing="0"
-                           width="100%"
-                           data-page-length="5">
+                    <table id="search" class="table table-bordered table-hover table-search table-responsive"
+                           cellspacing="0" width="100%" data-page-length="5">
                         <thead>
                         <tr>
                             <th class="th-sm">{% trans 'Client name' %}</th>

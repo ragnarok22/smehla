@@ -87,8 +87,10 @@
                         <label for="{{ form.observations.id_for_label }}">{{ form.observations.label }}</label>
                     </div>
                 </div>
+                <div class="col-12">
+                    <h3 class="h3 text-center">{% trans 'Migratory acts' %}</h3>
+                </div>
                 <div class="col-6">
-                    <h4 class="h4">{% trans 'For non-local use of the reception' %}</h4>
                     <div class="md-form">
                         {{ form.location }}
                         <label for="{{ form.location.id_for_label }}">{{ form.location.label }}</label>
@@ -97,7 +99,6 @@
                     {{ form.date }}
                 </div>
                 <div class="col-6">
-                    <h4 class="h4">{% trans 'For official use' %}</h4>
                     <label for="{{ form.date_official_use.id_for_label }}">{{ form.date_official_use.label }}</label>
                     {{ form.date_official_use }}
                 </div>

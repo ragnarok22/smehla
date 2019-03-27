@@ -33,7 +33,7 @@ class Client(models.Model):
     father = models.CharField(_('Father name'), max_length=200, null=True, blank=True)
     mother = models.CharField(_('Mother name'), max_length=200, null=True, blank=True)
     email = models.EmailField(_('Email'), null=True, blank=True)
-    phone = models.PositiveIntegerField(_('Phone number'), null=True, blank=True)
+    phone = models.CharField(_('Phone number'), max_length=15, null=True, blank=True)
     data_attachment = models.FileField(_('Data attachment'), upload_to=upload_file, null=True, blank=True)
     # Work data
     profession = models.CharField(_('Profession'), max_length=200, null=True, blank=True)
@@ -42,7 +42,7 @@ class Client(models.Model):
     # Work address
     province_work = models.CharField(_('Province'), max_length=50, null=True, blank=True)
     neighborhood_work = models.CharField(_('Neighborhood'), max_length=50, null=True, blank=True)
-    phone_work = models.PositiveIntegerField(_('Phone number'), null=True, blank=True)
+    phone_work = models.CharField(_('Phone number'), max_length=15, null=True, blank=True)
     email_work = models.EmailField(_('Email'), null=True, blank=True)
     # Current Address
     province = models.CharField(_('Province'), max_length=50, null=True, blank=True)
@@ -98,6 +98,7 @@ class Service(models.Model):
     service_type = None
     process_no = models.PositiveSmallIntegerField()
     official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
+    price = models.PositiveIntegerField(_('Price'), null=True, blank=True)
 
     def get_service_type(self):
         if self.service_type:
@@ -160,10 +161,10 @@ class Visa(Service):
     passport_issuance_date = models.DateField(_('Passport issuance date'))
     passport_expiration_date = models.DateField(_('Passport expiration date'))
 
-    lodging = models.CharField(_('Lodging'), max_length=100)  # hospedaje
-    city_lodging = models.CharField(_('City lodging'), max_length=100)
-    street_lodging = models.CharField(_('Street lodging'), max_length=100)
-    no_lodging_house = models.CharField(_('Lodging house No.'), max_length=5)
+    lodging = models.CharField(_('Lodging'), max_length=100, null=True, blank=True)  # hospedaje
+    city_lodging = models.CharField(_('City lodging'), max_length=100, null=True, blank=True)
+    street_lodging = models.CharField(_('Street lodging'), max_length=100, null=True, blank=True)
+    no_lodging_house = models.CharField(_('Lodging house No.'), max_length=5, null=True, blank=True)
     last_entry_angola_date = models.DateField(_('Last entry angola date'))
     frontier = models.CharField(_('Frontier used'), max_length=100)
     visa_expiration_date = models.DateField(_('Visa expiration date'), null=True, blank=True)
@@ -274,10 +275,10 @@ class ResidenceAuthorization(Service):  # in progress to fixed
     passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
     date_issuance_passport = models.DateField(_('Date of issuance of passport'))
     # for non-local use of the reception
-    location = models.CharField(_('Location'), max_length=100)
-    date = models.DateField(_("Date"))
+    location = models.CharField(_('Location'), max_length=100, null=True, blank=True)
+    date = models.DateField(_("Date"), null=True, blank=True)
     # for official use
-    date_official_use = models.DateField(_('Date'))
+    date_official_use = models.DateField(_('Date'), null=True, blank=True)
 
     class Meta:
         verbose_name = _('Residence authorization')
@@ -317,11 +318,11 @@ class Passport(Service):
     spouse = models.CharField(_('Spouse'), max_length=200, null=True, blank=True)
     observations = models.TextField(_('Observations'), null=True, blank=True)
     # for use of the reception
-    date_reception = models.DateField(_('Date'))
+    date_reception = models.DateField(_('Date'), null=True, blank=True)
     # for official use
-    passport_no = models.CharField(_('Pasport No.'), max_length=100)
-    passport_issued_in = models.CharField(_('Passport issued in'), max_length=100)
-    date_issue_passport = models.DateField(_('Date issue passport'))
+    passport_no = models.CharField(_('Pasport No.'), max_length=100, null=True, blank=True)
+    passport_issued_in = models.CharField(_('Passport issued in'), max_length=100, null=True, blank=True)
+    date_issue_passport = models.DateField(_('Date issue passport'), null=True, blank=True)
 
     class Meta:
         verbose_name = _('passport')

@@ -12,6 +12,7 @@ class VisaCreateForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -41,6 +42,7 @@ class MedicalTreatmentVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -75,6 +77,7 @@ class TemporaryVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -108,6 +111,7 @@ class StudyVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official', 'request_type']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             # client data
             'place_of_birth': widgets.TextInput(),
             'birth_country': widgets.TextInput(),
@@ -142,6 +146,7 @@ class ExtensionVisaForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             'extension_type': widgets.Select(),
             # client data
             'place_of_birth': widgets.TextInput(),
@@ -185,6 +190,7 @@ class PassportCreateForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             'passport_type': widgets.Select(),
             'act_type': widgets.Select(),
             'remission_type': widgets.Select(),
@@ -267,6 +273,7 @@ class ResidenceAuthorizationForm(forms.ModelForm):
         exclude = ['client', 'status', 'official']
         widgets = {
             'process_no': widgets.NumberInput(),
+            'price': widgets.NumberInput(),
             'type_request': widgets.Select(),
             'extension_type': widgets.Select(),
             'observations': widgets.TextInput(),
@@ -306,10 +313,7 @@ class ServiceStatusFrom(forms.Form):
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
                 results_archive = results.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if results_done:
-                    data = []
-                    for i in results_done:
-                        data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
-                    results = data
+                    return {'message': _('Ready to pick up')}
                 elif results_archive:
                     return {'message': _('Document collected')}
                 else:
@@ -320,11 +324,11 @@ class ServiceStatusFrom(forms.Form):
             results = models.Visa.objects.filter(Q(passport_no__exact=search))
             if results:
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                results_archive = results.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if results_done:
-                    data = []
-                    for i in results_done:
-                        data.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
-                    results = data
+                    return {'message': _('Ready to pick up')}
+                elif results_archive:
+                    return {'message': _('Document collected')}
                 else:
                     return {'message': _('It is in process')}
             else:
@@ -334,10 +338,11 @@ class ServiceStatusFrom(forms.Form):
 
             if authorization:
                 authorization_done = authorization.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                authorization_archive = authorization.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if authorization_done:
-                    results = []
-                    for i in authorization_done:
-                        results.append({'client_name': i.client.get_full_name(), 'passport_no': i.passport_no})
+                    return {'message': _('Ready to pick up')}
+                elif authorization_archive:
+                    return {'message': _('Document collected')}
                 else:
                     return {'message': _('It is in process')}
             else:
