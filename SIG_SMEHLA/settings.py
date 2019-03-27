@@ -151,5 +151,5 @@ SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent the browser from identifying conte
 SECURE_BROWSER_XSS_FILTER = True  # Activate the browser's XSS filtering and help prevent XSS attacks
 # SECURE_SSL_REDIRECT = True  # Redirect all connections to HTTPS
 # SESSION_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to hijack user sessions
-CSRF_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to steal the CSRF token
+# CSRF_COOKIE_SECURE = True  # Makes it more difficult for network traffic sniffers to steal the CSRF token
 X_FRAME_OPTIONS = 'DENY'  # unless there is a good reason for your site to serve other parts of itself in a frame
