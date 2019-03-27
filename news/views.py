@@ -19,9 +19,8 @@ class NewsDetailView(generic.DetailView):
     model = News
 
 
-class NewsUpdateView(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
+class NewsUpdateView(auth_mixin.LoginRequiredMixin, generic.UpdateView):
     model = News
-    occupations = ['ADMIN', 'FAC']
     form_class = forms.NewsCreateForm
 
     def get_success_url(self):
@@ -32,9 +31,8 @@ class NewsListView(generic.ListView):
     model = News
 
 
-class NewsDeleteView(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
+class NewsDeleteView(auth_mixin.LoginRequiredMixin, generic.DeleteView):
     model = News
-    occupations = ['ADMIN', 'FAC']
     success_url = reverse_lazy('news:list')
 
 

@@ -18,7 +18,7 @@
                 </div>
             {% endif %}
         </div>
-        {% if user.occupation == 'ADMIN' and user.occupation == 'FAC' %}
+        {% if user.is_authenticated %}
             <div class="row">
                 <a href="{% url 'news:update' news.pk %}" class="btn btn-default">{% trans 'Update' %}</a>
                 <a href="{% url 'news:delete' news.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>

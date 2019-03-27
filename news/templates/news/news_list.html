@@ -39,8 +39,24 @@
                             <!-- Text -->
                             <p class="card-text text-truncate">{{ news.content }}</p>
                             <!-- Button -->
-                            <a href="{% url 'news:detail' news.pk %}"
-                               class="btn btn-primary">{% trans 'View news' %}</a>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="{% url 'news:detail' news.pk %}"
+                                           class="btn btn-primary btn-sm">{% trans 'View news' %}</a>
+                                    </div>
+                                    {% if user.is_authenticated %}
+                                        <div class="col-4">
+                                            <a href="{% url 'news:update' news.pk %}"
+                                               class="btn btn-primary btn-sm">{% trans 'Update news' %}</a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="{% url 'news:delete' news.pk %}"
+                                               class="btn btn-danger btn-sm">{% trans 'Delete news' %}</a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
