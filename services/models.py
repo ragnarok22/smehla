@@ -97,8 +97,13 @@ class Service(models.Model):
     status = models.CharField(_('Status'), max_length=1, choices=SERVICE_STATUS, default='1')
     service_type = None
     process_no = models.PositiveSmallIntegerField()
-    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'))
+    official = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name=_('Official'), related_name='official')
     price = models.PositiveIntegerField(_('Price'), null=True, blank=True)
+    # recollected status
+    full_name_person = models.CharField(_('Person to delivery'), null=True, blank=True, max_length=250)
+    date_to_collected = models.DateField(_('Date to collected'), blank=True, null=True)
+    official_who_delivers = models.ForeignKey(Profile, on_delete=models.CASCADE,
+                                              verbose_name=_('Official who delivers'), blank=True, null=True)
 
     def get_service_type(self):
         if self.service_type:
