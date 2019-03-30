@@ -2,6 +2,28 @@
 {% load service_tags %}
 
 {% user_can_mod_service visa user as can_mod %}
+{% if visa.status == '7' %}
+    <div class="row mt-5">
+        <div class="col-6">
+            <p>Estado: {{ visa.get_status_display }}</p>
+        </div>
+        <div class="col-6">
+            <p>{% trans 'Person to delivery' %}: {{ visa.full_name_person }}</p>
+        </div>
+        <div class="col-6">
+            <p>{% trans 'Date to collected' %}: {{ visa.date_to_collected }}</p>
+        </div>
+        <div class="col-6">
+            <p>{% trans 'Official who delivers' %}: {{ visa.official_who_delivers }}</p>
+        </div>
+    </div>
+{% else %}
+    <div class="row mt-5">
+        <div class="col-6">
+            <p>Estado: {{ visa.get_status_display }}</p>
+        </div>
+    </div>
+{% endif %}
 {% if can_mod %}
     <div class="row">
         <div class="col">

@@ -219,6 +219,6 @@ class DeliveryView(generic.UpdateView):
         service = form.save(False)
         service.date_to_collected = timezone.now().today()
         service.official_who_delivers = self.request.user
-        service.status = '5'
+        service.status = '7'
         service.save()
         return super().form_valid(form)

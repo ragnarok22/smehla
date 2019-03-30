@@ -96,16 +96,6 @@
                 </div>
             </div>
         </div>
-        {% user_can_mod_service passport user as can_mod %}
-        {% if can_mod %}
-            <div class="row">
-                <div class="col">
-                    <a href="{% url 'services:service_update' 'passport' passport.pk %}"
-                       class="btn btn-default">{% trans 'Update' %}</a>
-                    <a href="{% url 'services:service_delete' 'passport' passport.pk %}"
-                       class="btn btn-danger">{% trans 'Delete' %}</a>
-                </div>
-            </div>
-        {% endif %}
+        {% include 'services/visa_edit_template.html' with visa=passport type='passport' %}
     </div>
 {% endblock %}

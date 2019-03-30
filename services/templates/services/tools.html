@@ -211,36 +211,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        {% elif user.occupation == 'DIR' and service.status == '4' %}
-                                            <a href="#" class="btn btn-default" data-toggle="modal"
-                                               data-target="#authenticate">
-                                                <i class="fa fa-arrow-right"></i>
-                                            </a>
-                                            <div class="modal" tabindex="-1" role="dialog" id="authenticate">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title">{% trans 'Please fill in the delivery details' %}</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <form method="post" action="{% url 'services:delivery' service.pk %}">
-                                                            <div class="modal-body">
-                                                                {% csrf_token %}
-                                                                <label for="name">{% trans 'Person to delivery' %}</label>
-                                                                <input type="text" id="name" class="form-control"
-                                                                       name="full_name_person" required>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="submit" class="btn btn-default">{% trans 'Accept' %}
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        {% elif user.occupation == 'DIR' and service.status == '5' %}
+
                                         {% else %}
                                             <a href="{% url 'services:change_status' service.pk 'up' %}"
                                                class="btn btn-default">
@@ -258,10 +230,36 @@
                                     {% endif %}
                                 {% endif %}
                                 {% if service.status == '5' and user.occupation == 'FAC' %}
-                                    <a href="{% url 'services:change_status' service.pk 'archive' %}"
-                                       class="btn btn-default">
+                                    <a href="#" class="btn btn-default" data-toggle="modal"
+                                       data-target="#delivery">
                                         <i class="fa fa-check"></i>
                                     </a>
+                                    <div class="modal" tabindex="-1" role="dialog" id="delivery">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">{% trans 'Please fill in the delivery details' %}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form method="post" action="{% url 'services:delivery' service.pk %}">
+                                                    <div class="modal-body">
+                                                        {% csrf_token %}
+                                                        <label for="name">{% trans 'Person to delivery' %}</label>
+                                                        <input type="text" id="name" class="form-control"
+                                                               name="full_name_person" required>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit"
+                                                                class="btn btn-default">{% trans 'Accept' %}
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 {% endif %}
                             </td>
                         </tr>
