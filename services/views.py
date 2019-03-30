@@ -208,3 +208,17 @@ class ChangeStatusServiceView(generic.RedirectView):
 
             service.save()
         return HttpResponseRedirect(reverse_lazy(self.pattern_name))
+
+
+class DeliveryView(generic.UpdateView):
+    form_class = forms.DeliveryForm
+    success_url = reverse_lazy('services:tools')
+    model = models.Service
+
+    def form_valid(self, form):
+        service = form.save(False)
+        service.date_to_collected = timezone.now().today()
+        service.official_who_delivers = self.request.user
+        service.status = '5'
+        service.save()
+        return super().form_valid(form)

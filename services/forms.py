@@ -359,3 +359,12 @@ class ServiceStatusFrom(forms.Form):
         else:
             results = {}  # raise error
         return {} if results == [] else {'data': results}
+
+
+class DeliveryForm(forms.ModelForm):
+    class Meta:
+        model = models.Service
+        fields = ['full_name_person']
+        widgets = {
+            'full_name_person': forms.TextInput(attrs={'class': 'form-control'})
+        }
