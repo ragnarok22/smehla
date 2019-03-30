@@ -311,11 +311,14 @@ class ServiceStatusFrom(forms.Form):
             )
             if results:
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                results_denied = results.filter(Q(status=models.Service.SERVICE_STATUS[5][0]))
                 results_archive = results.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if results_done:
                     return {'message': _('Ready to pick up')}
                 elif results_archive:
                     return {'message': _('Document collected')}
+                elif results_denied:
+                    return {'message': _('Document denied')}
                 else:
                     return {'message': _('It is in process')}
             else:
@@ -324,11 +327,14 @@ class ServiceStatusFrom(forms.Form):
             results = models.Visa.objects.filter(Q(passport_no__exact=search))
             if results:
                 results_done = results.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                results_denied = results.filter(Q(status=models.Service.SERVICE_STATUS[5][0]))
                 results_archive = results.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if results_done:
                     return {'message': _('Ready to pick up')}
                 elif results_archive:
                     return {'message': _('Document collected')}
+                elif results_denied:
+                    return {'message': _('Document denied')}
                 else:
                     return {'message': _('It is in process')}
             else:
@@ -338,11 +344,14 @@ class ServiceStatusFrom(forms.Form):
 
             if authorization:
                 authorization_done = authorization.filter(Q(status=models.Service.SERVICE_STATUS[4][0]))
+                authorization_denied = authorization.filter(Q(status=models.Service.SERVICE_STATUS[5][0]))
                 authorization_archive = authorization.filter(Q(status=models.Service.SERVICE_STATUS[6][0]))
                 if authorization_done:
                     return {'message': _('Ready to pick up')}
                 elif authorization_archive:
                     return {'message': _('Document collected')}
+                elif authorization_denied:
+                    return {'message': _('Document denied')}
                 else:
                     return {'message': _('It is in process')}
             else:
