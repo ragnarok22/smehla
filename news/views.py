@@ -39,7 +39,7 @@ class NewsDeleteView(auth_mixin.LoginRequiredMixin, generic.DeleteView):
 class ServiceCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
     model = Service
     occupations = ['ADMIN', 'FAC']
-    fields = ['service_type', 'description', 'file', 'service']
+    form_class = forms.ServiceCreateForm
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -61,7 +61,7 @@ class ServiceCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
 class ServiceUpdate(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
     model = Service
     occupations = ['ADMIN', 'FAC']
-    fields = ['service_type', 'description', 'file']
+    form_class = forms.ServiceUpdateForm
 
     def get_success_url(self):
         service = self.get_object()
