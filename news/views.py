@@ -39,8 +39,7 @@ class NewsDeleteView(auth_mixin.LoginRequiredMixin, generic.DeleteView):
 class ServiceCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
     model = Service
     occupations = ['ADMIN', 'FAC']
-    success_url = reverse_lazy('news:services')
-    fields = ['service_type', 'description', 'file']
+    fields = ['service_type', 'description', 'file', 'service']
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -62,14 +61,32 @@ class ServiceCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
 class ServiceUpdate(auth_mixin.OccupationRequiredMixin, generic.UpdateView):
     model = Service
     occupations = ['ADMIN', 'FAC']
-    fields = '__all__'
-    success_url = reverse_lazy('news:services')
+    fields = ['service_type', 'description', 'file']
+
+    def get_success_url(self):
+        service = self.get_object()
+        print(service.service)
+        if service.service == 'P':
+            return reverse_lazy('news:passport-info')
+        elif service.service == 'V':
+            return reverse_lazy('news:visa-info')
+        else:
+            return reverse_lazy('news:authorization-info')
 
 
 class ServiceDelete(auth_mixin.OccupationRequiredMixin, generic.DeleteView):
     model = Service
     occupations = ['ADMIN', 'FAC']
-    success_url = reverse_lazy('news:services')
+
+    def get_success_url(self):
+        service = self.get_object()
+        print(service.service)
+        if service.service == 'P':
+            return reverse_lazy('news:passport-info')
+        elif service.service == 'V':
+            return reverse_lazy('news:visa-info')
+        else:
+            return reverse_lazy('news:authorization-info')
 
 
 class LegislationCreate(auth_mixin.OccupationRequiredMixin, generic.CreateView):
