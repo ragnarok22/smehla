@@ -20,6 +20,7 @@
     <link href="{% static 'accounts/css/sweetalert2.min.css' %}" rel="stylesheet">
     <!-- Bootstrap Datepicker -->
     <link href="{% static 'accounts/css/bootstrap-datepicker.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/buttons.dataTables.min.css' %}" rel="stylesheet">
     <link href="{% static 'accounts/css/datatables.min.css' %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="{% static 'accounts/css/styles.css' %}" rel="stylesheet">
@@ -47,26 +48,36 @@
 <script type="text/javascript" src="{% static 'accounts/js/bootstrap-datepicker.pt.min.js' %}"></script>
 <!-- Smooth Scroll animation -->
 <script type="text/javascript" src="{% static 'accounts/js/smooth-scroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/jquery.dataTables.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/jszip.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/buttons.html5.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/buttons.print.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/dataTables.buttons.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'accounts/js/datatables.min.js' %}"></script>
 <!-- My custom JavaScript -->
 <script type="text/javascript" src="{% static 'accounts/js/export.js' %}"></script>
 <script type="text/javascript" src="{% static 'accounts/js/script.js' %}"></script>
 <script>
     $(function () {
-        $('.table-search').DataTable();
+
         {% if tab %}
             $('#{{ tab }}').addClass('active');
             $('#{{ tab }} a').attr('href', '#');
         {% endif %}
-        $('.datepicker').datepicker({
-            language: '{{ LANGUAGE_CODE }}',
-            format:"yyyy/mm/dd",
-        });
 
         let scroll = SmoothScroll("a[data-scroll]", {
             speed: 1000,
             offset: 22,
             updateURL: false,
+        });
+
+        $(document).ready(function () {
+            $('.table-search').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'csv', 'excel', 'print'
+                ]
+            });
         });
     });
 </script>
